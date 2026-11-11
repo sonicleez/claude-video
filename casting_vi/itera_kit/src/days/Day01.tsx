@@ -40,6 +40,14 @@ const tReveal = tFlip + 0.55;
 const tEnd = tReveal + D.n3_reveal.dur + 0.45;
 export const DAY01_DURATION = sec(tEnd + 2.8);
 
+/** Every spoken word with absolute timing — drives on-screen captions and the exported YouTube SRT. */
+export const CAPTION_WORDS: Word[] = [
+  ...D.n1_hook.words.map((w) => ({...w, s: w.s + tHook, e: w.e + tHook})),
+  ...voices.flatMap((v, i) => sentenceWords(v.clip.words.length ? v.clip : null, v.clip.dur).map((w) => ({...w, s: w.s + vStart[i], e: w.e + vStart[i]}))),
+  ...D.n2_ask.words.map((w) => ({...w, s: w.s + tAsk, e: w.e + tAsk})),
+  ...D.n3_reveal.words.map((w) => ({...w, s: w.s + tReveal, e: w.e + tReveal})),
+];
+
 /* ---------- Kit geometry (measured from the layout PNG) ---------- */
 type R = [number, number, number, number];
 const HEADER: R = [60, 250, 924, 312];
@@ -210,12 +218,7 @@ export const Day01: React.FC = () => {
       <Sequence from={sec(1.3)} durationInFrames={sec(0.9)}><Mascot pose="lang-nghe" x={770} y={330} size={240} hold={0.9} /></Sequence>
 
       {t < tEnd && (
-        <PunchCaption y={capY} words={[
-          ...D.n1_hook.words.map((w) => ({...w, s: w.s + tHook, e: w.e + tHook})),
-          ...voices.flatMap((v, i) => sentenceWords(v.clip.words.length ? v.clip : null, v.clip.dur).map((w) => ({...w, s: w.s + vStart[i], e: w.e + vStart[i]}))),
-          ...D.n2_ask.words.map((w) => ({...w, s: w.s + tAsk, e: w.e + tAsk})),
-          ...D.n3_reveal.words.map((w) => ({...w, s: w.s + tReveal, e: w.e + tReveal})),
-        ]} />
+        <PunchCaption y={capY} words={CAPTION_WORDS} />
       )}
 
       {[...vStart.map((s) => s - 0.02), tFlip, tEnd].map((s) => <Flash key={s} at={s} strength={s === tFlip ? 0.8 : 0.25} />)}
