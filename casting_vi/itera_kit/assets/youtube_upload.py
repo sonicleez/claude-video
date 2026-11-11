@@ -46,6 +46,7 @@ def main():
     ap.add_argument("--privacy", default="private", choices=["private", "unlisted", "public"])
     a = ap.parse_args()
     m = json.load(open(a.meta, encoding="utf-8")) if a.meta else {}
+    m = m.get("youtube", m)  # accept a make_short spec directly
     title = a.title or m.get("title") or sys.exit("Need --title or --meta with a title")
     desc = open(a.desc_file, encoding="utf-8").read() if a.desc_file else m.get("description", "")
     tags = [t for t in a.tags.split(",") if t] or m.get("tags", [])
@@ -68,9 +69,12 @@ def main():
         "status": {"privacyStatus": "private" if a.publish_at else a.privacy, "selfDeclaredMadeForKids": False,
                    "containsSyntheticMedia": True, **({"publishAt": a.publish_at} if a.publish_at else {})},
     }
+    parts = "snippet,status"
+    if m.get("localizations"):
+        meta["localizations"] = m["localizations"]; parts += ",localizations"
     size = os.path.getsize(a.video)
     init = urllib.request.Request(
-        "https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
+        f"https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part={parts}",
         data=json.dumps(meta).encode(), method="POST",
         headers={**auth, "Content-Type": "application/json; charset=UTF-8",
                  "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(size)})
@@ -85,6 +89,15 @@ def main():
     except urllib.error.HTTPError as e:
         sys.exit(f"Upload failed: HTTP {e.code} {e.read()[:400]!r}")
     print("Uploaded:", res["id"], res["status"]["privacyStatus"], res["status"].get("publishAt", ""), f"https://youtube.com/shorts/{res['id']}")
+    # The insert call does not keep containsSyntheticMedia; set it with a status update (keeps the schedule).
+    st = {"privacyStatus": res["status"]["privacyStatus"], "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True,
+          "embeddable": True, "publicStatsViewable": True, **({"publishAt": a.publish_at} if a.publish_at else {})}
+    upd = urllib.request.Request("https://www.googleapis.com/youtube/v3/videos?part=status", method="PUT",
+                                 data=json.dumps({"id": res["id"], "status": st}).encode(), headers={**auth, "Content-Type": "application/json"})
+    try:
+        print("AI flag:", json.load(urllib.request.urlopen(upd, timeout=60))["status"].get("containsSyntheticMedia"))
+    except urllib.error.HTTPError as e:
+        print("AI flag update failed:", e.code)
     if a.srt:
         upload_captions(auth, res["id"], a.srt)
 
