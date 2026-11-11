@@ -19,7 +19,7 @@ A new session does not remember earlier chats. This file and the skill `.claude/
 | `itera_kit` Remotion system (`src/brand`, helpers in `assets/`) | done |
 | Day 01 "Giọng nào là người thật?" v3 (39.7 s): voices Trâm, Cẩm Hồng, MiniMax, CapCut + An Nhiên narration | rendered locally (not in git — re-render: `npx remotion render Day01 …`) |
 | Day 01 SEO metadata `assets/day01/youtube.json`, SRT via `assets/export_srt.mjs` | ready |
-| YouTube upload `assets/youtube_upload.py` | works. Day 01 uploaded **private** to channel "Sonic Journey": https://youtube.com/shorts/5Lyhw46T3d8 with Vietnamese captions (2026-11-11). Publish/schedule only on the user's go-ahead |
+| YouTube upload `assets/youtube_upload.py` | works. Day 01 uploaded **private** to channel "Sonic Journey": https://youtube.com/shorts/5Lyhw46T3d8 with full SEO applied (2026-11-11): vi title/desc/15 tags, English localization, vi+en captions, custom thumbnail, playlist "Thử tai giọng AI tiếng Việt", containsSyntheticMedia=true. Still private: publish/schedule only on the user's go-ahead, then post the first comment |
 | Days 02–30 | not built |
 | Postiz auto-posting | paused by user; options: Postiz Cloud ($29+/mo) or self-host on user's VPS |
 
@@ -28,3 +28,6 @@ A new session does not remember earlier chats. This file and the skill `.claude/
 2. Card 4 uses a CapCut voice that STT transcribes poorly — user to decide whether to swap.
 3. Day 01 is 39.7 s: fine as a Short (< 60 s).
 4. Earlier ad (casting_vi/itera_ad) and voice casting samples exist; ad is not on the brand kit.
+
+## Thumbnail recipe
+`ffmpeg -ss 6.2 -i ITERA_NgayNN.mp4 -frames:v 1 -vf "drawbox=x=0:y=1215:w=1080:h=560:color=0x09090C@1:t=fill,drawtext=fontfile=public/kit/fonts/BeVietnamPro-ExtraBold.ttf:text='AI hay NGƯỜI?':fontsize=124:fontcolor=white:x=(w-tw)/2:y=1290,drawtext=...:fontcolor=0xD93F3F:y=1470" out/dayNN_thumb.jpg`

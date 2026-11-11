@@ -40,6 +40,11 @@ python3 assets/youtube_upload.py ITERA_NgayNN.mp4 --meta assets/dayNN/youtube.js
 python3 assets/youtube_upload.py ITERA_NgayNN.mp4 --meta assets/dayNN/youtube.json --srt out/dayNN.vi.srt               # private test
 python3 assets/youtube_upload.py ... --publish-at 2026-11-20T12:15:00Z   # schedule (19:15 Vietnam = 12:15Z)
 ```
+Then run full SEO on the uploaded id (metadata + English localization, vi/en captions, thumbnail, series playlist):
+```bash
+python3 assets/youtube_seo.py VIDEO_ID --meta assets/dayNN/youtube.json --srt vi=out/dayNN.vi.srt --srt en=out/dayNN.en.srt --thumb out/dayNN_thumb.jpg
+```
+English SRT = same cues as the vi SRT, translated line by line. Thumbnail = a 1080×1920 frame with a 2-line headline in the kit font (see `out/day01_thumb.jpg` recipe in HANDOFF). Series playlist: "Thử tai giọng AI tiếng Việt" (`playlist` key in youtube.json).
 SEO rules: title ≤ 70 chars, main keyword in the first ~40 ("giọng AI tiếng Việt", "text to speech tiếng Việt", "lồng tiếng AI"…), ends with `#shorts`; first description line = full keyword sentence; then what the video shows, the question/CTA, the URL https://itera102.space; 3 hashtags at the end; 8–15 tags mixing Vietnamese and English; `defaultLanguage`/`defaultAudioLanguage` vi; always upload the Vietnamese SRT; `containsSyntheticMedia: true` (AI voice). Upload private first and show the user the link; publish or schedule only when they say so. Video must be ≤ 60 s vertical to count as a Short.
 
 ## Rules (from the user — do not break)

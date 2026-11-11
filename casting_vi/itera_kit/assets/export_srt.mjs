@@ -15,7 +15,7 @@ const ts = (t) => { const ms = Math.round(t * 1000); const h = Math.floor(ms / 3
 const cues = []; let cur = [];
 words.forEach((w, i) => {
   cur.push(w); const text = cur.map((x) => x.t).join(' '); const nx = words[i + 1];
-  if (!nx || text.length >= maxc || /[.,!?]$/.test(w.t) || nx.s - w.e > 0.45) { cues.push([cur[0].s, w.e + 0.2, text]); cur = []; }
+  if (!nx || text.length >= maxc || /[.,!?]$/.test(w.t) || nx.s - w.e > 0.45 || nx.t[0] !== nx.t[0].toLowerCase() && !/^(ITERA|AI)$/.test(nx.t.replace(/[.,!?]$/, ''))) { cues.push([cur[0].s, w.e + 0.2, text]); cur = []; }
 });
 const srt = cues.map(([s, e, t], i) => `${i + 1}\n${ts(s)} --> ${ts(Math.min(e, cues[i + 1] ? cues[i + 1][0] - 0.02 : e))}\n${t}\n`).join('\n');
 writeFileSync(dst, srt);
