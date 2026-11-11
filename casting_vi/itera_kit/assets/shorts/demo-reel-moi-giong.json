@@ -1,0 +1,66 @@
+{
+ "id": "demo-reel-moi-giong",
+ "template": "reel",
+ "endLines": [
+  "Một kịch bản.",
+  "MỌI GIỌNG."
+ ],
+ "chapters": [
+  {
+   "prompt": "Giọng review sản phẩm",
+   "title": [
+    "REVIEW",
+    "SẢN PHẨM"
+   ],
+   "accent": "giọng cho",
+   "preset": "an_human",
+   "text": "[laughs] Bình này á, giữ đá tới chiều luôn đó!",
+   "footage": {
+    "mixkit": 31218,
+    "start": 9
+   }
+  },
+  {
+   "prompt": "Giọng kể chuyện đêm khuya",
+   "title": [
+    "KỂ",
+    "CHUYỆN"
+   ],
+   "accent": "giọng",
+   "preset": "camhong",
+   "text": "Đêm đó... căn phòng ba lẻ hai lại sáng đèn.",
+   "footage": {
+    "mixkit": 21144,
+    "start": 1
+   }
+  },
+  {
+   "prompt": "Giọng quảng cáo quán cà phê",
+   "title": [
+    "QUẢNG",
+    "CÁO"
+   ],
+   "accent": "giọng",
+   "preset": "tram",
+   "text": "Cuối tuần này, ghé quán cà phê mới mở nha!",
+   "footage": {
+    "mixkit": 817,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "Giọng bài giảng online",
+   "title": [
+    "BÀI",
+    "GIẢNG"
+   ],
+   "accent": "giọng",
+   "preset": "annhien",
+   "text": "Hôm nay, mình học về dấu câu nha.",
+   "footage": {
+    "mixkit": 1781,
+    "start": 1
+   }
+  }
+ ]
+}
