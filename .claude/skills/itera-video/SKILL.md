@@ -47,6 +47,13 @@ python3 assets/youtube_seo.py VIDEO_ID --meta assets/dayNN/youtube.json --srt vi
 English SRT = same cues as the vi SRT, translated line by line. Thumbnail = a 1080×1920 frame with a 2-line headline in the kit font (see `out/day01_thumb.jpg` recipe in HANDOFF). Series playlist: "Thử tai giọng AI tiếng Việt" (`playlist` key in youtube.json).
 SEO rules: title ≤ 70 chars, main keyword in the first ~40 ("giọng AI tiếng Việt", "text to speech tiếng Việt", "lồng tiếng AI"…), ends with `#shorts`; first description line = full keyword sentence; then what the video shows, the question/CTA, the URL https://itera102.space; 3 hashtags at the end; 8–15 tags mixing Vietnamese and English; `defaultLanguage`/`defaultAudioLanguage` vi; always upload the Vietnamese SRT; `containsSyntheticMedia: true` (AI voice). Upload private first and show the user the link; publish or schedule only when they say so. Video must be ≤ 60 s vertical to count as a Short.
 
+## Format, hooks and cadence (user decisions)
+- Length 18–30 s (Day 01 went from 40 s to 26 s: each sample reads half a sentence). Payoff/question in frame 1, hook 5–10 words with big on-screen text, open loop answered at the end, a visual change every ~2 s, loop the ending back to the start.
+- Write hooks for the two audiences' psychology — creators (no face, "bad" voice, recording takes hours, need volume) and affiliates (many videos/day, no face, cost per video, competitors faster). Use the 10 formulas in the plan doc section "Thư viện hook và lịch 4 bài/ngày"; give each script 2–3 hook variants and keep the one with the best "viewed vs swiped away" in YouTube Studio.
+- Cadence: 4 posts/day, 4 h apart (Vietnam time 08:00 educational tip · 12:00 ear test · 16:00 affiliate use case · 20:00 strongest plan video). Mind the YouTube API quota (10,000 units/day; upload ≈1,600, each caption ≈400): drop English captions or request more quota.
+- First comment = question + https://itera102.space (`assets/youtube_comment.py`, only once the video is public); the user pins it manually (API cannot pin).
+- Making a video public or scheduling `publishAt` needs the user's explicit go-ahead for that video or batch — ask; uploads stay private until then.
+
 ## Rules (from the user — do not break)
 - No referral/discount codes and no "free credit" promises unless the user approved them; CTA = link in bio / comment keyword / end card "Giọng này làm bằng ITERA." + itera102.space.
 - The user does not record their own voice: never present an AI voice as a real person. Days that need a real voice (4, 19, 27) must be rewritten first — ask.

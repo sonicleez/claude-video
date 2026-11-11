@@ -1,7 +1,7 @@
 /**
  * Ngày 01 · "Giọng nào là người thật?" — kit layout 10-layout-30-ngay/01-doan-giong-nguoi-that.
  * v2: kit layers are cut into header / title / 4 cards / pill and animated separately for energy.
- * All four are AI (no self-recording): 1 ElevenLabs Trâm · 2 ElevenLabs Cẩm Hồng · 3 MiniMax · 4 CapCut. Twist reveal: none is human.
+ * Short cut (~26 s). All four are AI: 1 ElevenLabs Trâm · 2 ElevenLabs Cẩm Hồng · 3 MiniMax · 4 ElevenLabs Ân. Twist reveal: none is human.
  */
 import React from 'react';
 import {AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, random} from 'remotion';
@@ -13,7 +13,7 @@ import DATA from '../day01.data.json';
 
 type Clip = {dur: number; words: Word[]};
 const D = DATA as unknown as Record<string, Clip>;
-const SENTENCE = 'Sáng nay mình dậy sớm, pha ly cà phê, và quyết định làm một việc mình đã trì hoãn cả năm.';
+const SENTENCE = 'Sáng nay mình dậy sớm, pha ly cà phê.';
 const tokens = SENTENCE.split(' ');
 const sentenceWords = (clip: Clip | null, dur: number): Word[] =>
   clip && clip.words.length === tokens.length
@@ -28,17 +28,17 @@ const voices = [
 ];
 
 /* ---------- Timeline (s) ---------- */
-const GAP = 0.3;
+const GAP = 0.2;
 const tHook = 0.35;
-let c = tHook + D.n1_hook.dur + 0.2;
+let c = tHook + D.n1_hook.dur + 0.15;
 const vStart = voices.map((v) => { const s = c; c += v.clip.dur + GAP; return s; });
 const tAsk = c;
 const tCount = tAsk + D.n2_ask.dur + 0.05;
-const COUNT = 1.5;
+const COUNT = 1.2;
 const tFlip = tCount + COUNT;
 const tReveal = tFlip + 0.55;
-const tEnd = tReveal + D.n3_reveal.dur + 0.45;
-export const DAY01_DURATION = sec(tEnd + 2.8);
+const tEnd = tReveal + D.n3_reveal.dur + 0.3;
+export const DAY01_DURATION = sec(tEnd + 2.0);
 
 /** Every spoken word with absolute timing — drives on-screen captions and the exported YouTube SRT. */
 export const CAPTION_WORDS: Word[] = [
@@ -100,7 +100,7 @@ const Cards: React.FC = () => {
   return (
     <>
       {CARDS.map((r, i) => {
-        const inP = spring({frame: frame - sec(0.95 + i * 0.12), fps: FPS, config: {damping: 11, stiffness: 170}});
+        const inP = spring({frame: frame - sec(0.45 + i * 0.1), fps: FPS, config: {damping: 11, stiffness: 170}});
         const f0 = tFlip + i * 0.09, f1 = f0 + 0.36;
         const fp = interpolate(t, [f0, f1], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
         const src = t < tFlip ? st.src : fp < 0.5 ? 'kit/day01/trang-thai-04.png' : 'kit/day01/trang-thai-dap-an.png';
@@ -236,7 +236,7 @@ export const Day01: React.FC = () => {
       }} />
       <Fx at={0} name="impact" volume={0.7} />
       <Fx at={0.15} name="whoosh" volume={0.45} />
-      {[0, 1, 2, 3].map((i) => <Fx key={i} at={0.95 + i * 0.12} name="pop" volume={0.35} />)}
+      {[0, 1, 2, 3].map((i) => <Fx key={i} at={0.45 + i * 0.1} name="pop" volume={0.35} />)}
       {vStart.map((s, i) => <Sfx key={i} at={s - 0.1} name="tick" volume={0.6} />)}
       <Fx at={tAsk - 0.15} name="whoosh" volume={0.45} />
       {[0, 1, 2].map((k) => <Sfx key={k} at={tCount + k * (COUNT / 3)} name="tick" volume={0.8} />)}
