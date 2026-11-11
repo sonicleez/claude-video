@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import {
-  AbsoluteFill, Audio, Img, Sequence, continueRender, delayRender, interpolate,
+  AbsoluteFill, Audio, Img, Sequence, continueRender, delayRender, interpolate, random as rnd,
   spring, staticFile, useCurrentFrame, useVideoConfig,
 } from 'remotion';
 
@@ -143,3 +143,112 @@ export const Sfx: React.FC<{at: number; name: 'tick' | 'reveal' | 'signature'; v
   const file = {tick: '01-marker-tick', reveal: '02-reveal', signature: '03-sonic-signature'}[name];
   return <Sequence from={sec(at)} durationInFrames={sec(1.5)}><Audio src={staticFile(`kit/sfx/${file}.wav`)} volume={volume} /></Sequence>;
 };
+
+/* ===================== Energy layer (v2) ===================== */
+
+
+/** Living graphite background: drifting silver light, wave-terrain lines, dust. Placeholder until bg-loop-studio.mp4 exists. */
+export const LiveBg: React.FC<{accent?: number}> = ({accent = 0}) => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  const lines = 9;
+  return (
+    <AbsoluteFill style={{background: T.bg, overflow: 'hidden'}}>
+      <div style={{position: 'absolute', width: 1300, height: 1300, left: -300 + Math.sin(t * 0.35) * 260, top: -420 + Math.cos(t * 0.27) * 120,
+        borderRadius: '50%', background: 'radial-gradient(circle, rgba(170,178,196,0.20) 0%, rgba(9,9,12,0) 65%)'}} />
+      <div style={{position: 'absolute', width: 1000, height: 1000, right: -380 + Math.cos(t * 0.3) * 200, bottom: 120 + Math.sin(t * 0.4) * 160,
+        borderRadius: '50%', background: `radial-gradient(circle, rgba(217,63,63,${0.10 + accent * 0.18}) 0%, rgba(9,9,12,0) 62%)`}} />
+      <svg width={W} height={H} style={{position: 'absolute', inset: 0, opacity: 0.35}}>
+        {Array.from({length: lines}, (_, k) => {
+          const y0 = 1500 + k * 46;
+          const pts = Array.from({length: 37}, (_, i) => {
+            const x = i * 30;
+            const y = y0 + Math.sin(i * 0.35 + t * 1.2 + k * 0.6) * (18 + k * 3) + Math.sin(i * 0.11 - t * 0.7) * 22;
+            return `${x},${y}`;
+          }).join(' ');
+          return <polyline key={k} points={pts} fill="none" stroke={k === 4 ? T.red : '#9AA1B3'} strokeOpacity={k === 4 ? 0.6 : 0.25 - k * 0.015} strokeWidth={k === 4 ? 2 : 1.5} />;
+        })}
+      </svg>
+      {Array.from({length: 40}, (_, i) => {
+        const x = rnd(`px${i}`) * W, sp = 12 + rnd(`ps${i}`) * 30;
+        const y = (rnd(`py${i}`) * H - t * sp * 3 + H * 4) % H;
+        return <div key={i} style={{position: 'absolute', left: x + Math.sin(t + i) * 10, top: y, width: 3, height: 3, borderRadius: 2, background: '#C9CED9', opacity: 0.15 + rnd(`po${i}`) * 0.35}} />;
+      })}
+      <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%)'}} />
+      <Grain />
+    </AbsoluteFill>
+  );
+};
+const Grain: React.FC = () => {
+  const seed = useCurrentFrame() % 6;
+  return (
+    <AbsoluteFill style={{opacity: 0.07, mixBlendMode: 'overlay'}}>
+      <svg width={W} height={H}><filter id={`lg${seed}`}><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed={seed} /></filter>
+        <rect width="100%" height="100%" filter={`url(#lg${seed})`} /></svg>
+    </AbsoluteFill>
+  );
+};
+
+/** Punch-zoom + shake on beats (seconds). */
+export const Camera: React.FC<{hits: number[]; children: React.ReactNode; strength?: number}> = ({hits, children, strength = 1}) => {
+  const frame = useCurrentFrame();
+  let s = 1, x = 0, y = 0;
+  for (const h of hits) {
+    const d = frame - sec(h);
+    if (d >= 0 && d < 15) {
+      const k = Math.exp(-d / 4) * strength;
+      s += 0.05 * k; x += (rnd(`cx${h}${frame}`) - 0.5) * 18 * k; y += (rnd(`cy${h}${frame}`) - 0.5) * 18 * k;
+    }
+  }
+  return <AbsoluteFill style={{transform: `translate(${x}px,${y}px) scale(${s * (1 + 0.012 * Math.sin(frame / 50))})`}}>{children}</AbsoluteFill>;
+};
+
+/** White flash for cuts. */
+export const Flash: React.FC<{at: number; strength?: number}> = ({at, strength = 0.7}) => {
+  const frame = useCurrentFrame();
+  const o = interpolate(frame, [sec(at) - 1, sec(at), sec(at) + 6], [0, strength, 0], clamp);
+  return <AbsoluteFill style={{background: '#F9FAFB', opacity: o, pointerEvents: 'none'}} />;
+};
+
+/** Energetic captions: ExtraBold caps, 2–4 words/page, active word on a white chip. */
+export const PunchCaption: React.FC<{words: Word[]; y: number; maxWords?: number; size?: number}> = ({words, y, maxWords = 4, size = 70}) => {
+  const frame = useCurrentFrame();
+  const t = frame / FPS;
+  const pages: Word[][] = [];
+  let cur: Word[] = [];
+  words.forEach((w, i) => {
+    cur.push(w);
+    const nx = words[i + 1];
+    if (/[.,!?]$/.test(w.t) || cur.length >= maxWords || !nx || nx.s - w.e > 0.28) { pages.push(cur); cur = []; }
+  });
+  const idx = pages.findIndex((p, i) => t >= p[0].s - 0.06 && t < (pages[i + 1] ? Math.min(pages[i + 1][0].s - 0.06, p[p.length - 1].e + 0.6) : p[p.length - 1].e + 0.6));
+  if (idx < 0) return null;
+  const page = pages[idx];
+  const pin = spring({frame: frame - sec(page[0].s - 0.06), fps: FPS, config: {damping: 12, stiffness: 260}});
+  return (
+    <div style={{position: 'absolute', left: 40, right: 40, top: y, textAlign: 'center', fontFamily: T.sans, fontWeight: 800, fontSize: size,
+      lineHeight: 1.18, textTransform: 'uppercase', transform: `scale(${interpolate(pin, [0, 1], [0.75, 1])}) translateY(${(1 - pin) * 20}px)`}}>
+      {page.map((w, i) => {
+        const on = t >= w.s && t < (page[i + 1] ? page[i + 1].s : w.e + 0.6);
+        return <span key={i} style={{display: 'inline-block', margin: '4px 8px', padding: '2px 14px', borderRadius: 12,
+          color: on ? '#09090C' : t >= w.s ? T.text : 'rgba(249,250,251,0.55)', background: on ? T.text : 'transparent',
+          transform: `scale(${on ? 1.08 : 1}) rotate(${on ? -1.5 : 0}deg)`, WebkitTextStroke: on ? undefined : '10px #09090C', paintOrder: 'stroke fill',
+          boxShadow: on ? '0 10px 30px rgba(0,0,0,0.45)' : undefined}}>{w.t.replace(/[.,!?]$/, '')}</span>;
+      })}
+    </div>
+  );
+};
+
+/** Crop a rectangle out of a full-frame kit PNG so it can be animated on its own. */
+export const Crop: React.FC<{src: string; r: [number, number, number, number]; style?: React.CSSProperties}> = ({src, r, style}) => {
+  const [x0, y0, x1, y1] = r;
+  return (
+    <div style={{position: 'absolute', left: x0, top: y0, width: x1 - x0, height: y1 - y0, overflow: 'hidden', ...style}}>
+      <Img src={staticFile(src)} style={{position: 'absolute', left: -x0, top: -y0, width: W, height: H}} />
+    </div>
+  );
+};
+
+export const Fx: React.FC<{at: number; name: string; volume?: number}> = ({at, name, volume = 0.5}) => (
+  <Sequence from={Math.max(0, sec(at))} durationInFrames={sec(2)}><Audio src={staticFile(`fx/${name}.wav`)} volume={volume} /></Sequence>
+);
