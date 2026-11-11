@@ -74,7 +74,7 @@ const Grain: React.FC = () => {
 };
 
 /* ---------- Camera: punch-in zooms + shake on impacts ---------- */
-const PUNCHES = [0, 2.38, 6.3, 11.85, 15.98, 18.88, 19.8, 20.6, 21.4, 23.57];
+const PUNCHES = [0, 2.38, 6.3, 11.85, 15.98, 18.88, 19.8, 20.6, 21.4, 23.39];
 const Camera: React.FC<{children: React.ReactNode}> = ({children}) => {
   const frame = useCurrentFrame();
   let scale = 1, sx = 0, sy = 0;
@@ -351,28 +351,28 @@ const Feats: React.FC = () => {
 const Cta: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS + S.cta;
-  const p = usePop(23.5 - S.cta, {damping: 9, stiffness: 140, mass: 0.7});
-  const shine = interpolate((t - 23.9) % 1.6, [0, 0.6], [-300, 1100], clamp);
+  const p = usePop(23.39 - S.cta, {damping: 9, stiffness: 140, mass: 0.7});
+  const shine = interpolate((t - 23.8) % 1.6, [0, 0.6], [-300, 1100], clamp);
   const bob = Math.sin(t * 7) * 14;
+  const pulse = 1 + 0.04 * Math.sin(t * 9);
   return (
     <AbsoluteFill>
-      <Big start={0.1} y={300} size={80} color={C.white}>Nhập mã</Big>
+      <Big start={0.1} y={300} size={84} color={C.white}>Thử ngay tại</Big>
       <div style={{
-        position: 'absolute', left: 90, right: 90, top: 440, height: 300, borderRadius: 44, background: C.lime, overflow: 'hidden',
-        display: 'flex', alignItems: 'center', justifyContent: 'center', transform: `scale(${interpolate(p, [0, 1], [0.2, 1])}) rotate(${interpolate(p, [0, 1], [-14, -2])}deg)`,
+        position: 'absolute', left: 90, right: 90, top: 440, height: 260, borderRadius: 130, background: C.lime, overflow: 'hidden',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        transform: `scale(${interpolate(p, [0, 1], [0.2, 1]) * pulse}) rotate(${interpolate(p, [0, 1], [-14, -2])}deg)`,
         boxShadow: '0 40px 140px rgba(200,255,46,0.45)',
       }}>
-        <div style={{position: 'absolute', left: -30, top: 120, width: 60, height: 60, borderRadius: 30, background: C.bg}} />
-        <div style={{position: 'absolute', right: -30, top: 120, width: 60, height: 60, borderRadius: 30, background: C.bg}} />
-        <div style={{fontFamily, fontWeight: 900, fontSize: 160, color: '#000', letterSpacing: -4}}>ITERA09</div>
+        <div style={{fontFamily, fontWeight: 900, fontSize: 112, color: '#000', letterSpacing: -3}}>itera102.space</div>
         <div style={{position: 'absolute', top: -100, bottom: -100, width: 120, left: shine, background: 'rgba(255,255,255,0.55)', transform: 'rotate(20deg)'}} />
       </div>
-      {t >= 24.69 && (
-        <div style={{position: 'absolute', top: 860 + bob, left: 0, right: 0, textAlign: 'center', fontFamily, fontWeight: 900, fontSize: 96, color: C.white}}>
+      {t >= 23.39 && (
+        <div style={{position: 'absolute', top: 820 + bob, left: 0, right: 0, textAlign: 'center', fontFamily, fontWeight: 900, fontSize: 96, color: C.white}}>
           ↑ LINK Ở BIO ↑
         </div>
       )}
-      {t >= 25.13 && <Big start={25.13 - S.cta} y={1020} size={70} color={C.dim}>Thử liền đi nè!</Big>}
+      {t >= 25.27 && <Big start={25.27 - S.cta} y={1000} size={74} color={C.dim}>Thử liền đi nè!</Big>}
     </AbsoluteFill>
   );
 };
@@ -440,7 +440,7 @@ const SFX: [number, string, number][] = [
   ...Array.from({length: 12}, (_, i) => [12.45 + i * 0.12, 'click', 0.25] as [number, string, number]),
   [14.08, 'click', 0.7], [14.82, 'click', 0.8], [15.0, 'riser', 0.35], [16.25, 'ding', 0.6],
   [18.6, 'whoosh', 0.6], [18.88, 'impact', 0.5], [19.8, 'impact', 0.5], [20.6, 'impact', 0.5], [21.4, 'riser', 0.3], [21.55, 'impact', 0.8],
-  [22.85, 'whoosh', 0.7], [23.57, 'impact', 0.9], [23.6, 'ding', 0.5], [24.69, 'pop', 0.5],
+  [22.85, 'whoosh', 0.7], [23.39, 'impact', 0.9], [23.42, 'ding', 0.5], [24.79, 'pop', 0.5],
 ];
 
 export const Ad: React.FC = () => {

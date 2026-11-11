@@ -1,0 +1,4 @@
+1
+00:00:00,116 --> 00:00:03,000
+Bấm link ở bio nha, vào Itera thử liền đi nè!
+
