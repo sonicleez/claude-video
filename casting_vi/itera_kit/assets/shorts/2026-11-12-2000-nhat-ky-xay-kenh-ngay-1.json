@@ -1,0 +1,103 @@
+{
+ "id": "2026-11-12-2000-nhat-ky-xay-kenh-ngay-1",
+ "template": "reel",
+ "endLines": [
+  "Nhật ký xây kênh",
+  "NGÀY 1"
+ ],
+ "hook": {
+  "lines": [
+   "94 SUB",
+   "XÂY KÊNH",
+   "BẰNG GIỌNG AI"
+  ],
+  "text": "Kênh này mới có chín mươi bốn sub. Mình sẽ xây nó... chỉ bằng giọng AI.",
+  "footage": {
+   "mixkit": 34980,
+   "start": 2
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Luật 1: không thu âm",
+   "button": "Chốt",
+   "title": [
+    "KHÔNG",
+    "THU ÂM"
+   ],
+   "accent": "luật 1",
+   "text": "Luật một nè, mình không thu âm câu nào hết.",
+   "footage": {
+    "mixkit": 31370,
+    "start": 10
+   }
+  },
+  {
+   "prompt": "Luật 2: 4 video mỗi ngày",
+   "button": "Chốt",
+   "title": [
+    "4 VIDEO",
+    "MỖI NGÀY"
+   ],
+   "accent": "luật 2",
+   "text": "Luật hai, mỗi ngày bốn video. [laughs] Nghe hơi liều ha.",
+   "footage": {
+    "mixkit": 28901,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "Luật 3: công khai số liệu",
+   "button": "Chốt",
+   "title": [
+    "SỐ THẬT",
+    "MỖI NGÀY"
+   ],
+   "accent": "luật 3",
+   "text": "Luật ba, số liệu thật, khoe hết, kể cả lúc flop.",
+   "footage": {
+    "mixkit": 24580,
+    "start": 6
+   }
+  },
+  {
+   "prompt": "Ngày 1: bắt đầu",
+   "button": "Bắt đầu",
+   "title": [
+    "NGÀY 1",
+    "BẮT ĐẦU"
+   ],
+   "accent": "follow",
+   "text": "Follow đi, coi thử kênh này đi được tới đâu nha.",
+   "footage": {
+    "mixkit": 1781,
+    "start": 3
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Xây kênh từ 94 sub chỉ bằng giọng AI: Ngày 1 #shorts",
+  "description": "Thử thách xây kênh YouTube từ 94 sub chỉ bằng giọng AI, không thu âm, 4 video mỗi ngày, công khai số liệu thật. Đây là ngày 1.\n\nNhật ký xây kênh bằng giọng đọc AI (text to speech) tạo trên ITERA. Follow để xem kênh đi được tới đâu.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #xaykenh #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "xây kênh YouTube",
+   "xây kênh từ 0",
+   "thử thách xây kênh",
+   "kênh không lộ mặt",
+   "nhật ký xây kênh",
+   "faceless channel",
+   "YouTube Shorts"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Growing a channel from 94 subs with only an AI voice: Day 1 #shorts",
+    "description": "A public challenge: grow a YouTube channel from 94 subscribers using only AI voice, 4 videos a day, real numbers. Day 1.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn đoán sau 30 ngày kênh này được bao nhiêu sub? 👇 Giọng trong video làm bằng ITERA: https://itera102.space"
+ }
+}

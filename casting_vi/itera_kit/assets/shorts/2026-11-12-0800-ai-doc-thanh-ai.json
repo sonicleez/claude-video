@@ -1,0 +1,98 @@
+{
+ "id": "2026-11-12-0800-ai-doc-thanh-ai",
+ "template": "reel",
+ "endLines": [
+  "Mẹo giọng AI",
+  "VIẾT THEO ÂM"
+ ],
+ "hook": {
+  "lines": [
+   "BẢO AI ĐỌC",
+   "CHỮ “AI”",
+   "NÓ ĐỌC…?"
+  ],
+  "text": "Mình kêu AI đọc đúng một chữ thôi. Nó đọc trật lất. [laughs]",
+  "footage": {
+   "mixkit": 32411,
+   "start": 2
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Giọng AI của bạn…",
+   "title": [
+    "GÕ",
+    "“AI”"
+   ],
+   "accent": "mình",
+   "text": "Chuyện là vầy, mình gõ hai chữ cái thôi, AI.",
+   "footage": {
+    "mixkit": 1808,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "Kết quả: “giọng ai”",
+   "title": [
+    "MÁY ĐỌC",
+    "“AI”"
+   ],
+   "accent": "ủa?",
+   "text": "Máy đọc cái rụp, giọng ai. Ủa... ai là ai trời?",
+   "footage": {
+    "mixkit": 19349,
+    "start": 1
+   }
+  },
+  {
+   "prompt": "Sửa lại: “ây ai”",
+   "title": [
+    "VIẾT",
+    "“ÂY AI”"
+   ],
+   "accent": "mẹo",
+   "text": "Mẹo nè, viết theo cách đọc, AI, là xong.",
+   "footage": {
+    "mixkit": 24580,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "Từ khó: viết theo âm",
+   "title": [
+    "VIẾT",
+    "THEO ÂM"
+   ],
+   "accent": "nhớ",
+   "text": "Từ tiếng Anh nào khó, cứ viết theo âm nha.",
+   "footage": {
+    "mixkit": 31370,
+    "start": 6
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Bảo AI đọc chữ “AI”, nó đọc thành gì? #shorts",
+  "description": "Giọng AI tiếng Việt đọc sai chữ “AI” thành “ai”: chuyện thật khi làm video bằng text to speech và cách sửa trong 5 giây.\n\nMẹo cho creator: từ viết tắt và tiếng Anh, hãy viết theo cách đọc trước khi tạo giọng. Bạn từng gặp từ nào AI đọc sai? Comment nha!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #xaykenh #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "AI đọc sai",
+   "mẹo giọng AI",
+   "làm video bằng AI",
+   "lỗi text to speech",
+   "content creator",
+   "mẹo làm video"
+  ],
+  "localizations": {
+   "en": {
+    "title": "I asked an AI voice to read “AI”… it failed #shorts",
+    "description": "A real text-to-speech fail in Vietnamese and the 5-second fix: spell it the way it sounds.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Từ nào AI đọc sai làm bạn bật cười nhất? 👇 Thử tạo giọng đọc AI tại: https://itera102.space"
+ }
+}

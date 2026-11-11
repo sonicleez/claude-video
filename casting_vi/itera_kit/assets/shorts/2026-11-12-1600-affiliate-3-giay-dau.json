@@ -1,0 +1,100 @@
+{
+ "id": "2026-11-12-1600-affiliate-3-giay-dau",
+ "template": "reel",
+ "endLines": [
+  "Affiliate",
+  "3 GIÂY ĐẦU"
+ ],
+ "hook": {
+  "lines": [
+   "10 VIDEO",
+   "0 ĐƠN?",
+   "3 GIÂY ĐẦU"
+  ],
+  "text": "Mười video affiliate mà chưa ra đơn? Coi lại ba giây đầu nè.",
+  "footage": {
+   "mixkit": 13168,
+   "start": 3
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Mở đầu: “Chào mọi người…”",
+   "button": "Xoá",
+   "title": [
+    "ĐỪNG",
+    "CHÀO"
+   ],
+   "accent": "lỗi hay gặp",
+   "text": "Đừng mở đầu bằng câu chào, người ta lướt mất tiêu.",
+   "footage": {
+    "mixkit": 28901,
+    "start": 1
+   }
+  },
+  {
+   "prompt": "Mở đầu: kết quả trước",
+   "title": [
+    "KẾT QUẢ",
+    "TRƯỚC"
+   ],
+   "accent": "sửa",
+   "text": "Cho thấy kết quả trước á, giải thích sau.",
+   "footage": {
+    "mixkit": 31218,
+    "start": 9
+   }
+  },
+  {
+   "prompt": "Giọng: rõ, có cảm xúc",
+   "title": [
+    "GIỌNG",
+    "CÓ HỒN"
+   ],
+   "accent": "và",
+   "text": "Giọng đọc phải có hồn, đừng đọc như trả bài.",
+   "footage": {
+    "mixkit": 31370,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "Thử giọng AI cho video",
+   "title": [
+    "THỬ",
+    "LIỀN"
+   ],
+   "accent": "link ở bio",
+   "text": "Giọng này là AI đó. Thử cho video của bạn đi.",
+   "footage": {
+    "mixkit": 50605,
+    "start": 1
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Video affiliate không ra đơn? Xem lại 3 giây đầu #shorts",
+  "description": "Video affiliate không ra đơn: 3 lỗi ở 3 giây đầu và cách sửa cho người làm Shopee, TikTok Shop không lộ mặt.\n\nĐừng mở đầu bằng câu chào, cho thấy kết quả trước, và dùng giọng đọc có cảm xúc. Giọng trong video là giọng AI tạo trên ITERA.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #xaykenh #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "video affiliate",
+   "affiliate không lộ mặt",
+   "affiliate không ra đơn",
+   "hook video",
+   "TikTok Shop",
+   "affiliate Shopee",
+   "3 giây đầu"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Affiliate videos not selling? Fix the first 3 seconds #shorts",
+    "description": "Three first-3-second mistakes in faceless affiliate videos and how to fix them.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Video affiliate của bạn mở đầu bằng câu gì? 👇 Tạo giọng đọc AI cho video sản phẩm tại: https://itera102.space"
+ }
+}
