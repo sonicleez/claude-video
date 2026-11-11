@@ -1,0 +1,8 @@
+[
+ {"name":"n1_hook","preset":"annhien","text":"Bốn giọng, cùng một câu. Chỉ một giọng là người thật."},
+ {"name":"n2_ask","preset":"annhien","text":"Bạn đoán giọng số mấy? Comment trước khi xem đáp án nha!"},
+ {"name":"n3_reveal","preset":"annhien","text":"Giọng số hai là người thật. Ba giọng còn lại đều làm bằng Itera."},
+ {"name":"v1_eleven","preset":"tram","text":"Sáng nay mình dậy sớm, pha ly cà phê, và quyết định làm một việc mình đã trì hoãn cả năm."},
+ {"name":"v3_minimax","preset":"minimax_south","text":"Sáng nay mình dậy sớm, pha ly cà phê, và quyết định làm một việc mình đã trì hoãn cả năm."},
+ {"name":"v4_capcut","preset":"capcut_sainu","text":"Sáng nay mình dậy sớm, pha ly cà phê, và quyết định làm một việc mình đã trì hoãn cả năm."}
+]
