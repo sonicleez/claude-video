@@ -1,5 +1,18 @@
 """python3 stt.py a.mp3 b.mp3 ... -> a.words.json; prints transcript."""
-import json, os, sys, time, urllib.request, uuid
+import json, os, sys, time, urllib.request
+_open=urllib.request.urlopen
+def _retry(*a,**k):
+    for i in range(6):
+        try:
+            r=_open(*a,**k); d=r.read()
+            class R:
+                def read(self,*_): return d
+            return R()
+        except Exception as e:
+            if i==5: raise
+            time.sleep(2*(i+1))
+urllib.request.urlopen=_retry
+import uuid
 B="https://api.itera102.space"; K=os.environ["API_Itera"]; UA="tts-client/1.0"
 def post(path):
     bnd=uuid.uuid4().hex; data=open(path,"rb").read()

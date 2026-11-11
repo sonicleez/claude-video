@@ -19,12 +19,14 @@ A new session does not remember earlier chats. This file and the skill `.claude/
 | `itera_kit` Remotion system (`src/brand`, helpers in `assets/`) | done |
 | Day 01 "Giọng nào là người thật?" v3 (39.7 s): voices Trâm, Cẩm Hồng, MiniMax, CapCut + An Nhiên narration | rendered locally (not in git — re-render: `npx remotion render Day01 …`) |
 | Day 01 SEO metadata `assets/day01/youtube.json`, SRT via `assets/export_srt.mjs` | ready |
-| YouTube upload `assets/youtube_upload.py` | works. Day 01 uploaded **private** to channel "Sonic Journey": https://youtube.com/shorts/5Lyhw46T3d8 with full SEO applied (2026-11-11): vi title/desc/15 tags, English localization, vi+en captions, custom thumbnail, playlist "Thử tai giọng AI tiếng Việt", containsSyntheticMedia=true. Still private: publish/schedule only on the user's go-ahead, then post the first comment |
+| Day 01 short cut (25.7 s, card 4 now ElevenLabs Ân) | uploaded **private** with full SEO: https://youtube.com/shorts/1BQ4Zm7TI64 — awaiting the user's go-ahead to publish/schedule; then run `assets/youtube_comment.py` and ask the user to pin it |
+| YouTube upload `assets/youtube_upload.py` | works. Old 40 s cut (superseded, removed from playlist) uploaded **private** to channel "Sonic Journey": https://youtube.com/shorts/5Lyhw46T3d8 with full SEO applied (2026-11-11): vi title/desc/15 tags, English localization, vi+en captions, custom thumbnail, playlist "Thử tai giọng AI tiếng Việt", containsSyntheticMedia=true. Still private: publish/schedule only on the user's go-ahead, then post the first comment |
 | Days 02–30 | not built |
 | Postiz auto-posting | paused by user; options: Postiz Cloud ($29+/mo) or self-host on user's VPS |
 
 ## Open items
-1. User to review the private Day 01 upload, then publish or schedule it.
+1. User to approve publishing Day 01 short (1BQ4Zm7TI64), e.g. 20:00 VN; old 40 s cut 5Lyhw46T3d8 can be deleted by the user.
+5. Plan: 4 posts/day at 08/12/16/20 VN — needs 4 videos/day; hook library is in the plan doc.
 2. Card 4 uses a CapCut voice that STT transcribes poorly — user to decide whether to swap.
 3. Day 01 is 39.7 s: fine as a Short (< 60 s).
 4. Earlier ad (casting_vi/itera_ad) and voice casting samples exist; ad is not on the brand kit.
