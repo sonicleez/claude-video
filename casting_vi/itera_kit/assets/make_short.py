@@ -4,7 +4,7 @@ Spec: {"id","tag","index","hook":[<=2 lines],"pill","segs":[{"kind":"hook|item|c
        "youtube":{"title","description","tags","localizations"?,"pinned_comment"?}}
 Output: out/<id>.mp4 (-14 LUFS). Prints each clip's STT transcript: re-word the spec if a line is garbled.
 """
-import json, os, subprocess, sys, time, urllib.request, uuid
+import json, os, re, subprocess, sys, time, urllib.request, uuid
 B = "https://api.itera102.space"; K = os.environ["API_Itera"]; UA = "tts-client/1.0"
 PRESET = {
  "annhien": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
@@ -35,13 +35,27 @@ def stt(path):
     tid = json.loads(http("POST", B + "/v1/speech-to-text", b"".join(parts) + f"--{bnd}--\r\n".encode(), {"Content-Type": f"multipart/form-data; boundary={bnd}"}))["task_id"]
     return wait(f"/v1/speech-to-text/{tid}")["result"]
 
+# Pronunciation: TTS reads "AI" as the Vietnamese word "ai". Speak it as "ây ai"; captions still show "AI".
+SAY = [(r"\bAI\b", "ây ai")]
+def speak(text):
+    for pat, rep in SAY: text = re.sub(pat, rep, text)
+    return text
+def display_tokens(text):
+    """Tokens of the spoken text, each with the caption text to show ("ây ai" -> one caption word "AI")."""
+    out, toks, i = [], speak(text).split(), 0
+    while i < len(toks):
+        if toks[i] == "ây" and i + 1 < len(toks) and re.sub(r"[.,!?]", "", toks[i + 1]) == "ai":
+            out.append(("AI" + toks[i + 1][2:], 2)); i += 2
+        else:
+            out.append((toks[i].replace("Itera", "ITERA"), 1)); i += 1
+    return out
 spec = json.load(open(sys.argv[1], encoding="utf-8")); sid = spec["id"]
 work = f"assets/shorts/{sid}"; pub = f"public/shorts/{sid}"; os.makedirs(work, exist_ok=True); os.makedirs(pub, exist_ok=True); os.makedirs("out", exist_ok=True)
 ids = {}
 for k, s in enumerate(spec["segs"]):
     if os.path.exists(f"{work}/s{k}.mp3"): continue
     prov, voice, model, lang, vs = PRESET[s.get("preset", "annhien")]
-    ids[k] = api("POST", f"/v1/text-to-speech/{voice}", {"text": s["text"], "provider": prov, "model_id": model, "language_code": lang, "voice_settings": vs})["id"]
+    ids[k] = api("POST", f"/v1/text-to-speech/{voice}", {"text": speak(s["text"]), "provider": prov, "model_id": model, "language_code": lang, "voice_settings": vs})["id"]
 credits = 0
 for k, tid in ids.items():
     r = wait(f"/v1/history/{tid}")
@@ -52,9 +66,12 @@ for k, s in enumerate(spec["segs"]):
     res = stt(f"{work}/s{k}.mp3"); print(f"[s{k}] {res['text']}")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{work}/s{k}.mp3", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", f"{pub}/s{k}.wav"], check=True)
     dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f"{pub}/s{k}.wav"]))
-    ws = [w for w in res["words"] if w["type"] == "word"]; toks = s["text"].replace("Itera", "ITERA").split()
-    if len(toks) == len(ws): words = [{"t": t, "s": round(w["start"], 3), "e": round(w["end"], 3)} for t, w in zip(toks, ws)]
-    else: words = [{"t": t, "s": round(i / len(toks) * dur, 3), "e": round((i + 1) / len(toks) * dur, 3)} for i, t in enumerate(toks)]
+    ws = [w for w in res["words"] if w["type"] == "word"]; disp = display_tokens(s["text"]); n = sum(c for _, c in disp)
+    words, i = [], 0
+    for t, c in disp:
+        if n == len(ws): words.append({"t": t, "s": round(ws[i]["start"], 3), "e": round(ws[i + c - 1]["end"], 3)})
+        else: words.append({"t": t, "s": round(i / n * dur, 3), "e": round((i + c) / n * dur, 3)})
+        i += c
     segs.append({"kind": s["kind"], "dur": round(dur, 3), "words": words, **{f: s[f] for f in ("title", "sub", "sample") if f in s}})
 props = {"id": sid, "tag": spec["tag"], "index": spec.get("index", ""), "hook": spec["hook"][:2], "segs": segs, "pill": spec.get("pill"),
          "endKit": os.path.exists("public/kit/end/art.jpg") and os.path.exists("public/kit/sfx/03-sonic-signature.wav")}
