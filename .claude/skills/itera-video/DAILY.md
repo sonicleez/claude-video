@@ -17,6 +17,15 @@ The user approved this routine on 2026-11-11: 4 Shorts per day, full SEO, schedu
    with a two-line tagline. Cinematic, few words, no list cards, music-led (fx/bed86.wav, ~86 BPM). One idea per video
    expressed as chapters (use cases, voice styles, before/after of a script…). Use the list `Short` template only when
    the content really is a checklist. Prefer footage of hands, objects and places over close-up faces; no children.
+   **Content strategy (user, 2026-11-12): think like a storytelling creator.** Every video is a mini story:
+   hook with stakes or curiosity (readable on frame 0 via the Reel `hook` block) → tension → turn → payoff that
+   honours the hook. Result or incident first, method second. Tell true stories from this channel (numbers,
+   incidents, experiments); never invent people, testimonials or results. Title = searched keyword + curiosity gap.
+   Four pillars by slot: **08:00** real incident/experiment → one tip · **12:00** pick/guess (comments) ·
+   **16:00** affiliate/creator pain · **20:00** "Nhật ký xây kênh: Ngày N" — the backbone series: yesterday's real
+   numbers from `youtube_stats.py` (subs, views, what flopped, what was changed) and what will be tested next; Day 1
+   was 2026-11-12 (94 subs; rules: no recording, 4 videos/day, real numbers in public). Keep the day counter going.
+   A joke that depends on TTS mispronouncing a word is unreliable — keep such contrasts visual (on-screen text).
 4. **Write 4 specs** in `assets/shorts/<YYYY-MM-DD-HHMM-slug>.json` (see existing ones): 18–30 s, hook ≤ 2 short lines,
    ≤ 3 items, one audience pain each, hook formulas from the plan doc. Full SEO block: title ≤ 70 chars with keyword
    first and `#shorts`, keyword-rich first description line, https://itera102.space, 3 hashtags, 10–12 tags, English

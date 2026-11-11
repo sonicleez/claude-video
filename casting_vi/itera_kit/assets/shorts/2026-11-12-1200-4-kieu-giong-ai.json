@@ -1,0 +1,102 @@
+{
+ "id": "2026-11-12-1200-4-kieu-giong-ai",
+ "template": "reel",
+ "endLines": [
+  "Bạn chọn",
+  "KIỂU NÀO?"
+ ],
+ "hook": {
+  "lines": [
+   "4 KIỂU",
+   "GIỌNG AI",
+   "CHỌN 1"
+  ],
+  "text": "Bốn kiểu giọng AI nè. Bạn chọn kiểu nào cho kênh mình?",
+  "footage": {
+   "mixkit": 19349,
+   "start": 4
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Giọng review sản phẩm",
+   "title": [
+    "REVIEW",
+    "SẢN PHẨM"
+   ],
+   "accent": "giọng cho",
+   "preset": "an_human",
+   "text": "[laughs] Bình này á, giữ đá tới chiều luôn đó!",
+   "footage": {
+    "mixkit": 31218,
+    "start": 9
+   }
+  },
+  {
+   "prompt": "Giọng kể chuyện đêm khuya",
+   "title": [
+    "KỂ",
+    "CHUYỆN"
+   ],
+   "accent": "giọng",
+   "preset": "camhong",
+   "text": "Đêm đó... căn phòng ba lẻ hai lại sáng đèn.",
+   "footage": {
+    "mixkit": 21144,
+    "start": 1
+   }
+  },
+  {
+   "prompt": "Giọng quảng cáo quán cà phê",
+   "title": [
+    "QUẢNG",
+    "CÁO"
+   ],
+   "accent": "giọng",
+   "preset": "tram",
+   "text": "Cuối tuần này, ghé quán cà phê mới mở nha!",
+   "footage": {
+    "mixkit": 817,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "Giọng bài giảng online",
+   "title": [
+    "BÀI",
+    "GIẢNG"
+   ],
+   "accent": "giọng",
+   "preset": "annhien",
+   "text": "Hôm nay, mình học về dấu câu nha.",
+   "footage": {
+    "mixkit": 1781,
+    "start": 1
+   }
+  }
+ ],
+ "youtube": {
+  "title": "4 kiểu giọng AI cho video: bạn chọn kiểu nào? #shorts",
+  "description": "4 kiểu giọng AI tiếng Việt cho video: review sản phẩm, kể chuyện, quảng cáo, bài giảng. Bạn chọn kiểu nào cho kênh của mình?\n\nCả 4 đều là giọng đọc AI (text to speech) tạo trên ITERA. Comment kiểu bạn chọn!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #xaykenh #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "so sánh giọng AI",
+   "giọng review sản phẩm",
+   "giọng kể chuyện",
+   "giọng quảng cáo",
+   "AI voice Vietnamese",
+   "chọn giọng cho kênh"
+  ],
+  "localizations": {
+   "en": {
+    "title": "4 AI voice styles for your videos: pick one #shorts",
+    "description": "Four Vietnamese AI voice styles: product review, storytelling, ad, lesson. Which one fits your channel?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn chọn kiểu giọng nào: review, kể chuyện, quảng cáo hay bài giảng? 👇 Thử tại: https://itera102.space"
+ }
+}

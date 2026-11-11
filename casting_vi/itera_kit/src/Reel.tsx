@@ -10,15 +10,17 @@ import {useAudioData, visualizeAudio} from '@remotion/media-utils';
 import {FPS, Fx, T, Word, sec} from './brand';
 
 export type Chapter = {prompt: string; button: string; title: string[]; accent: string; voiceDur: number; words: Word[]};
-export type ReelProps = {id: string; tag: string; chapters: Chapter[]; endLines: [string, string]};
+export type Hook = {lines: string[]; voiceDur: number; words: Word[]};
+export type ReelProps = {id: string; tag: string; hook?: Hook; chapters: Chapter[]; endLines: [string, string]};
 
 const PRE = 1.5;      // before-beat: type, click, generate
 const TAIL = 0.45;
 const END = 2.6;
 export const reelTimeline = (p: ReelProps) => {
-  let c = 0;
+  const hookDur = p.hook ? Math.max(1.6, p.hook.voiceDur + 0.3) : 0;
+  let c = hookDur;
   const starts = p.chapters.map((ch) => { const s = c; c += PRE + ch.voiceDur + TAIL; return s; });
-  return {starts, tEnd: c, total: c + END};
+  return {starts, hookDur, tEnd: c, total: c + END};
 };
 export const reelDuration = (p: ReelProps) => Math.max(30, sec(reelTimeline(p).total));
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -142,6 +144,31 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
   );
 };
 
+/** Opening hook: the claim is fully readable on frame 0 (no fade-in), over moving footage, with the narrator line. */
+const HookView: React.FC<{hook: Hook; id: string; frames: number}> = ({hook, id, frames}) => {
+  const frame = useCurrentFrame();
+  const zoom = interpolate(frame, [0, frames], [1.2, 1.05], clamp);
+  return (
+    <AbsoluteFill style={{background: T.bg}}>
+      <OffthreadVideo src={staticFile(`shorts/${id}/fh.mp4`)} muted style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zoom})`, filter: 'saturate(1.1) contrast(1.1) brightness(0.55)'}} />
+      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(9,9,12,0.6) 0%, rgba(9,9,12,0.15) 35%, rgba(9,9,12,0.8) 100%)'}} />
+      <Corners />
+      <div style={{position: 'absolute', left: 70, top: 250, fontFamily: T.sans, fontWeight: 800, fontSize: 34, color: T.text, letterSpacing: 2}}>ITERA</div>
+      {hook.lines.slice(0, 3).map((line, i) => {
+        const tp = i === 0 ? 1 : spring({frame: frame - i * 9, fps: FPS, config: {damping: 9, stiffness: 180, mass: 0.7}});
+        const punch = i === 0 ? 1 + 0.08 * Math.exp(-frame / 3) : interpolate(tp, [0, 1], [1.6, 1]);
+        const last = i === Math.min(hook.lines.length, 3) - 1;
+        return <div key={i} style={{position: 'absolute', left: 60, top: 640 + i * 176, fontFamily: T.sans, fontWeight: 800, fontSize: 164, lineHeight: 1, letterSpacing: -5, whiteSpace: 'nowrap',
+          color: last ? '#09090C' : T.text, background: last ? T.text : 'transparent', padding: last ? '6px 22px 14px' : 0, borderRadius: 14, marginLeft: last ? -4 : 0,
+          transformOrigin: '0% 50%', transform: `scale(${punch}) rotate(${last ? -2 : 0}deg)`, opacity: Math.min(1, tp * 2), textShadow: last ? 'none' : '0 10px 40px rgba(0,0,0,0.6)'}}>{line}</div>;
+      })}
+      <div style={{position: 'absolute', left: 64, width: 900, top: 1392, fontFamily: T.sans, fontWeight: 600, fontSize: 46, lineHeight: 1.2, color: T.text, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>
+        {hook.words.map((w, i) => <span key={i} style={{opacity: frame / FPS - 0.1 >= w.s ? 1 : 0.38, marginRight: 12, display: 'inline-block'}}>{w.t}</span>)}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 const EndCard: React.FC<{lines: [string, string]}> = ({lines}) => {
   const frame = useCurrentFrame();
   const r = interpolate(frame, [0, 10], [0, 2300], {...clamp, easing: (x) => x * x});
@@ -154,17 +181,21 @@ const EndCard: React.FC<{lines: [string, string]}> = ({lines}) => {
         <div style={{fontFamily: T.sans, fontWeight: 800, fontSize: 200, color: '#fff', letterSpacing: 4, transform: `scale(${interpolate(p, [0, 1], [1.3, 1])})`}}>ITERA</div>
         <div style={{fontFamily: T.sans, fontWeight: 600, fontStyle: 'italic', fontSize: 58, color: 'rgba(255,255,255,0.85)', marginTop: 40}}>{lines[0]}</div>
         <div style={{fontFamily: T.sans, fontWeight: 800, fontSize: 110, color: '#fff', marginTop: 6, transform: `scale(${interpolate(p2, [0, 1], [1.5, 1])})`, opacity: Math.min(1, p2 * 2)}}>{lines[1]}</div>
-        <div style={{fontFamily: T.mono, fontSize: 36, color: 'rgba(255,255,255,0.8)', marginTop: 60, letterSpacing: 2}}>itera102.space</div>
+        <div style={{fontFamily: T.mono, fontSize: 36, color: 'rgba(255,255,255,0.85)', marginTop: 60, letterSpacing: 2}}>itera102.space</div>
+        <div style={{fontFamily: T.mono, fontSize: 26, color: 'rgba(255,255,255,0.7)', marginTop: 22, letterSpacing: 2}}>GIỌNG AI · LÀM BẰNG ITERA</div>
       </AbsoluteFill>
     </AbsoluteFill>
   );
 };
 
 export const Reel: React.FC<ReelProps> = (p) => {
-  const {starts, tEnd} = reelTimeline(p);
-  const voiceAt = (x: number) => p.chapters.some((ch, k) => x >= starts[k] + PRE - 0.1 && x < starts[k] + PRE + ch.voiceDur + 0.1);
+  const {starts, tEnd, hookDur} = reelTimeline(p);
+  const voiceAt = (x: number) => p.chapters.some((ch, k) => x >= starts[k] + PRE - 0.1 && x < starts[k] + PRE + ch.voiceDur + 0.1) || x < hookDur;
   return (
     <AbsoluteFill style={{background: T.bg}}>
+      {p.hook && <Sequence durationInFrames={sec(hookDur)}><HookView hook={p.hook} id={p.id} frames={sec(hookDur)} /></Sequence>}
+      {p.hook && <Sequence from={3}><Audio src={staticFile(`shorts/${p.id}/vh.wav`)} /></Sequence>}
+      {p.hook && <Fx at={0} name="impact" volume={0.8} />}
       {p.chapters.map((ch, k) => {
         const frames = sec(PRE + ch.voiceDur + TAIL);
         return <Sequence key={k} from={sec(starts[k])} durationInFrames={frames}><ChapterView ch={ch} k={k} n={p.chapters.length} id={p.id} frames={frames} /></Sequence>;
