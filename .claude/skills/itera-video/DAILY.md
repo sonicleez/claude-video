@@ -10,6 +10,13 @@ The user approved this routine on 2026-11-11: 4 Shorts per day, full SEO, schedu
    Double down on the best format and hook pattern, drop the weakest, keep one experiment per day.
 3. **Trends.** One or two web searches for current short-video hooks/topics for Vietnamese creators and affiliates
    (AI voice, faceless video, TikTok Shop/Shopee affiliate). Use only as topic/hook ideas; never copy a video.
+   **Rhythm and mood (user's reference, 2026-11-11):** default to the **Reel** template (`"template":"reel"`, build with
+   `python3 assets/make_reel.py <spec>`; example `assets/shorts/demo-reel-moi-giong.json`). 4–5 chapters of ~3.5–4 s, each
+   the same loop: grey "before" footage → prompt bar types a request → cursor clicks → mosaic reveal to colour while a
+   voice line (≤ 3 s) plays → big 1–2 line title with a small red accent word; chapter counter, corner marks; red end card
+   with a two-line tagline. Cinematic, few words, no list cards, music-led (fx/bed86.wav, ~86 BPM). One idea per video
+   expressed as chapters (use cases, voice styles, before/after of a script…). Use the list `Short` template only when
+   the content really is a checklist. Prefer footage of hands, objects and places over close-up faces; no children.
 4. **Write 4 specs** in `assets/shorts/<YYYY-MM-DD-HHMM-slug>.json` (see existing ones): 18–30 s, hook ≤ 2 short lines,
    ≤ 3 items, one audience pain each, hook formulas from the plan doc. Full SEO block: title ≤ 70 chars with keyword
    first and `#shorts`, keyword-rich first description line, https://itera102.space, 3 hashtags, 10–12 tags, English
@@ -25,7 +32,7 @@ The user approved this routine on 2026-11-11: 4 Shorts per day, full SEO, schedu
    "lận đó", "vô"), a hesitation with "…" once or twice, short uneven sentences. One or two such touches per segment,
    not every sentence. Tags must not be spoken: check the STT line. Reference: `casting_vi/voice_test/D_tu_nhien_giong_An.mp3`
    and the script in HANDOFF.md. Sample voices in comparisons keep their own presets.
-5. **Build.** `python3 assets/make_short.py assets/shorts/<id>.json` for each. Read the STT lines it prints; if a line
+5. **Build.** `python3 assets/make_reel.py assets/shorts/<id>.json` (or `make_short.py` for list videos) for each. Read the STT lines it prints; if a line
    is garbled, re-word and delete `assets/shorts/<id>/sK.mp3` to regenerate. Check 3 frames of each video
    (`ffmpeg -ss T -i out/<id>.mp4 -frames:v 1 x.png`) for overflow before uploading.
 6. **Upload + schedule** into the next 4 free slots (Vietnam time 08:00, 12:00, 16:00, 20:00 = 01:00Z, 05:00Z, 09:00Z,
