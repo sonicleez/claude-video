@@ -3,3 +3,5 @@ out/
 # Brand-kit assets (fonts, layouts, mascot, sounds) are copied in from ../brand_kit locally; not published.
 public/kit/
 *.mp4
+public/shorts/
+assets/shorts/*/

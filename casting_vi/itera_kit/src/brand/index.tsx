@@ -33,7 +33,7 @@ if (typeof window !== 'undefined' && !(window as any).__iteraFonts) {
     [T.sans, 'BeVietnamPro-ExtraBold.ttf', '800'], [T.mono, 'JetBrainsMono.ttf', '100 900'],
   ];
   Promise.all(faces.map(([fam, file, weight]) =>
-    new FontFace(fam, `url(${staticFile(`kit/fonts/${file}`)})`, {weight}).load().then((f) => (document as any).fonts.add(f)),
+    new FontFace(fam, `url(${staticFile(`fonts/${file}`)})`, {weight}).load().then((f) => (document as any).fonts.add(f)),
   )).then(() => continueRender(h));
 }
 

@@ -1,0 +1,12 @@
+{"id":"2026-11-12-1200-3-giong-ai-chon-giong-nao","tag":"SO GIỌNG","index":"VS 01","hook":["Cùng 1 câu","3 giọng AI"],"pill":"Bình luận số bạn chọn",
+ "segs":[
+  {"kind":"hook","text":"Cùng một câu, ba giọng AI. Bạn chọn giọng nào?"},
+  {"kind":"item","title":"Giọng 1","sample":true,"preset":"tram","text":"Bình giữ nhiệt này giữ đá từ sáng tới chiều luôn đó."},
+  {"kind":"item","title":"Giọng 2","sample":true,"preset":"camhong","text":"Bình giữ nhiệt này giữ đá từ sáng tới chiều luôn đó."},
+  {"kind":"item","title":"Giọng 3","sample":true,"preset":"minimax_south","text":"Bình giữ nhiệt này giữ đá từ sáng tới chiều luôn đó."},
+  {"kind":"cta","text":"Một, hai hay ba? Comment nha! Cả ba đều là giọng AI của Itera."}],
+ "youtube":{"title":"3 giọng AI đọc cùng 1 câu: bạn chọn giọng nào? #shorts",
+  "description":"3 giọng AI tiếng Việt đọc cùng một câu review sản phẩm. Bạn chọn giọng 1, 2 hay 3? Comment số bạn chọn!\n\nCả 3 đều là giọng đọc AI (text to speech) tạo trên ITERA, hợp cho video review và affiliate không cần thu âm.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #texttospeech #shorts",
+  "tags":["so sánh giọng AI","giọng AI tiếng Việt","giọng nói AI","text to speech tiếng Việt","giọng đọc review sản phẩm","giọng đọc AI","affiliate không lộ mặt","AI voice Vietnamese","ElevenLabs tiếng Việt","MiniMax TTS","ITERA"],
+  "localizations":{"en":{"title":"3 Vietnamese AI voices, same line: which one wins? #shorts","description":"Three Vietnamese AI text-to-speech voices read the same product line. Pick 1, 2 or 3.\n\nhttps://itera102.space\n\n#AIvoice #texttospeech #shorts"}},
+  "pinned_comment":"Bạn chọn giọng 1, 2 hay 3? 👇 Cả 3 đều làm bằng ITERA, thử tại: https://itera102.space"}}

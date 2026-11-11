@@ -33,3 +33,8 @@ A new session does not remember earlier chats. This file and the skill `.claude/
 
 ## Thumbnail recipe
 `ffmpeg -ss 6.2 -i ITERA_NgayNN.mp4 -frames:v 1 -vf "drawbox=x=0:y=1215:w=1080:h=560:color=0x09090C@1:t=fill,drawtext=fontfile=public/kit/fonts/BeVietnamPro-ExtraBold.ttf:text='AI hay NGƯỜI?':fontsize=124:fontcolor=white:x=(w-tw)/2:y=1290,drawtext=...:fontcolor=0xD93F3F:y=1470" out/dayNN_thumb.jpg`
+
+## 2026-11-11 late: first scheduled batch + daily automation
+- Scheduled public on 2026-11-12 (VN time): 08:00 h9YI_hF307g (tip list) · 12:00 UQ5rsBv7Es0 (voice comparison) · 16:00 yFSPymfJ1Rw (affiliate) · 20:00 1BQ4Zm7TI64 (Day 01 ear test). No caption files (user decision).
+- Data-driven template `src/Short.tsx` + `assets/make_short.py`; stats `assets/youtube_stats.py`; routine in `.claude/skills/itera-video/DAILY.md`; log in `casting_vi/analytics/`.
+- A daily scheduled task (15:20 VN) runs the routine in the original session.
