@@ -1,19 +1,18 @@
 /**
  * Ngày 01 · "Giọng nào là người thật?" — kit layout 10-layout-30-ngay/01-doan-giong-nguoi-that.
  * v2: kit layers are cut into header / title / 4 cards / pill and animated separately for energy.
- * Order per the plan: 1 ElevenLabs · 2 self-recorded · 3 MiniMax · 4 CapCut.
+ * All four are AI (no self-recording): 1 ElevenLabs Trâm · 2 ElevenLabs Cẩm Hồng · 3 MiniMax · 4 CapCut. Twist reveal: none is human.
  */
 import React from 'react';
 import {AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, random} from 'remotion';
 import {useAudioData, visualizeAudio} from '@remotion/media-utils';
 import {
-  Camera, Crop, EndCard, FPS, Flash, Fx, Label, LiveBg, Mascot, PunchCaption, Sfx, T, Word, sec,
+  Camera, Crop, EndCard, FPS, Flash, Fx, LiveBg, Mascot, PunchCaption, Sfx, T, Word, sec,
 } from '../brand';
 import DATA from '../day01.data.json';
 
 type Clip = {dur: number; words: Word[]};
 const D = DATA as unknown as Record<string, Clip>;
-const SELF: Clip | null = (DATA as any).self ?? null; // added by assets/add_self.py
 const SENTENCE = 'Sáng nay mình dậy sớm, pha ly cà phê, và quyết định làm một việc mình đã trì hoãn cả năm.';
 const tokens = SENTENCE.split(' ');
 const sentenceWords = (clip: Clip | null, dur: number): Word[] =>
@@ -23,7 +22,7 @@ const sentenceWords = (clip: Clip | null, dur: number): Word[] =>
 
 const voices = [
   {file: 'day01/v1_eleven.wav', clip: D.v1_eleven},
-  {file: SELF ? 'day01/v2_self.wav' : null, clip: SELF ?? {dur: 5.5, words: []}},
+  {file: 'day01/v2_camhong.wav', clip: D.v2_camhong},
   {file: 'day01/v3_minimax.wav', clip: D.v3_minimax},
   {file: 'day01/v4_capcut.wav', clip: D.v4_capcut},
 ];
@@ -101,16 +100,17 @@ const Cards: React.FC = () => {
         const isActive = st.active === i;
         const anyActive = st.active >= 0;
         const actP = isActive ? spring({frame: frame - sec(vStart[i]), fps: FPS, config: {damping: 10, stiffness: 200}}) : 0;
-        const answer = t >= tReveal && i === 1;
-        const pulse = answer ? 1.06 + 0.02 * Math.sin((t - tReveal) * 8) : 1;
+        const answer = t >= tReveal + i * 0.15;
+        const pulse = answer ? 1 + 0.03 * Math.max(0, Math.sin((t - tReveal - i * 0.15) * 6)) : 1;
         const scale = interpolate(inP, [0, 1], [0.4, 1]) * (isActive ? 1 + 0.06 * actP : anyActive ? 0.96 : 1) * pulse;
-        const dim = (anyActive && !isActive) || (t >= tReveal && i !== 1) ? 0.55 : 1;
+        const dim = anyActive && !isActive ? 0.55 : 1;
         return (
           <div key={i} style={{position: 'absolute', left: r[0], top: r[1], width: r[2] - r[0], height: r[3] - r[1], perspective: 1200,
             transform: `scale(${scale}) translateY(${(1 - inP) * 120}px)`, opacity: Math.min(1, inP * 1.5) * dim,
             filter: isActive || answer ? `drop-shadow(0 0 ${30 + 20 * actP}px rgba(217,63,63,0.45))` : undefined}}>
             <div style={{position: 'absolute', inset: 0, transform: `rotateY(${rotY}deg)`}}>
               <Crop src={src} r={r} style={{left: 0, top: 0}} />
+              {i === 1 && fp >= 0.5 && <Crop src="kit/day01/trang-thai-dap-an.png" r={[80, 866, 322, 905]} style={{left: 20, top: 220}} />}
               {t < tFlip && <LiveWave i={i} r={r} state={isActive ? 'active' : t >= vStart[i] + voices[i].clip.dur ? 'done' : 'idle'} />}
             </div>
           </div>
@@ -163,6 +163,18 @@ const Countdown: React.FC = () => {
   );
 };
 
+const Stamp: React.FC = () => {
+  const frame = useCurrentFrame();
+  const p = spring({frame, fps: FPS, config: {damping: 8, stiffness: 160}});
+  return (
+    <div style={{position: 'absolute', left: 0, right: 156, top: 860, display: 'flex', justifyContent: 'center',
+      transform: `scale(${interpolate(p, [0, 1], [2.4, 1])}) rotate(-8deg)`, opacity: Math.min(1, p * 2)}}>
+      <div style={{border: `8px solid ${T.red}`, color: T.red, background: 'rgba(9,9,12,0.85)', borderRadius: 18, padding: '10px 34px',
+        fontFamily: T.sans, fontWeight: 800, fontSize: 92, letterSpacing: 2}}>100% AI</div>
+    </div>
+  );
+};
+
 const VoiceBy: React.FC = () => {
   const frame = useCurrentFrame();
   const p = spring({frame, fps: FPS, config: {damping: 12, stiffness: 200}});
@@ -185,12 +197,12 @@ export const Day01: React.FC = () => {
           <Cards />
           {voices.map((v, i) => (
             <Sequence key={i} from={sec(vStart[i])} durationInFrames={sec(v.clip.dur)}>
-              {!v.file && <Label x={CARDS[i][0] + 26} y={WAVE_Y[i] + 26} color={T.text} size={22}>[CHÈN BẢN TỰ THU]</Label>}
             </Sequence>
           ))}
           <Countdown />
           <Pill />
           {t >= tReveal && <Sequence from={sec(tReveal)}><VoiceBy /></Sequence>}
+          {t >= tReveal + 0.9 && <Sequence from={sec(tReveal + 0.9)}><Stamp /></Sequence>}
         </Camera>
       )}
 
@@ -208,13 +220,12 @@ export const Day01: React.FC = () => {
 
       {[...vStart.map((s) => s - 0.02), tFlip, tEnd].map((s) => <Flash key={s} at={s} strength={s === tFlip ? 0.8 : 0.25} />)}
       <Sequence from={sec(tEnd)}><EndCard /></Sequence>
-      {!SELF && <Label x={0} y={196} align="center" color={T.sub} size={22}>BẢN NHÁP · GIỌNG 2 CHỜ BẢN TỰ THU</Label>}
 
       {/* Audio: voices, kit cues, energy SFX. Beat drops out under the samples so they are judged fairly. */}
       {voices.map((v, i) => v.file && <Sequence key={i} from={sec(vStart[i])}><Audio src={staticFile(v.file)} /></Sequence>)}
-      <Sequence from={sec(tHook)}><Audio src={staticFile('day01/n1_hook.wav')} /></Sequence>
+      <Sequence from={sec(tHook)}><Audio src={staticFile('day01/n1_hook_b.wav')} /></Sequence>
       <Sequence from={sec(tAsk)}><Audio src={staticFile('day01/n2_ask.wav')} /></Sequence>
-      <Sequence from={sec(tReveal)}><Audio src={staticFile('day01/n3_reveal.wav')} /></Sequence>
+      <Sequence from={sec(tReveal)}><Audio src={staticFile('day01/n3_reveal_b.wav')} /></Sequence>
       <Audio src={staticFile('fx/beat.wav')} volume={(f) => {
         const s = f / FPS;
         const inSample = vStart.some((v, i) => s >= v - 0.1 && s < v + voices[i].clip.dur + 0.1);

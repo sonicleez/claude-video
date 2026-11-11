@@ -9,6 +9,7 @@ PRESET={
  "annhien":dict(provider="elevenlabs",voice="8PEPqUGgvwN1Fk9KR8jV",model_id="eleven_v3",language_code="vi",voice_settings={"stability":0.5,"speed":1.0}),
  "tram":dict(provider="elevenlabs",voice="6Xq32rHt6oAu98TBDKfr",model_id="eleven_v3",language_code="vi",voice_settings={"stability":0.5,"speed":1.0}),
  "minimax_south":dict(provider="minimax",voice="Vietnamese_Articulate_Assistant_v1",model_id="speech-2.8-hd",language_code="Vietnamese",voice_settings={"speed":1.0,"pitch":0,"vol":1.0}),
+ "camhong":dict(provider="elevenlabs",voice="x4KAhuXs2G8TfK9Zr7Q4",model_id="eleven_v3",language_code="vi",voice_settings={"stability":0.5,"speed":1.0}),
  "capcut_hanu":dict(provider="capcut",voice="7491607926562361857",model_id="capcut",language_code="vi",voice_settings={"speed":1.0,"pitch":0}),
  "capcut_sainu":dict(provider="capcut",voice="7491607853086544400",model_id="capcut",language_code="vi",voice_settings={"speed":1.0,"pitch":0}),
 }
