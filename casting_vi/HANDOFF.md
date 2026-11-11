@@ -38,3 +38,4 @@ A new session does not remember earlier chats. This file and the skill `.claude/
 - Scheduled public on 2026-11-12 (VN time): 08:00 h9YI_hF307g (tip list) · 12:00 UQ5rsBv7Es0 (voice comparison) · 16:00 yFSPymfJ1Rw (affiliate) · 20:00 1BQ4Zm7TI64 (Day 01 ear test). No caption files (user decision).
 - Data-driven template `src/Short.tsx` + `assets/make_short.py`; stats `assets/youtube_stats.py`; routine in `.claude/skills/itera-video/DAILY.md`; log in `casting_vi/analytics/`.
 - A daily scheduled task (15:20 VN) runs the routine in the original session.
+- Fix (user feedback): "AI" was spoken as Vietnamese "ai". All four videos were rebuilt with "ây ai" and re-uploaded; new scheduled ids: 08:00 1Q4WExlv0q8 · 12:00 AEpQT0qtXtk · 16:00 qwqDoBmYpYA · 20:00 JU9vIGRMYBg. Superseded private uploads (unscheduled, safe for the user to delete): h9YI_hF307g, UQ5rsBv7Es0, yFSPymfJ1Rw, 1BQ4Zm7TI64, 5Lyhw46T3d8.

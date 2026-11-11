@@ -57,6 +57,10 @@ For the recurring job (measure performance, adjust strategy, make and schedule 4
 - First comment = question + https://itera102.space (`assets/youtube_comment.py`, only once the video is public); the user pins it manually (API cannot pin).
 - Making a video public or scheduling `publishAt` needs the user's explicit go-ahead for that video or batch — ask; uploads stay private until then.
 
+## Pronunciation (user-reported)
+- TTS reads "AI" as the Vietnamese word "ai". In text sent to TTS always write **"ây ai"**; show "AI" on screen. `make_short.py` does this automatically (`SAY` list, `speak()`); for hand-built days write "ây ai" in jobs.json and merge the two words into one caption word "AI". Check the STT line: it should come back as "AI" (or "ây ai"), never plain "ai".
+- Apply the same idea to any other acronym or English term (TTS, SRT, SEO, CapCut…): spell it the way it should sound, add it to `SAY`, verify with STT. Ask the user to listen when unsure — STT cannot judge tone.
+
 ## Rules (from the user — do not break)
 - No referral/discount codes and no "free credit" promises unless the user approved them; CTA = link in bio / comment keyword / end card "Giọng này làm bằng ITERA." + itera102.space.
 - The user does not record their own voice: never present an AI voice as a real person. Days that need a real voice (4, 19, 27) must be rewritten first — ask.
