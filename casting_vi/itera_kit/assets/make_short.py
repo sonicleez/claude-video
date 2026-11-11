@@ -1,5 +1,6 @@
 """Build one data-driven ITERA Short from a spec JSON: voices (ITERA TTS) -> STT check -> props -> Remotion render.
 Usage (from casting_vi/itera_kit): python3 assets/make_short.py assets/shorts/<id>.json
+Segments may carry "footage": {"mixkit": <id>, "start": <sec>} for a graded stock-footage backdrop.
 Spec: {"id","tag","index","hook":[<=2 lines],"pill","segs":[{"kind":"hook|item|cta","text","preset"?,"title"?,"sub"?,"sample"?}],
        "youtube":{"title","description","tags","localizations"?,"pinned_comment"?}}
 Output: out/<id>.mp4 (-14 LUFS). Prints each clip's STT transcript: re-word the spec if a line is garbled.
@@ -73,6 +74,15 @@ for k, s in enumerate(spec["segs"]):
         else: words.append({"t": t, "s": round(i / n * dur, 3), "e": round((i + c) / n * dur, 3)})
         i += c
     segs.append({"kind": s["kind"], "dur": round(dur, 3), "words": words, **{f: s[f] for f in ("title", "sub", "sample") if f in s}})
+# Optional stock footage per segment: "footage": {"mixkit": 1808, "start": 2} (see assets/footage.py). It plays until the next footage segment.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+for k, s in enumerate(spec["segs"]):
+    if not s.get("footage"): continue
+    nxt = next((i for i in range(k + 1, len(segs)) if spec["segs"][i].get("footage")), len(segs))
+    span = sum(segs[i]["dur"] + 0.18 for i in range(k, nxt)) + 1.2
+    import footage
+    footage.get(str(s["footage"]["mixkit"]), f"{pub}/f{k}.mp4", s["footage"].get("start", 0), span)
+    segs[k]["footage"] = f"shorts/{sid}/f{k}.mp4"
 props = {"id": sid, "tag": spec["tag"], "index": spec.get("index", ""), "hook": spec["hook"][:2], "segs": segs, "pill": spec.get("pill"),
          "endKit": os.path.exists("public/kit/end/art.jpg") and os.path.exists("public/kit/sfx/03-sonic-signature.wav")}
 json.dump(props, open(f"out/{sid}.props.json", "w", encoding="utf-8"), ensure_ascii=False)

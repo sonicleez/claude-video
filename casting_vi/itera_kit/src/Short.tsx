@@ -4,11 +4,11 @@
  * Props come from assets/make_short.py (out/<id>.props.json). Needs no private kit files (endKit=false).
  */
 import React from 'react';
-import {AbsoluteFill, Audio, Sequence, interpolate, random, spring, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Audio, OffthreadVideo, Sequence, interpolate, random, spring, staticFile, useCurrentFrame} from 'remotion';
 import {useAudioData, visualizeAudio} from '@remotion/media-utils';
 import {Camera, EndCard, FPS, Flash, Fx, LiveBg, PunchCaption, T, Word, sec} from './brand';
 
-export type Seg = {kind: 'hook' | 'item' | 'cta'; dur: number; words: Word[]; title?: string; sub?: string; sample?: boolean};
+export type Seg = {kind: 'hook' | 'item' | 'cta'; dur: number; words: Word[]; title?: string; sub?: string; sample?: boolean; footage?: string};
 export type ShortProps = {id: string; tag: string; index: string; hook: string[]; segs: Seg[]; pill?: string; endKit: boolean};
 
 const GAP = 0.18;
@@ -54,7 +54,7 @@ const Card: React.FC<{j: number; k: number; seg: Seg; st: number; id: string}> =
   const scale = interpolate(inP, [0, 1], [0.5, 1]) * (active ? 1 + 0.05 * revP : 1);
   return (
     <div style={{position: 'absolute', left: X0, top: TOP0 + j * (CARD_H + CARD_GAP), width: CW, height: CARD_H, borderRadius: 24,
-      background: active ? '#1E1519' : T.surface, border: `2px solid ${active ? T.red : 'rgba(249,250,251,0.12)'}`,
+      background: active ? 'rgba(30,21,25,0.92)' : 'rgba(20,21,26,0.86)', backdropFilter: 'blur(14px)', border: `2px solid ${active ? T.red : 'rgba(249,250,251,0.12)'}`,
       transform: `scale(${scale}) translateY(${(1 - inP) * 100}px)`, opacity: Math.min(1, inP * 1.5) * (active ? 1 : revealed ? 0.72 : 0.55),
       boxShadow: active ? '0 0 46px rgba(217,63,63,0.4)' : undefined}}>
       <div style={{position: 'absolute', left: 30, top: 28, fontFamily: T.mono, fontWeight: 500, fontSize: 34, color: active ? T.red : T.sub}}>{String(j + 1).padStart(2, '0')}</div>
@@ -72,6 +72,27 @@ const Card: React.FC<{j: number; k: number; seg: Seg; st: number; id: string}> =
         </div>
       )}
     </div>
+  );
+};
+
+/** Stock footage as a graded, slowly zooming backdrop: graphite look so brand text and the one red accent stay on top. */
+const Footage: React.FC<{src: string; frames: number}> = ({src, frames}) => {
+  const frame = useCurrentFrame();
+  const z = interpolate(frame, [0, frames], [1.12, 1.0], clamp);
+  const inP = interpolate(frame, [0, 5], [0, 1], clamp);
+  return (
+    <AbsoluteFill style={{opacity: inP}}>
+      <OffthreadVideo src={staticFile(src)} muted style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${z})`,
+        filter: 'grayscale(0.75) contrast(1.12) brightness(0.8)'}} />
+      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(9,9,12,0.82) 0%, rgba(9,9,12,0.28) 30%, rgba(9,9,12,0.38) 62%, rgba(9,9,12,0.9) 100%)'}} />
+      <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 45%, rgba(0,0,0,0.6) 100%)'}} />
+      {[[40, 40, 1, 1], [1040, 40, -1, 1], [40, 1880, 1, -1], [1040, 1880, -1, -1]].map(([x, y, sx, sy], i) => (
+        <div key={i} style={{position: 'absolute', left: x, top: y, width: 0, height: 0}}>
+          <div style={{position: 'absolute', left: sx > 0 ? 0 : -46, top: sy > 0 ? 0 : -3, width: 46, height: 3, background: 'rgba(249,250,251,0.45)'}} />
+          <div style={{position: 'absolute', left: sx > 0 ? 0 : -3, top: sy > 0 ? 0 : -46, width: 3, height: 46, background: 'rgba(249,250,251,0.45)'}} />
+        </div>
+      ))}
+    </AbsoluteFill>
   );
 };
 
@@ -105,6 +126,13 @@ export const Short: React.FC<ShortProps> = (p) => {
   return (
     <AbsoluteFill>
       <LiveBg accent={sampleAt(t) ? 1 : 0} />
+      {p.segs.map((sg, k) => {
+        if (!sg.footage) return null;
+        const nx = p.segs.findIndex((x, i) => i > k && x.footage);
+        const end = nx >= 0 ? starts[nx] : tEnd;
+        const from = k === 0 ? 0 : sec(starts[k]);
+        return <Sequence key={`f${k}`} from={from} durationInFrames={Math.max(1, sec(end) - from)}><Footage src={sg.footage} frames={sec(end) - from} /></Sequence>;
+      })}
       {t < tEnd && (
         <Camera hits={starts}>
           <div style={{position: 'absolute', left: X0, top: 250, width: CW, display: 'flex', alignItems: 'baseline', gap: 18, opacity: head, transform: `translateY(${(1 - head) * -60}px)`}}>
@@ -132,7 +160,7 @@ export const Short: React.FC<ShortProps> = (p) => {
         </Camera>
       )}
       {t < tEnd && <PunchCaption y={1372} size={64} words={words} />}
-      {items.map(({k}) => <Flash key={k} at={starts[k] - 0.02} strength={0.2} />)}
+      {items.map(({k}) => <Flash key={k} at={starts[k] - 0.02} strength={p.segs[k].footage ? 0.45 : 0.2} />)}
       <Flash at={tEnd} strength={0.5} />
       <Sequence from={sec(tEnd)}>{p.endKit ? <EndCard /> : <CodeEnd />}</Sequence>
 
