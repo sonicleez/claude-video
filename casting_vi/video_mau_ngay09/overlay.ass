@@ -1,0 +1,42 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Big,Inter,104,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,6,0,5,80,80,0,1
+Style: Accent,Inter,92,&H0047D7FF,&H0047D7FF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,6,0,5,80,80,0,1
+Style: Mid,Inter,60,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,4,0,5,90,90,0,1
+Style: Box,Inter,44,&H00B4B4B4,&H00B4B4B4,&H00000000,&H00000000,0,1,0,0,100,100,0,0,1,0,0,5,90,90,0,1
+Style: Sub,Inter,58,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0000000,1,0,0,0,100,100,0,0,3,14,0,2,90,90,330,1
+Style: Corner,Inter,34,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,3,10,0,9,40,40,70,1
+Style: Tag,Inter,40,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,0,0,8,40,40,170,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:24.30,Corner,,0,0,0,,Voice by ITERA
+Dialogue: 1,0:00:00.00,0:00:24.30,Tag,,0,0,0,,{\alpha&H40&}NGÀY 9 · AFFILIATE
+Dialogue: 1,0:00:00.00,0:00:04.70,Big,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,620)}Video affiliate
+Dialogue: 1,0:00:00.50,0:00:04.70,Accent,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,770)}KHÔNG lộ mặt
+Dialogue: 1,0:00:01.60,0:00:04.70,Accent,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,900)}KHÔNG cần nói
+Dialogue: 1,0:00:04.70,0:00:12.80,Box,,0,0,0,,{\pos(540,560)}[ CẢNH QUAY: cận tay cầm bình giữ nhiệt ]
+Dialogue: 1,0:00:06.10,0:00:12.80,Mid,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,720)}Đá còn nguyên sáng → chiều
+Dialogue: 1,0:00:09.30,0:00:12.80,Mid,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,830)}Giá < 1 ly trà sữa
+Dialogue: 1,0:00:11.30,0:00:12.80,Accent,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,960)}Link ở giỏ hàng
+Dialogue: 1,0:00:12.90,0:00:19.40,Big,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,600)}Giọng này là AI
+Dialogue: 1,0:00:14.00,0:00:19.40,Mid,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,740)}An Nhiên · ITERA
+Dialogue: 1,0:00:15.60,0:00:19.40,Accent,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,880)}24 giây = 433 credit
+Dialogue: 1,0:00:19.40,0:00:24.30,Mid,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,560)}Nhập mã
+Dialogue: 1,0:00:19.60,0:00:24.30,Big,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\fs150\pos(540,720)}ITERA09
+Dialogue: 1,0:00:20.80,0:00:24.30,Mid,,0,0,0,,{\fad(120,0)\t(0,180,\fscx108\fscy108)\t(180,320,\fscx100\fscy100)}{\pos(540,880)}Link ở bio
+Dialogue: 2,0:00:00.12,0:00:03.88,Sub,,0,0,0,,Làm video affiliate mà không cần lộ mặt, cũng không cần nói câu nào?
+Dialogue: 2,0:00:04.02,0:00:04.60,Sub,,0,0,0,,Xem nè.
+Dialogue: 2,0:00:04.88,0:00:05.80,Sub,,0,0,0,,Bình giữ nhiệt này nè.
+Dialogue: 2,0:00:06.16,0:00:08.84,Sub,,0,0,0,,Bỏ đá từ sáng tới chiều, mở ra vẫn còn nguyên.
+Dialogue: 2,0:00:09.41,0:00:10.92,Sub,,0,0,0,,Giá chưa tới một ly trà sữa.
+Dialogue: 2,0:00:11.35,0:00:12.52,Sub,,0,0,0,,Link ở giỏ hàng nha.
+Dialogue: 2,0:00:12.93,0:00:15.24,Sub,,0,0,0,,À, giọng bạn vừa nghe là giọng AI đó.
+Dialogue: 2,0:00:15.61,0:00:19.08,Sub,,0,0,0,,Mình làm bằng ITERA, một ngày làm 10 video vẫn dư credit.
+Dialogue: 2,0:00:19.54,0:00:23.88,Sub,,0,0,0,,Nhập mã ITERA09 ở link bio để nhận thêm credit cho dân affiliate nha!
