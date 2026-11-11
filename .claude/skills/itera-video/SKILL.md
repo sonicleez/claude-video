@@ -57,6 +57,9 @@ For the recurring job (measure performance, adjust strategy, make and schedule 4
 - First comment = question + https://itera102.space (`assets/youtube_comment.py`, only once the video is public); the user pins it manually (API cannot pin).
 - Making a video public or scheduling `publishAt` needs the user's explicit go-ahead for that video or batch — ask; uploads stay private until then.
 
+## Voice (user decision 2026-11-11)
+Narrator for new videos = **Ân** (ElevenLabs `zIusdI28yOZPwIBus0aI`, eleven_v3, stability 0.0, preset `an_human`), with human-style scripts: breaths, fillers, small hesitations, a light laugh (details in DAILY.md). An Nhiên was the earlier narrator (Day 01 and the first batch).
+
 ## Pronunciation (user-reported)
 - TTS reads "AI" as the Vietnamese word "ai". In text sent to TTS always write **"ây ai"**; show "AI" on screen. `make_short.py` does this automatically (`SAY` list, `speak()`); for hand-built days write "ây ai" in jobs.json and merge the two words into one caption word "AI". Check the STT line: it should come back as "AI" (or "ây ai"), never plain "ai".
 - Apply the same idea to any other acronym or English term (TTS, SRT, SEO, CapCut…): spell it the way it should sound, add it to `SAY`, verify with STT. Ask the user to listen when unsure — STT cannot judge tone.

@@ -7,7 +7,10 @@ Output: out/<id>.mp4 (-14 LUFS). Prints each clip's STT transcript: re-word the 
 """
 import json, os, re, subprocess, sys, time, urllib.request, uuid
 B = "https://api.itera102.space"; K = os.environ["API_Itera"]; UA = "tts-client/1.0"
+# Narrator chosen by the user on 2026-11-11 (voice test D): Ân, eleven_v3, stability 0.0, human-style script.
+NARRATOR = "an_human"
 PRESET = {
+ "an_human": ("elevenlabs", "zIusdI28yOZPwIBus0aI", "eleven_v3", "vi", {"stability": 0.0, "speed": 1.0}),
  "annhien": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "tram": ("elevenlabs", "6Xq32rHt6oAu98TBDKfr", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "camhong": ("elevenlabs", "x4KAhuXs2G8TfK9Zr7Q4", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
@@ -55,7 +58,7 @@ work = f"assets/shorts/{sid}"; pub = f"public/shorts/{sid}"; os.makedirs(work, e
 ids = {}
 for k, s in enumerate(spec["segs"]):
     if os.path.exists(f"{work}/s{k}.mp3"): continue
-    prov, voice, model, lang, vs = PRESET[s.get("preset", "annhien")]
+    prov, voice, model, lang, vs = PRESET[s.get("preset", NARRATOR)]
     ids[k] = api("POST", f"/v1/text-to-speech/{voice}", {"text": speak(s["text"]), "provider": prov, "model_id": model, "language_code": lang, "voice_settings": vs})["id"]
 credits = 0
 for k, tid in ids.items():

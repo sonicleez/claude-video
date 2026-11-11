@@ -19,9 +19,12 @@ The user approved this routine on 2026-11-11: 4 Shorts per day, full SEO, schedu
    Find clips with `python3 assets/footage.py search "<english query>"`, then ALWAYS view
    `python3 assets/footage.py sheet out/sheet.jpg <ids…>` before choosing (ids ≥ 100000 do not download; skip them).
    Mixkit Free License only; no logos/brand names in frame; one clip per segment so the picture changes every 3–4 s.
-   **Voice style:** the user asked for a more human delivery (breaths, small hesitations, a laugh). Test clips A–D are in
-   `casting_vi/voice_test/`; until the user picks one, keep the current style. Once picked, record the choice in HANDOFF.md
-   and write scripts that way (eleven_v3 audio tags such as [exhales], [laughs]; fillers "ờ", "á", "nè"; ellipses).
+   **Voice style (user picked test D on 2026-11-11):** narrator = voice **Ân** (`an_human` preset, the default in
+   `make_short.py`: eleven_v3, stability 0.0). Write narration the way a young Southern Vietnamese creator talks, not
+   read-aloud copy: a breath or small reaction at the start (`[exhales]`, `[laughs]`), fillers ("ờ", "á", "nè", "hả",
+   "lận đó", "vô"), a hesitation with "…" once or twice, short uneven sentences. One or two such touches per segment,
+   not every sentence. Tags must not be spoken: check the STT line. Reference: `casting_vi/voice_test/D_tu_nhien_giong_An.mp3`
+   and the script in HANDOFF.md. Sample voices in comparisons keep their own presets.
 5. **Build.** `python3 assets/make_short.py assets/shorts/<id>.json` for each. Read the STT lines it prints; if a line
    is garbled, re-word and delete `assets/shorts/<id>/sK.mp3` to regenerate. Check 3 frames of each video
    (`ffmpeg -ss T -i out/<id>.mp4 -frames:v 1 x.png`) for overflow before uploading.
