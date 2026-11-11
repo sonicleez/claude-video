@@ -1,0 +1,58 @@
+{
+ "id": "demo-footage-affiliate",
+ "tag": "AFFILIATE",
+ "index": "AFF 01",
+ "hook": [
+  "Làm affiliate",
+  "mà ngại nói?"
+ ],
+ "pill": "Link ở bio",
+ "segs": [
+  {
+   "kind": "hook",
+   "text": "Làm affiliate mà ngại nói? Xem cái này.",
+   "footage": {
+    "mixkit": 25575,
+    "start": 2
+   }
+  },
+  {
+   "kind": "item",
+   "title": "Dán kịch bản",
+   "sub": "Vài câu review sản phẩm",
+   "text": "Một, dán kịch bản review.",
+   "footage": {
+    "mixkit": 1781,
+    "start": 1
+   }
+  },
+  {
+   "kind": "item",
+   "title": "Chọn giọng",
+   "sub": "Giọng Việt Bắc, Trung, Nam",
+   "text": "Hai, chọn giọng đọc tiếng Việt.",
+   "footage": {
+    "mixkit": 31370,
+    "start": 4
+   }
+  },
+  {
+   "kind": "item",
+   "title": "Bấm tạo",
+   "sub": "Nhận file giọng kèm phụ đề",
+   "text": "Ba, bấm tạo, nhận file giọng kèm phụ đề.",
+   "footage": {
+    "mixkit": 50605,
+    "start": 1
+   }
+  },
+  {
+   "kind": "cta",
+   "text": "Không lộ mặt, không thu âm. Giọng này cũng là AI của Itera đó!",
+   "footage": {
+    "mixkit": 31218,
+    "start": 3
+   }
+  }
+ ]
+}
