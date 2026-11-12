@@ -28,13 +28,20 @@ for v in series:
     rows.append({"id": v["id"], "title": sn["title"], "state": s["privacyStatus"], "publishAt": s.get("publishAt"), "hours_live": round(hours, 1),
                  "views": views, "likes": int(st.get("likeCount", 0)), "comments": int(st.get("commentCount", 0)),
                  "views_per_hour": round(views / hours, 1) if live else None})
+# Retention from YouTube Analytics (lags 1-2 days): average view % and duration, subscribers gained.
+if rows:
+    a = call(auth, "GET", "https://youtubeanalytics.googleapis.com/v2/reports?ids=channel==MINE&startDate=2026-11-01&endDate=" + now.strftime("%Y-%m-%d")
+             + "&metrics=views,averageViewPercentage,averageViewDuration,subscribersGained,shares&dimensions=video&filters=video==" + ",".join(r["id"] for r in rows))
+    an = {x[0]: x for x in a.get("rows", [])}
+    for r in rows:
+        if r["id"] in an: r.update({"avg_view_pct": round(an[r["id"]][2], 1), "avg_view_sec": an[r["id"]][3], "subs_gained": an[r["id"]][4], "shares": an[r["id"]][5]})
 rows.sort(key=lambda r: -(r["views_per_hour"] or -1))
 os.makedirs(os.path.join(os.path.dirname(__file__), "../../analytics"), exist_ok=True)
 with open(os.path.join(os.path.dirname(__file__), "../../analytics/stats.jsonl"), "a", encoding="utf-8") as f:
     f.write(json.dumps({"at": now.isoformat(timespec="seconds"), "subscribers": ch["statistics"].get("subscriberCount"), "videos": rows}, ensure_ascii=False) + "\n")
 print(f"subscribers={ch['statistics'].get('subscriberCount')} series_videos={len(rows)}")
 for r in rows:
-    print(f"{r['id']} {r['state']:8} {r['hours_live']:>6}h views={r['views']:<6} vph={r['views_per_hour']} likes={r['likes']} cmts={r['comments']} | {r['title']}")
+    print(f"{r['id']} {r['state']:8} {r['hours_live']:>6}h views={r['views']:<6} vph={r['views_per_hour']} likes={r['likes']} cmts={r['comments']} avp={r.get('avg_view_pct')}% subs+={r.get('subs_gained')} | {r['title']}")
 
 if "--comment" in sys.argv:
     texts = {}

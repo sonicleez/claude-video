@@ -13,9 +13,9 @@ export type Chapter = {prompt: string; button: string; title: string[]; accent: 
 export type Hook = {lines: string[]; voiceDur: number; words: Word[]};
 export type ReelProps = {id: string; tag: string; hook?: Hook; chapters: Chapter[]; endLines: [string, string]};
 
-const PRE = 1.5;      // before-beat: type, click, generate
+const PRE = 1.15;     // before-beat: type, click, generate (kept short: no dead time)
 const TAIL = 0.45;
-const END = 2.6;
+const END = 1.7;
 export const reelTimeline = (p: ReelProps) => {
   const hookDur = p.hook ? Math.max(1.6, p.hook.voiceDur + 0.3) : 0;
   let c = hookDur;
@@ -57,9 +57,9 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
   const R = PRE - 0.05;                       // reveal moment
   const rev = interpolate(t, [R, R + 0.4], [0, 1], clamp);
   const zoom = interpolate(frame, [0, frames], [1.14, 1.02], clamp) + (t >= R ? 0.05 * Math.exp(-(t - R) * 5) : 0);
-  const typed = Math.floor(interpolate(t, [0.15, 0.9], [0, ch.prompt.length], clamp));
-  const clickT = 1.12;
-  const cur = interpolate(t, [0.55, clickT], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
+  const typed = Math.floor(interpolate(t, [0.08, 0.6], [0, ch.prompt.length], clamp));
+  const clickT = 0.82;
+  const cur = interpolate(t, [0.3, clickT], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
   const pressed = t >= clickT && t < clickT + 0.14;
   const generating = t >= clickT + 0.05 && t < R;
   const barOut = interpolate(t, [R, R + 0.25], [0, 1], clamp);
@@ -108,7 +108,7 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
           </div>
         </div>
       )}
-      {t >= 0.5 && barOut < 1 && (
+      {t >= 0.28 && barOut < 1 && (
         <svg width="64" height="64" viewBox="0 0 24 24" style={{position: 'absolute', left: interpolate(cur, [0, 1], [470, 800]), top: interpolate(cur, [0, 1], [1500, 1300]), opacity: 1 - barOut,
           transform: `scale(${pressed ? 0.85 : 1})`, filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.6))'}}>
           <path d="M4 2l15 9-6.5 1.5L16 20l-3 1.3-3.4-7.4L5 18z" fill="#fff" stroke="#09090C" strokeWidth="1.2" />
@@ -134,9 +134,9 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
             );
           })}
           <Wave src={`shorts/${id}/v${k}.wav`} local={frame - sec(PRE)} />
-          <div style={{position: 'absolute', left: 64, width: 856, top: 1392, fontFamily: T.sans, fontWeight: 600, fontSize: 46, lineHeight: 1.2, color: T.text,
+          <div style={{position: 'absolute', left: 64, width: 856, top: 1388, fontFamily: T.sans, fontWeight: 700, fontSize: 54, lineHeight: 1.25, color: T.text,
             textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>
-            {ch.words.map((w, i) => <span key={i} style={{opacity: t - PRE >= w.s ? 1 : 0.38, marginRight: 12, display: 'inline-block'}}>{w.t}</span>)}
+            {ch.words.map((w, i) => { const on = t - PRE >= w.s && t - PRE < (ch.words[i + 1] ? ch.words[i + 1].s : w.e + 0.5); return <span key={i} style={{opacity: t - PRE >= w.s ? 1 : 0.38, marginRight: 8, padding: '0 8px', borderRadius: 10, display: 'inline-block', background: on ? T.text : 'transparent', color: on ? '#09090C' : T.text, textShadow: on ? 'none' : undefined}}>{w.t}</span>; })}
           </div>
         </>
       )}
@@ -207,8 +207,8 @@ export const Reel: React.FC<ReelProps> = (p) => {
         <React.Fragment key={k}>
           <Sequence from={sec(starts[k] + PRE)}><Audio src={staticFile(`shorts/${p.id}/v${k}.wav`)} /></Sequence>
           <Fx at={starts[k]} name="whoosh" volume={0.35} />
-          {Array.from({length: 6}, (_, i) => <Fx key={i} at={starts[k] + 0.18 + i * 0.12} name="pop" volume={0.12} />)}
-          <Fx at={starts[k] + 1.12} name="pop" volume={0.6} />
+          {Array.from({length: 5}, (_, i) => <Fx key={i} at={starts[k] + 0.1 + i * 0.1} name="pop" volume={0.12} />)}
+          <Fx at={starts[k] + 0.82} name="pop" volume={0.6} />
           <Fx at={starts[k] + PRE - 0.05} name="impact" volume={0.75} />
         </React.Fragment>
       ))}
