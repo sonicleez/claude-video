@@ -48,3 +48,4 @@ A new session does not remember earlier chats. This file and the skill `.claude/
 - Reel gained an opening `hook` block and an AI-voice disclosure line on the end card. Narrator Ân (test D).
 - Content strategy: storytelling pillars and the daily "Nhật ký xây kênh" series (see DAILY.md and the plan doc section "Chiến lược nội dung mới").
 - 2026-11-12: journey + research + analytics lessons written to Claude Doc "ITERA – Nhật ký hành trình và bài học" (https://claude.ai/artifact/D84eeq9ffEJXEuoR5Uvcdv); raw channel history in `casting_vi/analytics/channel_history_2026-11-12.json`. The OAuth token can read YouTube Analytics (average view %, subs gained). Reel timing tightened (see strategy.md).
+- User feedback (12 Nov): the typed-prompt + send effect must appear only once at the start (series signature); later chapters must each be creative/different. Reel now has per-chapter `style` (prompt | count | wipe | kinetic | slam). Scheduled videos rebuilt with it.
