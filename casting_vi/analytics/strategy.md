@@ -5,6 +5,7 @@
 - Link comments posted on both public videos (to be pinned by the user).
 - Batch for 13 Nov applies the new lessons: real channel data as a story (08:00), ghost-story voice pick with one-number answer (12:00), faceless-selling recipe (16:00), diary Day 2 with real numbers + behind the scenes and a one-word question (20:00). Titles carry concrete names (YouTube Shorts, ElevenLabs, Claude Remotion).
 - Uploaded and scheduled for 13 Nov (VN): 08:00 -IN6BFCtHDw · 12:00 A44dgfr9Lxk · 16:00 -FUxJwTN2o0 · 20:00 mWKG9oXRszA. Voice credits: 1,180.
+- Rebuilt after user feedback (prompt beat once, varied chapter styles) and re-uploaded; current scheduled ids: 12 Nov 20:00 GRlC-M1NPsk · 13 Nov 08:00 OYhQEKjOvNg · 12:00 -RXGPq1a2ds · 16:00 oGLSZk1zZz8 · 20:00 Y27LtoEU2h8. The earlier ids of these slots were deleted.
 - Experiment of the day: one-word/number comment prompts in every video (baseline: 0 comments).
 
 ## 2026-11-12 14:57 VN — first public numbers + channel history
