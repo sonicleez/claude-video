@@ -1,0 +1,88 @@
+{
+ "id": "2026-11-13-1200-giong-nao-ke-chuyen-ma",
+ "template": "reel",
+ "endLines": [
+  "Bạn chọn",
+  "SỐ MẤY?"
+ ],
+ "hook": {
+  "lines": [
+   "1 CÂU MA",
+   "3 GIỌNG AI",
+   "CHỌN 1"
+  ],
+  "text": "Một câu chuyện ma, ba giọng AI kể. Giọng nào làm bạn nổi da gà?",
+  "footage": {
+   "mixkit": 21144,
+   "start": 1
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Giọng kể chuyện số 1",
+   "title": [
+    "GIỌNG",
+    "SỐ 1"
+   ],
+   "accent": "nghe thử",
+   "preset": "camhong",
+   "text": "Đêm đó... căn phòng cuối hành lang lại sáng đèn.",
+   "footage": {
+    "mixkit": 48880,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "Giọng kể chuyện số 2",
+   "title": [
+    "GIỌNG",
+    "SỐ 2"
+   ],
+   "accent": "nghe thử",
+   "preset": "annhien",
+   "text": "Đêm đó... căn phòng cuối hành lang lại sáng đèn.",
+   "footage": {
+    "mixkit": 21144,
+    "start": 5
+   }
+  },
+  {
+   "prompt": "Giọng kể chuyện số 3",
+   "title": [
+    "GIỌNG",
+    "SỐ 3"
+   ],
+   "accent": "nghe thử",
+   "preset": "tram",
+   "text": "Đêm đó... căn phòng cuối hành lang lại sáng đèn.",
+   "footage": {
+    "mixkit": 28901,
+    "start": 5
+   }
+  }
+ ],
+ "youtube": {
+  "title": "3 giọng AI kể chuyện ma: giọng nào nổi da gà nhất? #shorts",
+  "description": "3 giọng AI tiếng Việt kể cùng một câu chuyện ma. Giọng nào hợp làm kênh truyện ma, truyện audio nhất? Comment số bạn chọn.\n\nCả 3 đều là giọng đọc AI (text to speech) tạo trên ITERA bằng ElevenLabs. Hợp cho kênh kể chuyện, truyện đêm khuya không cần thu âm.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#truyenma #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "giọng kể chuyện ma",
+   "truyện ma",
+   "giọng đọc truyện",
+   "kênh truyện audio",
+   "ElevenLabs tiếng Việt",
+   "so sánh giọng AI"
+  ],
+  "localizations": {
+   "en": {
+    "title": "3 AI voices tell a ghost story: which is creepiest? #shorts",
+    "description": "Three Vietnamese AI voices read the same ghost-story line. Pick 1, 2 or 3.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Giọng số mấy làm bạn nổi da gà: 1, 2 hay 3? 👇 Thử giọng kể chuyện tại: https://itera102.space"
+ }
+}

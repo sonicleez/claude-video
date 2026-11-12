@@ -1,5 +1,11 @@
 # Strategy log (newest first)
 
+## 2026-11-12 15:20 VN — daily run 1
+- Numbers: "Bảo AI đọc chữ AI" 405 views at 7.3 h (unchanged for ~25 min: the first push looks finished), 1 like, 0 comments; "4 kiểu giọng AI" 177 at 3.3 h, 0/0. Subscribers still 94. Retention % not in Analytics yet.
+- Link comments posted on both public videos (to be pinned by the user).
+- Batch for 13 Nov applies the new lessons: real channel data as a story (08:00), ghost-story voice pick with one-number answer (12:00), faceless-selling recipe (16:00), diary Day 2 with real numbers + behind the scenes and a one-word question (20:00). Titles carry concrete names (YouTube Shorts, ElevenLabs, Claude Remotion).
+- Experiment of the day: one-word/number comment prompts in every video (baseline: 0 comments).
+
 ## 2026-11-12 14:57 VN — first public numbers + channel history
 - "Bảo AI đọc chữ AI" 405 views in 6.9 h (58/h), 1 like, 0 comments; "4 kiểu giọng AI" 161 in 2.9 h (55/h), 0/0. Views fine, reactions missing → stronger one-word comment prompts.
 - Channel history (74 videos, 22,469 views, 53 subs ≈ 1 sub / 424 views): ≤40 s median 432 views / 62% viewed; 41–70 s 136 / 42%; 71–180 s 148 / 36% but 23 of the subs. Best video: Claude + Remotion (5,022 views, 54% viewed, 23 shares). Search = 25% of views. Hard-sell CSKH videos: 6.7% viewed.

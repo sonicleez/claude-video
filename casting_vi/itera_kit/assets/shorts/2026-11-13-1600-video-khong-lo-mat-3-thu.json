@@ -1,0 +1,103 @@
+{
+ "id": "2026-11-13-1600-video-khong-lo-mat-3-thu",
+ "template": "reel",
+ "endLines": [
+  "Không lộ mặt",
+  "VẪN RA VIDEO"
+ ],
+ "hook": {
+  "lines": [
+   "NGẠI",
+   "LỘ MẶT?",
+   "CẦN 3 THỨ"
+  ],
+  "text": "Ngại lộ mặt mà vẫn muốn làm video bán hàng hả? Cần đúng ba thứ thôi.",
+  "footage": {
+   "mixkit": 13168,
+   "start": 8
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "1. Cảnh quay sản phẩm",
+   "button": "Thêm",
+   "title": [
+    "CẢNH",
+    "SẢN PHẨM"
+   ],
+   "accent": "thứ 1",
+   "text": "Một, quay cận sản phẩm. Tay thôi, khỏi cần mặt.",
+   "footage": {
+    "mixkit": 31218,
+    "start": 9
+   }
+  },
+  {
+   "prompt": "2. Giọng đọc AI",
+   "button": "Thêm",
+   "title": [
+    "GIỌNG",
+    "ĐỌC AI"
+   ],
+   "accent": "thứ 2",
+   "text": "Hai, giọng đọc AI. Dán kịch bản vô là có giọng.",
+   "footage": {
+    "mixkit": 31370,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "3. Phụ đề chữ to",
+   "button": "Thêm",
+   "title": [
+    "PHỤ ĐỀ",
+    "CHỮ TO"
+   ],
+   "accent": "thứ 3",
+   "text": "Ba, phụ đề chữ to, vì nhiều người coi tắt tiếng lắm.",
+   "footage": {
+    "mixkit": 50605,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "Xong 1 video",
+   "button": "Xuất",
+   "title": [
+    "XONG",
+    "1 VIDEO"
+   ],
+   "accent": "vậy là",
+   "text": "Vậy là xong một video rồi đó. Bạn bán món gì?",
+   "footage": {
+    "mixkit": 817,
+    "start": 3
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Làm video bán hàng không lộ mặt: cần đúng 3 thứ #shorts",
+  "description": "Làm video bán hàng, affiliate không lộ mặt chỉ cần 3 thứ: cảnh quay sản phẩm, giọng đọc AI và phụ đề chữ to.\n\nHợp cho người làm affiliate Shopee, TikTok Shop ngại lên hình. Giọng trong video là giọng AI tạo trên ITERA. Bạn bán món gì? Comment nha!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#affiliate #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "video không lộ mặt",
+   "affiliate không lộ mặt",
+   "video bán hàng",
+   "làm video affiliate",
+   "TikTok Shop",
+   "affiliate Shopee",
+   "faceless video"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Faceless product videos: the 3 things you need #shorts",
+    "description": "Faceless selling videos need three things: product close-ups, an AI voice and big captions.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn đang bán món gì? 👇 Tạo giọng đọc AI cho video sản phẩm tại: https://itera102.space"
+ }
+}
