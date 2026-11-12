@@ -4,6 +4,7 @@
 - Numbers: "Bảo AI đọc chữ AI" 405 views at 7.3 h (unchanged for ~25 min: the first push looks finished), 1 like, 0 comments; "4 kiểu giọng AI" 177 at 3.3 h, 0/0. Subscribers still 94. Retention % not in Analytics yet.
 - Link comments posted on both public videos (to be pinned by the user).
 - Batch for 13 Nov applies the new lessons: real channel data as a story (08:00), ghost-story voice pick with one-number answer (12:00), faceless-selling recipe (16:00), diary Day 2 with real numbers + behind the scenes and a one-word question (20:00). Titles carry concrete names (YouTube Shorts, ElevenLabs, Claude Remotion).
+- Uploaded and scheduled for 13 Nov (VN): 08:00 -IN6BFCtHDw · 12:00 A44dgfr9Lxk · 16:00 -FUxJwTN2o0 · 20:00 mWKG9oXRszA. Voice credits: 1,180.
 - Experiment of the day: one-word/number comment prompts in every video (baseline: 0 comments).
 
 ## 2026-11-12 14:57 VN — first public numbers + channel history
