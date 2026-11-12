@@ -36,7 +36,7 @@ for key, c in items:
         if n == len(ws): words.append({"t": t, "s": round(ws[i]["start"], 3), "e": round(ws[i + x - 1]["end"], 3)})
         else: words.append({"t": t, "s": round(i / n * dur, 3), "e": round((i + x) / n * dur, 3)})
         i += x
-    footage.get(str(c["footage"]["mixkit"]), f"{pub}/f{key}.mp4", c["footage"].get("start", 0), 1.5 + dur + 1.2)
+    footage.get(str(c["footage"]["mixkit"]), f"{pub}/f{key}.mp4", c["footage"].get("start", 0), 1.15 + dur + 1.2)
     if key == "h": hook = {"lines": c["lines"][:3], "voiceDur": round(dur, 3), "words": words}
     else: chapters.append({"prompt": c["prompt"], "button": c.get("button", "Tạo giọng"), "title": c["title"][:2], "accent": c.get("accent", ""), "voiceDur": round(dur, 3), "words": words})
 props = {"id": sid, "tag": spec.get("tag", ""), **({"hook": hook} if hook else {}), "chapters": chapters, "endLines": spec.get("endLines", ["Một kịch bản.", "MỌI GIỌNG."])}

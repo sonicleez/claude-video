@@ -26,6 +26,19 @@ The user approved this routine on 2026-11-11: 4 Shorts per day, full SEO, schedu
    numbers from `youtube_stats.py` (subs, views, what flopped, what was changed) and what will be tested next; Day 1
    was 2026-11-12 (94 subs; rules: no recording, 4 videos/day, real numbers in public). Keep the day counter going.
    A joke that depends on TTS mispronouncing a word is unreliable — keep such contrasts visual (on-screen text).
+   **Lessons from the channel's own analytics (2026-11-12; full write-up in the Claude Doc "ITERA – Nhật ký hành trình
+   và bài học", https://claude.ai/artifact/D84eeq9ffEJXEuoR5Uvcdv — append a dated entry there after each run):**
+   videos ≤ 40 s got 3× the median views and 62% average viewed; subscribers came mostly from denser 71–180 s
+   "5 tips" videos; the channel's best video is about making videos with Claude + Remotion (the audience likes seeing
+   AI do real work) → make the diary series show the real behind-the-scenes (script → ITERA voice → Remotion code →
+   stats); 25% of views come from search → titles carry concrete searched names (giọng AI tiếng Việt, text to speech,
+   Remotion, Claude, ElevenLabs), never generic "bí mật ít ai biết"; hard-sell videos died (6.7% viewed); the first two
+   ITERA videos got ~55 views/hour but 0 comments → end every video with a question answerable in one word/number.
+   **Second-by-second:** 0–1 s hook text on frame 0, readable muted · 1–3 s who/what + stakes, open a question ·
+   3–8 s the incident/proof · 8–15 s turn or first reward, open a sub-question · 15–22 s pay off the hook exactly ·
+   last 2 s line that loops back to the hook + reason to follow. No dead air: voice starts while the prompt types.
+   `youtube_stats.py` now also prints average viewed % and subs gained (Analytics lags 1–2 days) — use them, not views
+   alone. "Viewed vs swiped away" is only in YouTube Studio; ask the user for a screenshot when needed.
 4. **Write 4 specs** in `assets/shorts/<YYYY-MM-DD-HHMM-slug>.json` (see existing ones): 18–30 s, hook ≤ 2 short lines,
    ≤ 3 items, one audience pain each, hook formulas from the plan doc. Full SEO block: title ≤ 70 chars with keyword
    first and `#shorts`, keyword-rich first description line, https://itera102.space, 3 hashtags, 10–12 tags, English
