@@ -3,7 +3,8 @@ Usage: python3 assets/make_reel.py assets/shorts/<id>.json
 Optional "hook": {"lines":[<=3 short lines],"text","footage":{...}} = opening claim readable on frame 0 with a narrator line.
 Spec: {"id","template":"reel","endLines":[l1,l2],"chapters":[{"prompt","button"?,"title":[1-2 lines],"accent","text","preset"?,
        "footage":{"mixkit":id,"start":s}}], "youtube":{...}}
-Each chapter: grey footage + prompt typed + click -> colour reveal while the voice line plays. Keep 4-5 chapters, lines <= 3 s.
+The typed-prompt + click beat is the signature and plays ONCE (first chapter). Later chapters cut straight in with a
+different treatment each ("style": wipe | count | kinetic | slam; auto-assigned when omitted, "count" for numeric titles). Keep 4-5 chapters, lines <= 3 s.
 """
 import json, os, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -38,7 +39,7 @@ for key, c in items:
         i += x
     footage.get(str(c["footage"]["mixkit"]), f"{pub}/f{key}.mp4", c["footage"].get("start", 0), 1.15 + dur + 1.2)
     if key == "h": hook = {"lines": c["lines"][:3], "voiceDur": round(dur, 3), "words": words}
-    else: chapters.append({"prompt": c["prompt"], "button": c.get("button", "Tạo giọng"), "title": c["title"][:2], "accent": c.get("accent", ""), "voiceDur": round(dur, 3), "words": words})
+    else: chapters.append({"prompt": c["prompt"], "button": c.get("button", "Tạo giọng"), "title": c["title"][:2], "accent": c.get("accent", ""), "voiceDur": round(dur, 3), "words": words, **({"style": c["style"]} if c.get("style") else {})})
 props = {"id": sid, "tag": spec.get("tag", ""), **({"hook": hook} if hook else {}), "chapters": chapters, "endLines": spec.get("endLines", ["Một kịch bản.", "MỌI GIỌNG."])}
 json.dump(props, open(f"out/{sid}.props.json", "w", encoding="utf-8"), ensure_ascii=False)
 subprocess.run(["npx", "remotion", "render", "Reel", f"out/{sid}.raw.mp4", f"--props=out/{sid}.props.json", "--crf=18", "--audio-bitrate=192k", "--log=error"], check=True)

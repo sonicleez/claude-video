@@ -12,8 +12,12 @@ The user approved this routine on 2026-11-11: 4 Shorts per day, full SEO, schedu
    (AI voice, faceless video, TikTok Shop/Shopee affiliate). Use only as topic/hook ideas; never copy a video.
    **Rhythm and mood (user's reference, 2026-11-11):** default to the **Reel** template (`"template":"reel"`, build with
    `python3 assets/make_reel.py <spec>`; example `assets/shorts/demo-reel-moi-giong.json`). 4–5 chapters of ~3.5–4 s, each
-   the same loop: grey "before" footage → prompt bar types a request → cursor clicks → mosaic reveal to colour while a
-   voice line (≤ 3 s) plays → big 1–2 line title with a small red accent word; chapter counter, corner marks; red end card
+   The grey footage → typed prompt bar → cursor click → mosaic reveal beat is the series signature and plays **once, on
+   the first chapter only** (user feedback 2026-11-12: repeating it every chapter looks mechanical). Every later chapter
+   cuts straight in and must look different: `"style"` = `count` (number counts up + red bar; auto for numeric titles),
+   `wipe` (red scan line), `kinetic` (spoken words land big one by one), `slam` (title slams in with flash). Vary the
+   order between videos and keep adding new treatments in `src/Reel.tsx` rather than reusing one. Each chapter has a
+   voice line (≤ 3 s) and a big 1–2 line title with a small red accent word; chapter counter, corner marks; red end card
    with a two-line tagline. Cinematic, few words, no list cards, music-led (fx/bed86.wav, ~86 BPM). One idea per video
    expressed as chapters (use cases, voice styles, before/after of a script…). Use the list `Short` template only when
    the content really is a checklist. Prefer footage of hands, objects and places over close-up faces; no children.

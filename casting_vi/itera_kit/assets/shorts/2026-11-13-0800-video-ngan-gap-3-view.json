@@ -1,0 +1,102 @@
+{
+ "id": "2026-11-13-0800-video-ngan-gap-3-view",
+ "template": "reel",
+ "endLines": [
+  "Số liệu thật",
+  "NGẮN THÔI"
+ ],
+ "hook": {
+  "lines": [
+   "74 VIDEO",
+   "1 SỰ THẬT",
+   "NGẮN = X3"
+  ],
+  "text": "Mình soi bảy mươi bốn video của kênh này. Ra một sự thật hơi phũ.",
+  "footage": {
+   "mixkit": 24580,
+   "start": 2
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Video dưới 40 giây",
+   "button": "Soi",
+   "title": [
+    "432",
+    "LƯỢT XEM"
+   ],
+   "accent": "dưới 40 giây",
+   "text": "Video dưới bốn mươi giây, thường được hơn bốn trăm lượt xem.",
+   "footage": {
+    "mixkit": 28901,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "Video trên 40 giây",
+   "button": "Soi",
+   "title": [
+    "136",
+    "LƯỢT XEM"
+   ],
+   "accent": "dài hơn",
+   "text": "Dài hơn chút á? Rớt còn hơn một trăm. Mất hai phần ba.",
+   "footage": {
+    "mixkit": 28893,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "Tỷ lệ xem hết",
+   "button": "Soi",
+   "title": [
+    "62%",
+    "VS 42%"
+   ],
+   "accent": "xem tới đâu",
+   "text": "Video ngắn, người ta coi được sáu mươi hai phần trăm. Dài thì bốn mươi hai.",
+   "footage": {
+    "mixkit": 13168,
+    "start": 5
+   }
+  },
+  {
+   "prompt": "Bài học: cắt cho gọn",
+   "button": "Chốt",
+   "title": [
+    "CẮT",
+    "CHO GỌN"
+   ],
+   "accent": "bài học",
+   "text": "Nên giờ video nào mình cũng cắt dưới ba mươi giây. Kênh bạn dài bao nhiêu?",
+   "footage": {
+    "mixkit": 50605,
+    "start": 2
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Video ngắn hơn có nhiều view hơn? Số liệu thật 74 video #shorts",
+  "description": "Video YouTube Shorts ngắn dưới 40 giây có nhiều view hơn không? Số liệu thật từ 74 video của kênh này: 432 so với 136 lượt xem trung vị.\n\nTỷ lệ xem trung bình: 62% với video dưới 40 giây, 42% với video 41–70 giây. Số liệu lấy từ YouTube Analytics của kênh. Video của bạn dài bao nhiêu giây? Comment nha!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #xaykenh #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "video ngắn bao nhiêu giây",
+   "YouTube Shorts",
+   "độ dài video Shorts",
+   "tăng view Shorts",
+   "xây kênh YouTube",
+   "YouTube Analytics"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Do shorter Shorts get more views? Real data from 74 videos #shorts",
+    "description": "Real YouTube Analytics from this channel: Shorts under 40 s got a 432 median views vs 136 for 41–70 s.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Video của bạn thường dài bao nhiêu giây? 👇 Giọng trong video làm bằng ITERA: https://itera102.space"
+ }
+}

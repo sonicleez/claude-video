@@ -1,0 +1,103 @@
+{
+ "id": "2026-11-13-2000-nhat-ky-xay-kenh-ngay-2",
+ "template": "reel",
+ "endLines": [
+  "Nhật ký xây kênh",
+  "NGÀY 2"
+ ],
+ "hook": {
+  "lines": [
+   "NGÀY 2",
+   "405 VIEW",
+   "0 COMMENT"
+  ],
+  "text": "Ngày hai xây kênh bằng giọng AI. Có view rồi, mà... không ai nói gì hết.",
+  "footage": {
+   "mixkit": 34980,
+   "start": 6
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Video đầu tiên: 7 giờ",
+   "button": "Xem số",
+   "title": [
+    "405",
+    "LƯỢT XEM"
+   ],
+   "accent": "7 tiếng đầu",
+   "text": "Video đầu tiên, bảy tiếng đầu được bốn trăm lẻ năm lượt xem.",
+   "footage": {
+    "mixkit": 28893,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "Comment: 0",
+   "button": "Xem số",
+   "title": [
+    "0",
+    "COMMENT"
+   ],
+   "accent": "nhưng",
+   "text": "Nhưng comment thì, [laughs] không có cái nào luôn.",
+   "footage": {
+    "mixkit": 13168,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "Hậu trường: AI làm hết",
+   "button": "Mở",
+   "title": [
+    "AI LÀM",
+    "HẾT"
+   ],
+   "accent": "hậu trường",
+   "text": "Hậu trường nè, AI viết kịch bản, tạo giọng, dựng video bằng code luôn.",
+   "footage": {
+    "mixkit": 1808,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "Hôm nay thử: hỏi 1 câu",
+   "button": "Thử",
+   "title": [
+    "BẠN",
+    "Ở ĐÂU?"
+   ],
+   "accent": "thử nghiệm",
+   "text": "Nên hôm nay mình thử hỏi một câu thôi. Bạn đang coi ở tỉnh nào?",
+   "footage": {
+    "mixkit": 24580,
+    "start": 6
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Xây kênh bằng giọng AI: Ngày 2, 405 view nhưng 0 comment #shorts",
+  "description": "Nhật ký xây kênh YouTube từ 94 sub chỉ bằng giọng AI, ngày 2: video đầu tiên được 405 lượt xem trong 7 giờ đầu nhưng chưa có comment nào.\n\nHậu trường: AI viết kịch bản, tạo giọng bằng ITERA và dựng video bằng code (Claude + Remotion). Số liệu ghi lúc viết kịch bản. Bạn đang xem ở tỉnh nào? Comment một chữ thôi!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #xaykenh #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "xây kênh YouTube",
+   "nhật ký xây kênh",
+   "thử thách xây kênh",
+   "Claude Remotion",
+   "kênh không lộ mặt",
+   "AI làm video",
+   "YouTube Shorts"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Growing a channel with only an AI voice: Day 2, 405 views, 0 comments #shorts",
+    "description": "Day 2 of growing a channel from 94 subs with only an AI voice. Real numbers and the behind-the-scenes: Claude + Remotion + ITERA voice.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn đang xem ở tỉnh nào? Comment một chữ thôi 👇 Giọng trong video làm bằng ITERA: https://itera102.space"
+ }
+}
