@@ -3,7 +3,7 @@
  "template": "reel",
  "endLines": [
   "Giọng nào là AI?",
-  "COMMENT SỐ!"
+  "COMMENT TÊN!"
  ],
  "hook": {
   "lines": [
@@ -25,7 +25,7 @@
     "NƯỚC SÔI",
     "RỒI NÈ"
    ],
-   "accent": "giọng số 1",
+   "accent": "ÂN",
    "preset": "an_soft",
    "text": "[warmly] Nước sôi rồi nè... ai rửa rau giùm mình với?",
    "footage": {
@@ -38,7 +38,7 @@
     "CÁ ĐÂU",
     "RỒI TA?"
    ],
-   "accent": "giọng số 2",
+   "accent": "TRÂM",
    "preset": "tram_soft",
    "style": "wipe",
    "text": "[softly] Đậu bắp rửa xong rồi á. Mà khoan... cá đâu rồi ta?",
@@ -53,7 +53,7 @@
     "MÈO ĂN",
     "RỒI"
    ],
-   "accent": "giọng số 3",
+   "accent": "CẨM HỒNG",
    "preset": "camhong_soft",
    "style": "slam",
    "text": "[chuckles] Cá hả... con mèo nó ăn mất tiêu rồi.",
@@ -68,7 +68,7 @@
     "CANH CHUA",
     "CHAY"
    ],
-   "accent": "giọng số 4",
+   "accent": "AN NHIÊN",
    "preset": "annhien_soft",
    "style": "wipe",
    "text": "[laughs softly] Thôi kệ đi... mình nấu canh chua chay, cũng ngon mà.",
@@ -83,10 +83,10 @@
     "AI HAY",
     "NGƯỜI?"
    ],
-   "accent": "đố bạn",
+   "accent": "ĐỐ BẠN",
    "preset": "an_soft",
    "style": "slam",
-   "text": "[softly] Bốn giọng vừa rồi... giọng nào là AI, giọng nào là người thật? Comment số nha.",
+   "text": "[softly] Bốn giọng vừa rồi... giọng nào là AI, giọng nào là người thật? Comment tên nha.",
    "footage": {
     "mixkit": 33206,
     "start": 4
@@ -96,7 +96,7 @@
  ],
  "youtube": {
   "title": "Giọng AI tiếng Việt nấu canh chua: đoán giọng nào là AI? #shorts",
-  "description": "Thử tai giọng AI tiếng Việt: bốn giọng trò chuyện nhẹ nhàng trong bếp nấu canh chua, và con mèo ăn mất con cá.\n\nBạn nghĩ giọng số mấy là AI, giọng số mấy là người thật? Comment số trước khi xem đáp án ở bình luận ghim! Giọng đọc làm bằng ITERA.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #nauan #shorts",
+  "description": "Thử tai giọng AI tiếng Việt: bốn giọng trò chuyện nhẹ nhàng trong bếp nấu canh chua, và con mèo ăn mất con cá.\n\nÂn, Trâm, Cẩm Hồng hay An Nhiên: giọng nào là AI, giọng nào là người thật? Comment tên trước khi xem đáp án ở bình luận ghim! Giọng đọc làm bằng ITERA.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #nauan #shorts",
   "tags": [
    "giọng AI tiếng Việt",
    "thử tai giọng AI",
@@ -120,5 +120,6 @@
   },
   "pinned_comment": "Đáp án: cả 4 giọng đều là giọng AI, làm bằng ITERA 😄 Bạn đoán đúng không? https://itera102.space"
  },
- "skin": "pop-plain"
+ "skin": "pop-plain",
+ "device": "iphone"
 }

@@ -11,7 +11,7 @@ import {FPS, Fx, T, Word, sec} from './brand';
 
 export type Chapter = {prompt: string; button: string; title: string[]; accent: string; voiceDur: number; words: Word[]; style?: string};
 export type Hook = {lines: string[]; voiceDur: number; words: Word[]};
-export type ReelProps = {id: string; tag: string; hook?: Hook; chapters: Chapter[]; endLines: [string, string]; endVoiceDur?: number; skin?: string};
+export type ReelProps = {id: string; tag: string; hook?: Hook; chapters: Chapter[]; endLines: [string, string]; endVoiceDur?: number; skin?: string; device?: string};
 
 const PRE = 1.15;     // signature before-beat (type, click, generate) — used ONCE, on the first chapter
 const QUICK_PRE = 0.3; // every other chapter cuts straight in
@@ -128,11 +128,11 @@ const MirrorWave: React.FC<{src: string; local: number}> = ({src, local}) => {
   );
 };
 /** Speaker tag chip (accent) for the pop skin. */
-const SpeakerChip: React.FC<{text: string; p: number}> = ({text, p}) => (
+const SpeakerChip: React.FC<{text: string; p: number; big?: boolean}> = ({text, p, big}) => (
   <div style={{position: 'absolute', left: 64, top: 862, display: 'flex', alignItems: 'center', gap: 12, padding: '10px 26px 12px', borderRadius: 34, background: T.red,
-    fontFamily: T.sans, fontWeight: 800, fontSize: 40, color: '#fff', letterSpacing: 2, textTransform: 'uppercase', boxShadow: '0 10px 30px rgba(217,63,63,0.45)',
-    transformOrigin: '0% 50%', transform: `scale(${interpolate(p, [0, 1], [0.4, 1])}) rotate(${(1 - p) * -10}deg)`, opacity: Math.min(1, p * 2)}}>
-    <div style={{width: 14, height: 14, borderRadius: 7, background: '#fff'}} />{text}
+    fontFamily: T.sans, fontWeight: 800, fontSize: big ? 72 : 40, color: '#fff', letterSpacing: 2, textTransform: 'uppercase', boxShadow: '0 10px 30px rgba(217,63,63,0.45)',
+    transformOrigin: '0% 50%', transform: `scale(${interpolate(p, [0, 1], [0.4, 1])}) rotate(${(1 - p) * -10}deg)`, opacity: Math.min(1, p * 2), ...(big ? {padding: '14px 40px 18px', borderRadius: 50, gap: 18} : {})}}>
+    <div style={{width: big ? 22 : 14, height: big ? 22 : 14, borderRadius: 11, background: '#fff'}} />{text}
   </div>
 );
 /** Title: line 1 white with a hard 3D shadow, line 2 as a tilted white sticker. */
@@ -233,7 +233,7 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
       {/* After beat: stacked title, accent, live waveform, clean caption */}
       {t >= R && (
         <>
-          {pop ? (ch.accent ? <SpeakerChip text={ch.accent} p={titleP(0)} /> : null) : <div style={{position: 'absolute', left: 64, top: 930, fontFamily: T.sans, fontWeight: 600, fontStyle: 'italic', fontSize: 50, color: T.red,
+          {pop ? (ch.accent ? <SpeakerChip text={ch.accent} p={titleP(0)} big={plain} /> : null) : <div style={{position: 'absolute', left: 64, top: 930, fontFamily: T.sans, fontWeight: 600, fontStyle: 'italic', fontSize: 50, color: T.red,
             opacity: Math.min(1, titleP(0) * 2), transform: `translateX(${(1 - titleP(0)) * -40}px)`}}>{ch.accent}</div>}
           {style === 'kinetic' && (() => {
             // Kinetic type: the spoken words themselves land big, one at a time; the title sits small above.
@@ -320,11 +320,41 @@ const EndCard: React.FC<{lines: [string, string]}> = ({lines}) => {
   );
 };
 
+
+/** iPhone mockup: the 9:16 scene is scaled into a rounded screen with a Dynamic Island, side buttons and a soft glow behind. */
+const PHONE = {sw: 860, x: 110, y: 200, bezel: 22};
+const PhoneFrame: React.FC<{children: React.ReactNode}> = ({children}) => {
+  const {sw, x, y, bezel} = PHONE; const sh = (sw * 16) / 9; const k = sw / 1080;
+  return (
+    <AbsoluteFill style={{background: 'radial-gradient(120% 70% at 50% 45%, #2A1416 0%, #121318 45%, #09090C 100%)'}}>
+      <div style={{position: 'absolute', left: x - bezel, top: y - bezel, width: sw + bezel * 2, height: sh + bezel * 2, borderRadius: 96, background: 'linear-gradient(145deg, #3A3B40 0%, #15161A 40%, #2B2C31 100%)',
+        boxShadow: '0 50px 120px rgba(0,0,0,0.7), 0 0 0 3px #4A4B52, inset 0 0 0 6px #060608'}} />
+      {[[x - bezel - 7, y + 250, 120], [x - bezel - 7, y + 420, 120], [x - bezel - 7, y + 150, 60], [x + sw + bezel, y + 330, 190]].map(([bx, by, bh], i) => (
+        <div key={i} style={{position: 'absolute', left: bx, top: by, width: 7, height: bh, borderRadius: 4, background: '#3A3B40'}} />
+      ))}
+      <div style={{position: 'absolute', left: x, top: y, width: sw, height: sh, borderRadius: 76, overflow: 'hidden', background: '#000'}}>
+        <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, transform: `scale(${k})`, transformOrigin: '0 0'}}>{children}</div>
+        <div style={{position: 'absolute', left: sw / 2 - 110, top: 22, width: 220, height: 64, borderRadius: 32, background: '#000'}} />
+        <div style={{position: 'absolute', left: sw / 2 - 120, bottom: 18, width: 240, height: 9, borderRadius: 5, background: 'rgba(255,255,255,0.75)'}} />
+        <div style={{position: 'absolute', inset: 0, borderRadius: 76, background: 'linear-gradient(125deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 30%)'}} />
+      </div>
+    </AbsoluteFill>
+  );
+};
+/** Brand bug that stays in the top-left corner for the whole video (outside the phone). */
+const CornerLogo: React.FC = () => (
+  <div style={{position: 'absolute', left: 48, top: 56, display: 'flex', alignItems: 'center', gap: 12}}>
+    <div style={{width: 18, height: 18, borderRadius: 9, background: T.red, boxShadow: `0 0 14px ${T.red}`}} />
+    <span style={{fontFamily: T.sans, fontWeight: 800, fontSize: 52, color: '#fff', letterSpacing: 4}}>ITERA</span>
+  </div>
+);
+
 export const Reel: React.FC<ReelProps> = (p) => {
   const {starts, tEnd, hookDur, total} = reelTimeline(p);
   const voiceAt = (x: number) => p.chapters.some((ch, k) => x >= starts[k] + preOf(ch, k) - 0.1 && x < starts[k] + preOf(ch, k) + ch.voiceDur + 0.1) || x < hookDur || (!!p.endVoiceDur && x >= tEnd + END_VOICE_AT - 0.1);
   return (
     <SkinCtx.Provider value={p.skin ?? 'classic'}><AbsoluteFill style={{background: T.bg}}>
+      {(() => { const scenes = (<>
       {p.hook && <Sequence durationInFrames={sec(hookDur)}><HookView hook={p.hook} id={p.id} frames={sec(hookDur)} /></Sequence>}
       {p.hook && <Sequence from={3}><Audio src={staticFile(`shorts/${p.id}/vh.wav`)} /></Sequence>}
       {p.hook && <Fx at={0} name="impact" volume={0.8} />}
@@ -332,6 +362,8 @@ export const Reel: React.FC<ReelProps> = (p) => {
         const frames = sec(preOf(ch, k) + ch.voiceDur + TAIL);
         return <Sequence key={k} from={sec(starts[k])} durationInFrames={frames}><ChapterView ch={ch} k={k} n={p.chapters.length} id={p.id} frames={frames} style={styleOf(ch, k)} pre={preOf(ch, k)} t0={starts[k]} /></Sequence>;
       })}
+      </>); return p.device === 'iphone' ? <Sequence durationInFrames={sec(tEnd) + 1}><PhoneFrame>{scenes}</PhoneFrame></Sequence> : scenes; })()}
+      {p.device === 'iphone' && <Sequence durationInFrames={sec(tEnd)}><CornerLogo /></Sequence>}
       <Sequence from={sec(tEnd)}><EndCard lines={p.endLines} /></Sequence>
       {p.endVoiceDur && <Sequence from={sec(tEnd + END_VOICE_AT)}><Audio src={staticFile(`shorts/${p.id}/ve.wav`)} /></Sequence>}
 

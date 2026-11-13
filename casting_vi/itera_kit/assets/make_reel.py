@@ -45,7 +45,7 @@ for key, c in items:
     footage.get(str(c["footage"]["mixkit"]), f"{pub}/f{key}.mp4", c["footage"].get("start", 0), 1.15 + dur + 1.2)
     if key == "h": hook = {"lines": c["lines"][:3], "voiceDur": round(dur, 3), "words": words}
     else: chapters.append({"prompt": c["prompt"], "button": c.get("button", "Tạo giọng"), "title": c["title"][:2], "accent": c.get("accent", ""), "voiceDur": round(dur, 3), "words": words, **({"style": c["style"]} if c.get("style") else {})})
-props = {"id": sid, "tag": spec.get("tag", ""), **({"skin": spec["skin"]} if spec.get("skin") else {}), **({"hook": hook} if hook else {}), "chapters": chapters, "endLines": spec.get("endLines", ["Một kịch bản.", "MỌI GIỌNG."]), **({"endVoiceDur": endVoice} if endVoice else {})}
+props = {"id": sid, "tag": spec.get("tag", ""), **({"skin": spec["skin"]} if spec.get("skin") else {}), **({"device": spec["device"]} if spec.get("device") else {}), **({"hook": hook} if hook else {}), "chapters": chapters, "endLines": spec.get("endLines", ["Một kịch bản.", "MỌI GIỌNG."]), **({"endVoiceDur": endVoice} if endVoice else {})}
 json.dump(props, open(f"out/{sid}.props.json", "w", encoding="utf-8"), ensure_ascii=False)
 subprocess.run(["npx", "remotion", "render", "Reel", f"out/{sid}.raw.mp4", f"--props=out/{sid}.props.json", "--crf=18", "--audio-bitrate=192k", "--log=error"], check=True)
 subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", f"out/{sid}.raw.mp4", "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", f"out/{sid}.mp4"], check=True)
