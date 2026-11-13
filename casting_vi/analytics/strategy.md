@@ -4,6 +4,7 @@
 - Subs 95 (+1). Views: ghost-story voice pick 960 in 3.4 h (286/h, 8 likes) · 4 voice styles 863 in 27 h (7 likes, 1 viewer comment) · "AI reads AI" 837 in 31 h · diary Day 1 304 in 19 h · affiliate first-3-seconds 134 in 23 h · "shorter videos, 74-video data" 44 in 7.4 h. Retention % still not in Analytics.
 - What worked: "pick a voice" and story/entertainment formats (people listen and choose). What failed: lecture-style advice (affiliate tips, data analysis). Diary is mid.
 - Changes: 3 of 4 slots become pick/story formats (news pick 08:00, ghost story part 2 at 12:00, selling-voice pick 16:00); affiliate content is delivered as a voice pick, not a lecture; diary Day 3 tells this lesson with the real numbers. Lecture/tips format dropped for now.
+- Scheduled for 14 Nov (VN): see ids in HANDOFF/stats; voice credits 1,159. Hook text now auto-fits the safe width.
 - Experiment: a narrated fiction mini-story (part 2 of the ghost line) with a MỞ/CHẠY one-word prompt.
 
 ## 2026-11-12 15:20 VN — daily run 1
