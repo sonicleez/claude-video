@@ -1,0 +1,91 @@
+{
+ "id": "2026-11-14-1600-giong-nao-ban-hang",
+ "template": "reel",
+ "endLines": [
+  "Bạn chọn",
+  "SỐ MẤY?"
+ ],
+ "hook": {
+  "lines": [
+   "1 CÂU BÁN",
+   "3 GIỌNG AI",
+   "CHỌN 1"
+  ],
+  "text": "Một câu bán hàng, ba giọng AI. Giọng nào làm bạn muốn mua liền?",
+  "footage": {
+   "mixkit": 32318,
+   "start": 2
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Giọng bán hàng số 1",
+   "title": [
+    "GIỌNG",
+    "SỐ 1"
+   ],
+   "accent": "nghe thử",
+   "preset": "tram",
+   "text": "Trái cây mới về sáng nay, ngọt lịm luôn, ghé lẹ kẻo hết nha!",
+   "footage": {
+    "mixkit": 32318,
+    "start": 7
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 2"
+   ],
+   "accent": "nghe thử",
+   "preset": "camhong",
+   "style": "slam",
+   "text": "Trái cây mới về sáng nay, ngọt lịm luôn, ghé lẹ kẻo hết nha!",
+   "footage": {
+    "mixkit": 817,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 3"
+   ],
+   "accent": "nghe thử",
+   "preset": "annhien",
+   "style": "wipe",
+   "text": "Trái cây mới về sáng nay, ngọt lịm luôn, ghé lẹ kẻo hết nha!",
+   "footage": {
+    "mixkit": 31218,
+    "start": 6.5
+   }
+  }
+ ],
+ "youtube": {
+  "title": "3 giọng AI bán hàng: giọng nào làm bạn muốn mua liền? #shorts",
+  "description": "3 giọng AI tiếng Việt đọc cùng một câu bán hàng. Giọng nào chốt đơn tốt nhất cho video affiliate, TikTok Shop? Comment số bạn chọn.\n\nCả 3 đều là giọng đọc AI (text to speech) tạo trên ITERA, hợp cho video bán hàng không lộ mặt, không cần thu âm.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#affiliate #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "giọng bán hàng",
+   "giọng đọc quảng cáo",
+   "video affiliate",
+   "affiliate không lộ mặt",
+   "TikTok Shop",
+   "so sánh giọng AI",
+   "giọng review sản phẩm"
+  ],
+  "localizations": {
+   "en": {
+    "title": "3 AI voices sell the same line: which makes you buy? #shorts",
+    "description": "Three Vietnamese AI voices read the same sales line. Pick 1, 2 or 3.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Giọng số mấy làm bạn muốn mua: 1, 2 hay 3? 👇 Tạo giọng bán hàng tại: https://itera102.space"
+ }
+}

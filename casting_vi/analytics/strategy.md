@@ -1,5 +1,17 @@
 # Strategy log (newest first)
 
+## 2026-11-13 19:22 VN — evening review (user asked: creative, sales-focused, stronger hooks)
+- Ghost-story voice pick 1,077 views in 7.4 h, 8 likes, first real viewer comment ("😮"); "4 voice styles" got a one-word viewer answer ("4"). Faceless-selling recipe 172 in 3.4 h (51/h) — best of the sales videos so far but below pick/story formats. Lecture formats stay at 44–134.
+- Decision: keep the storytelling strategy, put selling INSIDE the story (product is the twist), not after it. 14 Nov 08:00 news pick replaced by the market skit "Cả cái chợ này đều là giọng AI" (3 character voices, twist: nobody recorded) aimed at shop owners/affiliates.
+- Sales path note: Shorts links in descriptions/comments are believed not to be clickable (not re-verified) → say/show the name ITERA clearly, keep the channel link, and have the user attach a "related video" in YouTube Studio.
+
+## 2026-11-13 15:20 VN — daily run 2
+- Subs 95 (+1). Views: ghost-story voice pick 960 in 3.4 h (286/h, 8 likes) · 4 voice styles 863 in 27 h (7 likes, 1 viewer comment) · "AI reads AI" 837 in 31 h · diary Day 1 304 in 19 h · affiliate first-3-seconds 134 in 23 h · "shorter videos, 74-video data" 44 in 7.4 h. Retention % still not in Analytics.
+- What worked: "pick a voice" and story/entertainment formats (people listen and choose). What failed: lecture-style advice (affiliate tips, data analysis). Diary is mid.
+- Changes: 3 of 4 slots become pick/story formats (news pick 08:00, ghost story part 2 at 12:00, selling-voice pick 16:00); affiliate content is delivered as a voice pick, not a lecture; diary Day 3 tells this lesson with the real numbers. Lecture/tips format dropped for now.
+- Scheduled for 14 Nov (VN): see ids in HANDOFF/stats; voice credits 1,159. Hook text now auto-fits the safe width.
+- Experiment: a narrated fiction mini-story (part 2 of the ghost line) with a MỞ/CHẠY one-word prompt.
+
 ## 2026-11-12 15:20 VN — daily run 1
 - Numbers: "Bảo AI đọc chữ AI" 405 views at 7.3 h (unchanged for ~25 min: the first push looks finished), 1 like, 0 comments; "4 kiểu giọng AI" 177 at 3.3 h, 0/0. Subscribers still 94. Retention % not in Analytics yet.
 - Link comments posted on both public videos (to be pinned by the user).

@@ -1,0 +1,90 @@
+{
+ "id": "2026-11-14-0800-giong-nao-doc-ban-tin",
+ "template": "reel",
+ "endLines": [
+  "Bạn chọn",
+  "SỐ MẤY?"
+ ],
+ "hook": {
+  "lines": [
+   "1 BẢN TIN",
+   "3 GIỌNG AI",
+   "CHỌN 1"
+  ],
+  "text": "Một bản tin, ba giọng AI đọc. Giọng nào nghe giống đài nhất?",
+  "footage": {
+   "mixkit": 32411,
+   "start": 4
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Giọng đọc bản tin số 1",
+   "title": [
+    "GIỌNG",
+    "SỐ 1"
+   ],
+   "accent": "bản tin mẫu",
+   "preset": "annhien",
+   "text": "Bản tin sáng nay, trời se lạnh, bà con ra đường nhớ mang thêm áo khoác nha.",
+   "footage": {
+    "mixkit": 31370,
+    "start": 8
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 2"
+   ],
+   "accent": "bản tin mẫu",
+   "preset": "camhong",
+   "style": "wipe",
+   "text": "Bản tin sáng nay, trời se lạnh, bà con ra đường nhớ mang thêm áo khoác nha.",
+   "footage": {
+    "mixkit": 19349,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 3"
+   ],
+   "accent": "bản tin mẫu",
+   "preset": "minimax_south",
+   "style": "slam",
+   "text": "Bản tin sáng nay, trời se lạnh, bà con ra đường nhớ mang thêm áo khoác nha.",
+   "footage": {
+    "mixkit": 34980,
+    "start": 10
+   }
+  }
+ ],
+ "youtube": {
+  "title": "3 giọng AI đọc bản tin: giọng nào giống phát thanh viên nhất? #shorts",
+  "description": "3 giọng AI tiếng Việt đọc cùng một bản tin mẫu. Giọng nào nghe giống phát thanh viên đài nhất? Comment số bạn chọn.\n\nCả 3 đều là giọng đọc AI (text to speech) tạo trên ITERA. Hợp cho kênh tin tức, podcast, video giải thích không cần thu âm.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "giọng đọc tin tức",
+   "giọng phát thanh viên",
+   "giọng đọc bản tin",
+   "so sánh giọng AI",
+   "ElevenLabs tiếng Việt",
+   "MiniMax TTS"
+  ],
+  "localizations": {
+   "en": {
+    "title": "3 AI voices read the news: which sounds like a real anchor? #shorts",
+    "description": "Three Vietnamese AI voices read the same sample bulletin. Pick 1, 2 or 3.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Giọng số mấy nghe giống đài nhất: 1, 2 hay 3? 👇 Thử giọng đọc tin tại: https://itera102.space"
+ }
+}

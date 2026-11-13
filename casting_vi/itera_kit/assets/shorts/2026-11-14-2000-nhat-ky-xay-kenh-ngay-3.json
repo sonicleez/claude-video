@@ -1,0 +1,103 @@
+{
+ "id": "2026-11-14-2000-nhat-ky-xay-kenh-ngay-3",
+ "template": "reel",
+ "endLines": [
+  "Nhật ký xây kênh",
+  "NGÀY 3"
+ ],
+ "hook": {
+  "lines": [
+   "960 VIEW",
+   "VS 44 VIEW",
+   "VÌ SAO?"
+  ],
+  "text": "Ngày ba xây kênh bằng giọng AI. Một video chín trăm sáu chục view, một video... bốn mươi bốn.",
+  "footage": {
+   "mixkit": 34980,
+   "start": 14
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Video truyện ma: 3 giờ",
+   "button": "Xem số",
+   "title": [
+    "960",
+    "LƯỢT XEM"
+   ],
+   "accent": "truyện ma, 3 tiếng",
+   "text": "Video ba giọng AI kể chuyện ma, ba tiếng được chín trăm sáu chục lượt xem.",
+   "footage": {
+    "mixkit": 48498,
+    "start": 8
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "44",
+    "LƯỢT XEM"
+   ],
+   "accent": "video số liệu, 7 tiếng",
+   "style": "count",
+   "text": "Còn video mình ngồi phân tích số liệu á? Bảy tiếng, bốn mươi bốn. [laughs]",
+   "footage": {
+    "mixkit": 28893,
+    "start": 7
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "THÍCH NGHE",
+    "GHÉT BỊ DẠY"
+   ],
+   "accent": "bài học",
+   "style": "kinetic",
+   "text": "Bài học nè, người ta thích nghe kể chuyện, không thích bị giảng bài.",
+   "footage": {
+    "mixkit": 13168,
+    "start": 11
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "MA",
+    "HAY MẸO?"
+   ],
+   "accent": "bạn chọn",
+   "style": "slam",
+   "text": "Nên mai mình kể chuyện tiếp. Bạn thích coi ma, hay coi mẹo?",
+   "footage": {
+    "mixkit": 3461,
+    "start": 3
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Xây kênh bằng giọng AI: Ngày 3, 960 view vs 44 view, vì sao? #shorts",
+  "description": "Nhật ký xây kênh YouTube bằng giọng AI, ngày 3: video 3 giọng AI kể chuyện ma được 960 lượt xem trong 3 giờ, video phân tích số liệu chỉ 44 lượt xem trong 7 giờ.\n\nBài học: người xem thích nghe kể chuyện hơn bị giảng bài. Số liệu ghi lúc viết kịch bản. Hậu trường: AI viết kịch bản, tạo giọng bằng ITERA, dựng bằng Claude + Remotion. Bạn thích xem MA hay MẸO?\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#xaykenh #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "xây kênh YouTube",
+   "nhật ký xây kênh",
+   "thử thách xây kênh",
+   "Claude Remotion",
+   "kênh không lộ mặt",
+   "YouTube Shorts",
+   "tăng view Shorts"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Growing a channel with an AI voice: Day 3, 960 views vs 44 #shorts",
+    "description": "Day 3 of growing a channel with only an AI voice: a ghost-story voice test got 960 views in 3 hours, a data video got 44 in 7. Why?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn thích xem MA hay MẸO? Comment một chữ 👇 Giọng trong video làm bằng ITERA: https://itera102.space"
+ }
+}

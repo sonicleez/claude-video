@@ -1,0 +1,108 @@
+{
+ "id": "2026-11-14-1200-truyen-ma-phong-cuoi-hanh-lang-p2",
+ "template": "reel",
+ "endLines": [
+  "Giọng kể này",
+  "LÀ GIỌNG AI"
+ ],
+ "hook": {
+  "lines": [
+   "PHÒNG CUỐI",
+   "HÀNH LANG",
+   "PHẦN 2"
+  ],
+  "preset": "camhong",
+  "text": "Căn phòng cuối hành lang... lại sáng đèn. Lần này, tôi quyết định mở cửa.",
+  "footage": {
+   "mixkit": 48880,
+   "start": 2
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Kể tiếp chuyện ma…",
+   "button": "Kể",
+   "title": [
+    "TAY NẮM",
+    "LẠNH NGẮT"
+   ],
+   "accent": "phần 2",
+   "preset": "camhong",
+   "text": "Tay nắm cửa lạnh ngắt, như chưa ai chạm vào suốt ba năm.",
+   "footage": {
+    "mixkit": 2489,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "BÊN TRONG",
+    "CÓ TIẾNG"
+   ],
+   "accent": "rồi",
+   "preset": "camhong",
+   "style": "wipe",
+   "text": "Bên trong, có tiếng ai đó... đang đọc tên tôi.",
+   "footage": {
+    "mixkit": 48498,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG ĐÓ",
+    "CỦA TÔI"
+   ],
+   "accent": "nhưng",
+   "preset": "camhong",
+   "style": "kinetic",
+   "text": "Mà cái giọng đó, là giọng của chính tôi.",
+   "footage": {
+    "mixkit": 21144,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "MỞ",
+    "HAY CHẠY?"
+   ],
+   "accent": "bạn sẽ",
+   "preset": "camhong",
+   "style": "slam",
+   "text": "Nếu là bạn, bạn mở cửa, hay bỏ chạy?",
+   "footage": {
+    "mixkit": 2634,
+    "start": 2
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Truyện ma 20 giây: căn phòng cuối hành lang (phần 2) #shorts",
+  "description": "Truyện ma ngắn 20 giây kể bằng giọng AI tiếng Việt: căn phòng cuối hành lang lại sáng đèn, và bên trong có tiếng người đọc tên tôi. Phần 2.\n\nTruyện hư cấu, giọng kể là giọng AI (text to speech) tạo trên ITERA. Nếu là bạn, bạn mở cửa hay bỏ chạy? Comment MỞ hoặc CHẠY.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#truyenma #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "truyện ma",
+   "truyện ma ngắn",
+   "truyện ma 20 giây",
+   "giọng kể chuyện ma",
+   "truyện đêm khuya",
+   "kể chuyện bằng AI",
+   "truyện audio"
+  ],
+  "localizations": {
+   "en": {
+    "title": "20-second ghost story: the room at the end of the hall (part 2) #shorts",
+    "description": "A 20-second Vietnamese ghost story told by an AI voice. Fiction. Would you open the door or run?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn MỞ cửa hay CHẠY? Comment một chữ 👇 Giọng kể làm bằng ITERA: https://itera102.space"
+ }
+}
