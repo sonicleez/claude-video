@@ -184,7 +184,7 @@ const HookView: React.FC<{hook: Hook; id: string; frames: number}> = ({hook, id,
         const tp = i === 0 ? 1 : spring({frame: frame - i * 9, fps: FPS, config: {damping: 9, stiffness: 180, mass: 0.7}});
         const punch = i === 0 ? 1 + 0.08 * Math.exp(-frame / 3) : interpolate(tp, [0, 1], [1.6, 1]);
         const last = i === Math.min(hook.lines.length, 3) - 1;
-        return <div key={i} style={{position: 'absolute', left: 60, top: 640 + i * 176, fontFamily: T.sans, fontWeight: 800, fontSize: 164, lineHeight: 1, letterSpacing: -5, whiteSpace: 'nowrap',
+        return <div key={i} style={{position: 'absolute', left: 60, top: 640 + i * 196, fontFamily: T.sans, fontWeight: 800, fontSize: 164, lineHeight: 1, letterSpacing: -5, whiteSpace: 'nowrap',
           color: last ? '#09090C' : T.text, background: last ? T.text : 'transparent', padding: last ? '6px 22px 14px' : 0, borderRadius: 14, marginLeft: last ? -4 : 0,
           transformOrigin: '0% 50%', transform: `scale(${punch}) rotate(${last ? -2 : 0}deg)`, opacity: Math.min(1, tp * 2), textShadow: last ? 'none' : '0 10px 40px rgba(0,0,0,0.6)'}}>{line}</div>;
       })}
