@@ -7,9 +7,9 @@
  ],
  "hook": {
   "lines": [
-   "KHÔNG AI",
-   "THU ÂM",
-   "MÀ CẢ CHỢ"
+   "0 NGƯỜI THU",
+   "CẢ CHỢ",
+   "CÓ GIỌNG"
   ],
   "text": "Không ai thu âm câu nào. Vậy mà cả cái chợ này... đều có giọng.",
   "footage": {
@@ -42,7 +42,7 @@
    "accent": "giọng 2",
    "preset": "tram",
    "style": "wipe",
-   "text": "Bớt nhiêu chị? Năm chục hai ký được hông?",
+   "text": "Bớt nhiêu chị? Em lấy hai ký, bớt chút nha!",
    "footage": {
     "mixkit": 982,
     "start": 9
@@ -71,7 +71,7 @@
    ],
    "accent": "bất ngờ chưa",
    "style": "kinetic",
-   "text": "Cả cái chợ này, đều là giọng AI hết đó. Bạn thích giọng nào nhất?",
+   "text": "Cả cái chợ này, không ai thu âm hết đó. Bạn thích giọng nào nhất?",
    "footage": {
     "mixkit": 32318,
     "start": 9

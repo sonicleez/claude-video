@@ -43,6 +43,10 @@ The user approved this routine on 2026-11-11: 4 Shorts per day, full SEO, schedu
    last 2 s line that loops back to the hook + reason to follow. No dead air: voice starts while the prompt types.
    `youtube_stats.py` now also prints average viewed % and subs gained (Analytics lags 1–2 days) — use them, not views
    alone. "Viewed vs swiped away" is only in YouTube Studio; ask the user for a screenshot when needed.
+   **Selling inside the story (user, 2026-11-13):** creative + sales: the product should be the twist or the tool the
+   story turns on (e.g. a market skit where every character is an AI voice → "one account made the whole market"),
+   not a pitch tacked on after. Pick-a-voice and short fiction are the proven formats; aim selling ones at shop owners
+   and affiliates. Shorts links are believed not to be clickable, so the name ITERA must be spoken/shown clearly.
 4. **Write 4 specs** in `assets/shorts/<YYYY-MM-DD-HHMM-slug>.json` (see existing ones): 18–30 s, hook ≤ 2 short lines,
    ≤ 3 items, one audience pain each, hook formulas from the plan doc. Full SEO block: title ≤ 70 chars with keyword
    first and `#shorts`, keyword-rich first description line, https://itera102.space, 3 hashtags, 10–12 tags, English
