@@ -11,7 +11,7 @@ import {FPS, Fx, T, Word, sec} from './brand';
 
 export type Chapter = {prompt: string; button: string; title: string[]; accent: string; voiceDur: number; words: Word[]; style?: string};
 export type Hook = {lines: string[]; voiceDur: number; words: Word[]};
-export type ReelProps = {id: string; tag: string; hook?: Hook; chapters: Chapter[]; endLines: [string, string]; endVoiceDur?: number};
+export type ReelProps = {id: string; tag: string; hook?: Hook; chapters: Chapter[]; endLines: [string, string]; endVoiceDur?: number; skin?: string};
 
 const PRE = 1.15;     // signature before-beat (type, click, generate) — used ONCE, on the first chapter
 const QUICK_PRE = 0.3; // every other chapter cuts straight in
@@ -58,8 +58,111 @@ const Wave: React.FC<{src: string; local: number}> = ({src, local}) => {
   );
 };
 
-const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; frames: number; style: string; pre: number}> = ({ch, k, n, id, frames, style, pre}) => {
+
+/* ---------- "pop" skin (user 2026-11-13: bolder viewfinder, waveform, type and frame) ---------- */
+export const SkinCtx = React.createContext<string>('classic');
+const BEAT = 60 / 86;
+/** Camera viewfinder HUD: rounded inset frame, thick breathing brackets, blinking REC, running timecode, focus box that locks on. */
+const Hud: React.FC<{t0: number; k?: number; n?: number}> = ({t0, k, n}) => {
+  const frame = useCurrentFrame(); const t = frame / FPS; const g = t0 + t;
+  const breathe = 6 * Math.pow(Math.abs(Math.cos((Math.PI * g) / BEAT)), 6);
+  const lock = spring({frame, fps: FPS, config: {damping: 13, stiffness: 160}});
+  const tc = `00:00:${String(Math.floor(g)).padStart(2, '0')}:${String(Math.floor((g % 1) * 30)).padStart(2, '0')}`;
+  const L = 78, TH = 9;
+  const fs = 300 * interpolate(lock, [0, 1], [1.5, 1]);
+  return (
+    <>
+      <div style={{position: 'absolute', inset: 30, borderRadius: 56, border: '3px solid rgba(255,255,255,0.22)', boxShadow: 'inset 0 0 120px rgba(0,0,0,0.45)'}} />
+      {[[60, 60, 1, 1], [1020, 60, -1, 1], [60, 1860, 1, -1], [1020, 1860, -1, -1]].map(([x, y, sx, sy], i) => {
+        const X = x + sx * breathe, Y = y + sy * breathe;
+        return (
+          <div key={i} style={{position: 'absolute', left: X, top: Y}}>
+            <div style={{position: 'absolute', left: sx > 0 ? 0 : -L, top: sy > 0 ? 0 : -TH, width: L, height: TH, borderRadius: TH, background: '#fff', boxShadow: '0 0 18px rgba(0,0,0,0.5)'}} />
+            <div style={{position: 'absolute', left: sx > 0 ? 0 : -TH, top: sy > 0 ? 0 : -L, width: TH, height: L, borderRadius: TH, background: '#fff', boxShadow: '0 0 18px rgba(0,0,0,0.5)'}} />
+          </div>
+        );
+      })}
+      <div style={{position: 'absolute', left: 84, top: 236, display: 'flex', alignItems: 'center', gap: 16, padding: '10px 22px', borderRadius: 40, background: 'rgba(9,9,12,0.55)', backdropFilter: 'blur(10px)'}}>
+        <div style={{width: 24, height: 24, borderRadius: 12, background: T.red, opacity: Math.floor(g * 2) % 2 ? 0.25 : 1, boxShadow: `0 0 16px ${T.red}`}} />
+        <span style={{fontFamily: T.mono, fontWeight: 700, fontSize: 30, color: '#fff', letterSpacing: 3}}>REC</span>
+        <span style={{fontFamily: T.sans, fontWeight: 800, fontSize: 30, color: '#fff', letterSpacing: 3, marginLeft: 8}}>ITERA</span>
+      </div>
+      <div style={{position: 'absolute', right: 84, top: 236, display: 'flex', alignItems: 'center', gap: 14, padding: '10px 22px', borderRadius: 40, background: 'rgba(9,9,12,0.55)', backdropFilter: 'blur(10px)',
+        fontFamily: T.mono, fontSize: 28, color: '#fff', letterSpacing: 2}}>
+        {tc}{k !== undefined && n ? <span style={{marginLeft: 6, padding: '2px 12px', borderRadius: 14, background: '#fff', color: '#09090C', fontWeight: 700}}>{k + 1}/{n}</span> : null}
+      </div>
+      {/* focus box: snaps onto the subject, then holds */}
+      <div style={{position: 'absolute', left: 540 - fs / 2, top: 600 - fs / 2, width: fs, height: fs, opacity: interpolate(t, [0, 0.15, 1.2, 1.6], [0, 0.9, 0.9, 0.35], clamp)}}>
+        {[[0, 0], [1, 0], [0, 1], [1, 1]].map(([a, b], i) => (
+          <div key={i} style={{position: 'absolute', left: a ? undefined : 0, right: a ? 0 : undefined, top: b ? undefined : 0, bottom: b ? 0 : undefined, width: 46, height: 46,
+            borderLeft: a ? 'none' : '5px solid #FFD54A', borderRight: a ? '5px solid #FFD54A' : 'none', borderTop: b ? 'none' : '5px solid #FFD54A', borderBottom: b ? '5px solid #FFD54A' : 'none'}} />
+        ))}
+        <div style={{position: 'absolute', left: fs / 2 - 14, top: fs / 2 - 2, width: 28, height: 4, background: '#FFD54A'}} />
+        <div style={{position: 'absolute', left: fs / 2 - 2, top: fs / 2 - 14, width: 4, height: 28, background: '#FFD54A'}} />
+      </div>
+    </>
+  );
+};
+/** Mirrored live waveform in a glass pill, with a pulsing mic disc. */
+const MirrorWave: React.FC<{src: string; local: number}> = ({src, local}) => {
+  const audio = useAudioData(staticFile(src));
+  const N = 34;
+  const spec = audio && local >= 0 ? visualizeAudio({fps: FPS, frame: local, audioData: audio, numberOfSamples: 64}) : null;
+  const level = spec ? Math.min(1, spec.slice(0, 16).reduce((a, b) => a + b, 0) * 3) : 0;
+  return (
+    <div style={{position: 'absolute', left: 64, top: 1300, width: 856, height: 124, borderRadius: 62, background: 'rgba(12,13,17,0.6)', border: '2px solid rgba(255,255,255,0.18)',
+      backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', padding: '0 34px 0 18px', gap: 22, boxShadow: '0 20px 50px rgba(0,0,0,0.45)'}}>
+      <div style={{width: 88, height: 88, borderRadius: 44, background: T.red, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+        boxShadow: `0 0 0 ${6 + level * 18}px rgba(217,63,63,0.28)`, transform: `scale(${1 + level * 0.08})`}}>
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="#fff"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11z" /></svg>
+      </div>
+      <div style={{flex: 1, height: 96, display: 'flex', alignItems: 'center', gap: 7}}>
+        {Array.from({length: N}, (_, i) => {
+          const c = Math.abs(i - (N - 1) / 2) / ((N - 1) / 2);
+          const v = spec ? spec[Math.floor(c * 30)] : 0;
+          const h = Math.min(1, 0.08 + v * 22 * (1.1 - c * 0.5));
+          return <div key={i} style={{flex: 1, height: 96 * h, borderRadius: 8, background: 'linear-gradient(180deg, #FFFFFF 0%, #FFC2C2 50%, #FFFFFF 100%)', opacity: 0.5 + h * 0.5}} />;
+        })}
+      </div>
+    </div>
+  );
+};
+/** Speaker tag chip (accent) for the pop skin. */
+const SpeakerChip: React.FC<{text: string; p: number}> = ({text, p}) => (
+  <div style={{position: 'absolute', left: 64, top: 862, display: 'flex', alignItems: 'center', gap: 12, padding: '10px 26px 12px', borderRadius: 34, background: T.red,
+    fontFamily: T.sans, fontWeight: 800, fontSize: 40, color: '#fff', letterSpacing: 2, textTransform: 'uppercase', boxShadow: '0 10px 30px rgba(217,63,63,0.45)',
+    transformOrigin: '0% 50%', transform: `scale(${interpolate(p, [0, 1], [0.4, 1])}) rotate(${(1 - p) * -10}deg)`, opacity: Math.min(1, p * 2)}}>
+    <div style={{width: 14, height: 14, borderRadius: 7, background: '#fff'}} />{text}
+  </div>
+);
+/** Title: line 1 white with a hard 3D shadow, line 2 as a tilted white sticker. */
+const PopTitleLine: React.FC<{line: string; i: number; tp: number; slam: boolean}> = ({line, i, tp, slam}) => {
+  const sticker = i === 1;
+  return (
+    <div style={{position: 'absolute', left: sticker ? 56 : 60, top: 955 + i * 150, fontFamily: T.sans, fontWeight: 800, fontSize: 138, lineHeight: 1, letterSpacing: -3, whiteSpace: 'nowrap',
+      transformOrigin: '0% 60%', opacity: Math.min(1, tp * 2),
+      transform: `scale(${interpolate(tp, [0, 1], [slam ? 2.6 : 1.6, 1])}) rotate(${sticker ? -3 + (1 - tp) * 10 : (1 - tp) * -6}deg) translateY(${(1 - tp) * 30}px)`,
+      ...(sticker
+        ? {color: '#09090C', background: '#fff', padding: '8px 26px 18px', borderRadius: 20, boxShadow: '10px 12px 0 rgba(9,9,12,0.85)'}
+        : {color: '#fff', textShadow: '0 6px 0 #09090C, 5px 11px 0 rgba(217,63,63,0.95), 0 20px 40px rgba(0,0,0,0.5)'})}}>{line}</div>
+  );
+};
+/** Karaoke caption: spoken words pop in, the active word sits on a red chip. */
+const PopCaption: React.FC<{words: Word[]; lt: number; frame: number; pre: number; top?: number}> = ({words, lt, frame, pre, top = 1446}) => (
+  <div style={{position: 'absolute', left: 64, width: 880, top, fontFamily: T.sans, fontWeight: 800, fontSize: 54, lineHeight: 1.3, color: '#fff',
+    textShadow: '0 3px 0 #09090C, 0 4px 16px rgba(0,0,0,0.9)'}}>
+    {words.map((w, i) => {
+      const on = lt >= w.s && lt < (words[i + 1] ? words[i + 1].s : w.e + 0.5);
+      const wp = spring({frame: frame - sec(pre + w.s), fps: FPS, config: {damping: 11, stiffness: 260, mass: 0.5}});
+      return <span key={i} style={{display: 'inline-block', marginRight: 10, padding: '0 10px 4px', borderRadius: 12, opacity: lt >= w.s ? 1 : 0.32,
+        background: on ? T.red : 'transparent', textShadow: on ? 'none' : undefined, transform: `scale(${on ? interpolate(wp, [0, 1], [1.25, 1.06]) : 1}) rotate(${on ? -2 : 0}deg)`}}>{w.t}</span>;
+    })}
+  </div>
+);
+
+const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; frames: number; style: string; pre: number; t0?: number}> = ({ch, k, n, id, frames, style, pre, t0 = 0}) => {
   const frame = useCurrentFrame();
+  const pop = React.useContext(SkinCtx) === 'pop';
   const t = frame / FPS;
   const isPrompt = style === 'prompt';
   const R = pre - 0.05;                       // reveal moment
@@ -95,11 +198,11 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(9,9,12,0.55) 0%, rgba(9,9,12,0) 22%, rgba(9,9,12,0) 48%, rgba(9,9,12,0.88) 100%)'}} />
       <AbsoluteFill style={{background: '#F9FAFB', opacity: interpolate(t, [R - 0.03, R, R + 0.22], [0, 0.75, 0], clamp)}} />
       {t < 0.2 && <AbsoluteFill style={{background: '#09090C', opacity: interpolate(t, [0, 0.2], [0.9, 0], clamp)}} />}
-      <Corners />
+      {pop ? <Hud t0={t0} k={k} n={n} /> : <><Corners />
       <div style={{position: 'absolute', right: 70, top: 250, fontFamily: T.mono, fontSize: 30, color: T.text, letterSpacing: 2}}>
         {String(k + 1).padStart(2, '0')} <span style={{color: T.sub}}>/ {String(n).padStart(2, '0')}</span>
       </div>
-      <div style={{position: 'absolute', left: 70, top: 250, fontFamily: T.sans, fontWeight: 800, fontSize: 34, color: T.text, letterSpacing: 2}}>ITERA</div>
+      <div style={{position: 'absolute', left: 70, top: 250, fontFamily: T.sans, fontWeight: 800, fontSize: 34, color: T.text, letterSpacing: 2}}>ITERA</div></>}
 
       {/* Before beat: prompt bar, typing, cursor click */}
       {style === 'wipe' && rev > 0 && rev < 1 && <div style={{position: 'absolute', left: `${rev * 100}%`, top: 0, bottom: 0, width: 8, background: T.red, boxShadow: `0 0 40px ${T.red}`}} />}
@@ -130,8 +233,8 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
       {/* After beat: stacked title, accent, live waveform, clean caption */}
       {t >= R && (
         <>
-          <div style={{position: 'absolute', left: 64, top: 930, fontFamily: T.sans, fontWeight: 600, fontStyle: 'italic', fontSize: 50, color: T.red,
-            opacity: Math.min(1, titleP(0) * 2), transform: `translateX(${(1 - titleP(0)) * -40}px)`}}>{ch.accent}</div>
+          {pop ? (ch.accent ? <SpeakerChip text={ch.accent} p={titleP(0)} /> : null) : <div style={{position: 'absolute', left: 64, top: 930, fontFamily: T.sans, fontWeight: 600, fontStyle: 'italic', fontSize: 50, color: T.red,
+            opacity: Math.min(1, titleP(0) * 2), transform: `translateX(${(1 - titleP(0)) * -40}px)`}}>{ch.accent}</div>}
           {style === 'kinetic' && (() => {
             // Kinetic type: the spoken words themselves land big, one at a time; the title sits small above.
             const lt = t - pre; const idx = ch.words.reduce((a, w, i) => (lt >= w.s ? i : a), -1);
@@ -150,6 +253,7 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
             const tp = titleP(i);
             const num = style === 'count' && i === 0 ? line0.match(/^(\d[\d.,]*)(%?)$/) : null;
             const line = num ? `${Math.round(Number(num[1].replace(/[.,]/g, '')) * interpolate(t, [R, R + 0.7], [0, 1], clamp))}${num[2]}` : line0;
+            if (pop) return <PopTitleLine key={i} line={line} i={i} tp={tp} slam={style === 'slam'} />;
             return (
               <div key={i} style={{position: 'absolute', left: 60, top: 990 + i * 138, fontFamily: T.sans, fontWeight: 800, fontSize: 142, lineHeight: 1, letterSpacing: -4, whiteSpace: 'nowrap',
                 transformOrigin: '0% 60%', transform: `scale(${interpolate(tp, [0, 1], [style === 'slam' ? 2.8 : 1.5, 1])}) rotate(${style === 'slam' ? (1 - tp) * (i ? 8 : -8) : 0}deg) translateY(${(1 - tp) * 30}px)`, opacity: Math.min(1, tp * 2), fontVariantNumeric: 'tabular-nums'}}>
@@ -159,8 +263,9 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
             );
           })}
           {style === 'count' && <div style={{position: 'absolute', left: 64, top: 1276, height: 10, borderRadius: 5, background: T.red, width: 856 * interpolate(t, [R, R + 0.7], [0, 1], clamp)}} />}
-          {style !== 'count' && <Wave src={`shorts/${id}/v${k}.wav`} local={frame - sec(pre)} />}
-          {style !== 'kinetic' && <div style={{position: 'absolute', left: 64, width: 856, top: 1388, fontFamily: T.sans, fontWeight: 700, fontSize: 54, lineHeight: 1.25, color: T.text,
+          {style !== 'count' && (pop ? <MirrorWave src={`shorts/${id}/v${k}.wav`} local={frame - sec(pre)} /> : <Wave src={`shorts/${id}/v${k}.wav`} local={frame - sec(pre)} />)}
+          {pop && style !== 'kinetic' && <PopCaption words={ch.words} lt={t - pre} frame={frame} pre={pre} />}
+          {!pop && style !== 'kinetic' && <div style={{position: 'absolute', left: 64, width: 856, top: 1388, fontFamily: T.sans, fontWeight: 700, fontSize: 54, lineHeight: 1.25, color: T.text,
             textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>
             {ch.words.map((w, i) => { const on = t - pre >= w.s && t - pre < (ch.words[i + 1] ? ch.words[i + 1].s : w.e + 0.5); return <span key={i} style={{opacity: t - pre >= w.s ? 1 : 0.38, marginRight: 8, padding: '0 8px', borderRadius: 10, display: 'inline-block', background: on ? T.text : 'transparent', color: on ? '#09090C' : T.text, textShadow: on ? 'none' : undefined}}>{w.t}</span>; })}
           </div>}
@@ -173,13 +278,14 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
 /** Opening hook: the claim is fully readable on frame 0 (no fade-in), over moving footage, with the narrator line. */
 const HookView: React.FC<{hook: Hook; id: string; frames: number}> = ({hook, id, frames}) => {
   const frame = useCurrentFrame();
+  const pop = React.useContext(SkinCtx) === 'pop';
   const zoom = interpolate(frame, [0, frames], [1.2, 1.05], clamp);
   return (
     <AbsoluteFill style={{background: T.bg}}>
       <OffthreadVideo src={staticFile(`shorts/${id}/fh.mp4`)} muted style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zoom})`, filter: 'saturate(1.15) contrast(1.1) brightness(0.75)'}} />
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(9,9,12,0.6) 0%, rgba(9,9,12,0.15) 35%, rgba(9,9,12,0.8) 100%)'}} />
-      <Corners />
-      <div style={{position: 'absolute', left: 70, top: 250, fontFamily: T.sans, fontWeight: 800, fontSize: 34, color: T.text, letterSpacing: 2}}>ITERA</div>
+      {pop ? <Hud t0={0} /> : <><Corners />
+      <div style={{position: 'absolute', left: 70, top: 250, fontFamily: T.sans, fontWeight: 800, fontSize: 34, color: T.text, letterSpacing: 2}}>ITERA</div></>}
       {hook.lines.slice(0, 3).map((line, i) => {
         const tp = i === 0 ? 1 : spring({frame: frame - i * 9, fps: FPS, config: {damping: 9, stiffness: 180, mass: 0.7}});
         const punch = i === 0 ? 1 + 0.08 * Math.exp(-frame / 3) : interpolate(tp, [0, 1], [1.6, 1]);
@@ -188,9 +294,9 @@ const HookView: React.FC<{hook: Hook; id: string; frames: number}> = ({hook, id,
           color: last ? '#09090C' : T.text, background: last ? T.text : 'transparent', padding: last ? '6px 22px 14px' : 0, borderRadius: 14, marginLeft: last ? -4 : 0,
           transformOrigin: '0% 50%', transform: `scale(${punch}) rotate(${last ? -2 : 0}deg)`, opacity: Math.min(1, tp * 2), textShadow: last ? 'none' : '0 10px 40px rgba(0,0,0,0.6)'}}>{line}</div>;
       })}
-      <div style={{position: 'absolute', left: 64, width: 900, top: 1392, fontFamily: T.sans, fontWeight: 600, fontSize: 46, lineHeight: 1.2, color: T.text, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>
+      {pop ? <PopCaption words={hook.words} lt={frame / FPS - 0.1} frame={frame} pre={0.1} top={1392} /> : <div style={{position: 'absolute', left: 64, width: 900, top: 1392, fontFamily: T.sans, fontWeight: 600, fontSize: 46, lineHeight: 1.2, color: T.text, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>
         {hook.words.map((w, i) => <span key={i} style={{opacity: frame / FPS - 0.1 >= w.s ? 1 : 0.38, marginRight: 12, display: 'inline-block'}}>{w.t}</span>)}
-      </div>
+      </div>}
     </AbsoluteFill>
   );
 };
@@ -218,13 +324,13 @@ export const Reel: React.FC<ReelProps> = (p) => {
   const {starts, tEnd, hookDur, total} = reelTimeline(p);
   const voiceAt = (x: number) => p.chapters.some((ch, k) => x >= starts[k] + preOf(ch, k) - 0.1 && x < starts[k] + preOf(ch, k) + ch.voiceDur + 0.1) || x < hookDur || (!!p.endVoiceDur && x >= tEnd + END_VOICE_AT - 0.1);
   return (
-    <AbsoluteFill style={{background: T.bg}}>
+    <SkinCtx.Provider value={p.skin ?? 'classic'}><AbsoluteFill style={{background: T.bg}}>
       {p.hook && <Sequence durationInFrames={sec(hookDur)}><HookView hook={p.hook} id={p.id} frames={sec(hookDur)} /></Sequence>}
       {p.hook && <Sequence from={3}><Audio src={staticFile(`shorts/${p.id}/vh.wav`)} /></Sequence>}
       {p.hook && <Fx at={0} name="impact" volume={0.8} />}
       {p.chapters.map((ch, k) => {
         const frames = sec(preOf(ch, k) + ch.voiceDur + TAIL);
-        return <Sequence key={k} from={sec(starts[k])} durationInFrames={frames}><ChapterView ch={ch} k={k} n={p.chapters.length} id={p.id} frames={frames} style={styleOf(ch, k)} pre={preOf(ch, k)} /></Sequence>;
+        return <Sequence key={k} from={sec(starts[k])} durationInFrames={frames}><ChapterView ch={ch} k={k} n={p.chapters.length} id={p.id} frames={frames} style={styleOf(ch, k)} pre={preOf(ch, k)} t0={starts[k]} /></Sequence>;
       })}
       <Sequence from={sec(tEnd)}><EndCard lines={p.endLines} /></Sequence>
       {p.endVoiceDur && <Sequence from={sec(tEnd + END_VOICE_AT)}><Audio src={staticFile(`shorts/${p.id}/ve.wav`)} /></Sequence>}
@@ -241,6 +347,6 @@ export const Reel: React.FC<ReelProps> = (p) => {
       ))}
       <Fx at={tEnd - 0.1} name="whoosh" volume={0.6} />
       <Fx at={tEnd + 0.25} name="impact" volume={0.7} />
-    </AbsoluteFill>
+    </AbsoluteFill></SkinCtx.Provider>
   );
 };
