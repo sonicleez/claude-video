@@ -162,7 +162,7 @@ const PopCaption: React.FC<{words: Word[]; lt: number; frame: number; pre: numbe
 
 const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; frames: number; style: string; pre: number; t0?: number}> = ({ch, k, n, id, frames, style, pre, t0 = 0}) => {
   const frame = useCurrentFrame();
-  const skin = React.useContext(SkinCtx); const pop = skin.startsWith('pop'); const clean = skin === 'pop-clean';
+  const skin = React.useContext(SkinCtx); const pop = skin.startsWith('pop'); const plain = skin === 'pop-plain'; const clean = skin === 'pop-clean' || plain;
   const t = frame / FPS;
   const isPrompt = style === 'prompt';
   const R = pre - 0.05;                       // reveal moment
@@ -198,7 +198,7 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(9,9,12,0.55) 0%, rgba(9,9,12,0) 22%, rgba(9,9,12,0) 48%, rgba(9,9,12,0.88) 100%)'}} />
       <AbsoluteFill style={{background: '#F9FAFB', opacity: interpolate(t, [R - 0.03, R, R + 0.22], [0, 0.75, 0], clamp)}} />
       {t < 0.2 && <AbsoluteFill style={{background: '#09090C', opacity: interpolate(t, [0, 0.2], [0.9, 0], clamp)}} />}
-      {pop ? <Hud t0={t0} k={k} n={n} focus={!clean} /> : <><Corners />
+      {plain ? null : pop ? <Hud t0={t0} k={k} n={n} focus={!clean} /> : <><Corners />
       <div style={{position: 'absolute', right: 70, top: 250, fontFamily: T.mono, fontSize: 30, color: T.text, letterSpacing: 2}}>
         {String(k + 1).padStart(2, '0')} <span style={{color: T.sub}}>/ {String(n).padStart(2, '0')}</span>
       </div>
@@ -249,7 +249,7 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
               </>
             );
           })()}
-          {style !== 'kinetic' && ch.title.slice(0, 2).map((line0, i) => {
+          {style !== 'kinetic' && !plain && ch.title.slice(0, 2).map((line0, i) => {
             const tp = titleP(i);
             const num = style === 'count' && i === 0 ? line0.match(/^(\d[\d.,]*)(%?)$/) : null;
             const line = num ? `${Math.round(Number(num[1].replace(/[.,]/g, '')) * interpolate(t, [R, R + 0.7], [0, 1], clamp))}${num[2]}` : line0;
@@ -278,13 +278,13 @@ const ChapterView: React.FC<{ch: Chapter; k: number; n: number; id: string; fram
 /** Opening hook: the claim is fully readable on frame 0 (no fade-in), over moving footage, with the narrator line. */
 const HookView: React.FC<{hook: Hook; id: string; frames: number}> = ({hook, id, frames}) => {
   const frame = useCurrentFrame();
-  const skin = React.useContext(SkinCtx); const pop = skin.startsWith('pop'); const clean = skin === 'pop-clean';
+  const skin = React.useContext(SkinCtx); const pop = skin.startsWith('pop'); const plain = skin === 'pop-plain'; const clean = skin === 'pop-clean' || plain;
   const zoom = interpolate(frame, [0, frames], [1.2, 1.05], clamp);
   return (
     <AbsoluteFill style={{background: T.bg}}>
       <OffthreadVideo src={staticFile(`shorts/${id}/fh.mp4`)} muted style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zoom})`, filter: 'saturate(1.15) contrast(1.1) brightness(0.75)'}} />
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(9,9,12,0.6) 0%, rgba(9,9,12,0.15) 35%, rgba(9,9,12,0.8) 100%)'}} />
-      {pop ? <Hud t0={0} focus={!clean} /> : <><Corners />
+      {plain ? null : pop ? <Hud t0={0} focus={!clean} /> : <><Corners />
       <div style={{position: 'absolute', left: 70, top: 250, fontFamily: T.sans, fontWeight: 800, fontSize: 34, color: T.text, letterSpacing: 2}}>ITERA</div></>}
       {hook.lines.slice(0, 3).map((line, i) => {
         const tp = i === 0 ? 1 : spring({frame: frame - i * 9, fps: FPS, config: {damping: 9, stiffness: 180, mass: 0.7}});
