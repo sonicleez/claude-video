@@ -176,7 +176,7 @@ const HookView: React.FC<{hook: Hook; id: string; frames: number}> = ({hook, id,
   const zoom = interpolate(frame, [0, frames], [1.2, 1.05], clamp);
   return (
     <AbsoluteFill style={{background: T.bg}}>
-      <OffthreadVideo src={staticFile(`shorts/${id}/fh.mp4`)} muted style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zoom})`, filter: 'saturate(1.1) contrast(1.1) brightness(0.55)'}} />
+      <OffthreadVideo src={staticFile(`shorts/${id}/fh.mp4`)} muted style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zoom})`, filter: 'saturate(1.15) contrast(1.1) brightness(0.75)'}} />
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(9,9,12,0.6) 0%, rgba(9,9,12,0.15) 35%, rgba(9,9,12,0.8) 100%)'}} />
       <Corners />
       <div style={{position: 'absolute', left: 70, top: 250, fontFamily: T.sans, fontWeight: 800, fontSize: 34, color: T.text, letterSpacing: 2}}>ITERA</div>

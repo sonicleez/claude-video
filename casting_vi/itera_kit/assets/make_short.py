@@ -13,6 +13,10 @@ PRESET = {
  "an_human": ("elevenlabs", "zIusdI28yOZPwIBus0aI", "eleven_v3", "vi", {"stability": 0.0, "speed": 1.0}),
  # Softer, calmer Ân (user 2026-11-13: "dịu dàng hơn"): higher stability, slightly slower; write calm scripts, use [softly].
  "an_soft": ("elevenlabs", "zIusdI28yOZPwIBus0aI", "eleven_v3", "vi", {"stability": 0.5, "similarity_boost": 0.8, "style": 0.0, "speed": 0.92}),
+ # Warm, gentle cast for dialogue skits (user 2026-11-13: "giống người thật, nhẹ nhàng tình cảm hơn").
+ "tram_soft": ("elevenlabs", "6Xq32rHt6oAu98TBDKfr", "eleven_v3", "vi", {"stability": 0.5, "similarity_boost": 0.8, "style": 0.0, "speed": 0.94}),
+ "camhong_soft": ("elevenlabs", "x4KAhuXs2G8TfK9Zr7Q4", "eleven_v3", "vi", {"stability": 0.5, "similarity_boost": 0.8, "style": 0.0, "speed": 0.94}),
+ "annhien_soft": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "similarity_boost": 0.8, "style": 0.0, "speed": 0.94}),
  "annhien": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "tram": ("elevenlabs", "6Xq32rHt6oAu98TBDKfr", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "camhong": ("elevenlabs", "x4KAhuXs2G8TfK9Zr7Q4", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),

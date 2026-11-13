@@ -10,11 +10,11 @@
    "4 GIỌNG",
    "1 NỒI CANH"
   ],
-  "text": "[laughs] Bốn người, một cái bếp... và một nồi canh chua.",
-  "preset": "an_human",
+  "text": "[softly] Chiều nay... cả nhà mình nấu canh chua nha.",
+  "preset": "an_soft",
   "footage": {
-   "mixkit": 39535,
-   "start": 2
+   "mixkit": 9286,
+   "start": 3
   }
  },
  "chapters": [
@@ -23,28 +23,28 @@
    "button": "Nấu",
    "title": [
     "NƯỚC SÔI",
-    "RỒI NHA"
+    "RỒI NÈ"
    ],
    "accent": "giọng số 1",
-   "preset": "an_human",
-   "text": "Nước sôi rồi nha! Ai rửa rau giùm cái coi?",
+   "preset": "an_soft",
+   "text": "[warmly] Nước sôi rồi nè... ai rửa rau giùm mình với?",
    "footage": {
-    "mixkit": 24677,
-    "start": 3
+    "mixkit": 29953,
+    "start": 4
    }
   },
   {
    "title": [
     "CÁ ĐÂU",
-    "RỒI?"
+    "RỒI TA?"
    ],
    "accent": "giọng số 2",
-   "preset": "tram",
+   "preset": "tram_soft",
    "style": "wipe",
-   "text": "Đậu bắp rửa xong rồi nè. Mà khoan... cá đâu rồi?",
+   "text": "[softly] Đậu bắp rửa xong rồi á. Mà khoan... cá đâu rồi ta?",
    "footage": {
-    "mixkit": 15510,
-    "start": 5
+    "mixkit": 22817,
+    "start": 3
    },
    "prompt": ""
   },
@@ -54,12 +54,12 @@
     "RỒI"
    ],
    "accent": "giọng số 3",
-   "preset": "camhong",
+   "preset": "camhong_soft",
    "style": "slam",
-   "text": "Cá hả? [laughs] Con mèo nó ăn mất tiêu rồi.",
+   "text": "[chuckles] Cá hả... con mèo nó ăn mất tiêu rồi.",
    "footage": {
     "mixkit": 31355,
-    "start": 3
+    "start": 4
    },
    "prompt": ""
   },
@@ -69,12 +69,12 @@
     "CHAY"
    ],
    "accent": "giọng số 4",
-   "preset": "minimax_south",
+   "preset": "annhien_soft",
    "style": "kinetic",
-   "text": "Thôi khỏi cá, nấu canh chua chay luôn đi!",
+   "text": "[laughs softly] Thôi kệ đi... mình nấu canh chua chay, cũng ngon mà.",
    "footage": {
-    "mixkit": 26367,
-    "start": 6
+    "mixkit": 12158,
+    "start": 3
    },
    "prompt": ""
   },
@@ -84,19 +84,19 @@
     "NGƯỜI?"
    ],
    "accent": "đố bạn",
-   "preset": "an_human",
+   "preset": "an_soft",
    "style": "slam",
-   "text": "Bốn giọng vừa rồi, giọng nào là AI, giọng nào là người thật? Comment số nha!",
+   "text": "[softly] Bốn giọng vừa rồi... giọng nào là AI, giọng nào là người thật? Comment số nha.",
    "footage": {
-    "mixkit": 22022,
-    "start": 2
+    "mixkit": 33206,
+    "start": 4
    },
    "prompt": ""
   }
  ],
  "youtube": {
   "title": "Giọng AI tiếng Việt nấu canh chua: đoán giọng nào là AI? #shorts",
-  "description": "Thử tai giọng AI tiếng Việt: bốn giọng trò chuyện trong bếp nấu canh chua, và con mèo ăn mất con cá.\n\nBạn nghĩ giọng số mấy là AI, giọng số mấy là người thật? Comment số trước khi xem đáp án ở bình luận ghim! Giọng đọc làm bằng ITERA.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #nauan #shorts",
+  "description": "Thử tai giọng AI tiếng Việt: bốn giọng trò chuyện nhẹ nhàng trong bếp nấu canh chua, và con mèo ăn mất con cá.\n\nBạn nghĩ giọng số mấy là AI, giọng số mấy là người thật? Comment số trước khi xem đáp án ở bình luận ghim! Giọng đọc làm bằng ITERA.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #nauan #shorts",
   "tags": [
    "giọng AI tiếng Việt",
    "thử tai giọng AI",
