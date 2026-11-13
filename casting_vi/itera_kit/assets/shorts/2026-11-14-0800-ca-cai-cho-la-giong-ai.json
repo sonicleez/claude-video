@@ -1,0 +1,105 @@
+{
+ "id": "2026-11-14-0800-ca-cai-cho-la-giong-ai",
+ "template": "reel",
+ "endLines": [
+  "Cả cái chợ",
+  "1 TÀI KHOẢN"
+ ],
+ "hook": {
+  "lines": [
+   "KHÔNG AI",
+   "THU ÂM",
+   "MÀ CẢ CHỢ"
+  ],
+  "text": "Không ai thu âm câu nào. Vậy mà cả cái chợ này... đều có giọng.",
+  "footage": {
+   "mixkit": 982,
+   "start": 3
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Tạo giọng cho cả cái chợ",
+   "button": "Tạo",
+   "title": [
+    "CÔ",
+    "BÁN TRÁI"
+   ],
+   "accent": "giọng 1",
+   "preset": "an_human",
+   "text": "Trái cây mới về nè, ngọt lịm luôn! Mua đi em, chị bớt cho.",
+   "footage": {
+    "mixkit": 32318,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KHÁCH",
+    "TRẢ GIÁ"
+   ],
+   "accent": "giọng 2",
+   "preset": "tram",
+   "style": "wipe",
+   "text": "Bớt nhiêu chị? Năm chục hai ký được hông?",
+   "footage": {
+    "mixkit": 982,
+    "start": 9
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "CHÚ",
+    "BÁN BÁNH"
+   ],
+   "accent": "giọng 3",
+   "preset": "minimax_south",
+   "style": "slam",
+   "text": "Mua trái cây xong ghé chú, bánh mới nướng nóng hổi nè!",
+   "footage": {
+    "mixkit": 32558,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "CẢ CHỢ",
+    "LÀ AI"
+   ],
+   "accent": "bất ngờ chưa",
+   "style": "kinetic",
+   "text": "Cả cái chợ này, đều là giọng AI hết đó. Bạn thích giọng nào nhất?",
+   "footage": {
+    "mixkit": 32318,
+    "start": 9
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Cả cái chợ này đều là giọng AI: bạn nghe ra không? #shorts",
+  "description": "Tiểu phẩm 20 giây: cô bán trái cây, khách trả giá, chú bán bánh. Không ai thu âm, cả 3 giọng đều là giọng AI tiếng Việt.\n\nCả 3 giọng được tạo trên ITERA, hợp làm video bán hàng, quảng cáo cửa hàng, tiểu phẩm nhiều nhân vật mà không cần thuê người đọc. Bạn thích giọng số mấy: 1, 2 hay 3?\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #banhang #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "giọng bán hàng",
+   "video bán hàng",
+   "quảng cáo cửa hàng",
+   "tiểu phẩm AI",
+   "giọng nhiều nhân vật",
+   "lồng tiếng AI"
+  ],
+  "localizations": {
+   "en": {
+    "title": "This whole market is AI voices: can you tell? #shorts",
+    "description": "A 20-second skit: a fruit seller, a haggling customer, a baker. Nobody recorded a line; all three are Vietnamese AI voices made with ITERA.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn thích giọng số mấy: cô bán trái (1), khách trả giá (2) hay chú bán bánh (3)? 👇 Tạo giọng cho cửa hàng của bạn tại: https://itera102.space"
+ }
+}
