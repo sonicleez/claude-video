@@ -10,7 +10,7 @@
    "KHÔNG CẦN",
    "THU ÂM"
   ],
-  "text": "[exhales] Không cần thu âm... mà video vẫn có giọng đọc tiếng Việt nè.",
+  "text": "[softly] Không cần thu âm... video của bạn vẫn có giọng đọc tiếng Việt.",
   "footage": {
    "mixkit": 24621,
    "start": 1
@@ -25,7 +25,7 @@
     "KỊCH BẢN"
    ],
    "accent": "bước 1",
-   "text": "Với ITERA á, dán kịch bản vô, chọn giọng, vậy là xong.",
+   "text": "Với ITERA, bạn chỉ cần dán kịch bản, chọn giọng, vậy là xong.",
    "footage": {
     "mixkit": 4763,
     "start": 0
@@ -38,7 +38,7 @@
    ],
    "accent": "video ngắn",
    "style": "slam",
-   "text": "Review sản phẩm cho TikTok, Reels, Shorts, không cần lộ mặt.",
+   "text": "Review sản phẩm cho TikTok, Reels, Shorts, mà không cần lộ mặt.",
    "footage": {
     "mixkit": 50405,
     "start": 4
@@ -52,7 +52,7 @@
    ],
    "accent": "youtube",
    "style": "kinetic",
-   "text": "Kể chuyện, thuyết minh cho YouTube nè.",
+   "text": "Kể chuyện, thuyết minh cho YouTube.",
    "footage": {
     "mixkit": 49878,
     "start": 3
@@ -66,7 +66,7 @@
    ],
    "accent": "facebook · zalo",
    "style": "wipe",
-   "text": "Quảng cáo cho quán, cho shop, đăng Facebook, Zalo đều được.",
+   "text": "Quảng cáo cho quán, cho shop, đăng Facebook hay Zalo đều được.",
    "footage": {
     "mixkit": 817,
     "start": 2
@@ -80,7 +80,7 @@
    ],
    "accent": "giáo dục",
    "style": "slam",
-   "text": "Bài giảng online luôn. [laughs] Một kịch bản, nhiều giọng để chọn.",
+   "text": "Cả bài giảng online nữa. Một kịch bản, nhiều giọng để chọn.",
    "footage": {
     "mixkit": 8895,
     "start": 1
@@ -113,5 +113,9 @@
    }
   },
   "pinned_comment": "Bạn định làm giọng cho loại video nào: review, kể chuyện hay quảng cáo? 👇 Thử ITERA: https://itera102.space"
+ },
+ "narrator": "an_soft",
+ "end": {
+  "text": "[softly] ITERA. Một kịch bản... mọi kênh."
  }
 }

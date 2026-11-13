@@ -11,7 +11,7 @@ import {FPS, Fx, T, Word, sec} from './brand';
 
 export type Chapter = {prompt: string; button: string; title: string[]; accent: string; voiceDur: number; words: Word[]; style?: string};
 export type Hook = {lines: string[]; voiceDur: number; words: Word[]};
-export type ReelProps = {id: string; tag: string; hook?: Hook; chapters: Chapter[]; endLines: [string, string]};
+export type ReelProps = {id: string; tag: string; hook?: Hook; chapters: Chapter[]; endLines: [string, string]; endVoiceDur?: number};
 
 const PRE = 1.15;     // signature before-beat (type, click, generate) — used ONCE, on the first chapter
 const QUICK_PRE = 0.3; // every other chapter cuts straight in
@@ -21,11 +21,13 @@ export const styleOf = (ch: Chapter, k: number): string =>
 const preOf = (ch: Chapter, k: number) => (styleOf(ch, k) === 'prompt' ? PRE : QUICK_PRE);
 const TAIL = 0.45;
 const END = 1.7;
+const END_VOICE_AT = 0.45; // end-card tagline read aloud once the logo has landed
+const endDur = (p: ReelProps) => (p.endVoiceDur ? Math.max(END, END_VOICE_AT + p.endVoiceDur + 0.7) : END);
 export const reelTimeline = (p: ReelProps) => {
   const hookDur = p.hook ? Math.max(1.6, p.hook.voiceDur + 0.3) : 0;
   let c = hookDur;
   const starts = p.chapters.map((ch, k) => { const s = c; c += preOf(ch, k) + ch.voiceDur + TAIL; return s; });
-  return {starts, hookDur, tEnd: c, total: c + END};
+  return {starts, hookDur, tEnd: c, total: c + endDur(p)};
 };
 export const reelDuration = (p: ReelProps) => Math.max(30, sec(reelTimeline(p).total));
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -213,8 +215,8 @@ const EndCard: React.FC<{lines: [string, string]}> = ({lines}) => {
 };
 
 export const Reel: React.FC<ReelProps> = (p) => {
-  const {starts, tEnd, hookDur} = reelTimeline(p);
-  const voiceAt = (x: number) => p.chapters.some((ch, k) => x >= starts[k] + preOf(ch, k) - 0.1 && x < starts[k] + preOf(ch, k) + ch.voiceDur + 0.1) || x < hookDur;
+  const {starts, tEnd, hookDur, total} = reelTimeline(p);
+  const voiceAt = (x: number) => p.chapters.some((ch, k) => x >= starts[k] + preOf(ch, k) - 0.1 && x < starts[k] + preOf(ch, k) + ch.voiceDur + 0.1) || x < hookDur || (!!p.endVoiceDur && x >= tEnd + END_VOICE_AT - 0.1);
   return (
     <AbsoluteFill style={{background: T.bg}}>
       {p.hook && <Sequence durationInFrames={sec(hookDur)}><HookView hook={p.hook} id={p.id} frames={sec(hookDur)} /></Sequence>}
@@ -225,8 +227,9 @@ export const Reel: React.FC<ReelProps> = (p) => {
         return <Sequence key={k} from={sec(starts[k])} durationInFrames={frames}><ChapterView ch={ch} k={k} n={p.chapters.length} id={p.id} frames={frames} style={styleOf(ch, k)} pre={preOf(ch, k)} /></Sequence>;
       })}
       <Sequence from={sec(tEnd)}><EndCard lines={p.endLines} /></Sequence>
+      {p.endVoiceDur && <Sequence from={sec(tEnd + END_VOICE_AT)}><Audio src={staticFile(`shorts/${p.id}/ve.wav`)} /></Sequence>}
 
-      <Audio src={staticFile('fx/bed86.wav')} volume={(f) => { const x = f / FPS; return x >= tEnd + END - 0.3 ? 0 : voiceAt(x) ? 0.16 : 0.42; }} />
+      <Audio src={staticFile('fx/bed86.wav')} volume={(f) => { const x = f / FPS; return x >= total - 0.3 ? 0 : voiceAt(x) ? 0.16 : 0.42; }} />
       {p.chapters.map((ch, k) => (
         <React.Fragment key={k}>
           <Sequence from={sec(starts[k] + preOf(ch, k))}><Audio src={staticFile(`shorts/${p.id}/v${k}.wav`)} /></Sequence>

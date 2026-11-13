@@ -11,6 +11,8 @@ B = "https://api.itera102.space"; K = os.environ["API_Itera"]; UA = "tts-client/
 NARRATOR = "an_human"
 PRESET = {
  "an_human": ("elevenlabs", "zIusdI28yOZPwIBus0aI", "eleven_v3", "vi", {"stability": 0.0, "speed": 1.0}),
+ # Softer, calmer Ân (user 2026-11-13: "dịu dàng hơn"): higher stability, slightly slower; write calm scripts, use [softly].
+ "an_soft": ("elevenlabs", "zIusdI28yOZPwIBus0aI", "eleven_v3", "vi", {"stability": 0.5, "similarity_boost": 0.8, "style": 0.0, "speed": 0.92}),
  "annhien": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "tram": ("elevenlabs", "6Xq32rHt6oAu98TBDKfr", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "camhong": ("elevenlabs", "x4KAhuXs2G8TfK9Zr7Q4", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
