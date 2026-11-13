@@ -1,0 +1,117 @@
+{
+ "id": "itera-gioi-thieu",
+ "template": "reel",
+ "endLines": [
+  "Một kịch bản.",
+  "MỌI KÊNH."
+ ],
+ "hook": {
+  "lines": [
+   "KHÔNG CẦN",
+   "THU ÂM"
+  ],
+  "text": "[exhales] Không cần thu âm... mà video vẫn có giọng đọc tiếng Việt nè.",
+  "footage": {
+   "mixkit": 24621,
+   "start": 1
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Dán kịch bản của bạn",
+   "button": "Tạo giọng",
+   "title": [
+    "DÁN",
+    "KỊCH BẢN"
+   ],
+   "accent": "bước 1",
+   "text": "Với ITERA á, dán kịch bản vô, chọn giọng, vậy là xong.",
+   "footage": {
+    "mixkit": 4763,
+    "start": 0
+   }
+  },
+  {
+   "title": [
+    "TIKTOK",
+    "REELS"
+   ],
+   "accent": "video ngắn",
+   "style": "slam",
+   "text": "Review sản phẩm cho TikTok, Reels, Shorts, không cần lộ mặt.",
+   "footage": {
+    "mixkit": 50405,
+    "start": 4
+   },
+   "prompt": ""
+  },
+  {
+   "title": [
+    "KỂ",
+    "CHUYỆN"
+   ],
+   "accent": "youtube",
+   "style": "kinetic",
+   "text": "Kể chuyện, thuyết minh cho YouTube nè.",
+   "footage": {
+    "mixkit": 49878,
+    "start": 3
+   },
+   "prompt": ""
+  },
+  {
+   "title": [
+    "QUẢNG CÁO",
+    "CỬA HÀNG"
+   ],
+   "accent": "facebook · zalo",
+   "style": "wipe",
+   "text": "Quảng cáo cho quán, cho shop, đăng Facebook, Zalo đều được.",
+   "footage": {
+    "mixkit": 817,
+    "start": 2
+   },
+   "prompt": ""
+  },
+  {
+   "title": [
+    "BÀI GIẢNG",
+    "ONLINE"
+   ],
+   "accent": "giáo dục",
+   "style": "slam",
+   "text": "Bài giảng online luôn. [laughs] Một kịch bản, nhiều giọng để chọn.",
+   "footage": {
+    "mixkit": 8895,
+    "start": 1
+   },
+   "prompt": ""
+  }
+ ],
+ "youtube": {
+  "title": "ITERA: giọng AI tiếng Việt cho video, không cần thu âm #shorts",
+  "description": "ITERA là công cụ tạo giọng AI tiếng Việt (text to speech): dán kịch bản, chọn giọng, tải giọng đọc về cho video.\n\nDùng cho review sản phẩm TikTok/Reels/Shorts, kể chuyện và thuyết minh YouTube, quảng cáo quán và shop trên Facebook, Zalo, bài giảng online. Bạn định làm giọng cho loại video nào? Comment một chữ thôi!\n\nThử tại: https://itera102.space\n\n#giongnoiAI #texttospeech #shorts",
+  "tags": [
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "lồng tiếng AI",
+   "ITERA",
+   "tạo giọng nói AI",
+   "AI voice Vietnamese",
+   "Vietnamese text to speech",
+   "video không lộ mặt",
+   "review sản phẩm",
+   "thuyết minh YouTube",
+   "YouTube Shorts"
+  ],
+  "categoryId": "28",
+  "localizations": {
+   "en": {
+    "title": "ITERA: Vietnamese AI voice for your videos, no recording #shorts",
+    "description": "ITERA turns your Vietnamese script into an AI voice-over for TikTok, Reels, Shorts, YouTube, Facebook and Zalo.\n\nhttps://itera102.space\n\n#AIvoice #texttospeech #shorts"
+   }
+  },
+  "pinned_comment": "Bạn định làm giọng cho loại video nào: review, kể chuyện hay quảng cáo? 👇 Thử ITERA: https://itera102.space"
+ }
+}
