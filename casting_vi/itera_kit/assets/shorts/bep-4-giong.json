@@ -70,7 +70,7 @@
    ],
    "accent": "giọng số 4",
    "preset": "annhien_soft",
-   "style": "kinetic",
+   "style": "wipe",
    "text": "[laughs softly] Thôi kệ đi... mình nấu canh chua chay, cũng ngon mà.",
    "footage": {
     "mixkit": 12158,
@@ -120,5 +120,5 @@
   },
   "pinned_comment": "Đáp án: cả 4 giọng đều là giọng AI, làm bằng ITERA 😄 Bạn đoán đúng không? https://itera102.space"
  },
- "skin": "pop"
+ "skin": "pop-clean"
 }
