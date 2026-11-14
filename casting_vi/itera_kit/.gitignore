@@ -5,3 +5,5 @@ public/kit/
 *.mp4
 public/shorts/
 assets/shorts/*/
+media/
+public/scenic/

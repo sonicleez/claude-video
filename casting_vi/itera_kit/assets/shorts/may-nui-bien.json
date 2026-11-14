@@ -1,0 +1,17 @@
+{
+ "id": "may-nui-bien",
+ "template": "scenic",
+ "narrator": "an_soft",
+ "scenes": [
+  {"word": "MÂY", "line": "để mây trôi một chút", "label": "01 — CLOUDS",
+   "text": "[softly] Có những ngày... mình chỉ muốn ngồi yên, nhìn mây trôi thôi.", "media": {"mixkit": 21098, "start": 1}},
+  {"word": "NÚI", "line": "vẫn xanh, vẫn đứng đó", "label": "02 — MOUNTAINS",
+   "text": "Núi thì vẫn xanh như vậy... cứ đứng yên đó, chờ mình quay lại.", "media": {"image": "media/may-nui-bien/nui.jpg"}},
+  {"word": "BIỂN", "line": "trong tới từng viên sỏi", "label": "03 — SEA",
+   "text": "[exhales] Còn biển á... trong tới mức, thấy được từng viên sỏi luôn.", "media": {"video": "media/may-nui-bien/bien.mov", "boomerang": true, "ambient": true}},
+  {"word": "CHẬM", "line": "nghe sóng nói gì", "label": "04 — SLOW DOWN",
+   "text": "Đi chậm lại một chút đi... để nghe sóng nói gì.", "media": {"mixkit": 27196, "start": 2}}
+ ],
+ "end": {"words": ["MÂY", "NÚI", "BIỂN"], "line": "vẫn luôn ở đây mà.", "label": "05 — STILL HERE",
+  "text": "[softly] Mây, núi, biển... vẫn luôn ở đây mà.", "media": {"mixkit": 11359, "start": 1}}
+}
