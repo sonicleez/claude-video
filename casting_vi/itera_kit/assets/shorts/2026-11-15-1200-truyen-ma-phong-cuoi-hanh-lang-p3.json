@@ -1,0 +1,108 @@
+{
+ "id": "2026-11-15-1200-truyen-ma-phong-cuoi-hanh-lang-p3",
+ "template": "reel",
+ "endLines": [
+  "Giọng kể này",
+  "LÀ GIỌNG AI"
+ ],
+ "hook": {
+  "lines": [
+   "PHÒNG CUỐI",
+   "HÀNH LANG",
+   "PHẦN 3"
+  ],
+  "preset": "camhong",
+  "text": "Tôi bỏ chạy. Nhưng cái hành lang... cứ dài ra mãi.",
+  "footage": {
+   "mixkit": 48880,
+   "start": 5
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Kể tiếp phần 3…",
+   "button": "Kể",
+   "title": [
+    "CHẠY",
+    "MÃI KHÔNG TỚI"
+   ],
+   "accent": "phần 3",
+   "preset": "camhong",
+   "text": "Tôi chạy mãi, mà cánh cửa thang máy vẫn ở rất xa.",
+   "footage": {
+    "mixkit": 2490,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "ĐÈN",
+    "TẮT DẦN"
+   ],
+   "accent": "rồi",
+   "preset": "camhong",
+   "style": "wipe",
+   "text": "Đèn hành lang tắt dần, từng bóng một, sau lưng tôi.",
+   "footage": {
+    "mixkit": 3461,
+    "start": 5
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "CÓ AI",
+    "ĐI THEO"
+   ],
+   "accent": "và",
+   "preset": "camhong",
+   "style": "kinetic",
+   "text": "Rồi tôi nghe tiếng bước chân... bước đúng nhịp với tôi.",
+   "footage": {
+    "mixkit": 21144,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "QUAY LẠI",
+    "HAY KHÔNG?"
+   ],
+   "accent": "bạn sẽ",
+   "preset": "camhong",
+   "style": "slam",
+   "text": "Bạn có dám quay lại nhìn không?",
+   "footage": {
+    "mixkit": 2652,
+    "start": 3
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Truyện ma 20 giây: căn phòng cuối hành lang (phần 3) #shorts",
+  "description": "Truyện ma ngắn 20 giây kể bằng giọng AI tiếng Việt, phần 3: tôi bỏ chạy nhưng hành lang cứ dài ra, và có tiếng bước chân đi theo.\n\nTruyện hư cấu, giọng kể là giọng AI (text to speech) tạo trên ITERA. Bạn có dám quay lại nhìn không? Comment CÓ hoặc KHÔNG.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#truyenma #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "truyện ma",
+   "truyện ma ngắn",
+   "truyện ma 20 giây",
+   "giọng kể chuyện ma",
+   "truyện đêm khuya",
+   "truyện audio",
+   "truyện ma có thật"
+  ],
+  "localizations": {
+   "en": {
+    "title": "20-second ghost story: the room at the end of the hall (part 3) #shorts",
+    "description": "Part 3 of a Vietnamese ghost story told by an AI voice. Fiction. Would you turn around?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn có dám quay lại không: CÓ hay KHÔNG? 👇 Giọng kể làm bằng ITERA: https://itera102.space"
+ }
+}

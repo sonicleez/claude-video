@@ -1,5 +1,11 @@
 # Strategy log (newest first)
 
+## 2026-11-14 15:20 VN — daily run 3
+- Subs 96 (+2 since start). Views: ghost pick 1,253 (27 h, 9 likes) · 4 voice styles 878 (72% avg viewed) · AI reads AI 837 (63%) · diary Day 2 642 in 19 h, 5 likes, 2 comments incl. the first real viewer answer to the one-word question ("An Giang") · market skit 273 in 7 h (37/h) · ghost part 2 216 in 3.3 h (65/h) · faceless-selling 172 · diary Day 1 304 · affiliate tips 134 · data lecture 44.
+- Confirmed: one simple question gets answers (diary Day 2). Ghost series keeps the strongest early velocity. Diary is growing (Day 2 > Day 1).
+- 15 Nov: A/B "đọc trơn vs đọc có hồn" (selling inside a pick, shows ITERA's human style) · ghost part 3 · tiny-bakery ad with 3 voice picks (selling inside a skit) · diary Day 4 telling the first real comment + real numbers and repeating the province question.
+- The user may want to reply to viewer comments by hand (not automated: replies are outward actions beyond the routine).
+
 ## 2026-11-13 19:22 VN — evening review (user asked: creative, sales-focused, stronger hooks)
 - Ghost-story voice pick 1,077 views in 7.4 h, 8 likes, first real viewer comment ("😮"); "4 voice styles" got a one-word viewer answer ("4"). Faceless-selling recipe 172 in 3.4 h (51/h) — best of the sales videos so far but below pick/story formats. Lecture formats stay at 44–134.
 - Decision: keep the storytelling strategy, put selling INSIDE the story (product is the twist), not after it. 14 Nov 08:00 news pick replaced by the market skit "Cả cái chợ này đều là giọng AI" (3 character voices, twist: nobody recorded) aimed at shop owners/affiliates.

@@ -1,0 +1,101 @@
+{
+ "id": "2026-11-15-0800-doc-tron-vs-doc-co-hon",
+ "template": "reel",
+ "endLines": [
+  "Đọc có hồn",
+  "DỄ RA ĐƠN"
+ ],
+ "hook": {
+  "lines": [
+   "CÙNG 1 CÂU",
+   "A HAY B",
+   "RA ĐƠN?"
+  ],
+  "text": "Cùng một câu review, hai cách đọc. Cách nào làm bạn muốn mua?",
+  "footage": {
+   "mixkit": 32507,
+   "start": 3
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Đọc kịch bản review: kiểu A",
+   "title": [
+    "KIỂU A",
+    "ĐỌC TRƠN"
+   ],
+   "accent": "nghe thử",
+   "text": "Nồi chiên này chiên giòn, không cần dầu, dễ vệ sinh.",
+   "footage": {
+    "mixkit": 32507,
+    "start": 9
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KIỂU B",
+    "CÓ HỒN"
+   ],
+   "accent": "nghe thử",
+   "style": "wipe",
+   "text": "[exhales] Trời ơi, nồi chiên này á... chiên giòn rụm luôn, khỏi dầu nha! [laughs] Rửa cái là sạch.",
+   "footage": {
+    "mixkit": 32507,
+    "start": 15
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "CÙNG",
+    "1 GIỌNG AI"
+   ],
+   "accent": "bí mật là",
+   "style": "kinetic",
+   "text": "Hai kiểu là cùng một giọng AI đó. Khác nhau ở cách viết kịch bản thôi.",
+   "footage": {
+    "mixkit": 1808,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "A",
+    "HAY B?"
+   ],
+   "accent": "bạn chọn",
+   "style": "slam",
+   "text": "Bạn chọn A hay B? Comment một chữ thôi.",
+   "footage": {
+    "mixkit": 817,
+    "start": 5
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Cùng 1 câu review: đọc trơn vs đọc có hồn, A hay B? #shorts",
+  "description": "Cùng một câu review sản phẩm, đọc trơn (A) và đọc có hồn (B), cả hai đều là cùng một giọng AI tiếng Việt. Cách nào làm bạn muốn mua hơn?\n\nMẹo cho video bán hàng, affiliate: viết kịch bản như đang nói thật (thở, ngập ngừng, cảm thán) thì giọng AI nghe tự nhiên hơn. Giọng tạo trên ITERA. Comment A hoặc B!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#affiliate #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "giọng review sản phẩm",
+   "video bán hàng",
+   "video affiliate",
+   "giọng đọc có cảm xúc",
+   "kịch bản review",
+   "ElevenLabs tiếng Việt"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Same review line, flat vs alive: A or B? #shorts",
+    "description": "The same AI voice reads one product review two ways: flat (A) and natural (B). Which makes you want to buy?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn chọn A hay B? Comment một chữ 👇 Tạo giọng đọc có hồn tại: https://itera102.space"
+ }
+}

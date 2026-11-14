@@ -1,0 +1,103 @@
+{
+ "id": "2026-11-15-2000-nhat-ky-xay-kenh-ngay-4",
+ "template": "reel",
+ "endLines": [
+  "Nhật ký xây kênh",
+  "NGÀY 4"
+ ],
+ "hook": {
+  "lines": [
+   "NGÀY 4",
+   "COMMENT",
+   "ĐẦU TIÊN"
+  ],
+  "text": "Ngày bốn xây kênh bằng giọng AI. Cuối cùng... cũng có người trả lời mình.",
+  "footage": {
+   "mixkit": 34980,
+   "start": 4
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Ngày 2 mình hỏi: bạn ở tỉnh nào?",
+   "button": "Xem",
+   "title": [
+    "AN",
+    "GIANG"
+   ],
+   "accent": "có người trả lời",
+   "text": "Hôm trước mình hỏi bạn ở tỉnh nào. Có một bạn trả lời, An Giang!",
+   "footage": {
+    "mixkit": 1741,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "94",
+    "96 SUB"
+   ],
+   "accent": "sau 3 ngày",
+   "style": "count",
+   "text": "Sau ba ngày, kênh từ chín mươi bốn lên chín mươi sáu sub. Chậm, mà có thật.",
+   "footage": {
+    "mixkit": 28893,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "1253",
+    "LƯỢT XEM"
+   ],
+   "accent": "video chạy nhất",
+   "style": "count",
+   "text": "Video chạy nhất vẫn là truyện ma, một ngàn hai trăm năm mươi ba lượt xem.",
+   "footage": {
+    "mixkit": 3461,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "BẠN Ở",
+    "ĐÂU?"
+   ],
+   "accent": "hỏi lại nè",
+   "style": "slam",
+   "text": "Nên hôm nay hỏi lại nè. Bạn đang coi ở tỉnh nào?",
+   "footage": {
+    "mixkit": 24580,
+    "start": 4
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Xây kênh bằng giọng AI: Ngày 4, comment đầu tiên từ An Giang #shorts",
+  "description": "Nhật ký xây kênh YouTube bằng giọng AI, ngày 4: comment đầu tiên của người xem đến từ An Giang, kênh từ 94 lên 96 sub, video truyện ma đạt 1.253 lượt xem.\n\nSố liệu ghi lúc viết kịch bản. Hậu trường: AI viết kịch bản, tạo giọng bằng ITERA, dựng bằng Claude + Remotion. Bạn đang xem ở tỉnh nào? Comment một chữ!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#xaykenh #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "xây kênh YouTube",
+   "nhật ký xây kênh",
+   "thử thách xây kênh",
+   "Claude Remotion",
+   "kênh không lộ mặt",
+   "YouTube Shorts",
+   "xây kênh từ 0"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Growing a channel with an AI voice: Day 4, first real comment #shorts",
+    "description": "Day 4 of growing a channel with only an AI voice: the first viewer reply, 94 → 96 subs, a ghost-story video at 1,253 views.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn đang xem ở tỉnh nào? 👇 Giọng trong video làm bằng ITERA: https://itera102.space"
+ }
+}

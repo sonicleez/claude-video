@@ -1,0 +1,106 @@
+{
+ "id": "2026-11-15-1600-tiem-banh-nho-quang-cao-nhu-dai",
+ "template": "reel",
+ "endLines": [
+  "Tiệm nhỏ",
+  "QUẢNG CÁO NHƯ ĐÀI"
+ ],
+ "hook": {
+  "lines": [
+   "TIỆM NHỎ",
+   "QUẢNG CÁO",
+   "NHƯ ĐÀI?"
+  ],
+  "text": "Tiệm bánh mì nhỏ xíu, mà quảng cáo nghe như trên đài. Làm sao ta?",
+  "footage": {
+   "mixkit": 21931,
+   "start": 2
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Tạo quảng cáo cho tiệm bánh mì",
+   "button": "Tạo",
+   "title": [
+    "THUÊ",
+    "ĐỌC?"
+   ],
+   "accent": "chủ tiệm nói",
+   "text": "Tiệm mình nhỏ á, thuê người đọc quảng cáo thì hông nổi đâu.",
+   "footage": {
+    "mixkit": 21931,
+    "start": 5
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 1"
+   ],
+   "accent": "nghe thử",
+   "preset": "tram",
+   "style": "wipe",
+   "text": "Bánh mì nóng giòn mới ra lò, ghé tiệm ăn liền cho nóng nha!",
+   "footage": {
+    "mixkit": 32507,
+    "start": 12
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 2"
+   ],
+   "accent": "nghe thử",
+   "preset": "camhong",
+   "style": "slam",
+   "text": "Bánh mì nóng giòn mới ra lò, ghé tiệm ăn liền cho nóng nha!",
+   "footage": {
+    "mixkit": 32558,
+    "start": 8
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 3"
+   ],
+   "accent": "nghe thử",
+   "preset": "annhien",
+   "style": "kinetic",
+   "text": "Bánh mì nóng giòn mới ra lò, ghé tiệm ăn liền cho nóng nha!",
+   "footage": {
+    "mixkit": 817,
+    "start": 7
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Tiệm nhỏ mà quảng cáo như đài: 3 giọng AI, bạn chọn giọng nào? #shorts",
+  "description": "Quảng cáo cho tiệm nhỏ không cần thuê người đọc: 3 giọng AI tiếng Việt đọc cùng một câu quảng cáo bánh mì. Bạn chọn giọng số mấy cho tiệm?\n\nGiọng chủ tiệm và cả 3 giọng quảng cáo đều là giọng AI tạo trên ITERA. Hợp cho loa quảng cáo, video TikTok của quán ăn, tiệm nhỏ. Comment 1, 2 hoặc 3!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#banhang #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "giọng đọc quảng cáo",
+   "quảng cáo tiệm nhỏ",
+   "giọng quảng cáo quán ăn",
+   "loa quảng cáo",
+   "giọng bán hàng",
+   "video quảng cáo",
+   "so sánh giọng AI"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Small shop, radio-style ad: 3 AI voices, pick one #shorts",
+    "description": "A tiny bakery can't hire a voice actor, so three Vietnamese AI voices read its ad. Pick 1, 2 or 3.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Tiệm bạn bán gì, chọn giọng số mấy? 👇 Tạo giọng quảng cáo tại: https://itera102.space"
+ }
+}
