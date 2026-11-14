@@ -8,7 +8,7 @@
  "hook": {
   "lines": [
    "CÙNG 1 CÂU",
-   "A HAY B",
+   "KIỂU 1 HAY 2",
    "RA ĐƠN?"
   ],
   "text": "Cùng một câu review, hai cách đọc. Cách nào làm bạn muốn mua?",
@@ -21,7 +21,7 @@
   {
    "prompt": "Đọc kịch bản review: kiểu A",
    "title": [
-    "KIỂU A",
+    "KIỂU 1",
     "ĐỌC TRƠN"
    ],
    "accent": "nghe thử",
@@ -34,7 +34,7 @@
   {
    "prompt": "",
    "title": [
-    "KIỂU B",
+    "KIỂU 2",
     "CÓ HỒN"
    ],
    "accent": "nghe thử",
@@ -62,12 +62,12 @@
   {
    "prompt": "",
    "title": [
-    "A",
-    "HAY B?"
+    "1",
+    "HAY 2?"
    ],
    "accent": "bạn chọn",
    "style": "slam",
-   "text": "Bạn chọn A hay B? Comment một chữ thôi.",
+   "text": "Bạn chọn kiểu một hay kiểu hai? Comment một số thôi.",
    "footage": {
     "mixkit": 817,
     "start": 5
@@ -75,8 +75,8 @@
   }
  ],
  "youtube": {
-  "title": "Cùng 1 câu review: đọc trơn vs đọc có hồn, A hay B? #shorts",
-  "description": "Cùng một câu review sản phẩm, đọc trơn (A) và đọc có hồn (B), cả hai đều là cùng một giọng AI tiếng Việt. Cách nào làm bạn muốn mua hơn?\n\nMẹo cho video bán hàng, affiliate: viết kịch bản như đang nói thật (thở, ngập ngừng, cảm thán) thì giọng AI nghe tự nhiên hơn. Giọng tạo trên ITERA. Comment A hoặc B!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#affiliate #giongnoiAI #shorts",
+  "title": "Cùng 1 câu review: đọc trơn vs đọc có hồn, bạn chọn 1 hay 2? #shorts",
+  "description": "Cùng một câu review sản phẩm, đọc trơn (kiểu 1) và đọc có hồn (kiểu 2), cả hai đều là cùng một giọng AI tiếng Việt. Cách nào làm bạn muốn mua hơn?\n\nMẹo cho video bán hàng, affiliate: viết kịch bản như đang nói thật (thở, ngập ngừng, cảm thán) thì giọng AI nghe tự nhiên hơn. Giọng tạo trên ITERA. Comment 1 hoặc 2!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#affiliate #giongnoiAI #shorts",
   "tags": [
    "giọng nói AI",
    "giọng AI tiếng Việt",
@@ -92,10 +92,10 @@
   ],
   "localizations": {
    "en": {
-    "title": "Same review line, flat vs alive: A or B? #shorts",
-    "description": "The same AI voice reads one product review two ways: flat (A) and natural (B). Which makes you want to buy?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+    "title": "Same review line, flat vs alive: 1 or 2? #shorts",
+    "description": "The same AI voice reads one product review two ways: flat (1) and natural (2). Which makes you want to buy?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
    }
   },
-  "pinned_comment": "Bạn chọn A hay B? Comment một chữ 👇 Tạo giọng đọc có hồn tại: https://itera102.space"
+  "pinned_comment": "Bạn chọn kiểu 1 hay kiểu 2? Comment một số 👇 Tạo giọng đọc có hồn tại: https://itera102.space"
  }
 }

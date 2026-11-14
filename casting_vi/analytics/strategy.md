@@ -4,6 +4,7 @@
 - Subs 96 (+2 since start). Views: ghost pick 1,253 (27 h, 9 likes) · 4 voice styles 878 (72% avg viewed) · AI reads AI 837 (63%) · diary Day 2 642 in 19 h, 5 likes, 2 comments incl. the first real viewer answer to the one-word question ("An Giang") · market skit 273 in 7 h (37/h) · ghost part 2 216 in 3.3 h (65/h) · faceless-selling 172 · diary Day 1 304 · affiliate tips 134 · data lecture 44.
 - Confirmed: one simple question gets answers (diary Day 2). Ghost series keeps the strongest early velocity. Diary is growing (Day 2 > Day 1).
 - 15 Nov: A/B "đọc trơn vs đọc có hồn" (selling inside a pick, shows ITERA's human style) · ghost part 3 · tiny-bakery ad with 3 voice picks (selling inside a skit) · diary Day 4 telling the first real comment + real numbers and repeating the province question.
+- Lesson: Vietnamese TTS reads a lone "B" as "bớ"; use numbers (kiểu 1 / kiểu 2) for A/B picks. Voice credits for 15 Nov: 1,248.
 - The user may want to reply to viewer comments by hand (not automated: replies are outward actions beyond the routine).
 
 ## 2026-11-13 19:22 VN — evening review (user asked: creative, sales-focused, stronger hooks)

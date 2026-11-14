@@ -62,6 +62,7 @@ Narrator for new videos = **Ân** (ElevenLabs `zIusdI28yOZPwIBus0aI`, eleven_v3,
 
 ## Pronunciation (user-reported)
 - TTS reads "AI" as the Vietnamese word "ai". In text sent to TTS always write **"ây ai"**; show "AI" on screen. `make_short.py` does this automatically (`SAY` list, `speak()`); for hand-built days write "ây ai" in jobs.json and merge the two words into one caption word "AI". Check the STT line: it should come back as "AI" (or "ây ai"), never plain "ai".
+- Single letters are read badly ("B" → "bớ"): for A/B choices use numbers ("kiểu 1 / kiểu 2").
 - Apply the same idea to any other acronym or English term (TTS, SRT, SEO, CapCut…): spell it the way it should sound, add it to `SAY`, verify with STT. Ask the user to listen when unsure — STT cannot judge tone.
 
 ## Rules (from the user — do not break)
