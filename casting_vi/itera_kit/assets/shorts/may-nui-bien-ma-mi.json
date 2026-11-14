@@ -83,5 +83,15 @@
   },
   "pinned_comment": "Bạn nghĩ dưới đáy nước có gì? 👇 Giọng kể trong video là giọng AI làm bằng ITERA: https://itera102.space"
  },
- "mood": "eerie"
+ "mood": "eerie",
+ "music": [
+  {
+   "file": "fx/vast.wav",
+   "gain": 1.0
+  },
+  {
+   "file": "fx/eerie.wav",
+   "gain": 0.35
+  }
+ ]
 }

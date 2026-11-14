@@ -10,7 +10,7 @@ import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, random,
 import {FPS, T, sec} from './brand';
 
 export type Scene = {word: string; line: string; label: string; media: string; kind: 'video' | 'image'; voiceDur: number; ambient?: string; dur?: number};
-export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}; mood?: string};
+export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}; mood?: string; music?: {file: string; gain: number}[]};
 /** mood 'eerie': cold desaturated grade, flicker, glitchy type, dark drone bed. */
 export const MoodCtx = React.createContext<string>('calm');
 
@@ -152,7 +152,9 @@ export const Scenic: React.FC<ScenicProps> = (p) => {
       <Sequence from={sec(endStart)} durationInFrames={sec(endDur)}><EndView e={p.end} id={p.id} frames={sec(endDur)} /></Sequence>
       <Grain />
       <Chrome p={p} />
-      <Audio src={staticFile(p.mood === 'eerie' ? 'fx/eerie.wav' : 'fx/ambient.wav')} volume={(fr) => { const x = fr / FPS; const fade = interpolate(x, [0, 1, total - 1.5, total], [0, 1, 1, 0], clamp); return fade * (voiceAt(x) ? 0.22 : 0.5); }} />
+      {(p.music ?? [{file: p.mood === 'eerie' ? 'fx/eerie.wav' : 'fx/ambient.wav', gain: 1}]).map((m, i) => (
+        <Audio key={i} src={staticFile(m.file)} volume={(fr) => { const x = fr / FPS; const fade = interpolate(x, [0, 1, total - 1.5, total], [0, 1, 1, 0], clamp); return m.gain * fade * (voiceAt(x) ? 0.22 : 0.5); }} />
+      ))}
       {p.scenes.map((s, k) => (
         <React.Fragment key={k}>
           <Sequence from={sec(starts[k] + LEAD)}><Audio src={staticFile(`scenic/${p.id}/v${k}.wav`)} /></Sequence>
