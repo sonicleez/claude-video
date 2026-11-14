@@ -53,7 +53,7 @@ const Words: React.FC<{word: string; line: string; at: number; frames: number; t
         WebkitTextStroke: '2px rgba(255,255,255,0.42)', transform: `translateX(${interpolate(f, [0, frames], [120, -260])}px)`, opacity: interpolate(t, [at - 0.3, at + 0.6], [0, 1], clamp)}}>{word}</div>
       <div style={{position: 'absolute', top, left: 84, display: 'flex', fontFamily: T.sans, fontWeight: 700, fontSize: 176, letterSpacing: 26, color: '#fff', textShadow: '0 12px 50px rgba(0,0,0,0.45)'}}>
         {letters.map((ch, i) => {
-          const lp = interpolate(t, [at + i * 0.09, at + i * 0.09 + 0.55], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
+          const lp = at === 0 ? 1 : interpolate(t, [at + i * 0.09, at + i * 0.09 + 0.55], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
           return <span key={i} style={{display: 'inline-block', opacity: lp, filter: `blur(${(1 - lp) * 14}px)`, transform: `translateY(${(1 - lp) * 46}px)`, whiteSpace: 'pre'}}>{ch}</span>;
         })}
       </div>
@@ -64,9 +64,9 @@ const Words: React.FC<{word: string; line: string; at: number; frames: number; t
   );
 };
 
-const SceneView: React.FC<{s: Scene; id: string; frames: number}> = ({s, id, frames}) => {
+const SceneView: React.FC<{s: Scene; id: string; frames: number; first?: boolean}> = ({s, id, frames, first}) => {
   const f = useCurrentFrame(); const t = f / FPS;
-  const fin = interpolate(f, [0, sec(XF)], [0, 1], clamp);
+  const fin = first ? 1 : interpolate(f, [0, sec(XF)], [0, 1], clamp);
   const leak = interpolate(t, [0, 0.5, 1.6], [0, 0.45, 0], clamp);
   return (
     <AbsoluteFill style={{opacity: fin, filter: `blur(${(1 - fin) * 10}px)`}}>
@@ -74,7 +74,7 @@ const SceneView: React.FC<{s: Scene; id: string; frames: number}> = ({s, id, fra
       <AbsoluteFill style={{background: 'radial-gradient(130% 80% at 50% 40%, rgba(0,0,0,0) 45%, rgba(5,6,10,0.55) 100%)'}} />
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(5,6,10,0.35) 0%, rgba(5,6,10,0) 18%, rgba(5,6,10,0) 38%, rgba(5,6,10,0.45) 62%, rgba(5,6,10,0.15) 100%)'}} />
       <AbsoluteFill style={{background: `radial-gradient(60% 45% at ${interpolate(t, [0, 1.6], [10, 90], clamp)}% 20%, rgba(255,190,120,${leak}) 0%, rgba(255,140,80,0) 70%)`, mixBlendMode: 'screen'}} />
-      <Words word={s.word} line={s.line} at={LEAD - 0.2} frames={frames} />
+      <Words word={s.word} line={s.line} at={first ? 0 : LEAD - 0.2} frames={frames} />
     </AbsoluteFill>
   );
 };
@@ -135,7 +135,7 @@ export const Scenic: React.FC<ScenicProps> = (p) => {
   return (
     <AbsoluteFill style={{background: '#05060A'}}>
       {p.scenes.map((s, k) => (
-        <Sequence key={k} from={sec(starts[k])} durationInFrames={sec(sceneDur(s))}><SceneView s={s} id={p.id} frames={sec(sceneDur(s))} /></Sequence>
+        <Sequence key={k} from={sec(starts[k])} durationInFrames={sec(sceneDur(s))}><SceneView s={s} id={p.id} frames={sec(sceneDur(s))} first={k === 0} /></Sequence>
       ))}
       <Sequence from={sec(endStart)} durationInFrames={sec(endDur)}><EndView e={p.end} id={p.id} frames={sec(endDur)} /></Sequence>
       <Grain />

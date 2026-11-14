@@ -3,15 +3,84 @@
  "template": "scenic",
  "narrator": "an_soft",
  "scenes": [
-  {"word": "MÂY", "line": "để mây trôi một chút", "label": "01 — CLOUDS",
-   "text": "[softly] Có những ngày... mình chỉ muốn ngồi yên, nhìn mây trôi thôi.", "media": {"mixkit": 21098, "start": 1}},
-  {"word": "NÚI", "line": "vẫn xanh, vẫn đứng đó", "label": "02 — MOUNTAINS",
-   "text": "Núi thì vẫn xanh như vậy... cứ đứng yên đó, chờ mình quay lại.", "media": {"image": "media/may-nui-bien/nui.jpg"}},
-  {"word": "BIỂN", "line": "trong tới từng viên sỏi", "label": "03 — SEA",
-   "text": "[exhales] Còn biển á... trong tới mức, thấy được từng viên sỏi luôn.", "media": {"video": "media/may-nui-bien/bien.mov", "boomerang": true, "ambient": true}},
-  {"word": "CHẬM", "line": "nghe sóng nói gì", "label": "04 — SLOW DOWN",
-   "text": "Đi chậm lại một chút đi... để nghe sóng nói gì.", "media": {"mixkit": 27196, "start": 2}}
+  {
+   "word": "MÂY",
+   "line": "để mây trôi một chút",
+   "label": "01 — CLOUDS",
+   "text": "[softly] Có những ngày... mình chỉ muốn ngồi yên, nhìn mây trôi thôi.",
+   "media": {
+    "mixkit": 21098,
+    "start": 1
+   }
+  },
+  {
+   "word": "NÚI",
+   "line": "vẫn xanh, vẫn đứng đó",
+   "label": "02 — MOUNTAINS",
+   "text": "Núi thì vẫn xanh như vậy... cứ đứng yên đó, chờ mình quay lại.",
+   "media": {
+    "image": "media/may-nui-bien/nui.jpg"
+   }
+  },
+  {
+   "word": "BIỂN",
+   "line": "trong veo tới từng viên sỏi",
+   "label": "03 — SEA",
+   "text": "[exhales] Còn biển á... nước trong veo, thấy được từng viên sỏi luôn.",
+   "media": {
+    "video": "media/may-nui-bien/bien.mov",
+    "boomerang": true,
+    "ambient": true
+   }
+  },
+  {
+   "word": "CHẬM",
+   "line": "nghe sóng nói gì",
+   "label": "04 — SLOW DOWN",
+   "text": "Đi chậm lại một chút đi... để nghe sóng nói gì.",
+   "media": {
+    "mixkit": 27196,
+    "start": 2
+   }
+  }
  ],
- "end": {"words": ["MÂY", "NÚI", "BIỂN"], "line": "vẫn luôn ở đây mà.", "label": "05 — STILL HERE",
-  "text": "[softly] Mây, núi, biển... vẫn luôn ở đây mà.", "media": {"mixkit": 11359, "start": 1}}
+ "end": {
+  "words": [
+   "MÂY",
+   "NÚI",
+   "BIỂN"
+  ],
+  "line": "vẫn luôn ở đây mà.",
+  "label": "05 — STILL HERE",
+  "text": "[softly] Mây, núi, biển... vẫn luôn ở đây mà.",
+  "media": {
+   "mixkit": 11359,
+   "start": 1
+  }
+ },
+ "youtube": {
+  "title": "Mây, núi và biển: một phút sống chậm cùng giọng AI tiếng Việt #shorts",
+  "description": "Mây trôi, núi xanh, biển trong veo: một đoạn video ngắn sống chậm với giọng kể AI tiếng Việt (giọng Ân, làm bằng ITERA).\n\nCảnh núi và biển do mình tự quay. Bạn thích mây, núi hay biển nhất? Comment một chữ thôi!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#songcham #giongnoiAI #shorts",
+  "tags": [
+   "sống chậm",
+   "mây núi biển",
+   "video chữa lành",
+   "giọng AI tiếng Việt",
+   "giọng đọc AI",
+   "text to speech tiếng Việt",
+   "ITERA",
+   "healing video",
+   "Vietnam nature",
+   "relaxing shorts",
+   "YouTube Shorts"
+  ],
+  "categoryId": "19",
+  "localizations": {
+   "en": {
+    "title": "Clouds, mountains and the sea: a slow minute with a Vietnamese AI voice #shorts",
+    "description": "Clouds drifting, green mountains, crystal-clear sea. Narrated with a Vietnamese AI voice made with ITERA.\n\nhttps://itera102.space\n\n#slowliving #AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn thích mây, núi hay biển nhất? 👇 Giọng kể trong video là giọng AI làm bằng ITERA: https://itera102.space"
+ }
 }
