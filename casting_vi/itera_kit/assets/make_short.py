@@ -17,6 +17,8 @@ PRESET = {
  "tram_soft": ("elevenlabs", "6Xq32rHt6oAu98TBDKfr", "eleven_v3", "vi", {"stability": 0.5, "similarity_boost": 0.8, "style": 0.0, "speed": 0.94}),
  "camhong_soft": ("elevenlabs", "x4KAhuXs2G8TfK9Zr7Q4", "eleven_v3", "vi", {"stability": 0.5, "similarity_boost": 0.8, "style": 0.0, "speed": 0.94}),
  "annhien_soft": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "similarity_boost": 0.8, "style": 0.0, "speed": 0.94}),
+ # Male Southern storyteller for mystery/horror (shared library "Hung Tran"; user 2026-11-14: giọng nam rùng rợn).
+ "hungtran_eerie": ("elevenlabs", "DXiwi9uoxet6zAiZXynP", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.8, "speed": 0.9}),
  "annhien": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "tram": ("elevenlabs", "6Xq32rHt6oAu98TBDKfr", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "camhong": ("elevenlabs", "x4KAhuXs2G8TfK9Zr7Q4", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),

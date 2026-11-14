@@ -1,0 +1,87 @@
+{
+ "id": "may-nui-bien-ma-mi",
+ "template": "scenic",
+ "narrator": "hungtran_eerie",
+ "scenes": [
+  {
+   "word": "MÂY",
+   "line": "mây kéo về, không một tiếng động",
+   "label": "01 — CLOUDS",
+   "text": "[whispers] Có những ngày... mây kéo về nhanh lắm. [pause] Không một tiếng động.",
+   "media": {
+    "mixkit": 21098,
+    "start": 1
+   }
+  },
+  {
+   "word": "NÚI",
+   "line": "vẫn đứng yên... như đang nhìn bạn",
+   "label": "02 — MOUNTAINS",
+   "text": "Ngọn núi đó... vẫn đứng yên. [pause] Như đang nhìn mình vậy.",
+   "media": {
+    "image": "media/may-nui-bien/nui.jpg"
+   }
+  },
+  {
+   "word": "BIỂN",
+   "line": "trong tới mức thấy cả đáy",
+   "label": "03 — SEA",
+   "text": "[exhales] Nước biển trong veo... trong tới mức, thấy rõ cả thứ đang nằm dưới đáy.",
+   "media": {
+    "video": "media/may-nui-bien/bien.mov",
+    "boomerang": true,
+    "ambient": true
+   }
+  },
+  {
+   "word": "ĐỪNG",
+   "line": "đừng quay lại nhìn",
+   "label": "04 — DON'T LOOK BACK",
+   "text": "Đi chậm thôi... [whispers] và đừng quay lại nhìn nha.",
+   "media": {
+    "mixkit": 27196,
+    "start": 2
+   }
+  }
+ ],
+ "end": {
+  "words": [
+   "MÂY",
+   "NÚI",
+   "BIỂN"
+  ],
+  "line": "vẫn ở đây... chờ bạn.",
+  "label": "05 — STILL HERE",
+  "text": "[whispers] Mây, núi, biển... vẫn luôn ở đây. [pause] Chờ bạn.",
+  "media": {
+   "mixkit": 11359,
+   "start": 1
+  }
+ },
+ "youtube": {
+  "title": "Mây, núi, biển... và thứ dưới đáy nước | giọng AI kể chuyện ma mị #shorts",
+  "description": "Một đoạn kể chuyện ma mị về mây, núi và biển, giọng nam AI tiếng Việt làm bằng ITERA.\n\nCảnh núi và biển do mình tự quay. Bạn nghĩ dưới đáy nước có gì? Comment một chữ thôi!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#truyenma #giongnoiAI #shorts",
+  "tags": [
+   "truyện ma",
+   "kể chuyện ma mị",
+   "giọng đọc kinh dị",
+   "giọng AI tiếng Việt",
+   "giọng nam AI",
+   "text to speech tiếng Việt",
+   "ITERA",
+   "mây núi biển",
+   "horror shorts",
+   "Vietnamese AI voice",
+   "YouTube Shorts"
+  ],
+  "categoryId": "24",
+  "localizations": {
+   "en": {
+    "title": "Clouds, mountains, the sea... and what lies beneath | eerie AI narration #shorts",
+    "description": "An eerie little story about clouds, mountains and the sea, narrated by a Vietnamese male AI voice made with ITERA.\n\nhttps://itera102.space\n\n#horror #AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn nghĩ dưới đáy nước có gì? 👇 Giọng kể trong video là giọng AI làm bằng ITERA: https://itera102.space"
+ },
+ "mood": "eerie"
+}

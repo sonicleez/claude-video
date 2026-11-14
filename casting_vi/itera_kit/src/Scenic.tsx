@@ -6,11 +6,13 @@
  * behind it, and a short poetic line. Thin inset frame, ITERA bug top-left, story-style progress bars, scene label.
  */
 import React from 'react';
-import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, spring, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, random, spring, staticFile, useCurrentFrame} from 'remotion';
 import {FPS, T, sec} from './brand';
 
 export type Scene = {word: string; line: string; label: string; media: string; kind: 'video' | 'image'; voiceDur: number; ambient?: string; dur?: number};
-export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}};
+export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}; mood?: string};
+/** mood 'eerie': cold desaturated grade, flicker, glitchy type, dark drone bed. */
+export const MoodCtx = React.createContext<string>('calm');
 
 const LEAD = 0.9, TAIL = 0.9, XF = 0.7, MIN = 4.6;
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
@@ -32,7 +34,8 @@ const Grain: React.FC = () => {
 /** Moving picture: video with a slow pull-back, or a photo panned across its width. */
 const Media: React.FC<{s: Scene; id: string; frames: number}> = ({s, id, frames}) => {
   const f = useCurrentFrame(); const p = f / frames;
-  const grade = 'saturate(1.12) contrast(1.06) brightness(0.96) sepia(0.06)';
+  const eerie = React.useContext(MoodCtx) === 'eerie';
+  const grade = eerie ? 'saturate(0.45) contrast(1.2) brightness(0.72) hue-rotate(-12deg)' : 'saturate(1.12) contrast(1.06) brightness(0.96) sepia(0.06)';
   if (s.kind === 'image') {
     // 4:3 photo at full height is 2560 px wide: drift right-to-left across it with a gentle push-in.
     const z = interpolate(p, [0, 1], [1.04, 1.12]);
@@ -44,6 +47,8 @@ const Media: React.FC<{s: Scene; id: string; frames: number}> = ({s, id, frames}
 /** Big word: letters resolve from blur one by one; a giant outlined echo drifts behind; a thin rule and a soft line follow. */
 const Words: React.FC<{word: string; line: string; at: number; frames: number; top?: number}> = ({word, line, at, frames, top = 820}) => {
   const f = useCurrentFrame(); const t = f / FPS;
+  const eerie = React.useContext(MoodCtx) === 'eerie';
+  const glitch = eerie && random(`g${Math.floor(f / 3)}`) > 0.86;
   const letters = [...word];
   const out = interpolate(f, [frames - sec(0.6), frames], [1, 0], clamp);
   const rule = interpolate(t, [at + 0.5, at + 1.2], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
@@ -54,7 +59,9 @@ const Words: React.FC<{word: string; line: string; at: number; frames: number; t
       <div style={{position: 'absolute', top, left: 84, display: 'flex', fontFamily: T.sans, fontWeight: 700, fontSize: 176, letterSpacing: 26, color: '#fff', textShadow: '0 12px 50px rgba(0,0,0,0.45)'}}>
         {letters.map((ch, i) => {
           const lp = at === 0 ? 1 : interpolate(t, [at + i * 0.09, at + i * 0.09 + 0.55], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
-          return <span key={i} style={{display: 'inline-block', opacity: lp, filter: `blur(${(1 - lp) * 14}px)`, transform: `translateY(${(1 - lp) * 46}px)`, whiteSpace: 'pre'}}>{ch}</span>;
+          const jx = eerie ? (random(`x${i}-${Math.floor(f / 2)}`) - 0.5) * (1 - lp) * 30 + (glitch ? (random(`j${i}${f}`) - 0.5) * 14 : 0) : 0;
+          return <span key={i} style={{display: 'inline-block', opacity: eerie ? lp * (0.85 + 0.15 * random(`o${i}-${f}`)) : lp, filter: `blur(${(1 - lp) * 14}px)`, transform: `translate(${jx}px, ${(1 - lp) * 46}px)`, whiteSpace: 'pre',
+            textShadow: glitch ? '-5px 0 rgba(217,63,63,0.9), 5px 0 rgba(80,200,255,0.7)' : undefined}}>{ch}</span>;
         })}
       </div>
       <div style={{position: 'absolute', top: top + 222, left: 90, width: 150 * rule, height: 3, background: '#fff', borderRadius: 2}} />
@@ -67,13 +74,17 @@ const Words: React.FC<{word: string; line: string; at: number; frames: number; t
 const SceneView: React.FC<{s: Scene; id: string; frames: number; first?: boolean}> = ({s, id, frames, first}) => {
   const f = useCurrentFrame(); const t = f / FPS;
   const fin = first ? 1 : interpolate(f, [0, sec(XF)], [0, 1], clamp);
-  const leak = interpolate(t, [0, 0.5, 1.6], [0, 0.45, 0], clamp);
+  const eerie = React.useContext(MoodCtx) === 'eerie';
+  const leak = eerie ? 0 : interpolate(t, [0, 0.5, 1.6], [0, 0.45, 0], clamp);
+  const flick = eerie ? (random(`f${Math.floor(f / 2)}`) > 0.93 ? 0.45 : 0.04 * random(`n${f}`)) : 0;
   return (
     <AbsoluteFill style={{opacity: fin, filter: `blur(${(1 - fin) * 10}px)`}}>
       <Media s={s} id={id} frames={frames} />
       <AbsoluteFill style={{background: 'radial-gradient(130% 80% at 50% 40%, rgba(0,0,0,0) 45%, rgba(5,6,10,0.55) 100%)'}} />
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(5,6,10,0.35) 0%, rgba(5,6,10,0) 18%, rgba(5,6,10,0) 38%, rgba(5,6,10,0.45) 62%, rgba(5,6,10,0.15) 100%)'}} />
       <AbsoluteFill style={{background: `radial-gradient(60% 45% at ${interpolate(t, [0, 1.6], [10, 90], clamp)}% 20%, rgba(255,190,120,${leak}) 0%, rgba(255,140,80,0) 70%)`, mixBlendMode: 'screen'}} />
+      {eerie && <AbsoluteFill style={{background: 'radial-gradient(90% 60% at 50% 45%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.75) 100%)'}} />}
+      {eerie && <AbsoluteFill style={{background: '#000', opacity: flick}} />}
       <Words word={s.word} line={s.line} at={first ? 0 : LEAD - 0.2} frames={frames} />
     </AbsoluteFill>
   );
@@ -116,6 +127,7 @@ const EndView: React.FC<{e: ScenicProps['end']; id: string; frames: number}> = (
     <AbsoluteFill style={{opacity: fin * out, filter: `blur(${(1 - fin) * 10}px)`}}>
       <Media s={e} id={id} frames={frames} />
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(5,6,10,0.4) 0%, rgba(5,6,10,0.15) 35%, rgba(5,6,10,0.65) 100%)'}} />
+      {React.useContext(MoodCtx) === 'eerie' && <AbsoluteFill style={{background: 'radial-gradient(90% 60% at 50% 45%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.75) 100%)'}} />}
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 6}}>
         {e.words.map((w, i) => {
           const p = spring({frame: f - sec(0.5 + i * 0.45), fps: FPS, config: {damping: 20, stiffness: 90}});
@@ -133,14 +145,14 @@ export const Scenic: React.FC<ScenicProps> = (p) => {
   const {starts, endStart, endDur, total} = scenicTimeline(p);
   const voiceAt = (x: number) => [...p.scenes.map((s, k) => [starts[k] + LEAD, starts[k] + LEAD + s.voiceDur]), [endStart + LEAD, endStart + LEAD + p.end.voiceDur]].some(([a, b]) => x >= a - 0.2 && x < b + 0.3);
   return (
-    <AbsoluteFill style={{background: '#05060A'}}>
+    <MoodCtx.Provider value={p.mood ?? 'calm'}><AbsoluteFill style={{background: '#05060A'}}>
       {p.scenes.map((s, k) => (
         <Sequence key={k} from={sec(starts[k])} durationInFrames={sec(sceneDur(s))}><SceneView s={s} id={p.id} frames={sec(sceneDur(s))} first={k === 0} /></Sequence>
       ))}
       <Sequence from={sec(endStart)} durationInFrames={sec(endDur)}><EndView e={p.end} id={p.id} frames={sec(endDur)} /></Sequence>
       <Grain />
       <Chrome p={p} />
-      <Audio src={staticFile('fx/ambient.wav')} volume={(fr) => { const x = fr / FPS; const fade = interpolate(x, [0, 1, total - 1.5, total], [0, 1, 1, 0], clamp); return fade * (voiceAt(x) ? 0.22 : 0.5); }} />
+      <Audio src={staticFile(p.mood === 'eerie' ? 'fx/eerie.wav' : 'fx/ambient.wav')} volume={(fr) => { const x = fr / FPS; const fade = interpolate(x, [0, 1, total - 1.5, total], [0, 1, 1, 0], clamp); return fade * (voiceAt(x) ? 0.22 : 0.5); }} />
       {p.scenes.map((s, k) => (
         <React.Fragment key={k}>
           <Sequence from={sec(starts[k] + LEAD)}><Audio src={staticFile(`scenic/${p.id}/v${k}.wav`)} /></Sequence>
@@ -148,6 +160,6 @@ export const Scenic: React.FC<ScenicProps> = (p) => {
         </React.Fragment>
       ))}
       <Sequence from={sec(endStart + LEAD)}><Audio src={staticFile(`scenic/${p.id}/ve.wav`)} /></Sequence>
-    </AbsoluteFill>
+    </AbsoluteFill></MoodCtx.Provider>
   );
 };
