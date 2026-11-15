@@ -1,19 +1,19 @@
 {
  "id": "buoi-sang-tui-nho",
  "template": "scenic",
- "narrator": "an_soft",
+ "narrator": "an_human",
  "music": [
   {
-   "file": "fx/ambient.wav",
-   "gain": 1.0
+   "file": "fx/playful.wav",
+   "gain": 0.8
   }
  ],
  "scenes": [
   {
    "word": "SÁNG",
-   "line": "sân cỏ còn ướt sương",
+   "line": "ai còn ngủ nướng đó?",
    "label": "01 — MORNING",
-   "text": "[softly] Sáu giờ sáng... trời vừa hửng, sân cỏ vẫn còn ướt sương.",
+   "text": "[excited] Dậy! Dậy! Sáu giờ sáng rồi nha... ai còn ngủ nướng đó?",
    "media": {
     "mixkit": 6850,
     "start": 3
@@ -21,18 +21,18 @@
   },
   {
    "word": "ÁO VÀNG",
-   "line": "í ới gọi nhau ra sân",
+   "line": "vàng chóe như nải chuối",
    "label": "02 — YELLOW SHIRTS",
-   "text": "Tụi nhỏ mặc áo vàng, í ới gọi nhau ra sân.",
+   "text": "[laughs] Cả đám mặc áo vàng chóe... đứng chung nhìn y chang một nải chuối!",
    "media": {
     "image": "media/buoi-sang/ao-vang.jpg"
    }
   },
   {
    "word": "BÓNG",
-   "line": "chân còn vụng, mà vui",
+   "line": "bóng một đằng, chân một nẻo",
    "label": "03 — THE BALL",
-   "text": "[laughs] Đường chuyền còn vụng lắm... mà đứa nào cũng cười.",
+   "text": "Sút nè! [laughs] Ủa... bóng đi một đằng, chân đi một nẻo luôn.",
    "media": {
     "mixkit": 736,
     "start": 1
@@ -40,9 +40,9 @@
   },
   {
    "word": "CÙNG TẬP",
-   "line": "từng chút một, mỗi sáng",
+   "line": "té một cái? chạy tiếp!",
    "label": "04 — TOGETHER",
-   "text": "Cả đội cùng tập... từng chút một, mỗi buổi sáng.",
+   "text": "Ui da! Té một cái... phủi quần, đứng dậy, chạy tiếp! Hổng sao hết!",
    "media": {
     "image": "media/buoi-sang/tap-luyen.jpg"
    }
@@ -54,17 +54,17 @@
    "NHỎ",
    "RA SÂN"
   ],
-  "line": "mỗi sáng, một niềm vui nhỏ.",
+  "line": "mai ra sân tiếp nha!",
   "label": "05 — SEE YOU TOMORROW",
-  "text": "[softly] Mỗi buổi sáng ra sân... là một niềm vui nho nhỏ.",
+  "text": "[excited] Mai mình ra sân tiếp nha... ai tới trễ là ôm bóng dọn sân đó!",
   "media": {
    "mixkit": 38375,
    "start": 1
   }
  },
  "youtube": {
-  "title": "Buổi sáng của tụi nhỏ trên sân bóng | giọng kể AI tiếng Việt #shorts",
-  "description": "Một buổi sáng tập bóng của tụi nhỏ: áo vàng, sân cỏ còn ướt sương và những đường chuyền còn vụng. Giọng kể là giọng AI tiếng Việt làm bằng ITERA.\n\nBuổi sáng của bạn thường bắt đầu bằng gì? Comment một chữ thôi!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#bongdatre #giongnoiAI #shorts",
+  "title": "Buổi sáng tập bóng của tụi nhỏ: sút một đằng, chân một nẻo #shorts",
+  "description": "Buổi sáng tập bóng của tụi nhỏ, kể bằng giọng AI tiếng Việt tinh nghịch: áo vàng chóe như nải chuối, sút bóng một đằng chân một nẻo, té cái oạch rồi chạy tiếp.\n\nHồi nhỏ bạn có đá bóng buổi sáng không? Comment một chữ thôi!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#bongdatre #giongnoiAI #shorts",
   "tags": [
    "bóng đá thiếu nhi",
    "buổi sáng",
