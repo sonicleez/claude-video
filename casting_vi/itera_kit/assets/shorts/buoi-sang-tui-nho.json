@@ -1,7 +1,7 @@
 {
  "id": "buoi-sang-tui-nho",
  "template": "scenic",
- "narrator": "an_human",
+ "narrator": "vinh_warm",
  "music": [
   {
    "file": "fx/playful.wav",
@@ -13,7 +13,7 @@
    "word": "SÁNG",
    "line": "ai còn ngủ nướng đó?",
    "label": "01 — MORNING",
-   "text": "[excited] Dậy! Dậy! Sáu giờ sáng rồi nha... ai còn ngủ nướng đó?",
+   "text": "[warmly] Ê! Sáu giờ sáng rồi nha... ai còn ngủ nướng đó?",
    "media": {
     "mixkit": 6850,
     "start": 3
@@ -23,7 +23,7 @@
    "word": "ÁO VÀNG",
    "line": "vàng chóe như nải chuối",
    "label": "02 — YELLOW SHIRTS",
-   "text": "[laughs] Cả đám mặc áo vàng chóe... đứng chung nhìn y chang một nải chuối!",
+   "text": "[chuckles] Cả đám mặc áo vàng chóe... đứng chung nhìn y chang một nải chuối!",
    "media": {
     "image": "media/buoi-sang/ao-vang.jpg"
    }
@@ -32,7 +32,7 @@
    "word": "BÓNG",
    "line": "bóng một đằng, chân một nẻo",
    "label": "03 — THE BALL",
-   "text": "Sút nè! [laughs] Ủa... bóng đi một đằng, chân đi một nẻo luôn.",
+   "text": "Sút nè! [laughs softly] Ủa... bóng đi một đằng, chân đi một nẻo luôn.",
    "media": {
     "mixkit": 736,
     "start": 1
@@ -42,7 +42,7 @@
    "word": "CÙNG TẬP",
    "line": "té một cái? chạy tiếp!",
    "label": "04 — TOGETHER",
-   "text": "Ui da! Té một cái... phủi quần, đứng dậy, chạy tiếp! Hổng sao hết!",
+   "text": "Ui da! Té một cái... [warmly] phủi quần, đứng dậy, chạy tiếp. Hổng sao hết!",
    "media": {
     "image": "media/buoi-sang/tap-luyen.jpg"
    }
@@ -56,7 +56,7 @@
   ],
   "line": "mai ra sân tiếp nha!",
   "label": "05 — SEE YOU TOMORROW",
-  "text": "[excited] Mai mình ra sân tiếp nha... ai tới trễ là ôm bóng dọn sân đó!",
+  "text": "[softly] Mai mình ra sân tiếp nha... [chuckles] ai tới trễ là ôm bóng dọn sân đó!",
   "media": {
    "mixkit": 38375,
    "start": 1
