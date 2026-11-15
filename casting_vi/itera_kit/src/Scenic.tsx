@@ -40,6 +40,18 @@ const Media: React.FC<{s: Scene; id: string; frames: number}> = ({s, id, frames}
     // Fit any photo: wide ones pan sideways (at most 900 px), tall ones tilt up, near-9:16 ones push in.
     const a = s.aspect ?? 4 / 3; const z = interpolate(p, [0, 1], [1.04, 1.12]);
     const wAtH = 1920 * a;
+    if (a > 1.2) {
+      // Landscape photo: whole picture in a rounded card (slow push-in) over a blurred, enlarged copy of itself.
+      const cw = 960, ch = cw / a; const zc = interpolate(p, [0, 1], [1.0, 1.08]);
+      return (
+        <>
+          <Img src={staticFile(`scenic/${id}/${s.media}`)} style={{position: 'absolute', height: 1920, width: 1920 * a, left: (1080 - 1920 * a) / 2, top: 0, filter: `blur(28px) ${grade} brightness(0.7)`, transform: `scale(${1.1 + p * 0.05})`}} />
+          <div style={{position: 'absolute', left: 60, top: 1170, width: cw, height: ch, borderRadius: 28, overflow: 'hidden', boxShadow: '0 30px 80px rgba(0,0,0,0.55)', border: '2px solid rgba(255,255,255,0.35)'}}>
+            <Img src={staticFile(`scenic/${id}/${s.media}`)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zc})`, filter: grade}} />
+          </div>
+        </>
+      );
+    }
     if (wAtH > 1180) {
       const span = Math.min(wAtH - 1080, 900); const c = -(wAtH - 1080) / 2;
       return <Img src={staticFile(`scenic/${id}/${s.media}`)} style={{position: 'absolute', height: 1920, width: wAtH, top: 0, left: interpolate(p, [0, 1], [c + span / 2, c - span / 2]), transform: `scale(${z})`, transformOrigin: '50% 60%', filter: grade}} />;
