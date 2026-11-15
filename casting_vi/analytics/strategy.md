@@ -4,6 +4,7 @@
 - Subs 96 (flat). Retention now in Analytics: ghost voice pick 95.7% avg viewed (1,293 views) · 4 voice styles 69% (+1 sub) · AI reads AI 63% · diary Day 1 108% (loops) · affiliate tips 52% · data lecture 38%.
 - Velocity: ghost part 3 72 views/h (3.3 h) · A/B review (selling) 51/h · selling voice pick 402 in 23 h with a viewer answer "2" · diary Day 2 692 / Day 3 240 (diary fading) · market skit flat at 273 · ghost part 2 slowed (216).
 - Takeaways: pick formats work for selling too (viewers answer with a number); A/B "1 or 2" is a good selling vehicle; the ghost series has the best retention → make it interactive (viewers choose part 5). Diary needs a stronger hook → tie it to the ghost vote.
+- Voice credits for 16 Nov: 1,499 (incl. regenerating 4 lines). Tip: avoid the word "AI" in narration where possible; it still gets misread as "ai ai"/"A ai" in some voices.
 - 16 Nov: livestream-closing voice pick · ghost part 4 with a door 1/2 vote · café review A/B · diary Day 5 (96% vs 38% retention lesson + vote reminder).
 
 ## 2026-11-14 15:20 VN — daily run 3
