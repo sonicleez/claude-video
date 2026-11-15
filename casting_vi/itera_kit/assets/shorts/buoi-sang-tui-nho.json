@@ -1,0 +1,90 @@
+{
+ "id": "buoi-sang-tui-nho",
+ "template": "scenic",
+ "narrator": "an_soft",
+ "music": [
+  {
+   "file": "fx/ambient.wav",
+   "gain": 1.0
+  }
+ ],
+ "scenes": [
+  {
+   "word": "SÁNG",
+   "line": "sân cỏ còn ướt sương",
+   "label": "01 — MORNING",
+   "text": "[softly] Sáu giờ sáng... trời vừa hửng, sân cỏ vẫn còn ướt sương.",
+   "media": {
+    "mixkit": 21143,
+    "start": 2
+   }
+  },
+  {
+   "word": "ÁO VÀNG",
+   "line": "í ới gọi nhau ra sân",
+   "label": "02 — YELLOW SHIRTS",
+   "text": "Tụi nhỏ mặc áo vàng, í ới gọi nhau ra sân.",
+   "media": {
+    "image": "media/buoi-sang/ao-vang.jpg"
+   }
+  },
+  {
+   "word": "BÓNG",
+   "line": "chân còn vụng, mà vui",
+   "label": "03 — THE BALL",
+   "text": "[laughs] Đường chuyền còn vụng lắm... mà đứa nào cũng cười.",
+   "media": {
+    "mixkit": 736,
+    "start": 1
+   }
+  },
+  {
+   "word": "CÙNG TẬP",
+   "line": "từng chút một, mỗi sáng",
+   "label": "04 — TOGETHER",
+   "text": "Cả đội cùng tập... từng chút một, mỗi buổi sáng.",
+   "media": {
+    "image": "media/buoi-sang/tap-luyen.jpg"
+   }
+  }
+ ],
+ "end": {
+  "words": [
+   "TỤI",
+   "NHỎ",
+   "RA SÂN"
+  ],
+  "line": "mỗi sáng, một niềm vui nhỏ.",
+  "label": "05 — SEE YOU TOMORROW",
+  "text": "[softly] Mỗi buổi sáng ra sân... là một niềm vui nho nhỏ.",
+  "media": {
+   "mixkit": 38375,
+   "start": 1
+  }
+ },
+ "youtube": {
+  "title": "Buổi sáng của tụi nhỏ trên sân bóng | giọng kể AI tiếng Việt #shorts",
+  "description": "Một buổi sáng tập bóng của tụi nhỏ: áo vàng, sân cỏ còn ướt sương và những đường chuyền còn vụng. Giọng kể là giọng AI tiếng Việt làm bằng ITERA.\n\nBuổi sáng của bạn thường bắt đầu bằng gì? Comment một chữ thôi!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#bongdatre #giongnoiAI #shorts",
+  "tags": [
+   "bóng đá thiếu nhi",
+   "buổi sáng",
+   "tập bóng",
+   "sân cỏ",
+   "giọng AI tiếng Việt",
+   "giọng đọc AI",
+   "text to speech tiếng Việt",
+   "ITERA",
+   "kids football",
+   "Vietnamese AI voice",
+   "YouTube Shorts"
+  ],
+  "categoryId": "17",
+  "localizations": {
+   "en": {
+    "title": "The kids' morning on the football pitch | Vietnamese AI narration #shorts",
+    "description": "A morning football session: yellow shirts, dewy grass and clumsy passes. Narrated with a Vietnamese AI voice made with ITERA.\n\nhttps://itera102.space\n\n#kidsfootball #AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Buổi sáng của bạn bắt đầu bằng gì? 👇 Giọng kể trong video là giọng AI làm bằng ITERA: https://itera102.space"
+ }
+}

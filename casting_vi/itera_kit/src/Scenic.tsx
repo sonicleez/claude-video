@@ -9,7 +9,7 @@ import React from 'react';
 import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, random, spring, staticFile, useCurrentFrame} from 'remotion';
 import {FPS, T, sec} from './brand';
 
-export type Scene = {word: string; line: string; label: string; media: string; kind: 'video' | 'image'; voiceDur: number; ambient?: string; dur?: number};
+export type Scene = {word: string; line: string; label: string; media: string; kind: 'video' | 'image'; voiceDur: number; ambient?: string; dur?: number; aspect?: number};
 export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}; mood?: string; music?: {file: string; gain: number}[]};
 /** mood 'eerie': cold desaturated grade, flicker, glitchy type, dark drone bed. */
 export const MoodCtx = React.createContext<string>('calm');
@@ -37,9 +37,16 @@ const Media: React.FC<{s: Scene; id: string; frames: number}> = ({s, id, frames}
   const eerie = React.useContext(MoodCtx) === 'eerie';
   const grade = eerie ? 'saturate(0.45) contrast(1.2) brightness(0.72) hue-rotate(-12deg)' : 'saturate(1.12) contrast(1.06) brightness(0.96) sepia(0.06)';
   if (s.kind === 'image') {
-    // 4:3 photo at full height is 2560 px wide: drift right-to-left across it with a gentle push-in.
-    const z = interpolate(p, [0, 1], [1.04, 1.12]);
-    return <Img src={staticFile(`scenic/${id}/${s.media}`)} style={{position: 'absolute', height: 1920, left: interpolate(p, [0, 1], [-200, -1180]), top: 0, transform: `scale(${z})`, transformOrigin: '50% 60%', filter: grade}} />;
+    // Fit any photo: wide ones pan sideways (at most 900 px), tall ones tilt up, near-9:16 ones push in.
+    const a = s.aspect ?? 4 / 3; const z = interpolate(p, [0, 1], [1.04, 1.12]);
+    const wAtH = 1920 * a;
+    if (wAtH > 1180) {
+      const span = Math.min(wAtH - 1080, 900); const c = -(wAtH - 1080) / 2;
+      return <Img src={staticFile(`scenic/${id}/${s.media}`)} style={{position: 'absolute', height: 1920, width: wAtH, top: 0, left: interpolate(p, [0, 1], [c + span / 2, c - span / 2]), transform: `scale(${z})`, transformOrigin: '50% 60%', filter: grade}} />;
+    }
+    const hAtW = 1080 / a; const cover = Math.max(1, 1920 / hAtW); const h = hAtW * cover; const w = 1080 * cover;
+    const span = Math.max(0, h - 1920);
+    return <Img src={staticFile(`scenic/${id}/${s.media}`)} style={{position: 'absolute', width: w, height: h, left: (1080 - w) / 2, top: interpolate(p, [0, 1], [-span, 0]), transform: `scale(${z})`, transformOrigin: '50% 45%', filter: grade}} />;
   }
   return <OffthreadVideo src={staticFile(`scenic/${id}/${s.media}`)} muted style={{position: 'absolute', width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${interpolate(p, [0, 1], [1.12, 1.02])})`, filter: grade}} />;
 };
@@ -50,13 +57,14 @@ const Words: React.FC<{word: string; line: string; at: number; frames: number; t
   const eerie = React.useContext(MoodCtx) === 'eerie';
   const glitch = eerie && random(`g${Math.floor(f / 3)}`) > 0.86;
   const letters = [...word];
+  const fs = Math.min(176, 880 / (letters.length * 0.86)); // shrink long words to stay inside the frame
   const out = interpolate(f, [frames - sec(0.6), frames], [1, 0], clamp);
   const rule = interpolate(t, [at + 0.5, at + 1.2], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
   return (
     <AbsoluteFill style={{opacity: out}}>
       <div style={{position: 'absolute', top: top - 150, left: 0, whiteSpace: 'nowrap', fontFamily: T.sans, fontWeight: 800, fontSize: 400, letterSpacing: 12, color: 'transparent',
         WebkitTextStroke: '2px rgba(255,255,255,0.42)', transform: `translateX(${interpolate(f, [0, frames], [120, -260])}px)`, opacity: interpolate(t, [at - 0.3, at + 0.6], [0, 1], clamp)}}>{word}</div>
-      <div style={{position: 'absolute', top, left: 84, display: 'flex', fontFamily: T.sans, fontWeight: 700, fontSize: 176, letterSpacing: 26, color: '#fff', textShadow: '0 12px 50px rgba(0,0,0,0.45)'}}>
+      <div style={{position: 'absolute', top: top + (176 - fs) * 0.6, left: 84, display: 'flex', fontFamily: T.sans, fontWeight: 700, fontSize: fs, letterSpacing: fs * 0.15, color: '#fff', textShadow: '0 12px 50px rgba(0,0,0,0.45)'}}>
         {letters.map((ch, i) => {
           const lp = at === 0 ? 1 : interpolate(t, [at + i * 0.09, at + i * 0.09 + 0.55], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
           const jx = eerie ? (random(`x${i}-${Math.floor(f / 2)}`) - 0.5) * (1 - lp) * 30 + (glitch ? (random(`j${i}${f}`) - 0.5) * 14 : 0) : 0;

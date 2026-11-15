@@ -31,7 +31,7 @@ def prep(key, m, need):
         footage.get(str(m["mixkit"]), f"{pub}/m{key}.mp4", m.get("start", 0), need); return f"m{key}.mp4", "video", None
     if "image" in m:
         ext = os.path.splitext(m["image"])[1].lower() or ".jpg"
-        ff("-i", m["image"], "-vf", "scale=-2:1920", "-q:v", "3", f"{pub}/m{key}.jpg"); return f"m{key}.jpg", "image", None
+        ff("-i", m["image"], "-vf", "scale='min(iw,3200)':-2", "-q:v", "3", f"{pub}/m{key}.jpg"); return f"m{key}.jpg", "image", None
     v = m["video"]; vf = "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920"
     if m.get("boomerang"):
         ff("-i", v, "-filter_complex", f"[0:v]{vf},split[a][b];[b]reverse[r];[a][r]concat=n=2:v=1,setpts=2*PTS,fps=30[o]", "-map", "[o]", "-an", "-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p", f"{work}/loop{key}.mp4")
@@ -49,7 +49,11 @@ for key, c in items:
     ff("-i", f"{work}/v{key}.mp3", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", f"{pub}/v{key}.wav")
     d = dur_of(f"{pub}/v{key}.wav")
     media, kind, amb = prep(key, c["media"], max(5, d + 3.0))
-    sc = {"word": c.get("word", ""), "line": c["line"], "label": c["label"], "media": media, "kind": kind, "voiceDur": round(d, 3), **({"ambient": amb} if amb else {})}
+    asp = None
+    if kind == "image":
+        w_, h_ = map(int, subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "stream=width,height", "-of", "csv=p=0", f"{pub}/{media}"]).decode().strip().split(","))
+        asp = round(w_ / h_, 4)
+    sc = {**({"aspect": asp} if asp else {}), "word": c.get("word", ""), "line": c["line"], "label": c["label"], "media": media, "kind": kind, "voiceDur": round(d, 3), **({"ambient": amb} if amb else {})}
     if key == "e": end = {**sc, "words": c["words"]}
     else: scenes.append(sc)
 props = {"id": sid, "scenes": scenes, "end": end, **({"mood": spec["mood"]} if spec.get("mood") else {}), **({"music": spec["music"]} if spec.get("music") else {})}
