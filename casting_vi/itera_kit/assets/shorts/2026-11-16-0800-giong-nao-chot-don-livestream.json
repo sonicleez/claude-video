@@ -1,0 +1,91 @@
+{
+ "id": "2026-11-16-0800-giong-nao-chot-don-livestream",
+ "template": "reel",
+ "endLines": [
+  "Bạn chọn",
+  "SỐ MẤY?"
+ ],
+ "hook": {
+  "lines": [
+   "5 PHÚT CUỐI",
+   "GIỌNG NÀO",
+   "CHỐT ĐƠN?"
+  ],
+  "text": "Năm phút cuối livestream. Giọng AI nào làm bạn bấm mua liền?",
+  "footage": {
+   "mixkit": 13168,
+   "start": 6
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Giọng chốt đơn livestream số 1",
+   "title": [
+    "GIỌNG",
+    "SỐ 1"
+   ],
+   "accent": "nghe thử",
+   "preset": "an_human",
+   "text": "Còn đúng năm phút thôi nha cả nhà! Chốt đơn lẹ, hết là hông có đâu đó!",
+   "footage": {
+    "mixkit": 50410,
+    "start": 1
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 2"
+   ],
+   "accent": "nghe thử",
+   "preset": "tram",
+   "style": "slam",
+   "text": "Còn đúng năm phút thôi nha cả nhà! Chốt đơn lẹ, hết là hông có đâu đó!",
+   "footage": {
+    "mixkit": 28901,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 3"
+   ],
+   "accent": "nghe thử",
+   "preset": "camhong",
+   "style": "wipe",
+   "text": "Còn đúng năm phút thôi nha cả nhà! Chốt đơn lẹ, hết là hông có đâu đó!",
+   "footage": {
+    "mixkit": 31218,
+    "start": 6.5
+   }
+  }
+ ],
+ "youtube": {
+  "title": "5 phút cuối livestream: giọng AI nào chốt đơn tốt nhất? #shorts",
+  "description": "3 giọng AI tiếng Việt đọc cùng một câu chốt đơn livestream. Giọng nào làm bạn muốn bấm mua liền? Comment 1, 2 hoặc 3.\n\nCả 3 đều là giọng đọc AI (text to speech) tạo trên ITERA. Hợp cho video bán hàng, affiliate TikTok Shop, Shopee không cần tự nói.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#affiliate #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "giọng chốt đơn",
+   "livestream bán hàng",
+   "giọng bán hàng",
+   "video affiliate",
+   "TikTok Shop",
+   "so sánh giọng AI",
+   "giọng đọc quảng cáo"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Last 5 minutes of a livestream: which AI voice sells best? #shorts",
+    "description": "Three Vietnamese AI voices read the same livestream closing line. Pick 1, 2 or 3.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Giọng số mấy làm bạn muốn bấm mua: 1, 2 hay 3? 👇 Tạo giọng bán hàng tại: https://itera102.space"
+ }
+}

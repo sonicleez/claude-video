@@ -1,0 +1,103 @@
+{
+ "id": "2026-11-16-2000-nhat-ky-xay-kenh-ngay-5",
+ "template": "reel",
+ "endLines": [
+  "Nhật ký xây kênh",
+  "NGÀY 5"
+ ],
+ "hook": {
+  "lines": [
+   "96%",
+   "XEM HẾT",
+   "VÌ SAO?"
+  ],
+  "text": "Ngày năm xây kênh. Có một video mà gần như ai coi cũng coi tới hết.",
+  "footage": {
+   "mixkit": 34980,
+   "start": 8
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Video nào được xem hết nhiều nhất?",
+   "button": "Xem số",
+   "title": [
+    "96%",
+    "XEM HẾT"
+   ],
+   "accent": "truyện ma",
+   "text": "Video ba giọng AI kể chuyện ma, người xem coi trung bình chín mươi sáu phần trăm.",
+   "footage": {
+    "mixkit": 3461,
+    "start": 10
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "38%",
+    "XEM HẾT"
+   ],
+   "accent": "video giảng số liệu",
+   "style": "count",
+   "text": "Còn video mình ngồi giảng số liệu? Ba mươi tám phần trăm thôi.",
+   "footage": {
+    "mixkit": 28893,
+    "start": 9
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KỂ",
+    "ĐỪNG GIẢNG"
+   ],
+   "accent": "bài học",
+   "style": "kinetic",
+   "text": "Bài học nữa nè, kể một câu chuyện, đừng giảng bài.",
+   "footage": {
+    "mixkit": 24580,
+    "start": 9
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "CỬA",
+    "1 HAY 2?"
+   ],
+   "accent": "giúp mình nha",
+   "style": "slam",
+   "text": "Nên truyện ma phần năm, bạn chọn giùm mình. Cửa một hay cửa hai?",
+   "footage": {
+    "mixkit": 2652,
+    "start": 9
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Xây kênh bằng giọng AI: Ngày 5, video được xem hết 96% #shorts",
+  "description": "Nhật ký xây kênh YouTube bằng giọng AI, ngày 5: video 3 giọng AI kể chuyện ma được xem trung bình 96%, video giảng số liệu chỉ 38%.\n\nSố liệu từ YouTube Analytics của kênh, ghi lúc viết kịch bản. Bài học: kể chuyện thay vì giảng bài. Truyện ma phần 5 do bạn chọn: comment 1 hoặc 2!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#xaykenh #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "xây kênh YouTube",
+   "nhật ký xây kênh",
+   "thử thách xây kênh",
+   "tỷ lệ xem hết",
+   "YouTube Analytics",
+   "kênh không lộ mặt",
+   "YouTube Shorts"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Growing a channel with an AI voice: Day 5, a video watched 96% through #shorts",
+    "description": "Day 5: a ghost-story voice test is watched 96% on average, a data lecture only 38%. Tell stories, don't lecture.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Phần 5 truyện ma: cửa 1 hay cửa 2? 👇 Giọng trong video làm bằng ITERA: https://itera102.space"
+ }
+}

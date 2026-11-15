@@ -1,5 +1,11 @@
 # Strategy log (newest first)
 
+## 2026-11-15 15:20 VN — daily run 4
+- Subs 96 (flat). Retention now in Analytics: ghost voice pick 95.7% avg viewed (1,293 views) · 4 voice styles 69% (+1 sub) · AI reads AI 63% · diary Day 1 108% (loops) · affiliate tips 52% · data lecture 38%.
+- Velocity: ghost part 3 72 views/h (3.3 h) · A/B review (selling) 51/h · selling voice pick 402 in 23 h with a viewer answer "2" · diary Day 2 692 / Day 3 240 (diary fading) · market skit flat at 273 · ghost part 2 slowed (216).
+- Takeaways: pick formats work for selling too (viewers answer with a number); A/B "1 or 2" is a good selling vehicle; the ghost series has the best retention → make it interactive (viewers choose part 5). Diary needs a stronger hook → tie it to the ghost vote.
+- 16 Nov: livestream-closing voice pick · ghost part 4 with a door 1/2 vote · café review A/B · diary Day 5 (96% vs 38% retention lesson + vote reminder).
+
 ## 2026-11-14 15:20 VN — daily run 3
 - Subs 96 (+2 since start). Views: ghost pick 1,253 (27 h, 9 likes) · 4 voice styles 878 (72% avg viewed) · AI reads AI 837 (63%) · diary Day 2 642 in 19 h, 5 likes, 2 comments incl. the first real viewer answer to the one-word question ("An Giang") · market skit 273 in 7 h (37/h) · ghost part 2 216 in 3.3 h (65/h) · faceless-selling 172 · diary Day 1 304 · affiliate tips 134 · data lecture 44.
 - Confirmed: one simple question gets answers (diary Day 2). Ghost series keeps the strongest early velocity. Diary is growing (Day 2 > Day 1).

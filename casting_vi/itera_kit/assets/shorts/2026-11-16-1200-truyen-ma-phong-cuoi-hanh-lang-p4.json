@@ -1,0 +1,108 @@
+{
+ "id": "2026-11-16-1200-truyen-ma-phong-cuoi-hanh-lang-p4",
+ "template": "reel",
+ "endLines": [
+  "Phần 5",
+  "BẠN QUYẾT ĐỊNH"
+ ],
+ "hook": {
+  "lines": [
+   "PHÒNG CUỐI",
+   "HÀNH LANG",
+   "PHẦN 4"
+  ],
+  "preset": "camhong",
+  "text": "Tôi quay lại. Sau lưng tôi... không có ai cả.",
+  "footage": {
+   "mixkit": 48880,
+   "start": 7
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Kể tiếp phần 4…",
+   "button": "Kể",
+   "title": [
+    "KHÔNG",
+    "CÓ AI"
+   ],
+   "accent": "phần 4",
+   "preset": "camhong",
+   "text": "Nhưng tiếng bước chân vẫn còn, ở ngay trong tai tôi.",
+   "footage": {
+    "mixkit": 2490,
+    "start": 8
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "HAI",
+    "CÁNH CỬA"
+   ],
+   "accent": "rồi",
+   "preset": "camhong",
+   "style": "wipe",
+   "text": "Trước mặt tôi giờ có hai cánh cửa. Cửa số một, và cửa số hai.",
+   "footage": {
+    "mixkit": 33712,
+    "start": 2
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "SÁNG",
+    "VÀ TỐI"
+   ],
+   "accent": "một cửa",
+   "preset": "camhong",
+   "style": "kinetic",
+   "text": "Cửa số một có ánh đèn. Cửa số hai thì tối om, nhưng có tiếng gọi tên tôi.",
+   "footage": {
+    "mixkit": 3461,
+    "start": 8
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "1",
+    "HAY 2?"
+   ],
+   "accent": "bạn quyết định",
+   "preset": "camhong",
+   "style": "slam",
+   "text": "Phần năm, tôi sẽ mở cửa mà bạn chọn. Một, hay hai?",
+   "footage": {
+    "mixkit": 2652,
+    "start": 6
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Truyện ma 20 giây (phần 4): bạn chọn cửa 1 hay cửa 2? #shorts",
+  "description": "Truyện ma ngắn kể bằng giọng AI tiếng Việt, phần 4: hai cánh cửa, một sáng một tối. Phần 5 sẽ mở cửa mà người xem chọn nhiều nhất.\n\nTruyện hư cấu, giọng kể là giọng AI (text to speech) tạo trên ITERA. Comment 1 hoặc 2 để quyết định phần 5!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#truyenma #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "truyện ma",
+   "truyện ma ngắn",
+   "truyện ma 20 giây",
+   "truyện ma tương tác",
+   "giọng kể chuyện ma",
+   "truyện đêm khuya",
+   "truyện audio"
+  ],
+  "localizations": {
+   "en": {
+    "title": "20-second ghost story (part 4): door 1 or door 2? #shorts",
+    "description": "Part 4 of a Vietnamese ghost story told by an AI voice. Fiction. Viewers choose which door opens in part 5.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn chọn cửa 1 hay cửa 2? Comment một số, phần 5 mở cửa nhiều người chọn nhất 👇 Giọng kể làm bằng ITERA: https://itera102.space"
+ }
+}

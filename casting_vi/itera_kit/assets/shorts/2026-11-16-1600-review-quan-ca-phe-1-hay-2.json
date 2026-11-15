@@ -1,0 +1,101 @@
+{
+ "id": "2026-11-16-1600-review-quan-ca-phe-1-hay-2",
+ "template": "reel",
+ "endLines": [
+  "Viết như nói",
+  "GIỌNG CÓ HỒN"
+ ],
+ "hook": {
+  "lines": [
+   "REVIEW QUÁN",
+   "KIỂU 1",
+   "HAY 2?"
+  ],
+  "text": "Cùng một quán cà phê, hai kiểu review. Kiểu nào làm bạn muốn ghé?",
+  "footage": {
+   "mixkit": 43941,
+   "start": 2
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Review quán cà phê: kiểu 1",
+   "title": [
+    "KIỂU 1",
+    "ĐỌC TRƠN"
+   ],
+   "accent": "nghe thử",
+   "text": "Quán cà phê này không gian đẹp, đồ uống ngon, giá hợp lý.",
+   "footage": {
+    "mixkit": 43944,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KIỂU 2",
+    "CÓ HỒN"
+   ],
+   "accent": "nghe thử",
+   "style": "wipe",
+   "text": "[exhales] Trời ơi quán này... ngồi là hổng muốn về luôn á! [laughs] Ly cà phê thơm lừng, mà giá mềm xèo.",
+   "footage": {
+    "mixkit": 43941,
+    "start": 8
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "CÙNG",
+    "1 GIỌNG AI"
+   ],
+   "accent": "bí mật là",
+   "style": "kinetic",
+   "text": "Hai kiểu vẫn là một giọng AI đó. Khác nhau là cách viết kịch bản.",
+   "footage": {
+    "mixkit": 1808,
+    "start": 6
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "1",
+    "HAY 2?"
+   ],
+   "accent": "bạn chọn",
+   "style": "slam",
+   "text": "Bạn chọn kiểu một hay kiểu hai? Comment một số thôi.",
+   "footage": {
+    "mixkit": 817,
+    "start": 2
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Review quán cà phê: đọc trơn vs đọc có hồn, 1 hay 2? #shorts",
+  "description": "Cùng một quán cà phê, hai kiểu review bằng cùng một giọng AI tiếng Việt: đọc trơn (kiểu 1) và đọc có hồn (kiểu 2). Kiểu nào làm bạn muốn ghé quán?\n\nMẹo cho video review, affiliate: viết kịch bản như đang nói thật thì giọng AI nghe tự nhiên hơn. Giọng tạo trên ITERA. Comment 1 hoặc 2!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#review #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "review quán cà phê",
+   "giọng review",
+   "video review",
+   "kịch bản review",
+   "giọng đọc có cảm xúc",
+   "video affiliate"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Café review, flat vs alive: 1 or 2? #shorts",
+    "description": "The same AI voice reviews one café two ways. Which makes you want to go?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn chọn kiểu 1 hay kiểu 2? 👇 Tạo giọng review có hồn tại: https://itera102.space"
+ }
+}
