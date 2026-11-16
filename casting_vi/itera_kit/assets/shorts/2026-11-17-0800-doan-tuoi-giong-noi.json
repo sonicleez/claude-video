@@ -1,0 +1,104 @@
+{
+ "id": "2026-11-17-0800-doan-tuoi-giong-noi",
+ "template": "reel",
+ "endLines": [
+  "Giọng này",
+  "KHÔNG CÓ TUỔI"
+ ],
+ "hook": {
+  "lines": [
+   "ĐOÁN TUỔI",
+   "3 GIỌNG",
+   "NÀY"
+  ],
+  "text": "Nghe ba giọng này, đoán thử mỗi người bao nhiêu tuổi nha.",
+  "footage": {
+   "mixkit": 32411,
+   "start": 8
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Giọng số 1 bao nhiêu tuổi?",
+   "title": [
+    "GIỌNG",
+    "SỐ 1"
+   ],
+   "accent": "đoán tuổi",
+   "preset": "an_human",
+   "text": "Chào bạn, hôm nay mình kể bạn nghe một chuyện nhỏ nha.",
+   "footage": {
+    "mixkit": 13168,
+    "start": 12
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 2"
+   ],
+   "accent": "đoán tuổi",
+   "preset": "camhong",
+   "style": "wipe",
+   "text": "Chào bạn, hôm nay mình kể bạn nghe một chuyện nhỏ nha.",
+   "footage": {
+    "mixkit": 24580,
+    "start": 10
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 3"
+   ],
+   "accent": "đoán tuổi",
+   "preset": "tram",
+   "style": "slam",
+   "text": "Chào bạn, hôm nay mình kể bạn nghe một chuyện nhỏ nha.",
+   "footage": {
+    "mixkit": 43944,
+    "start": 12
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KHÔNG",
+    "CÓ TUỔI"
+   ],
+   "accent": "đáp án",
+   "style": "kinetic",
+   "text": "Đáp án nè, cả ba đều không có tuổi. Vì là giọng tạo bằng Itera. Bạn đoán sát không?",
+   "footage": {
+    "mixkit": 19349,
+    "start": 6
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Đoán tuổi 3 giọng này: bạn đoán sát không? #shorts",
+  "description": "Nghe 3 giọng đọc tiếng Việt và đoán tuổi từng giọng. Đáp án ở cuối: cả 3 đều là giọng AI (text to speech) tạo trên ITERA.\n\nComment tuổi bạn đoán cho giọng 1, 2, 3! Hợp để chọn giọng cho kênh, video bán hàng, quảng cáo không cần thu âm.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "đoán tuổi giọng nói",
+   "thử thách nghe",
+   "giọng AI giống người",
+   "so sánh giọng AI",
+   "chọn giọng cho kênh",
+   "ElevenLabs tiếng Việt"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Guess the age of these 3 voices #shorts",
+    "description": "Listen to three Vietnamese voices and guess their ages. The answer: all three are AI voices made with ITERA.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn đoán giọng 1, 2, 3 bao nhiêu tuổi? 👇 Tạo giọng cho kênh của bạn tại: https://itera102.space"
+ }
+}

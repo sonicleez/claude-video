@@ -1,0 +1,108 @@
+{
+ "id": "2026-11-17-1200-truyen-ma-phong-cuoi-hanh-lang-p5",
+ "template": "reel",
+ "endLines": [
+  "Hết phần 5",
+  "CÒN TIẾP?"
+ ],
+ "hook": {
+  "lines": [
+   "PHÒNG CUỐI",
+   "HÀNH LANG",
+   "PHẦN 5"
+  ],
+  "preset": "camhong",
+  "text": "Tôi chọn cửa số hai. Cánh cửa tối om, có tiếng gọi tên tôi.",
+  "footage": {
+   "mixkit": 2490,
+   "start": 10
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Mở cửa số 2…",
+   "button": "Mở",
+   "title": [
+    "CỬA",
+    "SỐ 2"
+   ],
+   "accent": "phần 5",
+   "preset": "camhong",
+   "text": "Cửa mở ra. Bên trong là căn phòng... y hệt phòng của tôi.",
+   "footage": {
+    "mixkit": 2489,
+    "start": 8
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "CÓ NGƯỜI",
+    "NGỒI ĐÓ"
+   ],
+   "accent": "rồi",
+   "preset": "camhong",
+   "style": "wipe",
+   "text": "Trên giường, có một người đang ngồi, quay lưng lại phía tôi.",
+   "footage": {
+    "mixkit": 3461,
+    "start": 11
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "MẶC ÁO",
+    "CỦA TÔI"
+   ],
+   "accent": "và",
+   "preset": "camhong",
+   "style": "kinetic",
+   "text": "Người đó mặc đúng cái áo tôi đang mặc.",
+   "footage": {
+    "mixkit": 21144,
+    "start": 7
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GỌI",
+    "HAY LÙI?"
+   ],
+   "accent": "bạn sẽ",
+   "preset": "camhong",
+   "style": "slam",
+   "text": "Nếu là bạn, bạn lên tiếng gọi, hay lùi ra ngoài?",
+   "footage": {
+    "mixkit": 48880,
+    "start": 3
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Truyện ma 20 giây (phần 5): sau cánh cửa số 2 #shorts",
+  "description": "Truyện ma ngắn kể bằng giọng AI tiếng Việt, phần 5: mở cửa số 2, bên trong là căn phòng y hệt phòng của tôi.\n\nLúc làm video chưa có phiếu bình chọn, nên cửa được chọn theo mạch truyện. Truyện hư cấu, giọng kể là giọng AI tạo trên ITERA. Bạn sẽ GỌI hay LÙI? Comment một chữ!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#truyenma #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "truyện ma",
+   "truyện ma ngắn",
+   "truyện ma 20 giây",
+   "truyện ma nhiều phần",
+   "giọng kể chuyện ma",
+   "truyện đêm khuya",
+   "truyện audio"
+  ],
+  "localizations": {
+   "en": {
+    "title": "20-second ghost story (part 5): behind door 2 #shorts",
+    "description": "Part 5 of a Vietnamese ghost story told by an AI voice. Fiction. Behind door 2 is a room exactly like mine.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn sẽ GỌI hay LÙI? Comment một chữ 👇 Giọng kể làm bằng ITERA: https://itera102.space"
+ }
+}

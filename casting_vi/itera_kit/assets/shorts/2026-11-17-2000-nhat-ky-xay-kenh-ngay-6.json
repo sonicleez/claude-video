@@ -1,0 +1,104 @@
+{
+ "id": "2026-11-17-2000-nhat-ky-xay-kenh-ngay-6",
+ "template": "reel",
+ "endLines": [
+  "Nhật ký xây kênh",
+  "NGÀY 6"
+ ],
+ "hook": {
+  "lines": [
+   "NGÀY 6",
+   "MẤT 1 SUB",
+   "0 PHIẾU"
+  ],
+  "text": "Ngày sáu xây kênh. Mất một sub, và cuộc bình chọn... không ai bầu hết.",
+  "footage": {
+   "mixkit": 34980,
+   "start": 12
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Số sub hôm nay",
+   "button": "Xem số",
+   "title": [
+    "96",
+    "→ 95 SUB"
+   ],
+   "accent": "mất 1 sub",
+   "style": "count",
+   "text": "Hôm qua chín mươi sáu, hôm nay chín mươi lăm. Mất một bạn rồi.",
+   "footage": {
+    "mixkit": 28893,
+    "start": 11
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "0",
+    "PHIẾU BẦU"
+   ],
+   "accent": "truyện ma phần 4",
+   "style": "count",
+   "text": "Truyện ma phần bốn, mình hỏi cửa một hay hai. Chưa ai trả lời luôn.",
+   "footage": {
+    "mixkit": 3461,
+    "start": 14
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "282",
+    "LƯỢT XEM"
+   ],
+   "accent": "nhưng 3 tiếng đầu",
+   "style": "count",
+   "text": "Mà video đó lại chạy nhanh nhất, ba tiếng đầu hai trăm tám mươi hai lượt xem.",
+   "footage": {
+    "mixkit": 2652,
+    "start": 10
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "XEM",
+    "NHƯNG IM"
+   ],
+   "accent": "bài học",
+   "style": "kinetic",
+   "text": "Người ta coi, mà người ta im. Ngày mai mình thử hỏi khác. Bạn có ý gì hông?",
+   "footage": {
+    "mixkit": 24580,
+    "start": 11
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Xây kênh bằng giọng AI: Ngày 6, mất 1 sub và 0 phiếu bầu #shorts",
+  "description": "Nhật ký xây kênh YouTube bằng giọng AI, ngày 6: kênh từ 96 xuống 95 sub, cuộc bình chọn truyện ma chưa có phiếu nào, dù video đó chạy nhanh nhất (282 lượt xem trong 3 giờ đầu).\n\nSố liệu thật, ghi lúc viết kịch bản. Bài học: người xem xem nhưng im lặng. Bạn có gợi ý gì để mọi người chịu comment? Hậu trường: Claude + Remotion + giọng ITERA.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#xaykenh #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "xây kênh YouTube",
+   "nhật ký xây kênh",
+   "thử thách xây kênh",
+   "mất sub",
+   "tăng tương tác",
+   "kênh không lộ mặt",
+   "YouTube Shorts"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Growing a channel with an AI voice: Day 6, lost 1 sub, 0 votes #shorts",
+    "description": "Day 6: 96 → 95 subscribers and no votes yet, even though that video was the fastest (282 views in 3 hours).\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn có gợi ý gì để mọi người chịu comment? 👇 Giọng trong video làm bằng ITERA: https://itera102.space"
+ }
+}

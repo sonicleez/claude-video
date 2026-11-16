@@ -1,5 +1,11 @@
 # Strategy log (newest first)
 
+## 2026-11-16 15:20 VN — daily run 5
+- Subs 95 (−1). No new viewer comments since 15 Nov; the door vote got 0 votes so far.
+- Velocity: ghost part 4 84 views/h (3.3 h) — best again; livestream voice pick 20/h (weak); diary Day 4 180 in 19 h.
+- Retention: selling voice pick 98%, diary Day 3 98%, ghost voice pick 95%, faceless-selling 88%, diary Day 2 71%, ghost part 2 47%, market skit 54%. High retention but few views on selling picks → hooks for them need more curiosity, not more selling.
+- 17 Nov: "guess the age of 3 voices" (curiosity hook, answer = ITERA) · ghost part 5 (door 2 chosen by story, said honestly in the description) · sunscreen review 1/2 (affiliate niche) · diary Day 6 telling the real setback (−1 sub, 0 votes) and asking for ideas.
+
 ## 2026-11-15 15:20 VN — daily run 4
 - Subs 96 (flat). Retention now in Analytics: ghost voice pick 95.7% avg viewed (1,293 views) · 4 voice styles 69% (+1 sub) · AI reads AI 63% · diary Day 1 108% (loops) · affiliate tips 52% · data lecture 38%.
 - Velocity: ghost part 3 72 views/h (3.3 h) · A/B review (selling) 51/h · selling voice pick 402 in 23 h with a viewer answer "2" · diary Day 2 692 / Day 3 240 (diary fading) · market skit flat at 273 · ghost part 2 slowed (216).

@@ -1,0 +1,101 @@
+{
+ "id": "2026-11-17-1600-review-kem-chong-nang-1-hay-2",
+ "template": "reel",
+ "endLines": [
+  "Viết như nói",
+  "GIỌNG CÓ HỒN"
+ ],
+ "hook": {
+  "lines": [
+   "REVIEW",
+   "KIỂU 1",
+   "HAY 2?"
+  ],
+  "text": "Cùng một món mỹ phẩm, hai kiểu review. Kiểu nào làm bạn muốn mua?",
+  "footage": {
+   "mixkit": 50410,
+   "start": 1
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Review kem chống nắng: kiểu 1",
+   "title": [
+    "KIỂU 1",
+    "ĐỌC TRƠN"
+   ],
+   "accent": "nghe thử",
+   "text": "Kem chống nắng này thấm nhanh, không bết, dùng hằng ngày được.",
+   "footage": {
+    "mixkit": 50410,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KIỂU 2",
+    "CÓ HỒN"
+   ],
+   "accent": "nghe thử",
+   "style": "wipe",
+   "text": "[exhales] Trời, mùa nắng này mà thiếu em này là toang á! [laughs] Thoa cái thấm liền, hổng bết miếng nào.",
+   "footage": {
+    "mixkit": 43941,
+    "start": 11
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "CÙNG",
+    "1 GIỌNG"
+   ],
+   "accent": "bí mật là",
+   "style": "kinetic",
+   "text": "Hai kiểu vẫn là cùng một giọng đó. Khác nhau ở cách viết kịch bản.",
+   "footage": {
+    "mixkit": 1808,
+    "start": 9
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "1",
+    "HAY 2?"
+   ],
+   "accent": "bạn chọn",
+   "style": "slam",
+   "text": "Bạn chọn kiểu một hay kiểu hai? Comment một số thôi.",
+   "footage": {
+    "mixkit": 13168,
+    "start": 15
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Review mỹ phẩm: đọc trơn vs đọc có hồn, 1 hay 2? #shorts",
+  "description": "Cùng một kịch bản review kem chống nắng, đọc trơn (kiểu 1) và đọc có hồn (kiểu 2), cùng một giọng AI tiếng Việt. Kiểu nào làm bạn muốn mua?\n\nMẹo cho video affiliate mỹ phẩm, review không lộ mặt: viết kịch bản như đang nói thật. Giọng tạo trên ITERA. Comment 1 hoặc 2!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#review #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "review mỹ phẩm",
+   "video affiliate mỹ phẩm",
+   "review không lộ mặt",
+   "giọng review",
+   "kịch bản review",
+   "TikTok Shop"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Skincare review, flat vs alive: 1 or 2? #shorts",
+    "description": "The same AI voice reads one sunscreen review two ways. Which makes you want to buy?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn chọn kiểu 1 hay kiểu 2? 👇 Tạo giọng review có hồn tại: https://itera102.space"
+ }
+}
