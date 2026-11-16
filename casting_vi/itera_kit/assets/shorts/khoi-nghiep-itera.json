@@ -1,0 +1,111 @@
+{
+ "id": "khoi-nghiep-itera",
+ "template": "scenic",
+ "narrator": "lamvy_story",
+ "music": [
+  {
+   "file": "fx/vast.wav",
+   "gain": 1.0
+  }
+ ],
+ "scenes": [
+  {
+   "word": "TAY TRẮNG",
+   "line": "không tiền, không máy quay",
+   "label": "TRUYỆN NGẮN — 01",
+   "text": "Năm hai mươi hai tuổi... cô muốn làm kênh video. Nhưng không có tiền, không có máy quay, và rất sợ lộ mặt.",
+   "media": {
+    "mixkit": 33379,
+    "start": 2
+   }
+  },
+  {
+   "word": "GIỌNG RUN",
+   "line": "thu đi thu lại cả buổi",
+   "label": "02 — THE VOICE",
+   "text": "Cô thử tự thu giọng... thu đi thu lại cả buổi, nghe lại, vẫn thấy run run.",
+   "media": {
+    "mixkit": 24621,
+    "start": 1
+   }
+  },
+  {
+   "word": "GỤC NGÃ",
+   "line": "video đầu: mười hai lượt xem",
+   "label": "03 — FALL",
+   "text": "Video đầu tiên... chỉ có mười hai lượt xem. [sighs] Cô ngồi lặng thinh, rất lâu.",
+   "media": {
+    "mixkit": 4500,
+    "start": 2
+   }
+  },
+  {
+   "word": "ITERA",
+   "line": "dán kịch bản, chọn giọng",
+   "label": "04 — A NEW VOICE",
+   "text": "Rồi cô tìm thấy ITERA... dán kịch bản vô, chọn một giọng đọc tiếng Việt, vậy là có giọng kể.",
+   "media": {
+    "mixkit": 42652,
+    "start": 3
+   }
+  },
+  {
+   "word": "ĐÊM MƯA",
+   "line": "viết, dựng, đăng mỗi ngày",
+   "label": "05 — KEEP GOING",
+   "text": "Những đêm mưa... một mình ngồi viết kịch bản, dựng video, rồi đăng đều, mỗi ngày.",
+   "media": {
+    "mixkit": 21144,
+    "start": 1
+   }
+  },
+  {
+   "word": "MỈM CƯỜI",
+   "line": "“em nghe giọng kể này mỗi tối”",
+   "label": "06 — SOMEONE LISTENS",
+   "text": "[warmly] Rồi một sáng, có người nhắn: chị ơi, em nghe giọng kể này mỗi tối. [softly] Cô mỉm cười.",
+   "media": {
+    "mixkit": 51121,
+    "start": 2
+   }
+  }
+ ],
+ "end": {
+  "words": [
+   "TỪ",
+   "TAY TRẮNG"
+  ],
+  "line": "kể câu chuyện của bạn, cùng ITERA.",
+  "label": "TRUYỆN NGẮN · HƯ CẤU",
+  "text": "[softly] Mọi câu chuyện lớn... đều bắt đầu từ một ngày rất nhỏ.",
+  "media": {
+   "mixkit": 34980,
+   "start": 4
+  }
+ },
+ "youtube": {
+  "title": "Khởi nghiệp từ tay trắng với giọng AI tiếng Việt: truyện ngắn #shorts",
+  "description": "Truyện ngắn hư cấu về một cô gái muốn làm kênh video nhưng không tiền, không máy quay và sợ lộ mặt. Cô bắt đầu kể chuyện bằng giọng AI tiếng Việt của ITERA. Giọng kể trong video cũng làm bằng ITERA.\n\nBạn muốn kể câu chuyện gì nếu không cần lộ mặt? Comment một chữ thôi!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#khoinghiep #giongnoiAI #shorts",
+  "tags": [
+   "khởi nghiệp từ tay trắng",
+   "làm kênh không lộ mặt",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "truyện ngắn",
+   "ITERA",
+   "faceless channel",
+   "Vietnamese AI voice",
+   "startup story",
+   "YouTube Shorts"
+  ],
+  "categoryId": "22",
+  "localizations": {
+   "en": {
+    "title": "Starting from nothing with a Vietnamese AI voice: a short story #shorts",
+    "description": "A short fictional story about a young woman who starts a faceless video channel using ITERA's Vietnamese AI voices.\n\nhttps://itera102.space\n\n#faceless #AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn muốn kể câu chuyện gì nếu không cần lộ mặt? 👇 Truyện ngắn hư cấu, giọng kể AI làm bằng ITERA: https://itera102.space"
+ }
+}
