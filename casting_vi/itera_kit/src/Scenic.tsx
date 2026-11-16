@@ -10,7 +10,7 @@ import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, random,
 import {FPS, T, sec} from './brand';
 
 export type Scene = {word: string; line: string; label: string; media: string; kind: 'video' | 'image'; voiceDur: number; ambient?: string; dur?: number; aspect?: number};
-export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}; mood?: string; music?: {file: string; gain: number}[]};
+export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}; mood?: string; music?: {file: string; gain: number}[]; chrome?: 'full' | 'minimal'; disclosure?: string};
 /** mood 'eerie': cold desaturated grade, flicker, glitchy type, dark drone bed. */
 export const MoodCtx = React.createContext<string>('calm');
 
@@ -116,6 +116,19 @@ const Chrome: React.FC<{p: ScenicProps}> = ({p}) => {
   const {starts, endStart} = scenicTimeline(p);
   const n = p.scenes.length; const cur = Math.max(0, starts.filter((s) => g >= s).length - 1);
   const s = g >= endStart ? p.end : p.scenes[cur];
+  const logo = (
+    <div style={{position: 'absolute', left: 84, top: 92, display: 'flex', alignItems: 'center', gap: 12, filter: 'drop-shadow(0 2px 10px rgba(0,0,0,0.55))'}}>
+      <div style={{width: 16, height: 16, borderRadius: 8, background: T.red, boxShadow: `0 0 14px ${T.red}`}} />
+      <span style={{fontFamily: T.sans, fontWeight: 800, fontSize: 44, color: '#fff', letterSpacing: 5}}>ITERA</span>
+    </div>
+  );
+  // 'minimal': no viewfinder frame, progress bars, counter or scene labels; logo + one small disclosure line only.
+  if (p.chrome === 'minimal') return (
+    <AbsoluteFill>
+      {logo}
+      <div style={{position: 'absolute', left: 0, right: 0, bottom: 92, textAlign: 'center', fontFamily: T.mono, fontSize: 22, color: 'rgba(255,255,255,0.7)', letterSpacing: 3, textShadow: '0 2px 8px rgba(0,0,0,0.7)'}}>{p.disclosure ?? 'GIỌNG KỂ AI · ITERA'}</div>
+    </AbsoluteFill>
+  );
   return (
     <AbsoluteFill>
       <div style={{position: 'absolute', inset: 44, borderRadius: 34, border: '2px solid rgba(255,255,255,0.5)'}} />
@@ -134,7 +147,7 @@ const Chrome: React.FC<{p: ScenicProps}> = ({p}) => {
         {g >= endStart ? '— ∞' : `${String(cur + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`}
       </div>
       <div style={{position: 'absolute', left: 90, bottom: 96, fontFamily: T.mono, fontSize: 26, color: 'rgba(255,255,255,0.8)', letterSpacing: 6}}>{s.label}</div>
-      <div style={{position: 'absolute', right: 90, bottom: 96, fontFamily: T.mono, fontSize: 22, color: 'rgba(255,255,255,0.6)', letterSpacing: 3}}>GIỌNG KỂ AI · ITERA</div>
+      <div style={{position: 'absolute', right: 90, bottom: 96, fontFamily: T.mono, fontSize: 22, color: 'rgba(255,255,255,0.6)', letterSpacing: 3}}>{p.disclosure ?? 'GIỌNG KỂ AI · ITERA'}</div>
     </AbsoluteFill>
   );
 };

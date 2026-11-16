@@ -4,7 +4,7 @@
  "narrator": "lamvy_story",
  "music": [
   {
-   "file": "fx/vast.wav",
+   "file": "fx/sweet.wav",
    "gain": 1.0
   }
  ],
@@ -107,5 +107,7 @@
    }
   },
   "pinned_comment": "Bạn muốn kể câu chuyện gì nếu không cần lộ mặt? 👇 Truyện ngắn hư cấu, giọng kể AI làm bằng ITERA: https://itera102.space"
- }
+ },
+ "chrome": "minimal",
+ "disclosure": "TRUYỆN NGẮN HƯ CẤU · GIỌNG KỂ AI"
 }
