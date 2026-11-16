@@ -10,7 +10,8 @@ import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, random,
 import {FPS, T, sec} from './brand';
 
 export type Scene = {word: string; line: string; label: string; media: string; kind: 'video' | 'image'; voiceDur: number; ambient?: string; dur?: number; aspect?: number};
-export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}; mood?: string; music?: {file: string; gain: number}[]; chrome?: 'full' | 'minimal'; disclosure?: string};
+export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}; mood?: string; music?: {file: string; gain: number}[]; chrome?: 'full' | 'minimal'; disclosure?: string; text?: 'center' | 'lower'};
+export const TextCtx = React.createContext<string>('center');
 /** mood 'eerie': cold desaturated grade, flicker, glitchy type, dark drone bed. */
 export const MoodCtx = React.createContext<string>('calm');
 
@@ -91,6 +92,40 @@ const Words: React.FC<{word: string; line: string; at: number; frames: number; t
   );
 };
 
+
+/** 'lower' text style: documentary lower-third at the bottom — red bar, lines slide up out of a mask, sub line follows. */
+const ease = (x: number) => 1 - Math.pow(1 - x, 4);
+const LowerText: React.FC<{lines: string[]; sub: string; extra?: string; at: number; frames: number}> = ({lines, sub, extra, at, frames}) => {
+  const f = useCurrentFrame(); const t = f / FPS;
+  const out = interpolate(f, [frames - sec(0.6), frames], [1, 0], clamp);
+  const p = (d: number) => (at === 0 && d === 0 ? 1 : interpolate(t, [at + d, at + d + 0.7], [0, 1], {...clamp, easing: ease}));
+  const fsOf = (w: string) => Math.min(118, 860 / ([...w].length * 0.7));
+  const bar = p(0);
+  return (
+    <AbsoluteFill style={{opacity: out}}>
+      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(5,6,10,0) 50%, rgba(5,6,10,0.55) 72%, rgba(5,6,10,0.85) 100%)'}} />
+      <div style={{position: 'absolute', left: 84, right: 84, bottom: 330, display: 'flex', gap: 30}}>
+        <div style={{width: 7, borderRadius: 4, background: T.red, boxShadow: `0 0 18px ${T.red}`, transform: `scaleY(${bar})`, transformOrigin: '50% 100%'}} />
+        <div style={{display: 'flex', flexDirection: 'column', gap: 4}}>
+          {lines.map((w, i) => {
+            const q = p(i * 0.14);
+            return (
+              <div key={i} style={{overflow: 'hidden', paddingTop: '0.32em', marginTop: '-0.32em', paddingBottom: 8, fontSize: fsOf(w)}}>
+                <div style={{fontFamily: T.sans, fontWeight: 800, fontSize: fsOf(w), lineHeight: 1.08, letterSpacing: 2, color: '#fff', whiteSpace: 'nowrap',
+                  transform: `translateY(${(1 - q) * 110}%)`, textShadow: '0 6px 30px rgba(0,0,0,0.5)'}}>{w}</div>
+              </div>
+            );
+          })}
+          <div style={{overflow: 'hidden', marginTop: 10, paddingTop: 14}}>
+            <div style={{fontFamily: T.sans, fontWeight: 400, fontSize: 46, lineHeight: 1.3, color: 'rgba(255,255,255,0.92)', transform: `translateY(${(1 - p(0.35 + lines.length * 0.1)) * 110}%)`}}>{sub}</div>
+          </div>
+          {extra && <div style={{marginTop: 22, fontFamily: T.mono, fontSize: 30, color: 'rgba(255,255,255,0.85)', letterSpacing: 3, opacity: p(0.9)}}>{extra}</div>}
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 const SceneView: React.FC<{s: Scene; id: string; frames: number; first?: boolean}> = ({s, id, frames, first}) => {
   const f = useCurrentFrame(); const t = f / FPS;
   const fin = first ? 1 : interpolate(f, [0, sec(XF)], [0, 1], clamp);
@@ -105,7 +140,7 @@ const SceneView: React.FC<{s: Scene; id: string; frames: number; first?: boolean
       <AbsoluteFill style={{background: `radial-gradient(60% 45% at ${interpolate(t, [0, 1.6], [10, 90], clamp)}% 20%, rgba(255,190,120,${leak}) 0%, rgba(255,140,80,0) 70%)`, mixBlendMode: 'screen'}} />
       {eerie && <AbsoluteFill style={{background: 'radial-gradient(90% 60% at 50% 45%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.75) 100%)'}} />}
       {eerie && <AbsoluteFill style={{background: '#000', opacity: flick}} />}
-      <Words word={s.word} line={s.line} at={first ? 0 : LEAD - 0.2} frames={frames} />
+      {React.useContext(TextCtx) === 'lower' ? <LowerText lines={[s.word]} sub={s.line} at={first ? 0 : LEAD - 0.2} frames={frames} /> : <Words word={s.word} line={s.line} at={first ? 0 : LEAD - 0.2} frames={frames} />}
     </AbsoluteFill>
   );
 };
@@ -161,7 +196,7 @@ const EndView: React.FC<{e: ScenicProps['end']; id: string; frames: number}> = (
       <Media s={e} id={id} frames={frames} />
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(5,6,10,0.4) 0%, rgba(5,6,10,0.15) 35%, rgba(5,6,10,0.65) 100%)'}} />
       {React.useContext(MoodCtx) === 'eerie' && <AbsoluteFill style={{background: 'radial-gradient(90% 60% at 50% 45%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.75) 100%)'}} />}
-      <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 6}}>
+      {React.useContext(TextCtx) === 'lower' ? <LowerText lines={e.words} sub={e.line} extra="itera102.space" at={0.4} frames={frames + 999} /> : <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 6}}>
         {e.words.map((w, i) => {
           const p = spring({frame: f - sec(0.5 + i * 0.45), fps: FPS, config: {damping: 20, stiffness: 90}});
           const efs = Math.min(150, 880 / ([...w].length * 0.86));
@@ -170,7 +205,7 @@ const EndView: React.FC<{e: ScenicProps['end']; id: string; frames: number}> = (
         })}
         <div style={{marginTop: 40, fontFamily: T.sans, fontStyle: 'italic', fontSize: 54, color: 'rgba(255,255,255,0.95)', opacity: interpolate(t, [2.0, 2.8], [0, 1], clamp)}}>{e.line}</div>
         <div style={{marginTop: 70, fontFamily: T.mono, fontSize: 32, color: 'rgba(255,255,255,0.85)', letterSpacing: 3, opacity: interpolate(t, [2.6, 3.3], [0, 1], clamp)}}>itera102.space</div>
-      </AbsoluteFill>
+      </AbsoluteFill>}
     </AbsoluteFill>
   );
 };
@@ -179,7 +214,7 @@ export const Scenic: React.FC<ScenicProps> = (p) => {
   const {starts, endStart, endDur, total} = scenicTimeline(p);
   const voiceAt = (x: number) => [...p.scenes.map((s, k) => [starts[k] + LEAD, starts[k] + LEAD + s.voiceDur]), [endStart + LEAD, endStart + LEAD + p.end.voiceDur]].some(([a, b]) => x >= a - 0.2 && x < b + 0.3);
   return (
-    <MoodCtx.Provider value={p.mood ?? 'calm'}><AbsoluteFill style={{background: '#05060A'}}>
+    <MoodCtx.Provider value={p.mood ?? 'calm'}><TextCtx.Provider value={p.text ?? 'center'}><AbsoluteFill style={{background: '#05060A'}}>
       {p.scenes.map((s, k) => (
         <Sequence key={k} from={sec(starts[k])} durationInFrames={sec(sceneDur(s))}><SceneView s={s} id={p.id} frames={sec(sceneDur(s))} first={k === 0} /></Sequence>
       ))}
@@ -196,6 +231,6 @@ export const Scenic: React.FC<ScenicProps> = (p) => {
         </React.Fragment>
       ))}
       <Sequence from={sec(endStart + LEAD)}><Audio src={staticFile(`scenic/${p.id}/ve.wav`)} /></Sequence>
-    </AbsoluteFill></MoodCtx.Provider>
+    </AbsoluteFill></TextCtx.Provider></MoodCtx.Provider>
   );
 };

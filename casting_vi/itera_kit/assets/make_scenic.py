@@ -56,7 +56,7 @@ for key, c in items:
     sc = {**({"aspect": asp} if asp else {}), "word": c.get("word", ""), "line": c["line"], "label": c["label"], "media": media, "kind": kind, "voiceDur": round(d, 3), **({"ambient": amb} if amb else {})}
     if key == "e": end = {**sc, "words": c["words"]}
     else: scenes.append(sc)
-props = {"id": sid, "scenes": scenes, "end": end, **({"mood": spec["mood"]} if spec.get("mood") else {}), **({"music": spec["music"]} if spec.get("music") else {}), **{k: spec[k] for k in ("chrome", "disclosure") if spec.get(k)}}
+props = {"id": sid, "scenes": scenes, "end": end, **({"mood": spec["mood"]} if spec.get("mood") else {}), **({"music": spec["music"]} if spec.get("music") else {}), **{k: spec[k] for k in ("chrome", "disclosure", "text") if spec.get(k)}}
 json.dump(props, open(f"out/{sid}.props.json", "w", encoding="utf-8"), ensure_ascii=False)
 subprocess.run(["npx", "remotion", "render", "Scenic", f"out/{sid}.raw.mp4", f"--props=out/{sid}.props.json", "--crf=18", "--audio-bitrate=192k", "--log=error"], check=True)
 ff("-i", f"out/{sid}.raw.mp4", "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", f"out/{sid}.mp4")
