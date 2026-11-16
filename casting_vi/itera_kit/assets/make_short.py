@@ -21,6 +21,8 @@ PRESET = {
  "hungtran_eerie": ("elevenlabs", "DXiwi9uoxet6zAiZXynP", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.8, "speed": 0.9}),
  # Gentle, expressive male Southern storyteller (shared library "Vinh"; user 2026-11-15: giọng nam nhẹ nhàng, biểu cảm sâu).
  "vinh_warm": ("elevenlabs", "pHMSzlSRiVLr5kB4DGOR", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.8, "speed": 0.95}),
+ # Emotional Southern female storyteller (shared library "Lam Vy"; 2026-11-16 startup story).
+ "lamvy_story": ("elevenlabs", "BfchfKCM67ImGdaJ1smU", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.8, "speed": 0.93}),
  "annhien": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "tram": ("elevenlabs", "6Xq32rHt6oAu98TBDKfr", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "camhong": ("elevenlabs", "x4KAhuXs2G8TfK9Zr7Q4", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),

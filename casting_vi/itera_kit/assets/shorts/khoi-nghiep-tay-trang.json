@@ -1,0 +1,112 @@
+{
+ "id": "khoi-nghiep-tay-trang",
+ "template": "scenic",
+ "narrator": "lamvy_story",
+ "music": [
+  {
+   "file": "fx/vast.wav",
+   "gain": 1.0
+  }
+ ],
+ "scenes": [
+  {
+   "word": "TAY TRẮNG",
+   "line": "hai bàn tay, một giấc mơ",
+   "label": "TRUYỆN NGẮN — 01",
+   "text": "Năm hai mươi hai tuổi... cô bắt đầu với hai bàn tay trắng, và một giấc mơ rất nhỏ.",
+   "media": {
+    "mixkit": 33379,
+    "start": 2
+   }
+  },
+  {
+   "word": "ĐƠN ĐẦU",
+   "line": "gói từng món bằng tay",
+   "label": "02 — FIRST ORDER",
+   "text": "Cô tự gói từng món hàng... tự chở đi giao, dưới cái nắng ba mươi bảy độ.",
+   "media": {
+    "mixkit": 42135,
+    "start": 1
+   }
+  },
+  {
+   "word": "GỤC NGÃ",
+   "line": "đơn hàng đầu bị trả lại",
+   "label": "03 — FALL",
+   "text": "Đơn hàng đầu tiên... bị trả lại. [sighs] Cô ngồi khóc một mình, giữa đống thùng giấy.",
+   "media": {
+    "mixkit": 4500,
+    "start": 2
+   }
+  },
+  {
+   "word": "ĐÊM MƯA",
+   "line": "những đêm không ngủ",
+   "label": "04 — SLEEPLESS",
+   "text": "Có những đêm, cô làm tới ba giờ sáng... ngoài kia, mưa vẫn rơi hoài.",
+   "media": {
+    "mixkit": 21144,
+    "start": 1
+   }
+  },
+  {
+   "word": "LÀM TIẾP",
+   "line": "người ta bảo: dừng lại đi",
+   "label": "05 — KEEP GOING",
+   "text": "Người ta bảo cô dừng lại đi. [softly] Cô chỉ cười... rồi làm tiếp.",
+   "media": {
+    "mixkit": 42652,
+    "start": 3
+   }
+  },
+  {
+   "word": "MỞ CỬA",
+   "line": "tiệm nhỏ đầu tiên",
+   "label": "06 — OPEN",
+   "text": "[warmly] Rồi một sáng... cánh cửa tiệm nhỏ đầu tiên của cô, mở ra.",
+   "media": {
+    "mixkit": 21759,
+    "start": 3
+   }
+  }
+ ],
+ "end": {
+  "words": [
+   "TỪ",
+   "TAY TRẮNG"
+  ],
+  "line": "mọi giấc mơ lớn đều bắt đầu rất nhỏ.",
+  "label": "TRUYỆN NGẮN · HƯ CẤU",
+  "text": "[softly] Mọi giấc mơ lớn... đều bắt đầu từ một ngày rất nhỏ.",
+  "media": {
+   "mixkit": 34980,
+   "start": 4
+  }
+ },
+ "youtube": {
+  "title": "Khởi nghiệp từ tay trắng: truyện ngắn về cô gái không bỏ cuộc #shorts",
+  "description": "Truyện ngắn (hư cấu) về một cô gái khởi nghiệp từ hai bàn tay trắng: đơn hàng đầu bị trả lại, những đêm làm tới ba giờ sáng, và cánh cửa tiệm nhỏ đầu tiên. Giọng kể là giọng AI tiếng Việt làm bằng ITERA.\n\nBạn đang bắt đầu điều gì từ con số 0? Comment một chữ thôi!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#khoinghiep #truyenngan #shorts",
+  "tags": [
+   "khởi nghiệp",
+   "khởi nghiệp từ tay trắng",
+   "truyện ngắn",
+   "câu chuyện truyền cảm hứng",
+   "động lực",
+   "giọng kể chuyện",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "ITERA",
+   "startup story",
+   "motivation shorts",
+   "YouTube Shorts"
+  ],
+  "categoryId": "22",
+  "localizations": {
+   "en": {
+    "title": "Starting from nothing: a short story about a girl who never quit #shorts",
+    "description": "A short fictional story about a young woman building her first shop from nothing. Narrated with a Vietnamese AI voice made with ITERA.\n\nhttps://itera102.space\n\n#startup #motivation #shorts"
+   }
+  },
+  "pinned_comment": "Bạn đang bắt đầu điều gì từ con số 0? 👇 Đây là truyện ngắn hư cấu, giọng kể AI làm bằng ITERA: https://itera102.space"
+ }
+}

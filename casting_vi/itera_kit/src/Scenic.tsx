@@ -151,7 +151,8 @@ const EndView: React.FC<{e: ScenicProps['end']; id: string; frames: number}> = (
       <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 6}}>
         {e.words.map((w, i) => {
           const p = spring({frame: f - sec(0.5 + i * 0.45), fps: FPS, config: {damping: 20, stiffness: 90}});
-          return <div key={i} style={{fontFamily: T.sans, fontWeight: 700, fontSize: 150, letterSpacing: 30, color: '#fff', opacity: p, filter: `blur(${(1 - p) * 12}px)`,
+          const efs = Math.min(150, 880 / ([...w].length * 0.86));
+          return <div key={i} style={{fontFamily: T.sans, fontWeight: 700, fontSize: efs, letterSpacing: efs * 0.2, color: '#fff', opacity: p, filter: `blur(${(1 - p) * 12}px)`,
             transform: `translateY(${(1 - p) * 40}px)`, textShadow: '0 12px 50px rgba(0,0,0,0.5)', marginLeft: 30}}>{w}</div>;
         })}
         <div style={{marginTop: 40, fontFamily: T.sans, fontStyle: 'italic', fontSize: 54, color: 'rgba(255,255,255,0.95)', opacity: interpolate(t, [2.0, 2.8], [0, 1], clamp)}}>{e.line}</div>
