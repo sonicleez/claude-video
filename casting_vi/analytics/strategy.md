@@ -5,6 +5,7 @@
 - Velocity: ghost part 4 84 views/h (3.3 h) — best again; livestream voice pick 20/h (weak); diary Day 4 180 in 19 h.
 - Retention: selling voice pick 98%, diary Day 3 98%, ghost voice pick 95%, faceless-selling 88%, diary Day 2 71%, ghost part 2 47%, market skit 54%. High retention but few views on selling picks → hooks for them need more curiosity, not more selling.
 - 17 Nov: "guess the age of 3 voices" (curiosity hook, answer = ITERA) · ghost part 5 (door 2 chosen by story, said honestly in the description) · sunscreen review 1/2 (affiliate niche) · diary Day 6 telling the real setback (−1 sub, 0 votes) and asking for ideas.
+- Scheduled 17 Nov: 08:00 r8s0YwHxZUw · 12:00 VukZvQwM-xc · 16:00 iULvPA01_TE · 20:00 Uun-wc0Yees. Credits ≈1,265. AI-flag update returned 403 on two uploads; a retry fixed it.
 
 ## 2026-11-15 15:20 VN — daily run 4
 - Subs 96 (flat). Retention now in Analytics: ghost voice pick 95.7% avg viewed (1,293 views) · 4 voice styles 69% (+1 sub) · AI reads AI 63% · diary Day 1 108% (loops) · affiliate tips 52% · data lecture 38%.
