@@ -1,6 +1,6 @@
 {
  "id": "me-co-met-khong",
- "narrator": "thao_mother",
+ "narrator": "nangxuan_mother",
  "music": "fx/lullaby.wav",
  "title": "CON HỎI: “MẸ CÓ MỆT KHÔNG?”",
  "titleSay": "[softly] Con hỏi: Mẹ có mệt không?",
@@ -84,5 +84,12 @@
    "pitch": 1.1
   }
  ],
- "endLead": "Hai giọng đọc bạn vừa nghe"
+ "endLead": "Hai giọng đọc bạn vừa nghe",
+ "endParts": [
+  {
+   "say": "[cheerfully] Hai giọng đọc bạn vừa nghe... đều là giọng AI, được tạo bằng ITERA đó!",
+   "preset": "valf_boy_bright",
+   "pitch": 1.1
+  }
+ ]
 }

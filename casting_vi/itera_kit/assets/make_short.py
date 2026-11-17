@@ -34,6 +34,8 @@ PRESET = {
  "thao_mother": ("elevenlabs", "XjVSVJF6jufs6Ra4im1Y", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.85, "speed": 0.9}),
  # Brighter, quicker boy: Valf at speed 1.08 (use with "pitch": 1.1 in story parts for a clearer child timbre).
  "valf_boy_bright": ("elevenlabs", "loY1uopAz31XyhAEhNSa", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.85, "speed": 1.08}),
+ # Deep, expressive Northern mother voice — shared library "Nắng Xuân" (user pick 2026-11-17).
+ "nangxuan_mother": ("elevenlabs", "rEvzjbRl5jRhZdVEX9vl", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.85, "speed": 0.9}),
  "annhien": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "tram": ("elevenlabs", "6Xq32rHt6oAu98TBDKfr", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "camhong": ("elevenlabs", "x4KAhuXs2G8TfK9Zr7Q4", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),

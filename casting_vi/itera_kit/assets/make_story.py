@@ -10,7 +10,7 @@ spec = json.load(open(sys.argv[1], encoding="utf-8")); sid = spec["id"]; NARR = 
 work = f"assets/stories/{sid}"; pub = f"public/story/{sid}"; os.makedirs(work, exist_ok=True); os.makedirs(pub, exist_ok=True); os.makedirs("out", exist_ok=True)
 def parts_of(x, text_key="say"):
     return x["parts"] if isinstance(x, dict) and "parts" in x else [{"say": x[text_key] if isinstance(x, dict) else x}]
-items = [("t", spec.get("titleParts") or [{"say": spec["titleSay"]}])] + [(str(k), parts_of(l)) for k, l in enumerate(spec["lines"])] + [("e", [{"say": spec["endSay"]}])]
+items = [("t", spec.get("titleParts") or [{"say": spec["titleSay"]}])] + [(str(k), parts_of(l)) for k, l in enumerate(spec["lines"])] + [("e", spec.get("endParts") or [{"say": spec["endSay"]}])]
 ids, credits = {}, 0
 for key, parts in items:
     for j, pt in enumerate(parts):
