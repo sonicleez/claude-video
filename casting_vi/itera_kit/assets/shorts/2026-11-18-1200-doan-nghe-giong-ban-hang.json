@@ -1,0 +1,106 @@
+{
+ "id": "2026-11-18-1200-doan-nghe-giong-ban-hang",
+ "template": "reel",
+ "endLines": [
+  "Một câu",
+  "BA NGƯỜI BÁN"
+ ],
+ "hook": {
+  "lines": [
+   "ĐOÁN XEM",
+   "AI BÁN",
+   "ĐƯỢC NỒI?"
+  ],
+  "text": "Ba người cùng bán một cái nồi. Bạn đoán người nào chốt được đơn?",
+  "footage": {
+   "mixkit": 43941,
+   "start": 3
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Người bán số 1",
+   "button": "Nghe",
+   "title": [
+    "NGƯỜI",
+    "SỐ 1"
+   ],
+   "accent": "nghe thử",
+   "preset": "tram",
+   "text": "Chị ơi, cái nồi này nấu cơm ngon lắm, chị lấy một cái hông?",
+   "footage": {
+    "mixkit": 50410,
+    "start": 6
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "NGƯỜI",
+    "SỐ 2"
+   ],
+   "accent": "nghe thử",
+   "preset": "camhong",
+   "style": "wipe",
+   "text": "Chị ơi, cái nồi này nấu cơm ngon lắm, chị lấy một cái hông?",
+   "footage": {
+    "mixkit": 1808,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "NGƯỜI",
+    "SỐ 3"
+   ],
+   "accent": "nghe thử",
+   "preset": "an_human",
+   "style": "slam",
+   "text": "[laughs] Chị ơi, cái nồi này nấu cơm ngon lắm á, chị lấy một cái hông?",
+   "footage": {
+    "mixkit": 13168,
+    "start": 20
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "1, 2",
+    "HAY 3?"
+   ],
+   "accent": "bạn mua của ai",
+   "style": "kinetic",
+   "text": "Cả ba người bán đều là giọng tạo bằng Itera. Bạn mua của người số mấy? Comment một số thôi.",
+   "footage": {
+    "mixkit": 19349,
+    "start": 3
+   }
+  }
+ ],
+ "youtube": {
+  "title": "3 giọng AI cùng bán 1 cái nồi: bạn mua của ai? #shorts",
+  "description": "Ba giọng AI tiếng Việt cùng đọc một câu chào hàng nồi cơm. Bạn mua của người bán số 1, 2 hay 3?\n\nCả 3 người bán đều là giọng AI (text to speech) tạo trên ITERA, dùng được cho video bán hàng, livestream, TikTok Shop không cần lộ mặt hay thu âm. Comment 1, 2 hoặc 3!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#banhang #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "giọng bán hàng",
+   "video bán hàng",
+   "chốt đơn",
+   "TikTok Shop",
+   "affiliate",
+   "bán hàng không lộ mặt",
+   "lồng tiếng AI"
+  ],
+  "localizations": {
+   "en": {
+    "title": "3 AI voices sell the same pot: who would you buy from? #shorts",
+    "description": "Three Vietnamese AI voices read the same sales line. Buy from seller 1, 2 or 3? All made with ITERA.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn mua của người số mấy? 👇 Tạo giọng bán hàng tại: https://itera102.space"
+ }
+}

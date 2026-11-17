@@ -1,5 +1,12 @@
 # Strategy log (newest first)
 
+## 2026-11-17 15:20 VN — daily run 6
+- Subs 96 (+1). New record: "guess the age of 3 voices" r8s0YwHxZUw 788 views in 7.3 h (107/h), beating ghost part 4 (84/h). Curiosity game + reveal "all are ITERA" = selling inside the story that also spreads.
+- Ghost part 5 VukZvQwM-xc only 19 views in 3.3 h at 12:00 (part 4 did 84/h) → series fatigue or wrong slot; ghost stories belong at night.
+- Diary fading: Day 5 176 in 19 h, Day 4 180 in 43 h. Café A/B review 95 in 23 h (weak).
+- Comments: still 0 door votes; one viewer answered "Số 3" on the ghost voice pick → number answers work, open choices don't.
+- 18 Nov: 08 guess-the-age part 2 · 12 "3 sellers, who would you buy from?" (guess format applied to selling) · 16 air-fryer review 1/2 (specs vs story) · 20 ghost finale (moved to night), asking for the next story topic in one word. Diary paused; channel numbers go into descriptions instead until it proves itself again.
+
 ## 2026-11-16 15:20 VN — daily run 5
 - Subs 95 (−1). No new viewer comments since 15 Nov; the door vote got 0 votes so far.
 - Velocity: ghost part 4 84 views/h (3.3 h) — best again; livestream voice pick 20/h (weak); diary Day 4 180 in 19 h.

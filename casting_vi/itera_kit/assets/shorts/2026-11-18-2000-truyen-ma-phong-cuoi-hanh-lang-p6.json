@@ -1,0 +1,107 @@
+{
+ "id": "2026-11-18-2000-truyen-ma-phong-cuoi-hanh-lang-p6",
+ "template": "reel",
+ "endLines": [
+  "Phòng cuối hành lang",
+  "HẾT"
+ ],
+ "hook": {
+  "lines": [
+   "PHẦN CUỐI",
+   "TÔI",
+   "LÊN TIẾNG"
+  ],
+  "preset": "camhong",
+  "text": "Tôi lên tiếng gọi. Người đó... từ từ quay lại.",
+  "footage": {
+   "mixkit": 3461,
+   "start": 4
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Gọi người đó…",
+   "button": "Gọi",
+   "title": [
+    "TÔI",
+    "GỌI"
+   ],
+   "accent": "phần cuối",
+   "preset": "camhong",
+   "text": "Ê... bạn là ai vậy?",
+   "footage": {
+    "mixkit": 2489,
+    "start": 14
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KHUÔN MẶT",
+    "CỦA TÔI"
+   ],
+   "accent": "người đó quay lại",
+   "preset": "camhong",
+   "style": "slam",
+   "text": "Người đó quay lại. Là mặt của tôi. Nhưng đang cười.",
+   "footage": {
+    "mixkit": 21144,
+    "start": 12
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "CẢM ƠN",
+    "ĐÃ MỞ CỬA"
+   ],
+   "accent": "nó nói",
+   "preset": "camhong",
+   "style": "kinetic",
+   "text": "Nó nói: cảm ơn đã mở cửa. Giờ tới lượt bạn ở trong này.",
+   "footage": {
+    "mixkit": 2490,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "TRUYỆN MỚI",
+    "KỂ GÌ?"
+   ],
+   "accent": "hết truyện",
+   "style": "wipe",
+   "text": "Hết truyện rồi nè. Truyện tiếp theo, bạn muốn nghe về cái gì? Comment một chữ thôi.",
+   "footage": {
+    "mixkit": 48880,
+    "start": 9
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Truyện ma 20 giây (phần cuối): người trong phòng quay lại #shorts",
+  "description": "Truyện ma ngắn kể bằng giọng AI tiếng Việt, phần cuối của 'Phòng cuối hành lang': tôi lên tiếng gọi, và người trong phòng quay lại.\n\nTruyện hư cấu, giọng kể là giọng AI tạo trên ITERA. Hết series rồi, truyện tiếp theo bạn muốn nghe về gì? Comment một chữ: nhà, trường, bệnh viện, đường…\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#truyenma #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "truyện ma",
+   "truyện ma ngắn",
+   "truyện ma 20 giây",
+   "truyện ma nhiều phần",
+   "giọng kể chuyện ma",
+   "truyện đêm khuya",
+   "truyện audio"
+  ],
+  "localizations": {
+   "en": {
+    "title": "20-second ghost story (finale): the person in the room turns around #shorts",
+    "description": "Finale of a Vietnamese ghost story told by an AI voice. Fiction. I call out, and the person in the room turns around.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Truyện tiếp theo bạn muốn nghe về gì? Comment một chữ 👇 Giọng kể làm bằng ITERA: https://itera102.space"
+ }
+}

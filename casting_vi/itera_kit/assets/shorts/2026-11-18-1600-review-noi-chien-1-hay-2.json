@@ -1,0 +1,102 @@
+{
+ "id": "2026-11-18-1600-review-noi-chien-1-hay-2",
+ "template": "reel",
+ "endLines": [
+  "Viết như nói",
+  "GIỌNG CÓ HỒN"
+ ],
+ "hook": {
+  "lines": [
+   "CÂU NÀO",
+   "BÁN ĐƯỢC",
+   "NỒI CHIÊN?"
+  ],
+  "text": "Hai câu review nồi chiên, cùng một giọng. Câu nào làm bạn muốn bấm mua?",
+  "footage": {
+   "mixkit": 43941,
+   "start": 8
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Review nồi chiên: kiểu 1",
+   "title": [
+    "KIỂU 1",
+    "ĐỌC TRƠN"
+   ],
+   "accent": "nghe thử",
+   "text": "Nồi chiên này dung tích lớn, dễ vệ sinh, chiên nhanh và giòn.",
+   "footage": {
+    "mixkit": 50410,
+    "start": 9
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KIỂU 2",
+    "CÓ HỒN"
+   ],
+   "accent": "nghe thử",
+   "style": "wipe",
+   "text": "[exhales] Trời ơi, tối qua đói bụng, bỏ đùi gà vô... mười lăm phút. [laughs] Giòn rụm luôn, mà rửa có một xíu là xong.",
+   "footage": {
+    "mixkit": 43941,
+    "start": 14
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KỂ",
+    "ĐỪNG LIỆT KÊ"
+   ],
+   "accent": "mẹo",
+   "style": "kinetic",
+   "text": "Mẹo nè: kể một khoảnh khắc thật, đừng liệt kê thông số.",
+   "footage": {
+    "mixkit": 1808,
+    "start": 12
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "1",
+    "HAY 2?"
+   ],
+   "accent": "bạn chọn",
+   "style": "slam",
+   "text": "Bạn chọn kiểu một hay kiểu hai? Comment một số thôi.",
+   "footage": {
+    "mixkit": 13168,
+    "start": 15
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Review nồi chiên: liệt kê vs kể chuyện, 1 hay 2? #shorts",
+  "description": "Cùng một giọng AI tiếng Việt đọc hai kịch bản review nồi chiên không dầu: liệt kê thông số (kiểu 1) và kể một khoảnh khắc (kiểu 2). Kiểu nào làm bạn muốn mua?\n\nMẹo cho video affiliate đồ gia dụng, review không lộ mặt: kể khoảnh khắc thật thay vì liệt kê thông số. Giọng tạo trên ITERA. Comment 1 hoặc 2!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#review #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "review nồi chiên không dầu",
+   "video affiliate",
+   "review không lộ mặt",
+   "kịch bản review",
+   "đồ gia dụng",
+   "TikTok Shop",
+   "Shopee affiliate"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Air fryer review, specs vs story: 1 or 2? #shorts",
+    "description": "The same AI voice reads an air fryer review two ways: a list of specs or a small story. Which makes you want to buy?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn chọn kiểu 1 hay kiểu 2? 👇 Tạo giọng review tại: https://itera102.space"
+ }
+}
