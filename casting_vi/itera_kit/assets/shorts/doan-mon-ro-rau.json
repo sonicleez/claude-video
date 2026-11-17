@@ -1,0 +1,117 @@
+{
+ "id": "doan-mon-ro-rau",
+ "template": "scenic",
+ "narrator": "an_human",
+ "chrome": "minimal",
+ "text": "lower",
+ "disclosure": "4 GIỌNG AI · ITERA",
+ "music": [
+  {
+   "file": "fx/playful.wav",
+   "gain": 0.55
+  }
+ ],
+ "scenes": [
+  {
+   "word": "ĐOÁN MÓN",
+   "line": "rổ rau này để ăn món gì?",
+   "label": "",
+   "preset": "an_human",
+   "text": "[excited] Nhìn rổ rau này nè... đoán thử coi, mình sắp ăn món gì?",
+   "media": {
+    "image": "media/ro-rau/full.jpg"
+   }
+  },
+  {
+   "word": "ÂN",
+   "line": "manh mối 1: cải cúc thơm hăng",
+   "label": "",
+   "preset": "an_soft",
+   "text": "Cải cúc tươi rói nè... mùi thơm hăng hăng, nhúng vô là mềm liền.",
+   "media": {
+    "image": "media/ro-rau/cai-cuc.jpg"
+   }
+  },
+  {
+   "word": "TRÂM",
+   "line": "manh mối 2: xà lách giòn",
+   "label": "",
+   "preset": "tram_soft",
+   "text": "Thêm xà lách xanh mướt... lá to, giòn giòn, ăn sống hay nhúng sơ đều ngon.",
+   "media": {
+    "image": "media/ro-rau/xa-lach.jpg"
+   }
+  },
+  {
+   "word": "VINH",
+   "line": "manh mối 3: ớt đỏ, ớt vàng",
+   "label": "",
+   "preset": "vinh_warm",
+   "text": "[chuckles] Ớt đỏ, ớt vàng cắt khoanh sẵn rồi... ai ghiền ớt thì cứ tự nhiên nha.",
+   "media": {
+    "image": "media/ro-rau/ot.jpg"
+   }
+  },
+  {
+   "word": "LAM VY",
+   "line": "manh mối 4: chanh vắt chén chấm",
+   "label": "",
+   "preset": "lamvy_story",
+   "text": "Còn chanh nữa nè... vắt vô chén nước chấm, chua chua, cay cay, là hết sảy.",
+   "media": {
+    "image": "media/ro-rau/chanh.jpg"
+   }
+  },
+  {
+   "word": "MÓN GÌ?",
+   "line": "comment đáp án liền đi!",
+   "label": "",
+   "preset": "an_human",
+   "text": "[laughs] Bốn manh mối đủ rồi đó... vậy là chuẩn bị ăn món gì? Comment liền đi!",
+   "media": {
+    "mixkit": 24677,
+    "start": 3
+   }
+  }
+ ],
+ "end": {
+  "words": [
+   "LẨU BÒ?",
+   "LẨU CÁ?",
+   "LẨU GÀ?",
+   "BÒ NHÚNG GIẤM?"
+  ],
+  "line": "bạn đoán món nào?",
+  "label": "",
+  "preset": "an_human",
+  "text": "Gợi ý nè: lẩu bò, lẩu cá, lẩu gà... hay bò nhúng giấm? Bạn đoán món nào?",
+  "media": {
+   "image": "media/ro-rau/full.jpg"
+  }
+ },
+ "youtube": {
+  "title": "Đoán món qua rổ rau: cải cúc, xà lách, ớt, chanh ăn với gì? #shorts",
+  "description": "Đố vui ẩm thực: nhìn rổ rau cải cúc, xà lách, ớt và chanh, bạn đoán mình sắp ăn món gì? Bốn giọng AI tiếng Việt (Ân, Trâm, Vinh, Lam Vy) làm bằng ITERA lần lượt đưa manh mối.\n\nGợi ý: lẩu bò, lẩu cá, lẩu gà hay bò nhúng giấm? Comment đáp án của bạn!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#doanmon #lau #shorts",
+  "tags": [
+   "đoán món ăn",
+   "đố vui ẩm thực",
+   "rau ăn lẩu",
+   "cải cúc",
+   "lẩu bò",
+   "bò nhúng giấm",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "ITERA",
+   "Vietnamese food quiz",
+   "YouTube Shorts"
+  ],
+  "categoryId": "26",
+  "localizations": {
+   "en": {
+    "title": "Guess the dish from this herb basket: crown daisy, lettuce, chili, lime #shorts",
+    "description": "A food quiz with four Vietnamese AI voices made with ITERA. Hot pot? Beef in vinegar broth? Guess in the comments!\n\nhttps://itera102.space\n\n#foodquiz #AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn đoán món gì: lẩu bò, lẩu cá, lẩu gà hay bò nhúng giấm? 👇 4 giọng trong video là giọng AI làm bằng ITERA: https://itera102.space"
+ }
+}

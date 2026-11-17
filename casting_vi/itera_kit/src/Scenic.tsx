@@ -35,6 +35,7 @@ const Grain: React.FC = () => {
 /** Moving picture: video with a slow pull-back, or a photo panned across its width. */
 const Media: React.FC<{s: Scene; id: string; frames: number}> = ({s, id, frames}) => {
   const f = useCurrentFrame(); const p = f / frames;
+  const textMode = React.useContext(TextCtx);
   const eerie = React.useContext(MoodCtx) === 'eerie';
   const grade = eerie ? 'saturate(0.45) contrast(1.2) brightness(0.72) hue-rotate(-12deg)' : 'saturate(1.12) contrast(1.06) brightness(0.96) sepia(0.06)';
   if (s.kind === 'image') {
@@ -43,11 +44,12 @@ const Media: React.FC<{s: Scene; id: string; frames: number}> = ({s, id, frames}
     const wAtH = 1920 * a;
     if (a > 1.2) {
       // Landscape photo: whole picture in a rounded card (slow push-in) over a blurred, enlarged copy of itself.
-      const cw = 960, ch = cw / a; const zc = interpolate(p, [0, 1], [1.0, 1.08]);
+      const lowerText = textMode === 'lower';
+      const cw = lowerText ? 900 : 960, ch = cw / a; const zc = interpolate(p, [0, 1], [1.0, 1.08]);
       return (
         <>
           <Img src={staticFile(`scenic/${id}/${s.media}`)} style={{position: 'absolute', height: 1920, width: 1920 * a, left: (1080 - 1920 * a) / 2, top: 0, filter: `blur(28px) ${grade} brightness(0.7)`, transform: `scale(${1.1 + p * 0.05})`}} />
-          <div style={{position: 'absolute', left: 60, top: 1170, width: cw, height: ch, borderRadius: 28, overflow: 'hidden', boxShadow: '0 30px 80px rgba(0,0,0,0.55)', border: '2px solid rgba(255,255,255,0.35)'}}>
+          <div style={{position: 'absolute', left: (1080 - cw) / 2, top: lowerText ? 250 : 1170, width: cw, height: ch, borderRadius: 28, overflow: 'hidden', boxShadow: '0 30px 80px rgba(0,0,0,0.55)', border: '2px solid rgba(255,255,255,0.35)'}}>
             <Img src={staticFile(`scenic/${id}/${s.media}`)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zc})`, filter: grade}} />
           </div>
         </>
@@ -99,7 +101,7 @@ const LowerText: React.FC<{lines: string[]; sub: string; extra?: string; at: num
   const f = useCurrentFrame(); const t = f / FPS;
   const out = interpolate(f, [frames - sec(0.6), frames], [1, 0], clamp);
   const p = (d: number) => (at === 0 && d === 0 ? 1 : interpolate(t, [at + d, at + d + 0.7], [0, 1], {...clamp, easing: ease}));
-  const fsOf = (w: string) => Math.min(118, 860 / ([...w].length * 0.7));
+  const fsOf = (w: string) => Math.min(lines.length > 2 ? 88 : 118, 860 / ([...w].length * 0.7));
   const bar = p(0);
   return (
     <AbsoluteFill style={{opacity: out}}>
