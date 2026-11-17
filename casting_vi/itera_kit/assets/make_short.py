@@ -25,6 +25,8 @@ PRESET = {
  "lamvy_story": ("elevenlabs", "BfchfKCM67ImGdaJ1smU", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.8, "speed": 0.93}),
  # Lam Vy, softest reading for tender short stories (2026-11-17: "truyền cảm nhẹ nhàng nhất").
  "lamvy_soft": ("elevenlabs", "BfchfKCM67ImGdaJ1smU", "eleven_v3", "vi", {"stability": 0.5, "similarity_boost": 0.85, "style": 0.0, "speed": 0.86}),
+ # Deep, warm Southern female storyteller (shared library "Tieu Hong"; 2026-11-17: giọng trầm truyền cảm).
+ "tieuhong_deep": ("elevenlabs", "0xI4eT7fHnn6AHTfF4Ro", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.85, "speed": 0.88}),
  "annhien": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "tram": ("elevenlabs", "6Xq32rHt6oAu98TBDKfr", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "camhong": ("elevenlabs", "x4KAhuXs2G8TfK9Zr7Q4", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
