@@ -1,0 +1,21 @@
+{
+ "id": "me-co-met-khong",
+ "narrator": "lamvy_soft",
+ "music": "fx/sweet.wav",
+ "title": "CON HỎI: “MẸ CÓ MỆT KHÔNG?”",
+ "titleSay": "[softly] Con hỏi: Mẹ có mệt không?",
+ "lines": [
+  {"say": "Mẹ đang nấu cơm. Không nói gì. Không thở dài."},
+  {"say": "Con tám tuổi, đi ngang, hỏi đúng bốn chữ đó.", "display": ["Con tám tuổi, đi ngang, hỏi đúng bốn chữ đó."]},
+  {"say": "Mẹ giật mình: Sao con hỏi thế?", "display": ["Mẹ giật mình: “Sao con hỏi thế?”"]},
+  {"say": "Con bảo: Tại mắt mẹ.", "display": ["Con bảo: “Tại mắt mẹ.”"], "gap": 1.0},
+  {"say": "[softly] Mắt mẹ.", "display": ["Mắt mẹ."], "gap": 1.2},
+  {"say": "Mẹ soi gương. Mắt mẹ vẫn thế. Mẹ không thấy gì.", "display": ["Mẹ soi gương. Mắt mẹ vẫn thế.", "Mẹ không thấy gì."]},
+  {"say": "Con thì thấy.", "display": ["Con thì thấy."], "gap": 1.2},
+  {"say": "Trẻ con đọc mẹ bằng một thứ ngôn ngữ mà người lớn quên mất.", "display": ["Trẻ con đọc mẹ bằng một thứ ngôn ngữ mà", "người lớn quên mất."], "gap": 1.0},
+  {"say": "Mẹ ngồi xuống: Ừ, hôm nay mẹ mệt.", "display": ["Mẹ ngồi xuống: “Ừ, hôm nay mẹ mệt.”"]},
+  {"say": "Con chạy lại ôm mẹ, không nói gì.", "display": ["Con chạy lại ôm mẹ, không nói gì."], "gap": 1.0},
+  {"say": "[softly] Con đọc mẹ bằng thứ ngôn ngữ mà người lớn đã quên.", "display": ["Con đọc mẹ bằng thứ ngôn ngữ mà", "người lớn đã quên. ♥"], "gap": 1.2}
+ ],
+ "endSay": "[softly] Giọng đọc bạn vừa nghe... là giọng AI, được tạo bằng ITERA."
+}
