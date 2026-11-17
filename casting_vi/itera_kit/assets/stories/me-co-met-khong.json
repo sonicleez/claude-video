@@ -1,6 +1,6 @@
 {
  "id": "me-co-met-khong",
- "narrator": "tieuhong_deep",
+ "narrator": "thao_mother",
  "music": "fx/lullaby.wav",
  "title": "CON HỎI: “MẸ CÓ MỆT KHÔNG?”",
  "titleSay": "[softly] Con hỏi: Mẹ có mệt không?",
@@ -31,8 +31,9 @@
      "say": "Con bảo:"
     },
     {
-     "say": "[softly] Tại mắt mẹ.",
-     "preset": "valf_boy"
+     "say": "[innocently] Tại mắt mẹ.",
+     "preset": "valf_boy_bright",
+     "pitch": 1.1
     }
    ]
   },
@@ -78,8 +79,9 @@
    "say": "[softly] Con hỏi:"
   },
   {
-   "say": "[softly] Mẹ có mệt không?",
-   "preset": "valf_boy"
+   "say": "[curious] Mẹ có mệt không?",
+   "preset": "valf_boy_bright",
+   "pitch": 1.1
   }
  ],
  "endLead": "Hai giọng đọc bạn vừa nghe"

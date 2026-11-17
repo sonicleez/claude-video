@@ -31,7 +31,8 @@ for key, parts in items:
     for j, pt in enumerate(parts):
         try: print(f"[v{key}_{j}] {stt(f'{work}/v{key}_{j}.mp3')['text']}")
         except Exception as e: print(f"[v{key}_{j}] STT failed: {e}")
-        ff("-i", f"{work}/v{key}_{j}.mp3", "-af", TRIM, "-ar", "48000", "-ac", "2", f"{work}/p{key}_{j}.wav"); segs.append(f"{work}/p{key}_{j}.wav")
+        pre = f"rubberband=pitch={pt['pitch']}:formant=shifted," if pt.get("pitch") else ""   # optional brighter/younger timbre
+        ff("-i", f"{work}/v{key}_{j}.mp3", "-af", pre + TRIM, "-ar", "48000", "-ac", "2", f"{work}/p{key}_{j}.wav"); segs.append(f"{work}/p{key}_{j}.wav")
     if len(segs) == 1: ff("-i", segs[0], f"{pub}/v{key}.wav")
     else:
         ins = sum([["-i", s] for s in segs], []); n = len(segs)
