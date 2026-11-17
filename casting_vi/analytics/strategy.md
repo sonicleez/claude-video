@@ -6,6 +6,7 @@
 - Diary fading: Day 5 176 in 19 h, Day 4 180 in 43 h. Café A/B review 95 in 23 h (weak).
 - Comments: still 0 door votes; one viewer answered "Số 3" on the ghost voice pick → number answers work, open choices don't.
 - 18 Nov: 08 guess-the-age part 2 · 12 "3 sellers, who would you buy from?" (guess format applied to selling) · 16 air-fryer review 1/2 (specs vs story) · 20 ghost finale (moved to night), asking for the next story topic in one word. Diary paused; channel numbers go into descriptions instead until it proves itself again.
+- Scheduled 18 Nov: 08:00 a1fPHjbhaI0 · 12:00 G2o6DDMSibs · 16:00 KWDXkW6v4dY · 20:00 _85xwbLj8-g. Credits ≈1,275.
 
 ## 2026-11-16 15:20 VN — daily run 5
 - Subs 95 (−1). No new viewer comments since 15 Nov; the door vote got 0 votes so far.
