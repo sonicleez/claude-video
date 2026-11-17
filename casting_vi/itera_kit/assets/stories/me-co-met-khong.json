@@ -25,7 +25,16 @@
    "display": [
     "Con bảo: “Tại mắt mẹ.”"
    ],
-   "gap": 1.3
+   "gap": 1.3,
+   "parts": [
+    {
+     "say": "Con bảo:"
+    },
+    {
+     "say": "[softly] Tại mắt mẹ.",
+     "preset": "valf_boy"
+    }
+   ]
   },
   {
    "say": "Mẹ soi gương. Mắt mẹ vẫn thế. Mẹ không thấy gì.",
@@ -63,5 +72,15 @@
    "gap": 1.2
   }
  ],
- "endSay": "[softly] Giọng đọc bạn vừa nghe... là giọng AI, được tạo bằng ITERA."
+ "endSay": "[softly] Hai giọng đọc bạn vừa nghe... đều là giọng AI, được tạo bằng ITERA.",
+ "titleParts": [
+  {
+   "say": "[softly] Con hỏi:"
+  },
+  {
+   "say": "[softly] Mẹ có mệt không?",
+   "preset": "valf_boy"
+  }
+ ],
+ "endLead": "Hai giọng đọc bạn vừa nghe"
 }

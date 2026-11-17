@@ -21,6 +21,6 @@ export const RemotionRoot = () => (
     <Composition id="Story" component={Story as any} durationInFrames={300} fps={FPS} width={W} height={H}
       defaultProps={{id: 'sample', title: '', titleDur: 1, lines: [], endDur: 1} as any}
       calculateMetadata={({props}) => ({durationInFrames: storyDuration(props as any)})} />
-    <Composition id="StoryEndCard" component={(() => <EndIllustration t={4} />) as any} durationInFrames={1} fps={FPS} width={W} height={H} />
+    <Composition id="StoryEndCard" component={((pr: any) => <EndIllustration t={4} lead={pr.lead} />) as any} durationInFrames={1} fps={FPS} width={W} height={H} defaultProps={{lead: 'Giọng đọc bạn vừa nghe'} as any} />
   </>
 );

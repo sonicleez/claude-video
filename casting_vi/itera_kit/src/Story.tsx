@@ -8,7 +8,7 @@ import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame}
 import {FPS, T, sec} from './brand';
 
 export type StoryLine = {text: string; display?: string[]; voiceDur: number; gap?: number; gapBefore?: number};
-export type StoryProps = {id: string; title: string; titleDur: number; lines: StoryLine[]; endDur: number; music?: string};
+export type StoryProps = {id: string; title: string; titleDur: number; lines: StoryLine[]; endDur: number; music?: string; endLead?: string};
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 const INK = '#3A2E2A', RED = '#D9534F', PAPER = '#F6EEE3';
 export const storyTimeline = (p: StoryProps) => {
@@ -64,7 +64,7 @@ const Reading: React.FC<{p: StoryProps}> = ({p}) => {
 };
 
 /** Illustrated end card: two hearts held by sound waves, "this voice is AI", ITERA. */
-export const EndIllustration: React.FC<{t: number}> = ({t}) => {
+export const EndIllustration: React.FC<{t: number; lead?: string}> = ({t, lead = 'Giọng đọc bạn vừa nghe'}) => {
   const a = (d: number) => interpolate(t, [d, d + 0.9], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 3)});
   const pulse = 1 + 0.03 * Math.sin(t * 2.4);
   return (
@@ -87,8 +87,8 @@ export const EndIllustration: React.FC<{t: number}> = ({t}) => {
         </g>
       </svg>
       <div style={{position: 'absolute', left: 60, right: 60, top: 1140, textAlign: 'center', fontFamily: T.sans, color: INK}}>
-        <div style={{fontSize: 40, fontWeight: 400, opacity: a(0.6), letterSpacing: 1}}>Giọng đọc bạn vừa nghe</div>
-        <div style={{fontSize: 86, fontWeight: 800, color: RED, marginTop: 10, opacity: a(1.0), transform: `translateY(${(1 - a(1.0)) * 20}px)`}}>là giọng AI</div>
+        <div style={{fontSize: 40, fontWeight: 400, opacity: a(0.6), letterSpacing: 1}}>{lead}</div>
+        <div style={{fontSize: 86, fontWeight: 800, color: RED, marginTop: 10, opacity: a(1.0), transform: `translateY(${(1 - a(1.0)) * 20}px)`}}>{lead.startsWith("Hai") ? "đều là giọng AI" : "là giọng AI"}</div>
         <div style={{fontSize: 40, fontWeight: 500, marginTop: 26, opacity: a(1.5)}}>được tạo bằng</div>
         <div style={{display: 'inline-flex', alignItems: 'center', gap: 16, marginTop: 18, opacity: a(1.9)}}>
           <div style={{width: 20, height: 20, borderRadius: 10, background: T.red}} />
@@ -109,7 +109,7 @@ export const Story: React.FC<StoryProps> = (p) => {
     <AbsoluteFill style={{background: PAPER}}>
       <Paper />
       <AbsoluteFill style={{opacity: 1 - endIn}}><Reading p={p} /></AbsoluteFill>
-      {t >= tEnd - 0.2 && <AbsoluteFill style={{opacity: endIn}}><EndIllustration t={t - tEnd} /></AbsoluteFill>}
+      {t >= tEnd - 0.2 && <AbsoluteFill style={{opacity: endIn}}><EndIllustration t={t - tEnd} lead={p.endLead} /></AbsoluteFill>}
       <AbsoluteFill style={{background: '#000', opacity: interpolate(t, [0, 0.5, total - 0.8, total], [1, 0, 0, 1], clamp)}} />
       {p.music && <Audio src={staticFile(p.music)} volume={(fr) => { const x = fr / FPS; return interpolate(x, [0, 1.5, total - 2, total], [0, 1, 1, 0], clamp) * (voiceAt(x) ? 0.16 : 0.32); }} />}
       <Sequence from={sec(tTitle)}><Audio src={staticFile(`story/${p.id}/vt.wav`)} /></Sequence>
