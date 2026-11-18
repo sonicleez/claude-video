@@ -1,0 +1,107 @@
+{
+ "id": "2026-11-19-2000-3-giong-ke-chuyen-ma-p2",
+ "template": "reel",
+ "endLines": [
+  "Giọng kể chuyện ma",
+  "LÀM BẰNG ITERA"
+ ],
+ "hook": {
+  "lines": [
+   "3 GIỌNG",
+   "KỂ MA",
+   "AI ĐÁNG SỢ?"
+  ],
+  "preset": "camhong",
+  "text": "Ba giọng cùng kể một câu chuyện ma. Nghe tới giọng nào bạn nổi da gà?",
+  "footage": {
+   "mixkit": 12567,
+   "start": 3
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Giọng kể số 1",
+   "button": "Nghe",
+   "title": [
+    "GIỌNG",
+    "SỐ 1"
+   ],
+   "accent": "nghe thử",
+   "preset": "camhong",
+   "text": "Đêm qua, có ai đó gõ cửa phòng tôi ba lần. Mà nhà tôi... chỉ có mình tôi.",
+   "footage": {
+    "mixkit": 48880,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 2"
+   ],
+   "accent": "nghe thử",
+   "preset": "tram",
+   "style": "wipe",
+   "text": "Đêm qua, có ai đó gõ cửa phòng tôi ba lần. Mà nhà tôi... chỉ có mình tôi.",
+   "footage": {
+    "mixkit": 48498,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "GIỌNG",
+    "SỐ 3"
+   ],
+   "accent": "nghe thử",
+   "preset": "an_human",
+   "style": "slam",
+   "text": "[whispers] Đêm qua, có ai đó gõ cửa phòng tôi ba lần. Mà nhà tôi... chỉ có mình tôi.",
+   "footage": {
+    "mixkit": 2489,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "1, 2",
+    "HAY 3?"
+   ],
+   "accent": "bạn sợ giọng nào",
+   "style": "kinetic",
+   "text": "Cả ba giọng đều tạo bằng Itera. Giọng nào làm bạn sợ nhất? Comment một số thôi.",
+   "footage": {
+    "mixkit": 3461,
+    "start": 8
+   }
+  }
+ ],
+ "youtube": {
+  "title": "3 giọng AI kể chuyện ma (phần 2): giọng nào đáng sợ nhất? #shorts",
+  "description": "Ba giọng AI tiếng Việt cùng kể một câu chuyện ma ngắn. Giọng nào làm bạn nổi da gà: số 1, 2 hay 3?\n\nPhần 1 là video được xem nhiều nhất kênh, nên có phần 2. Truyện hư cấu, cả 3 giọng kể là giọng AI tạo trên ITERA, dùng được cho kênh truyện ma, truyện audio không cần thu âm. Comment 1, 2 hoặc 3!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#truyenma #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "truyện ma",
+   "truyện ma ngắn",
+   "giọng kể chuyện ma",
+   "kênh truyện ma",
+   "truyện audio",
+   "truyện đêm khuya",
+   "lồng tiếng AI"
+  ],
+  "localizations": {
+   "en": {
+    "title": "3 AI voices tell a ghost story (part 2): which is scariest? #shorts",
+    "description": "Three Vietnamese AI voices tell the same short ghost story. Which one gives you chills: 1, 2 or 3? Fiction; all voices made with ITERA.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Giọng nào làm bạn sợ nhất? 👇 Tạo giọng kể chuyện tại: https://itera102.space"
+ }
+}

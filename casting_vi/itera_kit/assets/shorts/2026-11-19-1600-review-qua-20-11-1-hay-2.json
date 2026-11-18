@@ -1,0 +1,102 @@
+{
+ "id": "2026-11-19-1600-review-qua-20-11-1-hay-2",
+ "template": "reel",
+ "endLines": [
+  "Viết như nói",
+  "GIỌNG CÓ HỒN"
+ ],
+ "hook": {
+  "lines": [
+   "QUÀ 20/11",
+   "CÂU NÀO",
+   "BÁN ĐƯỢC?"
+  ],
+  "text": "Sắp hai mươi tháng mười một rồi. Hai câu review quà tặng cô, câu nào làm bạn muốn mua?",
+  "footage": {
+   "mixkit": 169,
+   "start": 4
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Review quà 20/11: kiểu 1",
+   "title": [
+    "KIỂU 1",
+    "ĐỌC TRƠN"
+   ],
+   "accent": "nghe thử",
+   "text": "Bộ bút này vỏ kim loại, viết êm, có hộp đẹp, phù hợp làm quà.",
+   "footage": {
+    "mixkit": 49557,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KIỂU 2",
+    "CÓ HỒN"
+   ],
+   "accent": "nghe thử",
+   "style": "wipe",
+   "text": "[exhales] Hồi đó, cô chấm bài cho mình bằng cây bút đỏ... [laughs] Giờ tới lượt mình tặng cô một cây.",
+   "footage": {
+    "mixkit": 49557,
+    "start": 20
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "KỂ",
+    "KỶ NIỆM"
+   ],
+   "accent": "mẹo",
+   "style": "kinetic",
+   "text": "Mẹo nè: bán quà thì kể kỷ niệm, đừng kể thông số.",
+   "footage": {
+    "mixkit": 46283,
+    "start": 5
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "1",
+    "HAY 2?"
+   ],
+   "accent": "bạn chọn",
+   "style": "slam",
+   "text": "Bạn chọn kiểu một hay kiểu hai? Comment một số thôi.",
+   "footage": {
+    "mixkit": 169,
+    "start": 14
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Review quà 20/11: liệt kê vs kể kỷ niệm, 1 hay 2? #shorts",
+  "description": "Cùng một giọng AI tiếng Việt đọc hai kịch bản review quà tặng thầy cô 20/11: liệt kê thông số (kiểu 1) và kể một kỷ niệm (kiểu 2). Kiểu nào làm bạn muốn mua?\n\nMẹo cho video affiliate mùa quà tặng: bán quà thì kể kỷ niệm. Giọng tạo trên ITERA, không cần thu âm hay lộ mặt. Comment 1 hoặc 2!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#review #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "quà 20/11",
+   "quà tặng thầy cô",
+   "video affiliate",
+   "review không lộ mặt",
+   "kịch bản review",
+   "TikTok Shop",
+   "Ngày Nhà giáo Việt Nam"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Teachers' Day gift review, specs vs memory: 1 or 2? #shorts",
+    "description": "The same AI voice reads a Teachers' Day gift review two ways: a list of specs or a small memory. Which makes you want to buy?\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn chọn kiểu 1 hay kiểu 2? 👇 Tạo giọng review tại: https://itera102.space"
+ }
+}

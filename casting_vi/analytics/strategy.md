@@ -1,5 +1,14 @@
 # Strategy log (newest first)
 
+## 2026-11-18 15:20 VN — daily run 7
+- Subs 96 (flat). No new viewer comments since 16 Nov.
+- Best new format: "3 voices sell the same pot, who would you buy from?" G2o6DDMSibs 240 views in 3.3 h (72/h). Guess game + selling works.
+- Sequel drop: guess-the-age part 2 a1fPHjbhaI0 247 in 7.3 h vs part 1 788 in the same window → once viewers know the answer the surprise is gone. Keep the game, change the puzzle/product each time.
+- Diary Day 6 (honest setback) 223 in 19 h, better than Day 5 (176 in 43 h) → diary returns when it has a real twist.
+- Cosmetics 1/2 review 216 in 23 h, better than café (95 in 47 h): product niches beat venue reviews.
+- Trends (web, 18 Nov): Q4 sales season (12.12 → Tết 2027), niches gifts / household / personal care / Tết food; more KOCs, lower GMV per creator, trust matters. 20/11 Teachers' Day in 2 days.
+- 19 Nov: 08 "3 sellers, Tết gift box" · 12 diary Day 7 (part 2 lost to part 1) · 16 20/11 gift review 1/2 · 20 "3 voices tell a ghost story" part 2 (new story, not a repeat of the answer).
+
 ## 2026-11-17 15:20 VN — daily run 6
 - Subs 96 (+1). New record: "guess the age of 3 voices" r8s0YwHxZUw 788 views in 7.3 h (107/h), beating ghost part 4 (84/h). Curiosity game + reveal "all are ITERA" = selling inside the story that also spreads.
 - Ghost part 5 VukZvQwM-xc only 19 views in 3.3 h at 12:00 (part 4 did 84/h) → series fatigue or wrong slot; ghost stories belong at night.

@@ -1,0 +1,104 @@
+{
+ "id": "2026-11-19-1200-nhat-ky-xay-kenh-ngay-7",
+ "template": "reel",
+ "endLines": [
+  "Nhật ký xây kênh",
+  "NGÀY 7"
+ ],
+ "hook": {
+  "lines": [
+   "PHẦN 2",
+   "LUÔN",
+   "THUA PHẦN 1?"
+  ],
+  "text": "Ngày bảy xây kênh. Video đoán tuổi thắng lớn. Phần hai thì... thua thảm.",
+  "footage": {
+   "mixkit": 34980,
+   "start": 4
+  }
+ },
+ "chapters": [
+  {
+   "prompt": "Video đoán tuổi phần 1",
+   "button": "Xem số",
+   "title": [
+    "926",
+    "LƯỢT XEM"
+   ],
+   "accent": "phần 1",
+   "style": "count",
+   "text": "Đoán tuổi phần một, chín trăm hai mươi sáu lượt xem. Nhiều nhất tuần luôn.",
+   "footage": {
+    "mixkit": 28893,
+    "start": 4
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "247",
+    "LƯỢT XEM"
+   ],
+   "accent": "phần 2, cùng 7 giờ đầu",
+   "style": "count",
+   "text": "Phần hai, cùng bảy tiếng đầu, chỉ có hai trăm bốn mươi bảy.",
+   "footage": {
+    "mixkit": 2652,
+    "start": 3
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "HẾT",
+    "BẤT NGỜ"
+   ],
+   "accent": "vì sao",
+   "style": "kinetic",
+   "text": "Mình nghĩ là, người ta biết đáp án rồi. Hết bất ngờ thì hết xem.",
+   "footage": {
+    "mixkit": 24580,
+    "start": 6
+   }
+  },
+  {
+   "prompt": "",
+   "title": [
+    "MỚI",
+    "MỖI NGÀY"
+   ],
+   "accent": "bài học",
+   "style": "slam",
+   "text": "Bài học hôm nay: giữ cách chơi, đổi câu đố. Bạn muốn đoán gì tiếp theo?",
+   "footage": {
+    "mixkit": 49557,
+    "start": 10
+   }
+  }
+ ],
+ "youtube": {
+  "title": "Xây kênh bằng giọng AI: Ngày 7, phần 2 thua phần 1 #shorts",
+  "description": "Nhật ký xây kênh YouTube bằng giọng AI, ngày 7: video đoán tuổi phần 1 đạt 926 lượt xem, phần 2 chỉ 247 lượt trong 7 giờ đầu.\n\nSố liệu thật lúc viết kịch bản (kênh 96 sub). Bài học: giữ cách chơi, đổi câu đố. Bạn muốn đoán gì tiếp theo? Hậu trường: Claude + Remotion + giọng ITERA.\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#xaykenh #giongnoiAI #shorts",
+  "tags": [
+   "giọng nói AI",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "xây kênh YouTube",
+   "nhật ký xây kênh",
+   "thử thách xây kênh",
+   "phần 2",
+   "bài học YouTube Shorts",
+   "kênh không lộ mặt",
+   "YouTube Shorts"
+  ],
+  "localizations": {
+   "en": {
+    "title": "Growing a channel with an AI voice: Day 7, part 2 lost to part 1 #shorts",
+    "description": "Day 7: the guess-the-age video got 926 views; part 2 got only 247 in the same first 7 hours. Lesson: keep the game, change the puzzle.\n\nhttps://itera102.space\n\n#AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn muốn đoán gì tiếp theo? 👇 Giọng trong video làm bằng ITERA: https://itera102.space"
+ }
+}
