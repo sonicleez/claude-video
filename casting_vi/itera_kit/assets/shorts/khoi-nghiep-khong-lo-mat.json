@@ -1,0 +1,104 @@
+{
+ "id": "khoi-nghiep-khong-lo-mat",
+ "template": "scenic",
+ "narrator": "an_human",
+ "chrome": "minimal",
+ "text": "lower",
+ "disclosure": "GIỌNG KỂ AI · ITERA",
+ "music": [
+  {
+   "file": "fx/sweet.wav",
+   "gain": 0.6
+  }
+ ],
+ "scenes": [
+  {
+   "word": "CHƯA HỌC",
+   "line": "chưa từng học trường lớp nào",
+   "label": "",
+   "text": "[exhales] Chưa học qua trường lớp nào... mà muốn khởi nghiệp làm video? Nghe nè.",
+   "media": {
+    "mixkit": 15774,
+    "start": 2
+   }
+  },
+  {
+   "word": "NGẠI LỘ MẶT",
+   "line": "quay tay, quay đồ, quay cảnh",
+   "label": "",
+   "text": "Ngại lộ mặt hả? Khỏi quay mặt luôn. Quay tay, quay món ăn, quay đường phố... giọng kể lo phần còn lại.",
+   "media": {
+    "mixkit": 31348,
+    "start": 2
+   }
+  },
+  {
+   "word": "KHÔNG Ý TƯỞNG",
+   "line": "kể chuyện quanh mình",
+   "label": "",
+   "text": "Không có ý tưởng? Kể chuyện quanh mình thôi á... món ngon hôm nay, mẹo vặt mỗi ngày, câu chuyện của người thân.",
+   "media": {
+    "mixkit": 24580,
+    "start": 1
+   }
+  },
+  {
+   "word": "KHÔNG THU ÂM",
+   "line": "dán kịch bản, chọn giọng ITERA",
+   "label": "",
+   "text": "Không biết thu âm? Với ITERA, dán kịch bản vô, chọn một giọng tiếng Việt, vậy là có giọng đọc.",
+   "media": {
+    "mixkit": 1808,
+    "start": 3
+   }
+  },
+  {
+   "word": "BẮT ĐẦU NHỎ",
+   "line": "mỗi ngày một video",
+   "label": "",
+   "text": "Rồi bắt đầu nhỏ thôi... mỗi ngày một video, học dần từ những người xem đầu tiên.",
+   "media": {
+    "mixkit": 34484,
+    "start": 2
+   }
+  }
+ ],
+ "end": {
+  "words": [
+   "KHÔNG LỘ MẶT",
+   "VẪN CÓ GIỌNG"
+  ],
+  "line": "bắt đầu từ hôm nay, cùng ITERA.",
+  "label": "",
+  "text": "[softly] Không cần lộ mặt, không cần phòng thu... bắt đầu từ hôm nay, cùng ITERA.",
+  "media": {
+   "mixkit": 34980,
+   "start": 4
+  }
+ },
+ "youtube": {
+  "title": "Khởi nghiệp làm video không lộ mặt, không cần thu âm với ITERA #shorts",
+  "description": "Chưa học qua trường lớp, ngại lộ mặt, không có ý tưởng, không biết thu âm: vẫn bắt đầu làm video được. Quay tay, quay món ăn, quay đường phố; kể chuyện quanh mình; và dùng giọng đọc AI tiếng Việt của ITERA thay cho thu âm. Giọng kể trong video cũng là giọng AI làm bằng ITERA.\n\nBạn đang ngại điều gì nhất khi bắt đầu? Comment một chữ thôi!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#khongloMat #giongnoiAI #shorts",
+  "tags": [
+   "khởi nghiệp làm video",
+   "làm video không lộ mặt",
+   "kênh không lộ mặt",
+   "không biết thu âm",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "giọng đọc AI",
+   "ITERA",
+   "faceless channel",
+   "Vietnamese AI voice",
+   "YouTube Shorts"
+  ],
+  "categoryId": "27",
+  "localizations": {
+   "en": {
+    "title": "Start a faceless video channel with no recording, using ITERA #shorts",
+    "description": "No training, camera-shy, no ideas, can't record? Film your hands, food or streets, tell stories around you, and voice them with ITERA's Vietnamese AI voices.\n\nhttps://itera102.space\n\n#faceless #AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Bạn đang ngại điều gì nhất: lộ mặt, ý tưởng hay thu âm? 👇 Giọng kể trong video là giọng AI làm bằng ITERA: https://itera102.space"
+ }
+}
