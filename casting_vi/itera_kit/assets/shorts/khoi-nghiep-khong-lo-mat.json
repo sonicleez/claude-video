@@ -70,11 +70,12 @@
   ],
   "line": "bắt đầu từ hôm nay, cùng ITERA.",
   "label": "",
-  "text": "[softly] Không cần lộ mặt, không cần phòng thu... bắt đầu từ hôm nay, cùng ITERA.",
+  "text": "[softly] Không cần lộ mặt... [pause] không cần phòng thu... [pause] Bắt đầu... từ hôm nay. [pause] Cùng ITERA.",
   "media": {
    "mixkit": 34980,
    "start": 4
-  }
+  },
+  "preset": "an_slow"
  },
  "youtube": {
   "title": "Khởi nghiệp làm video không lộ mặt, không cần thu âm với ITERA #shorts",
@@ -100,5 +101,6 @@
    }
   },
   "pinned_comment": "Bạn đang ngại điều gì nhất: lộ mặt, ý tưởng hay thu âm? 👇 Giọng kể trong video là giọng AI làm bằng ITERA: https://itera102.space"
- }
+ },
+ "endEmphasis": true
 }

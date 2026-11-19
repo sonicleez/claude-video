@@ -7,10 +7,10 @@
  */
 import React from 'react';
 import {AbsoluteFill, Audio, Img, OffthreadVideo, Sequence, interpolate, random, spring, staticFile, useCurrentFrame} from 'remotion';
-import {FPS, T, sec} from './brand';
+import {FPS, Fx, T, sec} from './brand';
 
 export type Scene = {word: string; line: string; label: string; media: string; kind: 'video' | 'image'; voiceDur: number; ambient?: string; dur?: number; aspect?: number};
-export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}; mood?: string; music?: {file: string; gain: number}[]; chrome?: 'full' | 'minimal'; disclosure?: string; text?: 'center' | 'lower'};
+export type ScenicProps = {id: string; scenes: Scene[]; end: Scene & {words: string[]}; mood?: string; music?: {file: string; gain: number}[]; chrome?: 'full' | 'minimal'; disclosure?: string; text?: 'center' | 'lower'; endEmphasis?: boolean};
 export const TextCtx = React.createContext<string>('center');
 /** mood 'eerie': cold desaturated grade, flicker, glitchy type, dark drone bed. */
 export const MoodCtx = React.createContext<string>('calm');
@@ -21,7 +21,7 @@ export const sceneDur = (s: Scene) => Math.max(MIN, LEAD + s.voiceDur + TAIL);
 export const scenicTimeline = (p: ScenicProps) => {
   let c = 0;
   const starts = p.scenes.map((s) => { const st = c; c += sceneDur(s) - XF; return st; });
-  const endStart = c; const endDur = Math.max(5, LEAD + p.end.voiceDur + 1.8);
+  const endStart = c; const endDur = Math.max(5, LEAD + p.end.voiceDur + (p.endEmphasis ? 3.4 : 1.8));
   return {starts, endStart, endDur, total: endStart + endDur};
 };
 export const scenicDuration = (p: ScenicProps) => sec(scenicTimeline(p).total);
@@ -97,7 +97,7 @@ const Words: React.FC<{word: string; line: string; at: number; frames: number; t
 
 /** 'lower' text style: documentary lower-third at the bottom — red bar, lines slide up out of a mask, sub line follows. */
 const ease = (x: number) => 1 - Math.pow(1 - x, 4);
-const LowerText: React.FC<{lines: string[]; sub: string; extra?: string; at: number; frames: number}> = ({lines, sub, extra, at, frames}) => {
+const LowerText: React.FC<{lines: string[]; sub: string; extra?: string; at: number; frames: number; stagger?: number}> = ({lines, sub, extra, at, frames, stagger = 0.14}) => {
   const f = useCurrentFrame(); const t = f / FPS;
   const out = interpolate(f, [frames - sec(0.6), frames], [1, 0], clamp);
   const p = (d: number) => (at === 0 && d === 0 ? 1 : interpolate(t, [at + d, at + d + 0.7], [0, 1], {...clamp, easing: ease}));
@@ -110,7 +110,7 @@ const LowerText: React.FC<{lines: string[]; sub: string; extra?: string; at: num
         <div style={{width: 7, borderRadius: 4, background: T.red, boxShadow: `0 0 18px ${T.red}`, transform: `scaleY(${bar})`, transformOrigin: '50% 100%'}} />
         <div style={{display: 'flex', flexDirection: 'column', gap: 4}}>
           {lines.map((w, i) => {
-            const q = p(i * 0.14);
+            const q = p(i * stagger);
             return (
               <div key={i} style={{overflow: 'hidden', paddingTop: '0.32em', marginTop: '-0.32em', paddingBottom: 8, fontSize: fsOf(w)}}>
                 <div style={{fontFamily: T.sans, fontWeight: 800, fontSize: fsOf(w), lineHeight: 1.08, letterSpacing: 2, color: '#fff', whiteSpace: 'nowrap',
@@ -119,7 +119,7 @@ const LowerText: React.FC<{lines: string[]; sub: string; extra?: string; at: num
             );
           })}
           <div style={{overflow: 'hidden', marginTop: 10, paddingTop: 14}}>
-            <div style={{fontFamily: T.sans, fontWeight: 400, fontSize: 46, lineHeight: 1.3, color: 'rgba(255,255,255,0.92)', transform: `translateY(${(1 - p(0.35 + lines.length * 0.1)) * 110}%)`}}>{sub}</div>
+            <div style={{fontFamily: T.sans, fontWeight: 400, fontSize: 46, lineHeight: 1.3, color: 'rgba(255,255,255,0.92)', transform: `translateY(${(1 - p(0.35 + lines.length * (stagger > 0.3 ? stagger : 0.1))) * 110}%)`}}>{sub}</div>
           </div>
           {extra && <div style={{marginTop: 22, fontFamily: T.mono, fontSize: 30, color: 'rgba(255,255,255,0.85)', letterSpacing: 3, opacity: p(0.9)}}>{extra}</div>}
         </div>
@@ -153,8 +153,9 @@ const Chrome: React.FC<{p: ScenicProps}> = ({p}) => {
   const {starts, endStart} = scenicTimeline(p);
   const n = p.scenes.length; const cur = Math.max(0, starts.filter((s) => g >= s).length - 1);
   const s = g >= endStart ? p.end : p.scenes[cur];
+  const tl = endStart + LEAD + p.end.voiceDur + 0.6; const hide = p.endEmphasis ? interpolate(g, [tl, tl + 0.5], [1, 0], clamp) : 1;
   const logo = (
-    <div style={{position: 'absolute', left: 84, top: 92, display: 'flex', alignItems: 'center', gap: 12, filter: 'drop-shadow(0 2px 10px rgba(0,0,0,0.55))'}}>
+    <div style={{position: 'absolute', left: 84, top: 92, display: 'flex', alignItems: 'center', gap: 12, opacity: hide, filter: 'drop-shadow(0 2px 10px rgba(0,0,0,0.55))'}}>
       <div style={{width: 16, height: 16, borderRadius: 8, background: T.red, boxShadow: `0 0 14px ${T.red}`}} />
       <span style={{fontFamily: T.sans, fontWeight: 800, fontSize: 44, color: '#fff', letterSpacing: 5}}>ITERA</span>
     </div>
@@ -189,7 +190,7 @@ const Chrome: React.FC<{p: ScenicProps}> = ({p}) => {
   );
 };
 
-const EndView: React.FC<{e: ScenicProps['end']; id: string; frames: number}> = ({e, id, frames}) => {
+const EndView: React.FC<{e: ScenicProps['end']; id: string; frames: number; emphasis?: boolean}> = ({e, id, frames, emphasis}) => {
   const f = useCurrentFrame(); const t = f / FPS;
   const fin = interpolate(f, [0, sec(XF)], [0, 1], clamp);
   const out = interpolate(f, [frames - sec(0.8), frames], [1, 0], clamp);
@@ -198,7 +199,7 @@ const EndView: React.FC<{e: ScenicProps['end']; id: string; frames: number}> = (
       <Media s={e} id={id} frames={frames} />
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(5,6,10,0.4) 0%, rgba(5,6,10,0.15) 35%, rgba(5,6,10,0.65) 100%)'}} />
       {React.useContext(MoodCtx) === 'eerie' && <AbsoluteFill style={{background: 'radial-gradient(90% 60% at 50% 45%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.75) 100%)'}} />}
-      {React.useContext(TextCtx) === 'lower' ? <LowerText lines={e.words} sub={e.line} extra="itera102.space" at={0.4} frames={frames + 999} /> : <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 6}}>
+      {React.useContext(TextCtx) === 'lower' ? <LowerText lines={e.words} sub={e.line} extra={emphasis ? undefined : 'itera102.space'} at={0.4} frames={emphasis ? sec(LEAD + e.voiceDur + 0.9) : frames + 999} stagger={emphasis ? 1.1 : 0.14} /> : <AbsoluteFill style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 6}}>
         {e.words.map((w, i) => {
           const p = spring({frame: f - sec(0.5 + i * 0.45), fps: FPS, config: {damping: 20, stiffness: 90}});
           const efs = Math.min(150, 880 / ([...w].length * 0.86));
@@ -208,6 +209,21 @@ const EndView: React.FC<{e: ScenicProps['end']; id: string; frames: number}> = (
         <div style={{marginTop: 40, fontFamily: T.sans, fontStyle: 'italic', fontSize: 54, color: 'rgba(255,255,255,0.95)', opacity: interpolate(t, [2.0, 2.8], [0, 1], clamp)}}>{e.line}</div>
         <div style={{marginTop: 70, fontFamily: T.mono, fontSize: 32, color: 'rgba(255,255,255,0.85)', letterSpacing: 3, opacity: interpolate(t, [2.6, 3.3], [0, 1], clamp)}}>itera102.space</div>
       </AbsoluteFill>}
+      {emphasis && (() => {
+        // Final beat: the screen darkens and a large ITERA wordmark lands after the last spoken word.
+        const tl = LEAD + e.voiceDur + 0.6; const q = interpolate(t, [tl, tl + 0.9], [0, 1], {...clamp, easing: (x) => 1 - Math.pow(1 - x, 4)});
+        if (q <= 0) return null;
+        return (
+          <AbsoluteFill style={{background: `rgba(5,6,10,${0.72 * q})`, alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: 26, opacity: q, filter: `blur(${(1 - q) * 14}px)`, transform: `scale(${1.25 - 0.25 * q})`}}>
+              <div style={{width: 38, height: 38, borderRadius: 19, background: T.red, boxShadow: `0 0 ${30 + 30 * q}px ${T.red}`}} />
+              <span style={{fontFamily: T.sans, fontWeight: 800, fontSize: 190, color: '#fff', letterSpacing: 18}}>ITERA</span>
+            </div>
+            <div style={{marginTop: 30, fontFamily: T.sans, fontWeight: 400, fontSize: 44, color: 'rgba(255,255,255,0.9)', opacity: interpolate(t, [tl + 0.5, tl + 1.2], [0, 1], clamp)}}>{e.line}</div>
+            <div style={{marginTop: 26, fontFamily: T.mono, fontSize: 32, color: 'rgba(255,255,255,0.75)', letterSpacing: 3, opacity: interpolate(t, [tl + 0.8, tl + 1.5], [0, 1], clamp)}}>itera102.space</div>
+          </AbsoluteFill>
+        );
+      })()}
     </AbsoluteFill>
   );
 };
@@ -220,11 +236,11 @@ export const Scenic: React.FC<ScenicProps> = (p) => {
       {p.scenes.map((s, k) => (
         <Sequence key={k} from={sec(starts[k])} durationInFrames={sec(sceneDur(s))}><SceneView s={s} id={p.id} frames={sec(sceneDur(s))} first={k === 0} /></Sequence>
       ))}
-      <Sequence from={sec(endStart)} durationInFrames={sec(endDur)}><EndView e={p.end} id={p.id} frames={sec(endDur)} /></Sequence>
+      <Sequence from={sec(endStart)} durationInFrames={sec(endDur)}><EndView e={p.end} id={p.id} frames={sec(endDur)} emphasis={p.endEmphasis} /></Sequence>
       <Grain />
       <Chrome p={p} />
       {(p.music ?? [{file: p.mood === 'eerie' ? 'fx/eerie.wav' : 'fx/ambient.wav', gain: 1}]).map((m, i) => (
-        <Audio key={i} src={staticFile(m.file)} volume={(fr) => { const x = fr / FPS; const fade = interpolate(x, [0, 1, total - 1.5, total], [0, 1, 1, 0], clamp); return m.gain * fade * (voiceAt(x) ? 0.22 : 0.5); }} />
+        <Audio key={i} src={staticFile(m.file)} volume={(fr) => { const x = fr / FPS; const fade = interpolate(x, [0, 1, total - 1.5, total], [0, 1, 1, 0], clamp); const endV = p.endEmphasis && x >= endStart + LEAD - 0.4 && x < endStart + LEAD + p.end.voiceDur + 0.5; return m.gain * fade * (endV ? 0.12 : voiceAt(x) ? 0.22 : 0.5); }} />
       ))}
       {p.scenes.map((s, k) => (
         <React.Fragment key={k}>
@@ -233,6 +249,7 @@ export const Scenic: React.FC<ScenicProps> = (p) => {
         </React.Fragment>
       ))}
       <Sequence from={sec(endStart + LEAD)}><Audio src={staticFile(`scenic/${p.id}/ve.wav`)} /></Sequence>
+      {p.endEmphasis && <Fx at={endStart + LEAD + p.end.voiceDur + 0.55} name="impact" volume={0.55} />}
     </AbsoluteFill></TextCtx.Provider></MoodCtx.Provider>
   );
 };

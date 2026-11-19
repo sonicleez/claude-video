@@ -36,6 +36,8 @@ PRESET = {
  "valf_boy_bright": ("elevenlabs", "loY1uopAz31XyhAEhNSa", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.85, "speed": 1.08}),
  # Deep, expressive Northern mother voice — shared library "Nắng Xuân" (user pick 2026-11-17).
  "nangxuan_mother": ("elevenlabs", "rEvzjbRl5jRhZdVEX9vl", "eleven_v3", "vi", {"stability": 0.0, "similarity_boost": 0.85, "speed": 0.9}),
+ # Ân, slow and weighty for closing lines (2026-11-19: "phần kết đọc chậm hơn, tạo điểm nhấn").
+ "an_slow": ("elevenlabs", "zIusdI28yOZPwIBus0aI", "eleven_v3", "vi", {"stability": 0.5, "similarity_boost": 0.85, "speed": 0.8}),
  "annhien": ("elevenlabs", "8PEPqUGgvwN1Fk9KR8jV", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "tram": ("elevenlabs", "6Xq32rHt6oAu98TBDKfr", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
  "camhong": ("elevenlabs", "x4KAhuXs2G8TfK9Zr7Q4", "eleven_v3", "vi", {"stability": 0.5, "speed": 1.0}),
