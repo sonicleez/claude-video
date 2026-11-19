@@ -1,5 +1,8 @@
 # Strategy log (newest first)
 
+## 2026-11-19 15:20 VN — daily run 8 (blocked)
+- YouTube token refresh failed: HTTP 400 invalid_grant (Refresh_token expired or revoked; issued 11 Nov, ~7-8 days, matches Google's 7-day expiry for OAuth apps in "Testing" mode). No stats, no link comments, no uploads. 19 Nov videos were already scheduled and publish as planned; 20 Nov has no videos yet. Waiting for the user to issue a new refresh token.
+
 ## 2026-11-18 15:20 VN — daily run 7
 - Subs 96 (flat). No new viewer comments since 16 Nov.
 - Best new format: "3 voices sell the same pot, who would you buy from?" G2o6DDMSibs 240 views in 3.3 h (72/h). Guess game + selling works.
