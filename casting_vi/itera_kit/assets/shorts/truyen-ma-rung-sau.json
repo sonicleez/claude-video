@@ -1,0 +1,110 @@
+{
+ "id": "truyen-ma-rung-sau",
+ "template": "scenic",
+ "narrator": "hungpham_story",
+ "mood": "eerie",
+ "chrome": "minimal",
+ "text": "lower",
+ "endEmphasis": true,
+ "disclosure": "TRUYỆN MA HƯ CẤU · GIỌNG KỂ AI",
+ "music": [
+  {
+   "file": "fx/eerie.wav",
+   "gain": 0.9
+  },
+  {
+   "file": "fx/vast.wav",
+   "gain": 0.35
+  }
+ ],
+ "scenes": [
+  {
+   "word": "RỪNG SÂU",
+   "line": "chuyến đi năm ấy",
+   "label": "",
+   "text": "Chuyện này... xảy ra đã lâu lắm rồi. Năm đó, tôi với hai người bạn rủ nhau vô rừng, ngủ lại một đêm.",
+   "media": {
+    "mixkit": 8330,
+    "start": 2
+   }
+  },
+  {
+   "word": "LỬA TRẠI",
+   "line": "cho tới khi có tiếng gọi",
+   "label": "",
+   "text": "Đêm xuống, tụi tôi đốt lửa, ngồi nói chuyện rôm rả... [pause] cho tới khi nghe có tiếng ai đó, gọi tên tôi.",
+   "media": {
+    "mixkit": 25247,
+    "start": 2
+   }
+  },
+  {
+   "word": "TIẾNG GỌI",
+   "line": "vọng ra từ bìa rừng",
+   "label": "",
+   "text": "[whispers] Tiếng gọi nhỏ lắm... ngọt lắm... vọng ra từ phía bìa rừng.",
+   "media": {
+    "mixkit": 26798,
+    "start": 1
+   }
+  },
+  {
+   "word": "BÓNG TRẮNG",
+   "line": "đứng sau gốc cây",
+   "label": "",
+   "text": "Tôi rọi đèn qua... [pause] có một cái bóng trắng, đứng sau gốc cây. Không nhúc nhích.",
+   "media": {
+    "mixkit": 47655,
+    "start": 3
+   }
+  },
+  {
+   "word": "BỐN ĐÔI DÉP",
+   "line": "ba người đi...",
+   "label": "",
+   "text": "Sáng ra, tụi tôi thu dọn đồ đạc. [pause] Ba người đi... mà ngay chỗ tụi tôi ngủ, có tới bốn đôi dép, xếp ngay ngắn.",
+   "media": {
+    "mixkit": 51047,
+    "start": 2
+   }
+  }
+ ],
+ "end": {
+  "words": [
+   "ĐỪNG",
+   "TRẢ LỜI"
+  ],
+  "line": "nếu trong rừng có ai gọi tên bạn...",
+  "label": "",
+  "text": "[whispers] Cho nên... nếu có đi rừng, mà nghe ai gọi tên mình... [pause] thì đừng có trả lời nghen.",
+  "media": {
+   "mixkit": 22729,
+   "start": 2
+  }
+ },
+ "youtube": {
+  "title": "Truyện ma đi rừng: ba người đi, bốn đôi dép | giọng kể AI tiếng Việt #shorts",
+  "description": "Truyện ma hư cấu kể theo kiểu người xưa: chuyến cắm trại trong rừng sâu, tiếng ai gọi tên giữa đêm, bóng trắng sau gốc cây và bốn đôi dép trước cửa lều. Giọng kể là giọng AI tiếng Việt làm bằng ITERA.\n\nNếu là bạn, bạn có trả lời không? Comment một chữ thôi!\n\nTạo giọng đọc AI tiếng Việt tại: https://itera102.space\n\n#truyenma #kechuyen #shorts",
+  "tags": [
+   "truyện ma",
+   "truyện ma đi rừng",
+   "kể chuyện ma",
+   "truyện ma ngắn",
+   "giọng kể chuyện",
+   "giọng AI tiếng Việt",
+   "text to speech tiếng Việt",
+   "ITERA",
+   "Vietnamese ghost story",
+   "horror shorts",
+   "YouTube Shorts"
+  ],
+  "categoryId": "24",
+  "localizations": {
+   "en": {
+    "title": "Ghost story in the forest: three went in, four pairs of sandals #shorts",
+    "description": "A fictional Vietnamese ghost story told old-style, narrated with a Vietnamese AI voice made with ITERA.\n\nhttps://itera102.space\n\n#ghoststory #AIvoice #shorts"
+   }
+  },
+  "pinned_comment": "Nếu nghe ai gọi tên trong rừng, bạn có trả lời không? 👇 Truyện hư cấu, giọng kể AI làm bằng ITERA: https://itera102.space"
+ }
+}
