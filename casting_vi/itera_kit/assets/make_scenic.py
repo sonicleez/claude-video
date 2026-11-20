@@ -49,13 +49,15 @@ for key, c in items:
     else:
       try: print(f"[v{key}] {stt(f'{work}/v{key}.mp3')['text']}")
       except Exception as e: print(f"[v{key}] STT failed: {e}")
+    # "voiceFxLevel": "light" (user 2026-11-20: "ít rợn lại") or "strong" (default).
+    L = {"light": {"pitch": 0.95, "whisper": 0.07, "echo": 0.12, "bass": 1.5}, "strong": {"pitch": 0.88, "whisper": 0.22, "echo": 0.22, "bass": 3}}[spec.get("voiceFxLevel", "strong")]
     if spec.get("voiceFx") == "eerie":
         # Darker, scarier narrator: pitch down (formants kept, still intelligible), a faint lower whisper double
         # a few ms behind, and a cold forest echo. Re-checked with STT below.
         fx = ("[0:a]aformat=channel_layouts=mono,silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
-              f"atempo={spec.get('voiceTempo', 1.0)},rubberband=pitch=0.88:formant=preserved,asplit[a][b];"
-              "[b]rubberband=pitch=0.78:formant=shifted,highpass=f=180,lowpass=f=2800,volume=0.22,adelay=35[w];"
-              "[a][w]amix=inputs=2:normalize=0,aecho=0.85:0.55:110|240:0.22|0.12,equalizer=f=120:t=q:w=1:g=3,loudnorm=I=-16:TP=-1.5:LRA=11[o]")
+              f"atempo={spec.get('voiceTempo', 1.0)},rubberband=pitch={L['pitch']}:formant=preserved,asplit[a][b];"
+              f"[b]rubberband=pitch=0.78:formant=shifted,highpass=f=180,lowpass=f=2800,volume={L['whisper']},adelay=35[w];"
+              f"[a][w]amix=inputs=2:normalize=0,aecho=0.85:0.55:110|240:{L['echo']}|{L['echo'] / 2},equalizer=f=120:t=q:w=1:g={L['bass']},loudnorm=I=-16:TP=-1.5:LRA=11[o]")
         ff("-i", f"{work}/v{key}.mp3", "-filter_complex", fx, "-map", "[o]", "-ar", "48000", "-ac", "2", f"{pub}/v{key}.wav")
         ff("-i", f"{pub}/v{key}.wav", "-b:a", "128k", f"{work}/v{key}_fx.mp3")
         if not os.environ.get("SKIP_STT"):

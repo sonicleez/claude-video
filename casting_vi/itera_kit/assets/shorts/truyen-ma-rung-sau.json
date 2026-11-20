@@ -76,7 +76,7 @@
   ],
   "line": "nếu trong rừng có ai gọi tên bạn...",
   "label": "",
-  "text": "[whispers] Thì... đừng có trả lời nghen.",
+  "text": "Nếu trong rừng... có ai gọi tên bạn... [whispers] thì đừng trả lời nghen.",
   "media": {
    "mixkit": 22729,
    "start": 2
@@ -108,5 +108,6 @@
   "pinned_comment": "Nếu nghe ai gọi tên trong rừng, bạn có trả lời không? 👇 Truyện hư cấu, giọng kể AI làm bằng ITERA: https://itera102.space"
  },
  "voiceFx": "eerie",
- "voiceTempo": 1.06
+ "voiceTempo": 1.06,
+ "voiceFxLevel": "light"
 }
