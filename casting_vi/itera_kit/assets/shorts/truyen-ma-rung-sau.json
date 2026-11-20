@@ -1,7 +1,7 @@
 {
  "id": "truyen-ma-rung-sau",
  "template": "scenic",
- "narrator": "hungpham_story",
+ "narrator": "hungpham_horror",
  "mood": "eerie",
  "chrome": "minimal",
  "text": "lower",
@@ -42,7 +42,7 @@
    "word": "TIẾNG GỌI",
    "line": "vọng ra từ bìa rừng",
    "label": "",
-   "text": "[whispers] Tiếng gọi nhỏ lắm... ngọt lắm... vọng ra từ phía bìa rừng.",
+   "text": "[whispers] Tiếng gọi nhỏ lắm... nhẹ nhàng lắm... vọng ra từ phía bìa rừng.",
    "media": {
     "mixkit": 26798,
     "start": 1
@@ -50,9 +50,9 @@
   },
   {
    "word": "BÓNG TRẮNG",
-   "line": "đứng sau gốc cây",
+   "line": "nhìn chằm chằm vào lều trại",
    "label": "",
-   "text": "Tôi rọi đèn qua... [pause] có một cái bóng trắng, đứng sau gốc cây. Không nhúc nhích.",
+   "text": "Tôi rọi đèn qua... [pause] có một cái bóng trắng, đứng sau gốc cây. [pause] Đứng yên... nhìn chằm chằm vào lều trại.",
    "media": {
     "mixkit": 47655,
     "start": 3
@@ -62,7 +62,7 @@
    "word": "BỐN ĐÔI DÉP",
    "line": "ba người đi...",
    "label": "",
-   "text": "Sáng ra, tụi tôi thu dọn đồ đạc. [pause] Ba người đi... mà ngay chỗ tụi tôi ngủ, có tới bốn đôi dép, xếp ngay ngắn.",
+   "text": "Sáng ra, tụi tôi thu dọn đồ đạc. [pause] Nhưng ba người đi... mà lại có tới bốn đôi dép, xếp ngay ngắn.",
    "media": {
     "mixkit": 51047,
     "start": 2
@@ -76,7 +76,7 @@
   ],
   "line": "nếu trong rừng có ai gọi tên bạn...",
   "label": "",
-  "text": "[whispers] Cho nên... nếu có đi rừng, mà nghe ai gọi tên mình... [pause] thì đừng có trả lời nghen.",
+  "text": "[whispers] Thì... đừng có trả lời nghen.",
   "media": {
    "mixkit": 22729,
    "start": 2
@@ -106,5 +106,6 @@
    }
   },
   "pinned_comment": "Nếu nghe ai gọi tên trong rừng, bạn có trả lời không? 👇 Truyện hư cấu, giọng kể AI làm bằng ITERA: https://itera102.space"
- }
+ },
+ "voiceFx": "eerie"
 }
