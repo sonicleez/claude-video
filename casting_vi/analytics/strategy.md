@@ -1,5 +1,8 @@
 # Strategy log (newest first)
 
+## 2026-11-20 15:20 VN — daily run 9 (still blocked)
+- Refresh_token still returns invalid_grant; the user has not replaced it yet. No stats, comments or uploads. Nothing is scheduled for 20 or 21 Nov.
+
 ## 2026-11-19 15:20 VN — daily run 8 (blocked)
 - YouTube token refresh failed: HTTP 400 invalid_grant (Refresh_token expired or revoked; issued 11 Nov, ~7-8 days, matches Google's 7-day expiry for OAuth apps in "Testing" mode). No stats, no link comments, no uploads. 19 Nov videos were already scheduled and publish as planned; 20 Nov has no videos yet. Waiting for the user to issue a new refresh token.
 
