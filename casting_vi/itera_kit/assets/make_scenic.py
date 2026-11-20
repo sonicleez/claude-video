@@ -45,8 +45,10 @@ def prep(key, m, need):
     return f"m{key}.mp4", "video", amb
 scenes, end = [], None
 for key, c in items:
-    try: print(f"[v{key}] {stt(f'{work}/v{key}.mp3')['text']}")
-    except Exception as e: print(f"[v{key}] STT failed: {e}")
+    if os.environ.get("SKIP_STT"): pass  # STT check skipped (API slow); run assets/stt.py separately
+    else:
+      try: print(f"[v{key}] {stt(f'{work}/v{key}.mp3')['text']}")
+      except Exception as e: print(f"[v{key}] STT failed: {e}")
     if spec.get("voiceFx") == "eerie":
         # Darker, scarier narrator: pitch down (formants kept, still intelligible), a faint lower whisper double
         # a few ms behind, and a cold forest echo. Re-checked with STT below.
@@ -55,8 +57,9 @@ for key, c in items:
               "[a][w]amix=inputs=2:normalize=0,aecho=0.85:0.55:110|240:0.22|0.12,equalizer=f=120:t=q:w=1:g=3,loudnorm=I=-16:TP=-1.5:LRA=11[o]")
         ff("-i", f"{work}/v{key}.mp3", "-filter_complex", fx, "-map", "[o]", "-ar", "48000", "-ac", "2", f"{pub}/v{key}.wav")
         ff("-i", f"{pub}/v{key}.wav", "-b:a", "128k", f"{work}/v{key}_fx.mp3")
-        try: print(f"[v{key} fx] {stt(f'{work}/v{key}_fx.mp3')['text']}")
-        except Exception as e: print(f"[v{key} fx] STT failed: {e}")
+        if not os.environ.get("SKIP_STT"):
+            try: print(f"[v{key} fx] {stt(f'{work}/v{key}_fx.mp3')['text']}")
+            except Exception as e: print(f"[v{key} fx] STT failed: {e}")
     else:
         ff("-i", f"{work}/v{key}.mp3", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", f"{pub}/v{key}.wav")
     d = dur_of(f"{pub}/v{key}.wav")
