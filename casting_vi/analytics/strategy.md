@@ -1,5 +1,8 @@
 # Strategy log (newest first)
 
+## 2026-11-22 15:20 VN — daily runs 10–11 (still blocked)
+- The 21 Nov run was delivered late (session worker restart) together with the 22 Nov run. Refresh_token still returns invalid_grant. No stats, comments or uploads; no videos scheduled since 19 Nov.
+
 ## 2026-11-20 15:20 VN — daily run 9 (still blocked)
 - Refresh_token still returns invalid_grant; the user has not replaced it yet. No stats, comments or uploads. Nothing is scheduled for 20 or 21 Nov.
 
