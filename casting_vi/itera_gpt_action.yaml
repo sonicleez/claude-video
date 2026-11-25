@@ -1,0 +1,148 @@
+openapi: 3.1.0
+info:
+  title: ITERA Voice API
+  version: "1.0.0"
+  description: >
+    Text-to-speech tiếng Việt qua ITERA (api.itera102.space).
+    Quy trình: createSpeech -> lấy id -> gọi getTask đến khi status = completed -> đưa result.audio_url cho người dùng.
+    Không gửi lại createSpeech khi task còn pending/processing (sẽ bị trừ credit hai lần).
+    Chi phí khoảng 1 credit/ký tự.
+servers:
+  - url: https://api.itera102.space
+paths:
+  /v1/models:
+    get:
+      operationId: listModels
+      summary: Danh sách model (dùng để kiểm tra kết nối, miễn phí)
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    model_id: {type: string}
+                    name: {type: string}
+  /v1/shared-voices:
+    get:
+      operationId: searchVoices
+      summary: Tìm giọng theo tên/ngôn ngữ
+      parameters:
+        - {name: language, in: query, schema: {type: string, default: vi}}
+        - {name: search, in: query, schema: {type: string}}
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  has_more: {type: boolean}
+                  voices:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        voice_id: {type: string}
+                        name: {type: string}
+                        gender: {type: string}
+                        age: {type: string}
+                        accent: {type: string}
+                        description: {type: string}
+                        preview_url: {type: string}
+  /v1/text-to-speech/{voice_id}:
+    post:
+      operationId: createSpeech
+      summary: Tạo giọng đọc (bất đồng bộ, trả về id task)
+      description: >
+        Giọng mặc định nên dùng: Ân zIusdI28yOZPwIBus0aI (nữ trẻ), Trâm 6Xq32rHt6oAu98TBDKfr (nữ ấm),
+        Dũng Anda 1spX5aWUTJxCVTQHaBi1 (nam). Với elevenlabs + eleven_v3: language_code "vi",
+        stability chỉ 0.0 / 0.5 / 1.0, có thể chèn thẻ [excited] [laughs] [giggles] [sighs] [warmly].
+        Với minimax: model_id speech-2.8-hd, language_code "Vietnamese", không dùng thẻ.
+        Viết "AI" thành "ây ai", số viết bằng chữ.
+      parameters:
+        - {name: voice_id, in: path, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [text, provider, model_id, language_code]
+              properties:
+                text: {type: string}
+                provider: {type: string, enum: [elevenlabs, minimax, capcut], default: elevenlabs}
+                model_id: {type: string, default: eleven_v3}
+                language_code: {type: string, default: vi}
+                voice_settings:
+                  type: object
+                  properties:
+                    stability: {type: number, default: 0.5}
+                    speed: {type: number, default: 1.0}
+                    pitch: {type: number}
+                    vol: {type: number}
+                export_transcript: {type: boolean, default: false}
+      responses:
+        "200":
+          description: Task đã tạo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: {type: string}
+                  status: {type: string}
+  /v1/history/{id}:
+    get:
+      operationId: getTask
+      summary: Trạng thái task TTS; khi completed có result.audio_url
+      parameters:
+        - {name: id, in: path, required: true, schema: {type: string}}
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: {type: string}
+                  status: {type: string, enum: [pending, processing, completed, failed]}
+                  progress: {type: number}
+                  credits_deducted: {type: number}
+                  error: {type: string}
+                  detail_error: {type: string}
+                  metadata: {type: object}
+                  result:
+                    type: object
+                    properties:
+                      audio_url: {type: string}
+                      srt_url: {type: string}
+  /v1/history:
+    get:
+      operationId: listTasks
+      summary: Lịch sử các task gần nhất
+      parameters:
+        - {name: page_size, in: query, schema: {type: integer, default: 10}}
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  has_more: {type: boolean}
+                  tasks: {type: array, items: {type: object}}
+components:
+  securitySchemes:
+    iteraKey:
+      type: apiKey
+      in: header
+      name: xi-api-key
+security:
+  - iteraKey: []
