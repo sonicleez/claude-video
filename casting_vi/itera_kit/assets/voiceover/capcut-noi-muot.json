@@ -3,19 +3,66 @@
  "preset": "an_human",
  "video": "/tmp/claude-0/dl_guide/guide.mov",
  "lines": [
-  [0.2,  "[excited] Bạn làm video mà chuyển cảnh không liền mạch? Vào đây mình chỉ nè."],
-  [3.6,  "Trước hết, chọn liền hai video."],
-  [7.0,  "Đoạn thứ hai, nhấn chọn Lớp Phủ."],
-  [12.4, "Nhấn giữ đoạn hai, kéo về trước khoảng một giây."],
-  [18.3, "Đặt thanh thời gian ở đầu đoạn hai."],
-  [20.8, "Chọn Nối."],
-  [22.0, "Kéo độ trong suốt về không."],
-  [24.4, "Chọn key frame."],
-  [26.4, "Di chuyển thanh thời gian đến cuối video thứ nhất."],
-  [30.5, "Chọn Nối."],
-  [31.7, "Kéo độ trong suốt về một trăm."],
-  [33.6, "Chọn key frame."],
-  [36.0, "Muốn nối nhiều đoạn, thì tiếp tục làm giống vậy nha."],
-  [44.0, "[laughs] Như vậy là xong, video mượt mà, không kẽ hở rồi!"]
- ]
+  [
+   0.2,
+   "[excited] Bạn làm video mà chuyển cảnh không liền mạch? Vào đây mình chỉ nè."
+  ],
+  [
+   3.6,
+   "Trước hết, chọn liền hai video."
+  ],
+  [
+   7.0,
+   "Đoạn thứ hai, nhấn chọn Lớp Phủ."
+  ],
+  [
+   12.4,
+   "Nhấn giữ đoạn hai, kéo về trước khoảng một giây."
+  ],
+  [
+   18.3,
+   "Đặt thanh thời gian ở đầu đoạn hai."
+  ],
+  [
+   20.8,
+   "Chọn Nối."
+  ],
+  [
+   22.0,
+   "Kéo độ trong suốt về không."
+  ],
+  [
+   24.4,
+   "Chọn key frame."
+  ],
+  [
+   26.4,
+   "Di chuyển thanh thời gian đến cuối video thứ nhất."
+  ],
+  [
+   30.5,
+   "Chọn Nối."
+  ],
+  [
+   31.7,
+   "Kéo độ trong suốt về một trăm."
+  ],
+  [
+   33.6,
+   "Chọn key frame."
+  ],
+  [
+   36.0,
+   "Muốn nối nhiều đoạn, thì tiếp tục làm giống vậy nha."
+  ],
+  [
+   44.0,
+   "[laughs] Như vậy là xong, video mượt mà, không kẽ hở rồi!"
+  ]
+ ],
+ "music": {
+  "file": "public/fx/playful.wav",
+  "gain": 0.22
+ },
+ "cover": "/home/user/claude-video/ITERA_video_long_tieng/Anh_bia_CapCut_noi_video_muot.png"
 }

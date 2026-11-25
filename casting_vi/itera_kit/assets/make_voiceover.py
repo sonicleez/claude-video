@@ -29,7 +29,18 @@ for k, (t, text) in enumerate(spec["lines"]):
 V = spec["video"]; vd = dur(V)
 ins = sum([["-i", f"{work}/l{k}.wav"] for k in range(len(starts))], [])
 flt = "".join(f"[{k + 1}:a]adelay={int(s * 1000)}|{int(s * 1000)}[a{k}];" for k, s in enumerate(starts))
-flt += "".join(f"[a{k}]" for k in range(len(starts))) + f"amix=inputs={len(starts)}:normalize=0,apad,atrim=0:{vd},loudnorm=I=-14:TP=-1.5:LRA=11[vo]"
-ff("-i", V, *ins, "-filter_complex", flt, "-map", "0:v", "-map", "[vo]", "-c:v", "libx264", "-crf", "20", "-preset", "medium", "-pix_fmt", "yuv420p",
+n = len(starts)
+flt += "".join(f"[a{k}]" for k in range(n)) + f"amix=inputs={n}:normalize=0,apad,atrim=0:{vd}[v0];"
+mus = spec.get("music")  # optional {"file","gain"}: soft bed, ducked under the voice (sidechain), faded in/out
+if mus:
+    ins += ["-stream_loop", "-1", "-i", mus["file"]]; mi = n + 1
+    flt += (f"[v0]asplit[vk][vsc];[{mi}:a]atrim=0:{vd},volume={mus.get('gain', 0.25)},afade=t=in:d=1.5,afade=t=out:st={max(0, vd - 2.5)}:d=2.5[m0];"
+            f"[m0][vsc]sidechaincompress=threshold=0.02:ratio=6:attack=30:release=500[md];[vk][md]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[vo]")
+else:
+    flt += "[v0]loudnorm=I=-14:TP=-1.5:LRA=11[vo]"
+cover = spec.get("cover")  # optional cover image embedded as the MP4 poster (attached_pic)
+extra = (["-i", cover] if cover else [])
+maps = ["-map", "0:v", "-map", "[vo]"] + (["-map", f"{n + 2 if mus else n + 1}:v", "-c:v:1", "mjpeg", "-disposition:v:1", "attached_pic"] if cover else [])
+ff("-i", V, *ins, *extra, "-filter_complex", flt, *maps, "-c:v:0", "libx264", "-crf", "20", "-preset", "medium", "-pix_fmt:v:0", "yuv420p",
    "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", f"out/{sid}.mp4")
 print(f"DONE out/{sid}.mp4 {dur(f'out/{sid}.mp4'):.1f}s credits={credits} last line ends {end:.1f}s / video {vd:.1f}s")
