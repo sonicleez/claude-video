@@ -1,0 +1,70 @@
+{
+ "id": "capcut-noi-muot-v3",
+ "preset": "an_human",
+ "video": "/tmp/claude-0/dl_guide2/guide_slow.mp4",
+ "lines": [
+  [
+   0.2,
+   "[excited] Bạn làm video mà chuyển cảnh không liền mạch? Vào đây mình chỉ nè."
+  ],
+  [
+   3.8,
+   "Trước hết, chọn liền hai video."
+  ],
+  [
+   22.21,
+   "Đoạn thứ hai, nhấn chọn Lớp Phủ."
+  ],
+  [
+   28.71,
+   "Nhấn giữ đoạn hai, kéo về trước khoảng một giây."
+  ],
+  [
+   33.51,
+   "Đặt thanh thời gian ở đầu đoạn hai."
+  ],
+  [
+   35.61,
+   "Chọn Nối."
+  ],
+  [
+   36.71,
+   "Kéo độ trong suốt về không."
+  ],
+  [
+   38.91,
+   "Chọn key frame."
+  ],
+  [
+   40.21,
+   "Di chuyển thanh thời gian đến cuối video thứ nhất."
+  ],
+  [
+   44.91,
+   "Chọn Nối."
+  ],
+  [
+   46.11,
+   "Kéo độ trong suốt về một trăm."
+  ],
+  [
+   47.91,
+   "Chọn key frame."
+  ],
+  [
+   49.51,
+   "Muốn nối nhiều đoạn, thì tiếp tục làm giống vậy nha."
+  ],
+  [
+   55.21,
+   "[laughs] Như vậy là xong, video mượt mà, không kẽ hở rồi!"
+  ]
+ ],
+ "music": {
+  "file": "public/fx/playful.wav",
+  "gain": 0.22
+ },
+ "cover": "/home/user/claude-video/ITERA_video_long_tieng/Anh_bia_CapCut_noi_video_muot.png",
+ "reuse": "capcut-noi-muot",
+ "subtitles": {}
+}
