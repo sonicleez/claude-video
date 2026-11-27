@@ -1,5 +1,8 @@
 # Strategy log (newest first)
 
+## 2026-11-27 15:20 VN — daily run 16 (still blocked)
+- Refresh_token still invalid_grant. 8th day without new videos.
+
 ## 2026-11-26 15:20 VN — daily run 15 (still blocked)
 - Refresh_token still invalid_grant. 7th day without new videos.
 
